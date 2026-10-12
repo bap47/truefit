@@ -1,0 +1,14 @@
+# Sửa trong CMS: Trang chủ
+tieu_de: Quy trình làm việc
+dong_phu: Chỉ với 5 bước đơn giản
+buoc:
+- ten: Tư vấn - Xác định nhu cầu
+  mo_ta: 'Gửi yêu cầu: số lượng, ngân sách,... Tư vấn kiểu dáng: màu sắc, vị trí logo, loại áo.'
+- ten: Lựa chọn vải - Báo giá
+  mo_ta: Tư vấn chuyên sâu về chất liệu vải. Gửi mẫu thực tế, mẫu online cho khách hàng.
+- ten: Thiết kế - Duyệt mẫu thật
+  mo_ta: Thiết kế mẫu demo. Chỉnh sửa theo ý khách hàng. Tiến hành may mẫu thực tế.
+- ten: Ký kết - Sản xuất
+  mo_ta: Chốt bảng size đồng phục. Ký kết và tiến hành sản xuất.
+- ten: Kiểm tra - Giao hàng
+  mo_ta: Kiểm tra chất lượng sản phẩm. Đóng gói và giao hàng tận nơi.
