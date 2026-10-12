@@ -1,0 +1,21 @@
+---
+layout: default
+title: Khách hàng & dự án
+---
+{% assign kh = site.khach_hang | sort: "thu_tu" %}
+<section class="tf-section">
+  <div class="wrap">
+    <h1 class="tf-title rise">Khách hàng <span>tin chọn TrueFit</span></h1>
+    <p class="tf-lead rise" style="--d:.1s">Hơn 500 doanh nghiệp, quán cafe, nhà hàng, đội nhóm đã đồng hành cùng TrueFit.</p>
+    <div class="tf-clients">
+      {% for c in kh %}
+      <a class="tf-client reveal" style="--d:{{ forloop.index0 | modulo: 4 | times: 0.08 }}s" href="{{ c.url | relative_url }}">
+        <span class="tf-client__logo"><img src="{{ c.logo | relative_url }}" alt="{{ c.title }}" loading="lazy"></span>
+        <strong>{{ c.title }}</strong>
+        {% if c.nganh %}<span>{{ c.nganh }}</span>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% include cta.html %}
