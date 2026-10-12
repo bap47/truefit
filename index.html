@@ -8,7 +8,7 @@ layout: default
 <section class="tf-hero" id="trang-chu"{% if h.hero.anh_nen != "" %} style="--hero-bg:url('{{ h.hero.anh_nen | relative_url }}')"{% endif %}>
   <div class="wrap">
     <h1 class="tf-hero__title rise">{{ h.hero.tieu_de }}</h1>
-    <a class="tf-hotline rise" style="--d:.12s" href="tel:{{ site.phone_raw }}"><span>{{ h.hero.tu_van }}</span><strong>{{ site.phone }}</strong></a>
+    <a class="tf-hotline rise" style="--d:.12s" href="tel:{{ site.data.lien_he.hotline_so }}"><span>{{ h.hero.tu_van }}</span><strong>{{ site.data.lien_he.hotline }}</strong></a>
     <p class="tf-hero__tagline rise" style="--d:.2s">{{ h.hero.slogan }}<br>{{ h.hero.slogan_phu }}</p>
   </div>
 </section>
@@ -73,7 +73,7 @@ layout: default
       <div class="tf-process__intro">
         <h2>{{ h.quy_trinh_tieu_de }}</h2>
         <p>{{ h.quy_trinh_phu }}</p>
-        <a class="btn btn--black" href="{{ site.zalo }}" target="_blank" rel="noopener">Đặt hàng ngay</a>
+        <a class="btn btn--black" href="{{ site.data.lien_he.zalo }}" target="_blank" rel="noopener">Đặt hàng ngay</a>
       </div>
       <ol class="tf-steps">
         {% for s in h.quy_trinh %}

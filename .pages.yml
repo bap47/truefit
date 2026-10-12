@@ -159,3 +159,22 @@ content:
         fields:
           - { name: tieu_de, label: Tiêu đề, type: string }
           - { name: mo_ta, label: Mô tả, type: text }
+
+  # ---------- LIÊN HỆ & MẠNG XÃ HỘI ----------
+  - name: lien_he
+    label: Liên hệ & mạng xã hội
+    type: file
+    path: _data/lien_he.yml
+    fields:
+      - { name: hotline, label: Hotline (cách hiển thị), type: string, description: "VD: 0909 914 059" }
+      - { name: hotline_so, label: Hotline (chỉ số, không dấu cách), type: string, description: "VD: 0909914059 – dùng cho nút gọi" }
+      - { name: zalo, label: Link Zalo, type: string, description: "VD: https://zalo.me/0909914059" }
+      - { name: email, label: Email, type: string }
+      - name: kenh
+        label: Icon liên hệ ở footer
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tên kênh, type: string, description: "VD: Facebook, Zalo, TikTok" }
+          - { name: link, label: Link, type: string, description: "Gọi điện: tel:0909914059 · Email: mailto:ten@gmail.com" }
+          - { name: icon, label: Icon (ảnh vuông, PNG/SVG), type: image }
