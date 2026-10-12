@@ -1,0 +1,126 @@
+---
+layout: default
+---
+{% assign h = site.data.trang_chu %}
+{% assign sp = site.san_pham | sort: "thu_tu" %}
+
+<!-- HERO: một thương hiệu, hai lối vào -->
+<section class="tf-hero"{% if h.hero.anh_nen != "" %} style="--hero-bg:url('{{ h.hero.anh_nen | relative_url }}')"{% endif %}>
+  <div class="wrap">
+    <h1 class="tf-hero__title rise">{{ h.hero.tieu_de }}</h1>
+    <p class="tf-hero__tagline rise" style="--d:.12s">{{ h.hero.slogan }}</p>
+    <div class="tf-paths">
+      {% for d in h.dich_vu %}
+      <a class="tf-path rise" style="--d:{{ forloop.index | times: 0.12 | plus: 0.2 }}s" href="{{ d.link | relative_url }}">
+        <img src="{{ d.anh | relative_url }}" alt="" width="800" height="800">
+        <span class="tf-path__txt">
+          <strong>{{ d.ten }}</strong>
+          <span>{{ d.mo_ta }}</span>
+          <span class="tf-path__go">{{ d.nut }} →</span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- SỐ LIỆU + LÝ DO -->
+<section class="tf-section">
+  <div class="wrap">
+    <h2 class="tf-title reveal">{{ h.ly_do_tieu_de }}</h2>
+    <div class="tf-stats">
+      {% for s in h.so_lieu %}
+      <div class="tf-stat reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
+        <p class="tf-stat__num" data-count="{{ s.so }}" data-label="{{ s.hien_thi }}">{{ s.hien_thi }}</p>
+        <p class="tf-stat__label">{{ s.nhan }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="tf-reasons">
+      {% for r in h.ly_do %}
+      <div class="tf-reason reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
+        <h3>{{ r.ten }}</h3>
+        <p>{{ r.mo_ta }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- MERCHANDISE -->
+{% assign merch = sp | where: "danh_muc", "merchandise" %}
+<section class="tf-section tf-section--cream" id="merchandise">
+  <div class="wrap">
+    <p class="tf-eyebrow reveal">Merchandise</p>
+    <h2 class="tf-title reveal">Quà tặng & merch <span>in logo thương hiệu</span></h2>
+    <p class="tf-lead reveal">Welcome kit cho nhân viên mới, quà sự kiện, quà tri ân khách hàng – đồng bộ nhận diện, sản xuất tại xưởng.</p>
+    <div class="tf-grid">
+      {% for p in merch limit: 6 %}{% include product-card.html p=p %}{% endfor %}
+    </div>
+    <p class="tf-more reveal"><a class="btn btn--line" href="{{ '/san-pham/merchandise/' | relative_url }}">Xem tất cả merchandise</a></p>
+  </div>
+</section>
+
+<!-- ĐỒNG PHỤC -->
+{% assign uni = sp | where: "danh_muc", "dong-phuc" %}
+<section class="tf-section" id="dong-phuc">
+  <div class="wrap">
+    <p class="tf-eyebrow reveal">Đồng phục</p>
+    <h2 class="tf-title reveal">Đồng phục <span>doanh nghiệp trọn gói</span></h2>
+    <p class="tf-lead reveal">Từ tư vấn chất liệu, thiết kế, may mẫu đến giao hàng tận nơi: tận tay – tận tình – tận nơi.</p>
+    <div class="tf-grid">
+      {% for p in uni limit: 6 %}{% include product-card.html p=p %}{% endfor %}
+    </div>
+    <p class="tf-more reveal"><a class="btn btn--line" href="{{ '/san-pham/dong-phuc/' | relative_url }}">Xem tất cả đồng phục</a></p>
+  </div>
+</section>
+
+<!-- QUY TRÌNH -->
+<section class="tf-section tf-section--mist">
+  <div class="wrap">
+    <div class="tf-process reveal">
+      <div class="tf-process__intro">
+        <h2>Quy trình làm việc</h2>
+        <p>{{ h.quy_trinh | size }} bước rõ ràng, áp dụng cho cả đồng phục và merchandise.</p>
+        <a class="btn btn--black" href="{{ site.zalo }}" target="_blank" rel="noopener">Đặt hàng ngay</a>
+      </div>
+      <ol class="tf-steps">
+        {% for s in h.quy_trinh %}
+        <li class="reveal" style="--d:{{ forloop.index0 | times: 0.12 }}s"><strong>{{ s.ten }}</strong>{{ s.mo_ta }}</li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- KHÁCH HÀNG -->
+{% assign kh = site.khach_hang | sort: "thu_tu" %}
+{% if kh.size > 0 %}
+<section class="tf-section">
+  <div class="wrap">
+    <h2 class="tf-title reveal">Khách hàng tin chọn <span>TrueFit</span></h2>
+  </div>
+  <div class="tf-marquee" aria-label="Logo khách hàng">
+    <div class="tf-marquee__track">
+      {% for n in (1..2) %}{% for c in kh %}
+      <a class="tf-marquee__item" href="{{ c.url | relative_url }}"{% if n == 2 %} aria-hidden="true" tabindex="-1"{% endif %}><img src="{{ c.logo | relative_url }}" alt="{{ c.title }}" loading="lazy"></a>
+      {% endfor %}{% if kh.size < 6 %}{% for c in kh %}<a class="tf-marquee__item" href="{{ c.url | relative_url }}" aria-hidden="true" tabindex="-1"><img src="{{ c.logo | relative_url }}" alt="" loading="lazy"></a>{% endfor %}{% endif %}{% endfor %}
+    </div>
+  </div>
+  <p class="tf-more reveal"><a class="btn btn--line" href="{{ '/khach-hang/' | relative_url }}">Xem dự án đã làm</a></p>
+</section>
+{% endif %}
+
+<!-- TIN TỨC -->
+{% if site.posts.size > 0 %}
+<section class="tf-section tf-section--cream">
+  <div class="wrap">
+    <h2 class="tf-title reveal">Tin tức</h2>
+    <div class="tf-news">
+      {% for post in site.posts limit: 3 %}{% include post-card.html post=post %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include cta.html %}

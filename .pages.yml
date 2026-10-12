@@ -1,0 +1,132 @@
+# Cấu hình Pages CMS (https://app.pagescms.org) – trang quản trị đăng bài
+media:
+  input: assets/uploads
+  output: /assets/uploads
+  extensions: [jpg, jpeg, png, webp, gif, svg]
+
+content:
+  # ---------- SẢN PHẨM ----------
+  - name: san_pham
+    label: Sản phẩm
+    type: collection
+    path: _san_pham
+    filename: "{primary}.md"
+    view:
+      fields: [title, danh_muc, thu_tu]
+      sort: [thu_tu, title]
+    fields:
+      - { name: title, label: Tên sản phẩm, type: string, required: true }
+      - name: danh_muc
+        label: Danh mục
+        type: select
+        required: true
+        options:
+          values:
+            - { value: merchandise, label: Merchandise }
+            - { value: dong-phuc, label: Đồng phục }
+      - { name: anh, label: Ảnh chính (vuông, ưu tiên nền trong), type: image, required: true }
+      - { name: thu_vien, label: Ảnh thực tế (nhiều ảnh), type: image, options: { multiple: true } }
+      - { name: dat_tu, label: Đặt từ, type: string, description: "VD: 50 áo, 100 túi" }
+      - { name: chat_lieu, label: Chất liệu, type: string }
+      - { name: mo_ta, label: Mô tả ngắn, type: text }
+      - { name: thu_tu, label: Thứ tự (số nhỏ hiện trước), type: number, default: 50 }
+      - { name: body, label: Nội dung chi tiết (không bắt buộc), type: rich-text }
+
+  # ---------- KHÁCH HÀNG / DỰ ÁN ----------
+  - name: khach_hang
+    label: Khách hàng & dự án
+    type: collection
+    path: _khach_hang
+    filename: "{primary}.md"
+    view:
+      fields: [title, nganh]
+    fields:
+      - { name: title, label: Tên khách hàng, type: string, required: true }
+      - { name: logo, label: Logo, type: image, required: true }
+      - { name: nganh, label: Ngành, type: string, description: "VD: F&B, Tài chính" }
+      - { name: da_may, label: Đã làm, type: string, description: "VD: 500 áo polo, 300 túi tote" }
+      - { name: thu_vien, label: Ảnh dự án thực tế, type: image, options: { multiple: true } }
+      - { name: thu_tu, label: Thứ tự, type: number, default: 50 }
+      - { name: body, label: Câu chuyện dự án, type: rich-text }
+
+  # ---------- TIN TỨC ----------
+  - name: tin_tuc
+    label: Tin tức
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+      sort: [date]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Tiêu đề, type: string, required: true }
+      - { name: date, label: Ngày đăng, type: date }
+      - { name: anh, label: Ảnh bìa, type: image }
+      - { name: mo_ta, label: Tóm tắt (hiện ở danh sách), type: text }
+      - { name: body, label: Nội dung, type: rich-text }
+
+  # ---------- CHÍNH SÁCH ----------
+  - name: chinh_sach
+    label: Chính sách
+    type: collection
+    path: _chinh_sach
+    filename: "{primary}.md"
+    fields:
+      - { name: title, label: Tiêu đề, type: string, required: true }
+      - { name: thu_tu, label: Thứ tự, type: number }
+      - { name: body, label: Nội dung, type: rich-text }
+
+  # ---------- TRANG CHỦ ----------
+  - name: trang_chu
+    label: Trang chủ
+    type: file
+    path: _data/trang_chu.yml
+    fields:
+      - { name: uu_dai, label: Thanh ưu đãi trên cùng, type: string }
+      - name: hero
+        label: Banner đầu trang
+        type: object
+        fields:
+          - { name: tieu_de, label: Tiêu đề (bọc chữ cam trong <span>…</span>), type: string }
+          - { name: slogan, label: Slogan, type: string }
+          - { name: anh_nen, label: Ảnh nền (mờ), type: image }
+      - name: dich_vu
+        label: 2 thẻ dịch vụ
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tên, type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
+          - { name: anh, label: Ảnh, type: image }
+          - { name: link, label: Link, type: string }
+          - { name: nut, label: Chữ trên nút, type: string }
+      - name: so_lieu
+        label: Số liệu
+        type: object
+        list: true
+        fields:
+          - { name: so, label: Số (để chạy hiệu ứng đếm), type: number }
+          - { name: hien_thi, label: Cách hiển thị, type: string, description: "VD: 40.000 hoặc 500+" }
+          - { name: nhan, label: Nhãn, type: string }
+      - { name: ly_do_tieu_de, label: Tiêu đề phần lý do, type: string }
+      - name: ly_do
+        label: Lý do chọn TrueFit
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tiêu đề, type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
+      - name: quy_trinh
+        label: Quy trình
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Bước, type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
+      - name: cta
+        label: Khối kêu gọi cuối trang
+        type: object
+        fields:
+          - { name: tieu_de, label: Tiêu đề, type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
