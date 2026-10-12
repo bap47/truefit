@@ -1,10 +1,8 @@
 ---
-title: "Huy hiệu"
-danh_muc: merchandise
+title: "huy-hieu (bản cũ – đã ẩn)"
+danh_muc: dong-phuc
 anh: /assets/img/demo/huy-hieu.png
-dat_tu: ""
-chat_lieu: ""
-mo_ta: "In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu và báo giá."
-thu_tu: 6
+thu_tu: 99
+an: true
 thu_vien: []
 ---
