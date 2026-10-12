@@ -232,6 +232,12 @@ html { scroll-padding-top: 130px; }
   html { scroll-padding-top: 110px; }
 }
 
+/* ---------- Icon liên hệ ở footer ---------- */
+.tf-social { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.tf-social a { display: block; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; transition: transform .25s var(--ease), box-shadow .25s; }
+.tf-social a:hover { transform: translateY(-3px); box-shadow: 0 8px 18px -8px rgba(255,255,255,.5); }
+.tf-social img { width: 100%; height: 100%; object-fit: cover; }
+
 /* ---------- Khối theo trang gốc ---------- */
 .tf-promo { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .4rem 1rem; }
 .btn--sm { padding: .35rem .9rem; font-size: .75rem; }
