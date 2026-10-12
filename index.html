@@ -1,37 +1,38 @@
 ---
 layout: default
 ---
-{% assign h = site.data.trang_chu %}
+{% assign t = site.data.trang_chu %}
+{% assign d1 = t['1_dau_trang'] %}{% assign d2 = t['2_gioi_thieu'] %}{% assign d3 = t['3_cam_ket'] %}{% assign d4 = t['4_ly_do'] %}{% assign d5 = t['5_quy_trinh'] %}{% assign d6 = t['6_khach_hang'] %}{% assign d7 = t['7_san_pham'] %}{% assign d8 = t['8_bao_quan'] %}
 {% assign sp = site.san_pham | sort: "thu_tu" %}
 
 <!-- HERO -->
-<section class="tf-hero" id="trang-chu"{% if h.hero.anh_nen != "" %} style="--hero-bg:url('{{ h.hero.anh_nen | relative_url }}')"{% endif %}>
+<section class="tf-hero" id="trang-chu"{% if d1.anh_nen != "" %} style="--hero-bg:url('{{ d1.anh_nen | relative_url }}')"{% endif %}>
   <div class="wrap">
-    <h1 class="tf-hero__title rise">{{ h.hero.tieu_de }}</h1>
-    <a class="tf-hotline rise" style="--d:.12s" href="tel:{{ site.data.lien_he.hotline_so }}"><span>{{ h.hero.tu_van }}</span><strong>{{ site.data.lien_he.hotline }}</strong></a>
-    <p class="tf-hero__tagline rise" style="--d:.2s">{{ h.hero.slogan }}<br>{{ h.hero.slogan_phu }}</p>
+    <h1 class="tf-hero__title rise">{% include cam.html t=d1.tieu_de %}</h1>
+    <a class="tf-hotline rise" style="--d:.12s" href="tel:{{ site.data.lien_he.hotline_so }}"><span>{{ d1.nut_tu_van }}</span><strong>{{ site.data.lien_he.hotline }}</strong></a>
+    <p class="tf-hero__tagline rise" style="--d:.2s">{{ d1.slogan }}<br>{{ d1.slogan_phu }}</p>
   </div>
 </section>
 
 <!-- GIỚI THIỆU -->
 <section class="tf-section" id="gioi-thieu">
   <div class="wrap">
-    <p class="tf-eyebrow reveal">{{ h.gioi_thieu.nho }}</p>
-    <h2 class="tf-title reveal">{{ h.gioi_thieu.tieu_de }}</h2>
-    <p class="tf-lead reveal">{{ h.gioi_thieu.mo_ta }}</p>
+    <p class="tf-eyebrow reveal">{{ d2.dong_nho }}</p>
+    <h2 class="tf-title reveal">{% include cam.html t=d2.tieu_de %}</h2>
+    <p class="tf-lead reveal">{{ d2.mo_ta }}</p>
     <div class="tf-feature">
-      {% for p in h.hero.san_pham_noi_bat %}
+      {% for p in d2.san_pham_noi_bat %}
       <div class="tf-feature__item reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
         <img src="{{ p.anh | relative_url }}" alt="{{ p.ten }}" loading="lazy" width="800" height="800">
         <span>{{ p.ten }}</span>
       </div>
       {% endfor %}
     </div>
-    <p class="tf-badges reveal">{% for n in h.hero.nhan %}<span>✓ {{ n }}</span>{% endfor %}</p>
+    <p class="tf-badges reveal">{% for n in d2.nhan %}<span>✓ {{ n }}</span>{% endfor %}</p>
 
-    <h3 class="tf-subtitle reveal">{{ h.cam_ket_tieu_de }}</h3>
+    <h3 class="tf-subtitle reveal">{{ d3.tieu_de }}</h3>
     <div class="tf-commit">
-      {% for c in h.cam_ket %}
+      {% for c in d3.cam_ket %}
       <div class="tf-commit__item reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
         <h4>{{ c.ten }}</h4>
         <ul>{% for y in c.y %}<li>{{ y }}</li>{% endfor %}</ul>
@@ -40,10 +41,10 @@ layout: default
     </div>
 
     <div class="tf-stats tf-stats--4">
-      {% for s in h.so_lieu %}
+      {% for s in d3.so_lieu %}
       <div class="tf-stat reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
         <p class="tf-stat__group">{{ s.nhom }}</p>
-        <p class="tf-stat__num"{% if s.so > 0 %} data-count="{{ s.so }}" data-label="{{ s.hien_thi }}"{% endif %}>{{ s.hien_thi }}</p>
+        <p class="tf-stat__num" data-count>{{ s.so }}</p>
         <p class="tf-stat__label">{{ s.nhan }}</p>
       </div>
       {% endfor %}
@@ -54,9 +55,9 @@ layout: default
 <!-- TẠI SAO CHỌN -->
 <section class="tf-section tf-section--cream">
   <div class="wrap">
-    <h2 class="tf-title reveal">{{ h.ly_do_tieu_de }}</h2>
+    <h2 class="tf-title reveal">{% include cam.html t=d4.tieu_de %}</h2>
     <div class="tf-reasons">
-      {% for r in h.ly_do %}
+      {% for r in d4.ly_do %}
       <div class="tf-reason tf-reason--white reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
         <h3>{{ r.ten }}</h3>
         <p>{{ r.mo_ta }}</p>
@@ -71,12 +72,12 @@ layout: default
   <div class="wrap">
     <div class="tf-process reveal">
       <div class="tf-process__intro">
-        <h2>{{ h.quy_trinh_tieu_de }}</h2>
-        <p>{{ h.quy_trinh_phu }}</p>
+        <h2>{{ d5.tieu_de }}</h2>
+        <p>{{ d5.dong_phu }}</p>
         <a class="btn btn--black" href="{{ site.data.lien_he.zalo }}" target="_blank" rel="noopener">Đặt hàng ngay</a>
       </div>
       <ol class="tf-steps">
-        {% for s in h.quy_trinh %}
+        {% for s in d5.buoc %}
         <li class="reveal" style="--d:{{ forloop.index0 | times: 0.12 }}s"><strong>{{ s.ten }}</strong>{{ s.mo_ta }}</li>
         {% endfor %}
       </ol>
@@ -88,8 +89,8 @@ layout: default
 {% assign kh = site.khach_hang | sort: "thu_tu" %}
 <section class="tf-section tf-section--cream" id="khach-hang">
   <div class="wrap">
-    <h2 class="tf-title reveal">{{ h.khach_hang_tieu_de }}</h2>
-    <p class="tf-lead reveal">{{ h.khach_hang_mo_ta }}</p>
+    <h2 class="tf-title reveal">{% include cam.html t=d6.tieu_de %}</h2>
+    <p class="tf-lead reveal">{{ d6.mo_ta }}</p>
   </div>
   {% if kh.size > 0 %}
   <div class="tf-marquee" aria-label="Logo khách hàng">
@@ -106,7 +107,7 @@ layout: default
 {% assign uni = sp | where: "danh_muc", "dong-phuc" %}
 <section class="tf-section" id="san-pham">
   <div class="wrap">
-    <h2 class="tf-title reveal">{{ h.san_pham_tieu_de }}</h2>
+    <h2 class="tf-title reveal">{% include cam.html t=d7.tieu_de_san_pham %}</h2>
     <div class="tf-grid">
       {% for p in uni %}{% unless p.an %}{% include product-card.html p=p %}{% endunless %}{% endfor %}
     </div>
@@ -117,21 +118,21 @@ layout: default
 {% assign gift = sp | where: "danh_muc", "merchandise" %}
 <section class="tf-section tf-section--cream" id="qua-tang">
   <div class="wrap">
-    <h2 class="tf-title reveal">{{ h.qua_tang_tieu_de }}</h2>
+    <h2 class="tf-title reveal">{% include cam.html t=d7.tieu_de_qua_tang %}</h2>
     <div class="tf-grid">
       {% for p in gift %}{% unless p.an %}{% include product-card.html p=p %}{% endunless %}{% endfor %}
     </div>
-    <p class="tf-note reveal">{{ h.qua_tang_luu_y }}</p>
+    <p class="tf-note reveal">{{ d7.luu_y_qua_tang }}</p>
   </div>
 </section>
 
 <!-- BẢO QUẢN -->
 <section class="tf-section" id="bao-quan">
   <div class="wrap">
-    <h2 class="tf-title reveal">{{ h.bao_quan_tieu_de }}</h2>
-    <p class="tf-note reveal">{{ h.bao_quan_luu_y }}</p>
+    <h2 class="tf-title reveal">{{ d8.tieu_de }}</h2>
+    <p class="tf-note reveal">{{ d8.luu_y }}</p>
     <div class="tf-care">
-      {% for c in h.bao_quan %}<p class="reveal" style="--d:{{ forloop.index0 | modulo: 3 | times: 0.1 }}s"><span>{{ forloop.index }}</span>{{ c }}</p>{% endfor %}
+      {% for c in d8.buoc %}<p class="reveal" style="--d:{{ forloop.index0 | modulo: 3 | times: 0.1 }}s"><span>{{ forloop.index }}</span>{{ c }}</p>{% endfor %}
     </div>
   </div>
 </section>

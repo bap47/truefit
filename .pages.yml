@@ -1,39 +1,39 @@
-# Cấu hình Pages CMS (https://app.pagescms.org) – trang quản trị đăng bài
+# Cấu hình Pages CMS (https://app.pagescms.org)
 media:
   input: assets/uploads
   output: /assets/uploads
   extensions: [jpg, jpeg, png, webp, gif, svg]
 
 content:
-  # ---------- SẢN PHẨM ----------
+  # =================== NỘI DUNG ĐĂNG THƯỜNG XUYÊN ===================
   - name: san_pham
-    label: Sản phẩm
+    label: Sản phẩm & quà tặng
     type: collection
     path: _san_pham
     filename: "{primary}.md"
     view:
-      fields: [title, danh_muc, thu_tu]
+      fields: [title, danh_muc, an]
       sort: [thu_tu, title]
+      default: { sort: thu_tu, order: asc }
     fields:
       - { name: title, label: Tên sản phẩm, type: string, required: true }
       - name: danh_muc
-        label: Danh mục
+        label: Hiện ở mục
         type: select
         required: true
         options:
           values:
-            - { value: dong-phuc, label: Sản phẩm (đồng phục) }
-            - { value: merchandise, label: Quà tặng sự kiện / Merchandise }
-      - { name: anh, label: Ảnh chính (vuông, ưu tiên nền trong), type: image, required: true }
-      - { name: thu_vien, label: Ảnh thực tế (nhiều ảnh), type: image, options: { multiple: true } }
-      - { name: dat_tu, label: Đặt từ, type: string, description: "VD: 50 áo, 100 túi" }
+            - { value: dong-phuc, label: Các sản phẩm của TrueFit }
+            - { value: merchandise, label: Quà tặng sự kiện }
+      - { name: anh, label: Ảnh chính, type: image, required: true, description: "Ảnh vuông 800×800, ưu tiên PNG nền trong" }
+      - { name: dat_tu, label: Đặt từ, type: string, description: "VD: 50 áo – để trống nếu không muốn hiện" }
       - { name: chat_lieu, label: Chất liệu, type: string }
       - { name: mo_ta, label: Mô tả ngắn, type: text }
-      - { name: thu_tu, label: Thứ tự (số nhỏ hiện trước), type: number, default: 50 }
+      - { name: thu_vien, label: Ảnh thực tế, type: image, options: { multiple: true }, description: "Có thể chọn nhiều ảnh – hiện thành lưới dưới trang sản phẩm" }
+      - { name: thu_tu, label: Thứ tự, type: number, default: 50, description: "Số nhỏ hiện trước" }
       - { name: an, label: Ẩn khỏi web, type: boolean, default: false }
       - { name: body, label: Nội dung chi tiết (không bắt buộc), type: rich-text }
 
-  # ---------- KHÁCH HÀNG / DỰ ÁN ----------
   - name: khach_hang
     label: Khách hàng & dự án
     type: collection
@@ -41,16 +41,16 @@ content:
     filename: "{primary}.md"
     view:
       fields: [title, nganh]
+      default: { sort: thu_tu, order: asc }
     fields:
       - { name: title, label: Tên khách hàng, type: string, required: true }
-      - { name: logo, label: Logo, type: image, required: true }
+      - { name: logo, label: Logo, type: image, required: true, description: "PNG nền trong, khoảng 600×400" }
       - { name: nganh, label: Ngành, type: string, description: "VD: F&B, Tài chính" }
       - { name: da_may, label: Đã làm, type: string, description: "VD: 500 áo polo, 300 túi tote" }
       - { name: thu_vien, label: Ảnh dự án thực tế, type: image, options: { multiple: true } }
       - { name: thu_tu, label: Thứ tự, type: number, default: 50 }
       - { name: body, label: Câu chuyện dự án, type: rich-text }
 
-  # ---------- TIN TỨC ----------
   - name: tin_tuc
     label: Tin tức
     type: collection
@@ -58,123 +58,158 @@ content:
     filename: "{year}-{month}-{day}-{primary}.md"
     view:
       fields: [title, date]
-      sort: [date]
       default: { sort: date, order: desc }
     fields:
       - { name: title, label: Tiêu đề, type: string, required: true }
       - { name: date, label: Ngày đăng, type: date }
       - { name: anh, label: Ảnh bìa, type: image }
-      - { name: mo_ta, label: Tóm tắt (hiện ở danh sách), type: text }
+      - { name: mo_ta, label: Tóm tắt, type: text }
       - { name: body, label: Nội dung, type: rich-text }
 
-  # ---------- CHÍNH SÁCH ----------
-  - name: chinh_sach
-    label: Chính sách
-    type: collection
-    path: _chinh_sach
-    filename: "{primary}.md"
-    fields:
-      - { name: title, label: Tiêu đề, type: string, required: true }
-      - { name: thu_tu, label: Thứ tự, type: number }
-      - { name: body, label: Nội dung, type: rich-text }
-
-  # ---------- TRANG CHỦ ----------
-  - name: trang_chu
-    label: Trang chủ
+  # =================== TRANG CHỦ (theo thứ tự từ trên xuống) ===================
+  - name: tc_1
+    label: "Trang chủ ① Đầu trang"
     type: file
-    path: _data/trang_chu.yml
+    path: _data/trang_chu/1_dau_trang.yml
     fields:
       - { name: uu_dai, label: Thanh ưu đãi trên cùng, type: string }
-      - name: hero
-        label: Banner đầu trang
-        type: object
-        fields:
-          - { name: tieu_de, label: Tiêu đề (chữ cam bọc trong <span>…</span>), type: string }
-          - { name: tu_van, label: Chữ trước số hotline, type: string }
-          - { name: slogan, label: Slogan, type: string }
-          - { name: slogan_phu, label: Slogan phụ, type: string }
-          - { name: anh_nen, label: Ảnh nền, type: image }
-          - name: san_pham_noi_bat
-            label: 3 sản phẩm nổi bật
-            type: object
-            list: true
-            fields:
-              - { name: ten, label: Tên, type: string }
-              - { name: anh, label: Ảnh, type: image }
-          - { name: nhan, label: Nhãn nổi bật, type: string, list: true }
-      - name: gioi_thieu
-        label: Giới thiệu
-        type: object
-        fields:
-          - { name: nho, label: Dòng nhỏ, type: string }
-          - { name: tieu_de, label: Tiêu đề, type: string }
-          - { name: mo_ta, label: Mô tả, type: text }
-      - { name: cam_ket_tieu_de, label: Tiêu đề phần cam kết, type: string }
-      - name: cam_ket
-        label: Cam kết
+      - { name: tieu_de, label: Tiêu đề lớn, type: string, description: "Chữ muốn tô cam thì bọc trong dấu sao. VD: *Giải pháp* đồng phục doanh nghiệp *trọn gói*" }
+      - { name: nut_tu_van, label: Chữ trên nút hotline, type: string }
+      - { name: slogan, label: Slogan dòng 1, type: string }
+      - { name: slogan_phu, label: Slogan dòng 2, type: string }
+      - { name: anh_nen, label: Ảnh nền (không bắt buộc), type: image, description: "Ảnh ngang 1920×1080, hiện mờ phía sau tiêu đề" }
+
+  - name: tc_2
+    label: "Trang chủ ② Giới thiệu"
+    type: file
+    path: _data/trang_chu/2_gioi_thieu.yml
+    fields:
+      - { name: dong_nho, label: Dòng chữ nhỏ trên tiêu đề, type: string }
+      - { name: tieu_de, label: Tiêu đề, type: string, description: "Bọc *dấu sao* để tô cam" }
+      - { name: mo_ta, label: Mô tả, type: text }
+      - name: san_pham_noi_bat
+        label: 3 sản phẩm nổi bật
         type: object
         list: true
         fields:
-          - { name: ten, label: Tiêu đề, type: string }
+          - { name: ten, label: Tên, type: string }
+          - { name: anh, label: Ảnh, type: image }
+      - { name: nhan, label: Nhãn cam bên dưới, type: string, list: true }
+
+  - name: tc_3
+    label: "Trang chủ ③ Cam kết & số liệu"
+    type: file
+    path: _data/trang_chu/3_cam_ket.yml
+    fields:
+      - { name: tieu_de, label: Tiêu đề, type: string }
+      - name: cam_ket
+        label: Các ô cam kết
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tên cam kết, type: string }
           - { name: y, label: Các ý, type: string, list: true }
       - name: so_lieu
-        label: Số liệu
+        label: Các ô số liệu
         type: object
         list: true
         fields:
-          - { name: nhom, label: Nhóm, type: string }
-          - { name: so, label: Số (để chạy hiệu ứng đếm, 0 = không đếm), type: number }
-          - { name: hien_thi, label: Cách hiển thị, type: string }
-          - { name: nhan, label: Nhãn, type: string }
-      - { name: ly_do_tieu_de, label: Tiêu đề phần lý do, type: string }
+          - { name: nhom, label: Dòng nhỏ phía trên, type: string }
+          - { name: so, label: Con số, type: string, description: "VD: 40.000 hoặc 12+ – số sẽ tự chạy đếm" }
+          - { name: nhan, label: Dòng phía dưới, type: string }
+
+  - name: tc_4
+    label: "Trang chủ ④ Tại sao chọn TrueFit"
+    type: file
+    path: _data/trang_chu/4_ly_do.yml
+    fields:
+      - { name: tieu_de, label: Tiêu đề, type: string, description: "Bọc *dấu sao* để tô cam" }
       - name: ly_do
-        label: Lý do chọn TrueFit
+        label: Các lý do
         type: object
         list: true
         fields:
           - { name: ten, label: Tiêu đề, type: string }
           - { name: mo_ta, label: Mô tả, type: text }
-      - { name: quy_trinh_tieu_de, label: Tiêu đề quy trình, type: string }
-      - { name: quy_trinh_phu, label: Dòng phụ quy trình, type: string }
-      - name: quy_trinh
-        label: Các bước quy trình
+
+  - name: tc_5
+    label: "Trang chủ ⑤ Quy trình"
+    type: file
+    path: _data/trang_chu/5_quy_trinh.yml
+    fields:
+      - { name: tieu_de, label: Tiêu đề, type: string }
+      - { name: dong_phu, label: Dòng phụ, type: string }
+      - name: buoc
+        label: Các bước
         type: object
         list: true
         fields:
-          - { name: ten, label: Bước, type: string }
-          - { name: mo_ta, label: Mô tả, type: text }
-      - { name: khach_hang_tieu_de, label: Tiêu đề khách hàng, type: string }
-      - { name: khach_hang_mo_ta, label: Mô tả khách hàng, type: text }
-      - { name: san_pham_tieu_de, label: Tiêu đề sản phẩm, type: string }
-      - { name: qua_tang_tieu_de, label: Tiêu đề quà tặng, type: string }
-      - { name: qua_tang_luu_y, label: Lưu ý quà tặng, type: text }
-      - { name: bao_quan_tieu_de, label: Tiêu đề bảo quản, type: string }
-      - { name: bao_quan_luu_y, label: Lưu ý bảo quản, type: text }
-      - { name: bao_quan, label: Các bước bảo quản, type: string, list: true }
-      - { name: lien_he_tieu_de, label: Tiêu đề liên hệ (footer), type: string }
-      - { name: lien_he_mo_ta, label: Mô tả liên hệ, type: text }
-      - name: cta
-        label: Khối kêu gọi (trang con)
-        type: object
-        fields:
-          - { name: tieu_de, label: Tiêu đề, type: string }
+          - { name: ten, label: Tên bước, type: string }
           - { name: mo_ta, label: Mô tả, type: text }
 
-  # ---------- LIÊN HỆ & MẠNG XÃ HỘI ----------
+  - name: tc_6
+    label: "Trang chủ ⑥ Khách hàng"
+    type: file
+    path: _data/trang_chu/6_khach_hang.yml
+    fields:
+      - { name: tieu_de, label: Tiêu đề, type: string, description: "Logo khách hàng sửa ở mục «Khách hàng & dự án»" }
+      - { name: mo_ta, label: Mô tả, type: text }
+
+  - name: tc_7
+    label: "Trang chủ ⑦ Sản phẩm & quà tặng"
+    type: file
+    path: _data/trang_chu/7_san_pham.yml
+    fields:
+      - { name: tieu_de_san_pham, label: Tiêu đề phần sản phẩm, type: string, description: "Danh sách sản phẩm sửa ở mục «Sản phẩm & quà tặng»" }
+      - { name: tieu_de_qua_tang, label: Tiêu đề phần quà tặng, type: string }
+      - { name: luu_y_qua_tang, label: Lưu ý dưới phần quà tặng, type: text }
+
+  - name: tc_8
+    label: "Trang chủ ⑧ Hướng dẫn bảo quản"
+    type: file
+    path: _data/trang_chu/8_bao_quan.yml
+    fields:
+      - { name: tieu_de, label: Tiêu đề, type: string }
+      - { name: luu_y, label: Lưu ý, type: text }
+      - { name: buoc, label: Các bước bảo quản, type: string, list: true }
+
+  - name: tc_9
+    label: "Trang chủ ⑨ Cuối trang"
+    type: file
+    path: _data/trang_chu/9_cuoi_trang.yml
+    fields:
+      - { name: tieu_de_footer, label: Tiêu đề footer, type: string }
+      - { name: mo_ta_footer, label: Mô tả footer, type: text }
+      - { name: tieu_de_keu_goi, label: Tiêu đề khối kêu gọi (cuối các trang con), type: string }
+      - { name: mo_ta_keu_goi, label: Mô tả khối kêu gọi, type: text }
+
+  # =================== CÀI ĐẶT CHUNG ===================
   - name: lien_he
     label: Liên hệ & mạng xã hội
     type: file
     path: _data/lien_he.yml
     fields:
       - { name: hotline, label: Hotline (cách hiển thị), type: string, description: "VD: 0909 914 059" }
-      - { name: hotline_so, label: Hotline (chỉ số, không dấu cách), type: string, description: "VD: 0909914059 – dùng cho nút gọi" }
-      - { name: zalo, label: Link Zalo, type: string, description: "VD: https://zalo.me/0909914059" }
+      - { name: hotline_so, label: Hotline (chỉ số), type: string, description: "VD: 0909914059 – dùng cho nút gọi" }
+      - { name: zalo, label: Link Zalo, type: string }
       - { name: email, label: Email, type: string }
       - name: kenh
         label: Icon liên hệ ở footer
         type: object
         list: true
         fields:
-          - { name: ten, label: Tên kênh, type: string, description: "VD: Facebook, Zalo, TikTok" }
+          - { name: ten, label: Tên kênh, type: string }
           - { name: link, label: Link, type: string, description: "Gọi điện: tel:0909914059 · Email: mailto:ten@gmail.com" }
-          - { name: icon, label: Icon (ảnh vuông, PNG/SVG), type: image }
+          - { name: icon, label: Icon (ảnh vuông), type: image }
+
+  - name: chinh_sach
+    label: Chính sách
+    type: collection
+    path: _chinh_sach
+    filename: "{primary}.md"
+    view:
+      default: { sort: thu_tu, order: asc }
+    fields:
+      - { name: title, label: Tiêu đề, type: string, required: true }
+      - { name: thu_tu, label: Thứ tự, type: number }
+      - { name: body, label: Nội dung, type: rich-text }
