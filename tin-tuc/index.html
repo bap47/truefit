@@ -1,0 +1,13 @@
+---
+layout: default
+title: Tin tức
+---
+<section class="tf-section">
+  <div class="wrap">
+    <h1 class="tf-title rise">Tin tức</h1>
+    <div class="tf-news">
+      {% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}
+    </div>
+    {% if site.posts.size == 0 %}<p class="tf-lead">Chưa có bài viết.</p>{% endif %}
+  </div>
+</section>
