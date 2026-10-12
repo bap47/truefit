@@ -26,8 +26,9 @@
 
   /* Đếm số chạy lên */
   function countUp(el) {
-    var target = parseFloat(el.dataset.count);
-    var label = el.dataset.label || String(target);
+    var label = el.dataset.label || el.textContent.trim();
+    el.dataset.label = label;
+    var target = parseFloat(label.replace(/\D/g, ''));
     if (!target || reduce) { el.textContent = label; return; }
     var pad = /^0\d/.test(label) ? label.replace(/\D/g, '').length : 0;
     var suffix = label.replace(/[\d.,\s]/g, '');
@@ -49,7 +50,7 @@
   var counters = document.querySelectorAll('[data-count]');
   if (!('IntersectionObserver' in window) || reduce) {
     items.forEach(function (el) { el.classList.add('is-in'); el.classList.remove('reveal'); });
-    counters.forEach(function (el) { el.textContent = el.dataset.label; });
+    counters.forEach(function (el) { if (el.dataset.label) el.textContent = el.dataset.label; });
     return;
   }
 
