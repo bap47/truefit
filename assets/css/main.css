@@ -220,6 +220,18 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
 .tf-zalo:hover { background: #0052cc; animation: none; }
 @keyframes tf-pulse { 0%, 100% { box-shadow: 0 10px 25px -8px rgba(0,104,255,.6), 0 0 0 0 rgba(0,104,255,.35); } 50% { box-shadow: 0 10px 25px -8px rgba(0,104,255,.6), 0 0 0 12px rgba(0,104,255,0); } }
 
+/* ---------- Thanh ưu đãi + menu luôn dính trên cùng ---------- */
+.tf-top { position: sticky; top: 0; z-index: 50; }
+.tf-top .tf-header { position: static; }
+.tf-top.is-stuck { box-shadow: 0 6px 24px -10px rgba(0,0,0,.35); }
+html { scroll-padding-top: 130px; }
+@media (max-width: 600px) {
+  .tf-promo { font-size: .7rem; line-height: 1.35; padding: .35rem .75rem; }
+  .tf-promo .btn--sm { display: none; }
+  .tf-header__in { padding-block: .45rem; }
+  html { scroll-padding-top: 110px; }
+}
+
 /* ---------- Khối theo trang gốc ---------- */
 .tf-promo { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .4rem 1rem; }
 .btn--sm { padding: .35rem .9rem; font-size: .75rem; }
