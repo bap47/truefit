@@ -6,11 +6,8 @@ hero:
   slogan_phu: Khẳng định giá trị - Khơi nguồn sức mạnh
   san_pham_noi_bat:
     - ten: Áo thun cổ tròn
-      anh: /assets/uploads/Screenshot 2026-10-13 at 00.40.49.png
     - ten: Áo khoác gió
-      anh: /assets/img/demo/ao-khoac-gio.png
     - ten: Áo thun cổ trụ
-      anh: /assets/img/demo/ao-polo.png
   nhan:
     - Đa dạng mẫu mã
     - May mẫu miễn phí
