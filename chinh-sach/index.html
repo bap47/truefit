@@ -1,0 +1,14 @@
+---
+layout: default
+title: Chính sách
+---
+{% assign ps = site.chinh_sach | sort: "thu_tu" %}
+<section class="tf-section">
+  <div class="wrap">
+    <h1 class="tf-title rise">Chính sách</h1>
+    <p class="tf-lead rise" style="--d:.1s">Áp dụng cho mọi đơn hàng đồng phục và merchandise tại TrueFit.</p>
+    <div class="tf-reasons">
+      {% for p in ps %}<a class="tf-reason tf-reason--link reveal" style="--d:{{ forloop.index0 | times: 0.08 }}s" href="{{ p.url | relative_url }}"><h3>{{ p.title }}</h3><p>Xem chi tiết →</p></a>{% endfor %}
+    </div>
+  </div>
+</section>
