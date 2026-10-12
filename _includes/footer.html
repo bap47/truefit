@@ -4,7 +4,9 @@
     <div>
       <h3>{{ home.lien_he_tieu_de }}</h3>
       <p>{{ home.lien_he_mo_ta }}</p>
-      <p class="tf-footer__social"><a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a> <a href="{{ site.zalo }}" target="_blank" rel="noopener">Zalo</a> <a href="tel:{{ site.phone_raw }}">Gọi</a> <a href="mailto:{{ site.email }}">Gmail</a></p>
+      <p class="tf-social">
+        {% for k in site.data.lien_he.kenh %}<a href="{{ k.link }}"{% unless k.link contains 'tel:' or k.link contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ k.ten }}" title="{{ k.ten }}"><img src="{{ k.icon | relative_url }}" alt="{{ k.ten }}" width="40" height="40"></a>{% endfor %}
+      </p>
     </div>
     <div>
       <h3>Chính sách</h3>
@@ -15,8 +17,8 @@
     </div>
     <div>
       <h3>Dịch vụ khách hàng</h3>
-      <p>Hotline<br><a href="tel:{{ site.phone_raw }}"><strong>{{ site.phone }}</strong></a></p>
-      <p>Email<br><a href="mailto:{{ site.email }}"><strong>{{ site.email }}</strong></a></p>
+      <p>Hotline<br><a href="tel:{{ site.data.lien_he.hotline_so }}"><strong>{{ site.data.lien_he.hotline }}</strong></a></p>
+      <p>Email<br><a href="mailto:{{ site.data.lien_he.email }}"><strong>{{ site.data.lien_he.email }}</strong></a></p>
     </div>
   </div>
   <p class="wrap tf-footer__copy">© {{ site.time | date: "%Y" }} TrueFit – Fit your brand, fit your team.</p>
