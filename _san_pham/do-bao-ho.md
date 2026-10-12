@@ -1,0 +1,10 @@
+---
+title: "Đồ bảo hộ lao động"
+danh_muc: dong-phuc
+anh: /assets/img/demo/do-bao-ho.png
+dat_tu: "20 bộ"
+chat_lieu: "Kaki"
+mo_ta: "In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu và báo giá."
+thu_tu: 12
+thu_vien: []
+---
