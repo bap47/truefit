@@ -1,0 +1,57 @@
+# Nội dung trang chủ – sửa trong CMS mục "Trang chủ"
+uu_dai: "🎁 Ưu đãi dành riêng cho khách hàng của TrueFit: Tặng gói thiết kế trị giá 500K"
+
+hero:
+  tieu_de: "Xưởng may <span>đồng phục</span> & <span>merchandise</span> cho doanh nghiệp"
+  slogan: "Fit your brand – Fit your team"
+  anh_nen: ""
+
+dich_vu:
+  - ten: "Merchandise thương hiệu"
+    mo_ta: "Quà sự kiện, welcome kit, quà tri ân, túi tote, lanyard… in logo đồng bộ."
+    anh: "/assets/img/demo/tui-tote.png"
+    link: "/san-pham/merchandise/"
+    nut: "Xem merchandise"
+  - ten: "Đồng phục doanh nghiệp"
+    mo_ta: "Áo thun, polo, khoác gió, đồ bảo hộ… may đo theo nhận diện thương hiệu."
+    anh: "/assets/img/demo/ao-polo.png"
+    link: "/san-pham/dong-phuc/"
+    nut: "Xem đồng phục"
+
+so_lieu:
+  - so: 40000
+    hien_thi: "40.000"
+    nhan: "sản phẩm/tháng"
+  - so: 4
+    hien_thi: "04"
+    nhan: "xưởng may chuyên biệt"
+  - so: 500
+    hien_thi: "500+"
+    nhan: "khách hàng doanh nghiệp"
+
+ly_do_tieu_de: "Vì sao chọn <span>TrueFit</span>"
+ly_do:
+  - ten: "Xưởng trực tiếp"
+    mo_ta: "4 xưởng may chuyên biệt, kiểm soát chặt chẽ từ vải đến thành phẩm."
+  - ten: "Cam kết chất lượng"
+    mo_ta: "Bảo hành 3 tháng, sửa lỗi may thêu miễn phí, hoàn tiền nếu lỗi không khắc phục được."
+  - ten: "Linh hoạt tốc độ"
+    mo_ta: "Quy trình khép kín, đáp ứng đơn gấp và số lượng lớn mà vẫn giữ chất lượng."
+  - ten: "May mẫu miễn phí"
+    mo_ta: "Xem mẫu thật trước khi sản xuất hàng loạt (với đơn hàng đủ điều kiện)."
+
+quy_trinh:
+  - ten: "Tư vấn"
+    mo_ta: "Xác định nhu cầu: số lượng, ngân sách, kiểu dáng, vị trí logo."
+  - ten: "Chọn chất liệu, báo giá"
+    mo_ta: "Gửi mẫu vải thực tế và báo giá chi tiết."
+  - ten: "Thiết kế, duyệt mẫu"
+    mo_ta: "Thiết kế demo, chỉnh theo góp ý, may mẫu thực tế."
+  - ten: "Ký kết, sản xuất"
+    mo_ta: "Chốt bảng size, ký hợp đồng và sản xuất."
+  - ten: "Kiểm tra, giao hàng"
+    mo_ta: "Kiểm tra từng sản phẩm, đóng gói và giao tận nơi."
+
+cta:
+  tieu_de: "Gửi logo, nhận mẫu thiết kế miễn phí"
+  mo_ta: "Nhắn tên công ty, số lượng dự kiến và sản phẩm cần làm. TrueFit phản hồi trong vòng 15 phút."
