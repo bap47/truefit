@@ -1,9 +1,9 @@
-{% assign home = site.data.trang_chu %}
+{% assign home = site.data.trang_chu['9_cuoi_trang'] %}
 <footer class="tf-footer" id="lien-he">
   <div class="wrap tf-footer__grid">
     <div>
-      <h3>{{ home.lien_he_tieu_de }}</h3>
-      <p>{{ home.lien_he_mo_ta }}</p>
+      <h3>{{ home.tieu_de_footer }}</h3>
+      <p>{{ home.mo_ta_footer }}</p>
       <p class="tf-social">
         {% for k in site.data.lien_he.kenh %}<a href="{{ k.link }}"{% unless k.link contains 'tel:' or k.link contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ k.ten }}" title="{{ k.ten }}"><img src="{{ k.icon | relative_url }}" alt="{{ k.ten }}" width="40" height="40"></a>{% endfor %}
       </p>
