@@ -1,0 +1,7 @@
+{% assign post = include.post %}
+<a class="tf-post reveal" href="{{ post.url | relative_url }}">
+  {% if post.anh %}<span class="tf-post__img"><img src="{{ post.anh | relative_url }}" alt="" loading="lazy"></span>{% endif %}
+  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+  <strong>{{ post.title }}</strong>
+  <span>{{ post.mo_ta | default: post.excerpt | strip_html | truncatewords: 24 }}</span>
+</a>

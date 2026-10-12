@@ -1,0 +1,11 @@
+{% assign c = site.data.trang_chu.cta %}
+<section class="tf-cta tf-section">
+  <div class="wrap reveal">
+    <h2>{{ c.tieu_de }}</h2>
+    <p>{{ c.mo_ta }}</p>
+    <div class="tf-btns">
+      <a class="btn btn--white" href="{{ site.zalo }}" target="_blank" rel="noopener">Nhắn Zalo</a>
+      <a class="btn btn--ghost" href="tel:{{ site.phone_raw }}">Gọi {{ site.phone }}</a>
+    </div>
+  </div>
+</section>

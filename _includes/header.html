@@ -1,0 +1,15 @@
+{% assign home = site.data.trang_chu %}
+<p class="tf-promo">{{ home.uu_dai }}</p>
+<header class="tf-header">
+  <div class="wrap tf-header__in">
+    <a class="tf-logo" href="{{ '/' | relative_url }}" aria-label="TrueFit – Trang chủ">TrueFit</a>
+    <button class="tf-burger" aria-expanded="false" aria-controls="menu" aria-label="Mở menu"><span></span><span></span><span></span></button>
+    <nav id="menu" class="tf-nav">
+      {% assign links = "Merchandise|/san-pham/merchandise/,Đồng phục|/san-pham/dong-phuc/,Khách hàng|/khach-hang/,Tin tức|/tin-tuc/,Chính sách|/chinh-sach/" | split: "," %}
+      {% for l in links %}{% assign p = l | split: "|" %}
+      <a href="{{ p[1] | relative_url }}"{% if page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>
+      {% endfor %}
+      <a class="btn btn--white" href="{{ site.zalo }}" target="_blank" rel="noopener">Đặt hàng ngay</a>
+    </nav>
+  </div>
+</header>
