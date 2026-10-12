@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% assign sp = site.san_pham | sort: "thu_tu" %}
+{% if page.danh_muc %}{% assign sp = sp | where: "danh_muc", page.danh_muc %}{% endif %}
+<section class="tf-section">
+  <div class="wrap">
+    <h1 class="tf-title rise">{{ page.title }}</h1>
+    {% if page.mo_ta %}<p class="tf-lead rise" style="--d:.1s">{{ page.mo_ta }}</p>{% endif %}
+    <nav class="tf-switch rise" style="--d:.2s" aria-label="Danh mục">
+      <a href="{{ '/san-pham/' | relative_url }}"{% unless page.danh_muc %} aria-current="page"{% endunless %}>Tất cả</a>
+      <a href="{{ '/san-pham/merchandise/' | relative_url }}"{% if page.danh_muc == "merchandise" %} aria-current="page"{% endif %}>Merchandise</a>
+      <a href="{{ '/san-pham/dong-phuc/' | relative_url }}"{% if page.danh_muc == "dong-phuc" %} aria-current="page"{% endif %}>Đồng phục</a>
+    </nav>
+    {{ content }}
+    <div class="tf-grid">
+      {% for p in sp %}{% include product-card.html p=p %}{% endfor %}
+    </div>
+    {% if sp.size == 0 %}<p class="tf-lead">Chưa có sản phẩm trong mục này.</p>{% endif %}
+  </div>
+</section>
+{% include cta.html %}

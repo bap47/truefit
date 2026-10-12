@@ -1,0 +1,13 @@
+---
+layout: default
+---
+{% assign ps = site.chinh_sach | sort: "thu_tu" %}
+<section class="tf-section">
+  <div class="wrap tf-article">
+    <nav class="tf-policy-nav" aria-label="Chính sách">
+      {% for p in ps %}<a href="{{ p.url | relative_url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>{{ p.title }}</a>{% endfor %}
+    </nav>
+    <h1 class="rise">{{ page.title }}</h1>
+    <div class="tf-prose rise" style="--d:.1s">{{ content }}</div>
+  </div>
+</section>

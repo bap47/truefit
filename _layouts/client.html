@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section class="tf-section">
+  <div class="wrap tf-product">
+    <div class="tf-product__img tf-product__img--logo rise"><img src="{{ page.logo | relative_url }}" alt="Logo {{ page.title }}"></div>
+    <div class="tf-product__info">
+      <a class="tf-eyebrow rise" href="{{ '/khach-hang/' | relative_url }}">Khách hàng</a>
+      <h1 class="rise" style="--d:.08s">{{ page.title }}</h1>
+      <dl class="tf-spec rise" style="--d:.16s">
+        {% if page.nganh %}<div><dt>Ngành</dt><dd>{{ page.nganh }}</dd></div>{% endif %}
+        {% if page.da_may %}<div><dt>Đã làm</dt><dd>{{ page.da_may }}</dd></div>{% endif %}
+      </dl>
+      {% if content != "" %}<div class="tf-prose rise" style="--d:.24s">{{ content }}</div>{% endif %}
+    </div>
+  </div>
+  {% if page.thu_vien and page.thu_vien.size > 0 %}
+  <div class="wrap tf-gallery">
+    {% for a in page.thu_vien %}<img class="reveal" src="{{ a | relative_url }}" alt="Dự án {{ page.title }} – ảnh {{ forloop.index }}" loading="lazy">{% endfor %}
+  </div>
+  {% endif %}
+</section>
+{% include cta.html %}

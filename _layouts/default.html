@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.title %}{% assign tf_title = page.title | append: " | " | append: site.title %}{% else %}{% assign tf_title = site.title | append: " – Đồng phục & Merchandise doanh nghiệp" %}{% endif %}
+  <title>{{ tf_title }}</title>
+  <meta name="description" content="{{ page.mo_ta | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <meta property="og:title" content="{{ tf_title }}">
+  <meta property="og:description" content="{{ page.mo_ta | default: site.description | strip_html | truncate: 160 }}">
+  {% assign og = page.anh | default: page.logo | default: '/assets/img/demo/ao-polo.png' %}
+  <meta property="og:image" content="{{ og | absolute_url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#noi-dung">Bỏ qua tới nội dung</a>
+  {% include header.html %}
+  <main id="noi-dung">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <a class="tf-zalo" href="{{ site.zalo }}" target="_blank" rel="noopener">Chat Zalo</a>
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

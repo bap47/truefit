@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="tf-section">
+  <div class="wrap tf-article">
+    <a class="tf-eyebrow rise" href="{{ '/tin-tuc/' | relative_url }}">Tin tức</a>
+    <h1 class="rise" style="--d:.08s">{{ page.title }}</h1>
+    <time class="rise" style="--d:.16s" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>
+    {% if page.anh %}<img class="tf-article__cover rise" style="--d:.24s" src="{{ page.anh | relative_url }}" alt="">{% endif %}
+    <div class="tf-prose">{{ content }}</div>
+  </div>
+</article>
+{% include cta.html %}

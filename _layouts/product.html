@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{% assign ten_dm = "Đồng phục" %}{% if page.danh_muc == "merchandise" %}{% assign ten_dm = "Merchandise" %}{% endif %}
+<section class="tf-section">
+  <div class="wrap tf-product">
+    <div class="tf-product__img rise"><img src="{{ page.anh | relative_url }}" alt="{{ page.title }}" width="800" height="800"></div>
+    <div class="tf-product__info">
+      <a class="tf-eyebrow rise" href="{{ '/san-pham/' | append: page.danh_muc | append: '/' | relative_url }}">{{ ten_dm }}</a>
+      <h1 class="rise" style="--d:.08s">{{ page.title }}</h1>
+      {% if page.mo_ta %}<p class="rise" style="--d:.16s">{{ page.mo_ta }}</p>{% endif %}
+      <dl class="tf-spec rise" style="--d:.24s">
+        {% if page.dat_tu and page.dat_tu != "" %}<div><dt>Đặt từ</dt><dd>{{ page.dat_tu }}</dd></div>{% endif %}
+        {% if page.chat_lieu and page.chat_lieu != "" %}<div><dt>Chất liệu</dt><dd>{{ page.chat_lieu }}</dd></div>{% endif %}
+        <div><dt>Gia công logo</dt><dd>In hoặc thêu theo yêu cầu</dd></div>
+      </dl>
+      <div class="tf-btns rise" style="--d:.32s">
+        <a class="btn" href="{{ site.zalo }}" target="_blank" rel="noopener">Báo giá mẫu này</a>
+        <a class="btn btn--line" href="tel:{{ site.phone_raw }}">Gọi {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+  {% if page.thu_vien and page.thu_vien.size > 0 %}
+  <div class="wrap tf-gallery">
+    {% for a in page.thu_vien %}<img class="reveal" src="{{ a | relative_url }}" alt="{{ page.title }} – ảnh thực tế {{ forloop.index }}" loading="lazy">{% endfor %}
+  </div>
+  {% endif %}
+  {% if content != "" %}<div class="wrap tf-prose">{{ content }}</div>{% endif %}
+</section>
+
+{% assign cung = site.san_pham | where: "danh_muc", page.danh_muc | sort: "thu_tu" %}
+<section class="tf-section tf-section--cream">
+  <div class="wrap">
+    <h2 class="tf-title reveal">Sản phẩm <span>cùng loại</span></h2>
+    <div class="tf-grid">
+      {% assign n = 0 %}
+      {% for p in cung %}{% if p.url != page.url and n < 3 %}{% include product-card.html p=p %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% include cta.html %}
