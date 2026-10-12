@@ -22,14 +22,15 @@ content:
         required: true
         options:
           values:
-            - { value: merchandise, label: Merchandise }
-            - { value: dong-phuc, label: Đồng phục }
+            - { value: dong-phuc, label: Sản phẩm (đồng phục) }
+            - { value: merchandise, label: Quà tặng sự kiện / Merchandise }
       - { name: anh, label: Ảnh chính (vuông, ưu tiên nền trong), type: image, required: true }
       - { name: thu_vien, label: Ảnh thực tế (nhiều ảnh), type: image, options: { multiple: true } }
       - { name: dat_tu, label: Đặt từ, type: string, description: "VD: 50 áo, 100 túi" }
       - { name: chat_lieu, label: Chất liệu, type: string }
       - { name: mo_ta, label: Mô tả ngắn, type: text }
       - { name: thu_tu, label: Thứ tự (số nhỏ hiện trước), type: number, default: 50 }
+      - { name: an, label: Ẩn khỏi web, type: boolean, default: false }
       - { name: body, label: Nội dung chi tiết (không bắt buộc), type: rich-text }
 
   # ---------- KHÁCH HÀNG / DỰ ÁN ----------
@@ -88,26 +89,42 @@ content:
         label: Banner đầu trang
         type: object
         fields:
-          - { name: tieu_de, label: Tiêu đề (bọc chữ cam trong <span>…</span>), type: string }
+          - { name: tieu_de, label: Tiêu đề (chữ cam bọc trong <span>…</span>), type: string }
+          - { name: tu_van, label: Chữ trước số hotline, type: string }
           - { name: slogan, label: Slogan, type: string }
-          - { name: anh_nen, label: Ảnh nền (mờ), type: image }
-      - name: dich_vu
-        label: 2 thẻ dịch vụ
+          - { name: slogan_phu, label: Slogan phụ, type: string }
+          - { name: anh_nen, label: Ảnh nền, type: image }
+          - name: san_pham_noi_bat
+            label: 3 sản phẩm nổi bật
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Tên, type: string }
+              - { name: anh, label: Ảnh, type: image }
+          - { name: nhan, label: Nhãn nổi bật, type: string, list: true }
+      - name: gioi_thieu
+        label: Giới thiệu
+        type: object
+        fields:
+          - { name: nho, label: Dòng nhỏ, type: string }
+          - { name: tieu_de, label: Tiêu đề, type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
+      - { name: cam_ket_tieu_de, label: Tiêu đề phần cam kết, type: string }
+      - name: cam_ket
+        label: Cam kết
         type: object
         list: true
         fields:
-          - { name: ten, label: Tên, type: string }
-          - { name: mo_ta, label: Mô tả, type: text }
-          - { name: anh, label: Ảnh, type: image }
-          - { name: link, label: Link, type: string }
-          - { name: nut, label: Chữ trên nút, type: string }
+          - { name: ten, label: Tiêu đề, type: string }
+          - { name: y, label: Các ý, type: string, list: true }
       - name: so_lieu
         label: Số liệu
         type: object
         list: true
         fields:
-          - { name: so, label: Số (để chạy hiệu ứng đếm), type: number }
-          - { name: hien_thi, label: Cách hiển thị, type: string, description: "VD: 40.000 hoặc 500+" }
+          - { name: nhom, label: Nhóm, type: string }
+          - { name: so, label: Số (để chạy hiệu ứng đếm, 0 = không đếm), type: number }
+          - { name: hien_thi, label: Cách hiển thị, type: string }
           - { name: nhan, label: Nhãn, type: string }
       - { name: ly_do_tieu_de, label: Tiêu đề phần lý do, type: string }
       - name: ly_do
@@ -117,15 +134,27 @@ content:
         fields:
           - { name: ten, label: Tiêu đề, type: string }
           - { name: mo_ta, label: Mô tả, type: text }
+      - { name: quy_trinh_tieu_de, label: Tiêu đề quy trình, type: string }
+      - { name: quy_trinh_phu, label: Dòng phụ quy trình, type: string }
       - name: quy_trinh
-        label: Quy trình
+        label: Các bước quy trình
         type: object
         list: true
         fields:
           - { name: ten, label: Bước, type: string }
           - { name: mo_ta, label: Mô tả, type: text }
+      - { name: khach_hang_tieu_de, label: Tiêu đề khách hàng, type: string }
+      - { name: khach_hang_mo_ta, label: Mô tả khách hàng, type: text }
+      - { name: san_pham_tieu_de, label: Tiêu đề sản phẩm, type: string }
+      - { name: qua_tang_tieu_de, label: Tiêu đề quà tặng, type: string }
+      - { name: qua_tang_luu_y, label: Lưu ý quà tặng, type: text }
+      - { name: bao_quan_tieu_de, label: Tiêu đề bảo quản, type: string }
+      - { name: bao_quan_luu_y, label: Lưu ý bảo quản, type: text }
+      - { name: bao_quan, label: Các bước bảo quản, type: string, list: true }
+      - { name: lien_he_tieu_de, label: Tiêu đề liên hệ (footer), type: string }
+      - { name: lien_he_mo_ta, label: Mô tả liên hệ, type: text }
       - name: cta
-        label: Khối kêu gọi cuối trang
+        label: Khối kêu gọi (trang con)
         type: object
         fields:
           - { name: tieu_de, label: Tiêu đề, type: string }
