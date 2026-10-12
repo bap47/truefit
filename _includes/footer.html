@@ -1,9 +1,10 @@
-<footer class="tf-footer">
+{% assign home = site.data.trang_chu %}
+<footer class="tf-footer" id="lien-he">
   <div class="wrap tf-footer__grid">
     <div>
-      <p class="tf-footer__logo">TrueFit</p>
-      <p>Xưởng may đồng phục & merchandise cho doanh nghiệp. Luôn sẵn sàng lắng nghe để hoàn thiện sản phẩm và trải nghiệm dịch vụ.</p>
-      <p class="tf-footer__social"><a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a> <a href="{{ site.zalo }}" target="_blank" rel="noopener">Zalo</a> <a href="mailto:{{ site.email }}">Email</a></p>
+      <h3>{{ home.lien_he_tieu_de }}</h3>
+      <p>{{ home.lien_he_mo_ta }}</p>
+      <p class="tf-footer__social"><a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a> <a href="{{ site.zalo }}" target="_blank" rel="noopener">Zalo</a> <a href="tel:{{ site.phone_raw }}">Gọi</a> <a href="mailto:{{ site.email }}">Gmail</a></p>
     </div>
     <div>
       <h3>Chính sách</h3>
@@ -13,8 +14,8 @@
       </ul>
     </div>
     <div>
-      <h3>Liên hệ</h3>
-      <p>Hotline/Zalo<br><a href="tel:{{ site.phone_raw }}"><strong>{{ site.phone }}</strong></a></p>
+      <h3>Dịch vụ khách hàng</h3>
+      <p>Hotline<br><a href="tel:{{ site.phone_raw }}"><strong>{{ site.phone }}</strong></a></p>
       <p>Email<br><a href="mailto:{{ site.email }}"><strong>{{ site.email }}</strong></a></p>
     </div>
   </div>
