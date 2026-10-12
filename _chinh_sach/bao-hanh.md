@@ -16,7 +16,7 @@ Mỗi sản phẩm được bảo hành **3 tháng** kể từ ngày khách hàn
 
 ## Trường hợp không áp dụng
 
-- Sản phẩm hư hỏng do bảo quản, giặt ủi sai [hướng dẫn](/chinh-sach/bao-quan/).
+- Sản phẩm hư hỏng do bảo quản, giặt ủi sai [hướng dẫn](../bao-quan/).
 - Sản phẩm bị tác động bởi va đập, hoá chất, cắt sửa sau khi nhận hàng.
 - Sản phẩm đã quá thời hạn bảo hành.
 
