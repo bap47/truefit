@@ -1,8 +1,8 @@
 # ===== Cấu hình chung TrueFit =====
 title: TrueFit
 description: Xưởng may đồng phục & merchandise cho doanh nghiệp. Fit your brand – Fit your team.
-url: "https://truefituniform.shop"
-baseurl: ""   # nếu chạy ở dạng tentaikhoan.github.io/ten-repo thì điền "/ten-repo"
+url: "https://bap47.github.io"   # khi gắn tên miền đổi thành "https://truefituniform.shop"
+baseurl: "/truefit"   # khi gắn tên miền truefituniform.shop thì đổi thành ""
 lang: vi
 
 # Liên hệ (dùng khắp trang)
