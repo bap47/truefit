@@ -498,3 +498,26 @@ body.tf-lock { overflow: hidden; }
   .tf-nav__item:hover .tf-nav__caret { transform: rotate(180deg); }
 }
 @media (max-width: 860px) { .tf-mega, .tf-nav__caret { display: none; } .tf-nav__item > a { padding-block: 0; } }
+
+/* ---------- Khung ảnh tự do (thay dải sản phẩm) ---------- */
+.tf-intro__show[data-frame] { position: relative; padding: 0; display: block; min-height: 420px; background: var(--mist); }
+.tf-frame__track { position: absolute; inset: 0; }
+.tf-frame__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); transition: opacity 1s var(--ease), transform 5s linear; }
+.tf-frame__img.is-on { opacity: 1; transform: scale(1); }
+.tf-frame__dots { position: absolute; left: 0; right: 0; bottom: 1rem; display: flex; justify-content: center; gap: .45rem; z-index: 2; }
+.tf-frame__dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 999px; background: rgba(255,255,255,.65); box-shadow: 0 0 0 1px rgba(0,0,0,.08); cursor: pointer; transition: width .3s var(--ease), background .3s; }
+.tf-frame__dots button[aria-current="true"] { width: 26px; background: var(--orange); }
+@media (max-width: 680px) { .tf-intro__show[data-frame] { min-height: 300px; } }
+
+/* Tiêu đề "Đến với TrueFit" luôn nằm 1 dòng trên máy tính */
+.tf-intro__title { font-size: clamp(1.5rem, 3.1vw, 2.9rem); }
+.tf-intro__title span { white-space: nowrap; }
+@media (min-width: 761px) { .tf-intro__title { white-space: nowrap; } }
+
+/* Thanh menu cam gọn lại */
+.tf-header__in { padding-block: .55rem; }
+.tf-nav__item > a { padding-block: .3rem; }
+.tf-mega { top: 100%; }
+.tf-mega::before { content: ""; position: absolute; left: 0; right: 0; top: -1.2rem; height: 1.2rem; }
+.tf-nav a:not(.btn)::after { bottom: -4px; }
+.tf-nav__cta { padding: .35rem .95rem; }
