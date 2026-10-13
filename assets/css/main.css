@@ -521,3 +521,19 @@ body.tf-lock { overflow: hidden; }
 .tf-mega::before { content: ""; position: absolute; left: 0; right: 0; top: -1.2rem; height: 1.2rem; }
 .tf-nav a:not(.btn)::after { bottom: -4px; }
 .tf-nav__cta { padding: .35rem .95rem; }
+
+/* Menu thả xuống Chính sách */
+.tf-nav__item--drop { position: relative; }
+.tf-drop { position: absolute; top: calc(100% + .9rem); left: 50%; min-width: 230px; background: #fff; border-radius: 16px; padding: .6rem; box-shadow: 0 24px 50px -24px rgba(0,0,0,.4); display: grid; opacity: 0; visibility: hidden; transform: translate(-50%, 8px); transition: opacity .2s, transform .25s var(--ease), visibility 0s .25s; z-index: 70; }
+.tf-drop::before { content: ""; position: absolute; left: 0; right: 0; top: -1rem; height: 1rem; }
+.tf-drop a { color: var(--ink) !important; padding: .6rem .9rem; border-radius: 10px; font-weight: 500; white-space: nowrap; }
+.tf-drop a::after { display: none !important; }
+.tf-drop a:hover { background: var(--cream-soft); color: var(--orange) !important; }
+@media (min-width: 861px) {
+  .tf-nav__item--drop:hover .tf-drop, .tf-nav__item--drop:focus-within .tf-drop { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition: opacity .2s, transform .25s var(--ease); }
+  .tf-nav__item--drop:hover .tf-nav__caret { transform: rotate(180deg); }
+}
+@media (max-width: 860px) { .tf-drop { display: none; } }
+
+/* Logo đối tác chạy ngang: bỏ nền màu */
+.tf-marquee__item { background: transparent; padding: .5rem 1rem; }
