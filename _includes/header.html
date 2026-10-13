@@ -41,7 +41,15 @@
         </div>
       </div>
       {% endfor %}
-      {% assign links = "Đối tác|/khach-hang/,Quy trình|/#quy-trinh" | split: "," %}
+      <div class="tf-nav__item tf-nav__item--drop">
+        <a href="{{ '/khach-hang/' | relative_url }}" aria-haspopup="true"{% if page.url contains '/khach-hang/' %} aria-current="page"{% endif %}>Đối tác <span class="tf-nav__caret" aria-hidden="true">▾</span></a>
+        <div class="tf-drop">
+          <a href="{{ '/khach-hang/#dong-phuc' | relative_url }}">Đối tác đồng phục</a>
+          <a href="{{ '/khach-hang/#qua-tang' | relative_url }}">Đối tác quà tặng</a>
+          <a href="{{ '/khach-hang/' | relative_url }}">Tất cả đối tác</a>
+        </div>
+      </div>
+      {% assign links = "Quy trình|/#quy-trinh" | split: "," %}
       {% for l in links %}{% assign p = l | split: "|" %}
       <a href="{{ p[1] | relative_url }}"{% if page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>
       {% endfor %}

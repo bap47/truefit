@@ -1,10 +1,10 @@
 {% assign c = include.c %}
-<a class="tf-story reveal" href="{{ c.url | relative_url }}" data-nganh="{{ c.nganh }}">
+<a class="tf-story reveal" href="{{ c.url | relative_url }}" data-nganh="{{ c.nganh }}" data-nhom="{{ c.nhom | default: 'dong-phuc' }}">
   <span class="tf-story__img{% unless c.anh_bia and c.anh_bia != '' %} tf-story__img--logo{% endunless %}">
     {% if c.anh_bia and c.anh_bia != '' %}<img src="{{ c.anh_bia | relative_url }}" alt="Dự án {{ c.title }}" loading="lazy" width="800" height="600">{% else %}<img src="{{ c.logo | relative_url }}" alt="Logo {{ c.title }}" loading="lazy">{% endif %}
   </span>
   <span class="tf-story__body">
-    <span class="tf-story__tags">{% if c.nganh and c.nganh != '' %}<span>{{ c.nganh }}</span>{% endif %}{% if c.da_may and c.da_may != '' %}<span>{{ c.da_may }}</span>{% endif %}</span>
+    <span class="tf-story__tags">{% if c.nhom == "qua-tang" %}<span class="is-nhom">Quà tặng</span>{% elsif c.nhom == "ca-hai" %}<span class="is-nhom">Đồng phục & Quà tặng</span>{% else %}<span class="is-nhom">Đồng phục</span>{% endif %}{% if c.nganh and c.nganh != '' %}<span>{{ c.nganh }}</span>{% endif %}{% if c.da_may and c.da_may != '' %}<span>{{ c.da_may }}</span>{% endif %}</span>
     <strong>{% if c.tieu_de_bai and c.tieu_de_bai != '' %}{{ c.tieu_de_bai }}{% else %}{{ c.title }}{% endif %}</strong>
     {% if c.tom_tat and c.tom_tat != '' %}<span class="tf-story__sum">{{ c.tom_tat }}</span>{% endif %}
     <em>Xem chi tiết →</em>
