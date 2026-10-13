@@ -26,6 +26,9 @@ collections:
   chinh_sach:
     output: true
     permalink: /chinh-sach/:name/
+  quy_trinh:
+    output: true
+    permalink: /quy-trinh/:name/
 
 defaults:
   - scope: { path: "", type: posts }
@@ -36,6 +39,8 @@ defaults:
     values: { layout: client }
   - scope: { path: "", type: chinh_sach }
     values: { layout: policy }
+  - scope: { path: "", type: quy_trinh }
+    values: { layout: process }
   - scope: { path: "" }
     values: { layout: default }
 

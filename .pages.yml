@@ -65,6 +65,29 @@ content:
       - { name: thu_tu, label: Thứ tự, type: number, default: 50 }
       - { name: body, label: "Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)", type: rich-text }
 
+  - name: quy_trinh
+    label: Quy trình (trang riêng)
+    type: collection
+    path: _quy_trinh
+    filename: "{primary}.md"
+    view:
+      fields: [title]
+      default: { sort: thu_tu, order: asc }
+    fields:
+      - { name: title, label: Tiêu đề trang, type: string, required: true }
+      - { name: nhom, label: Tên ngắn trên nút chuyển, type: string, description: "VD: Đồng phục" }
+      - { name: mo_ta, label: Mô tả ngắn, type: text }
+      - { name: thu_tu, label: Thứ tự, type: number }
+      - name: buoc
+        label: Các bước
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tên bước, type: string }
+          - { name: mo_ta, label: Mô tả, type: text }
+          - { name: chi_tiet, label: Ý chi tiết, type: string, list: true }
+      - { name: body, label: Nội dung thêm bên dưới (không bắt buộc), type: rich-text }
+
   - name: tin_tuc
     label: Tin tức
     type: collection
@@ -154,7 +177,7 @@ content:
         fields:
           - { name: ten, label: Tên, type: string }
           - { name: mo_ta, label: Mô tả ngắn, type: string }
-          - { name: anh, label: Ảnh, type: image, description: "Ảnh thật dạng lifestyle (team mặc đồng phục / set quà tặng) – tránh trùng ảnh sản phẩm" }
+          - { name: anh, label: Ảnh, type: image, description: "Ảnh ngang ~1600×1000, ảnh thật lifestyle (team mặc đồng phục / set quà tặng). Chữ nằm góc dưới bên trái nên chừa khoảng đó" }
           - { name: link, label: Link, type: string, description: "VD: /san-pham/dong-phuc/" }
           - { name: nut, label: Chữ trên nút, type: string }
 

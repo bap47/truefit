@@ -76,7 +76,7 @@ layout: default
 </section>
 
 <!-- ③ HAI HƯỚNG: ĐỒNG PHỤC | QUÀ TẶNG -->
-<section class="tf-section tf-section--cream" id="hai-huong">
+<section class="tf-section tf-section--tight" id="hai-huong">
   <div class="wrap">
     {% if d2b.tieu_de and d2b.tieu_de != '' %}<h2 class="tf-title reveal">{% include cam.html t=d2b.tieu_de %}</h2>{% endif %}
     <div class="tf-doors">
@@ -125,6 +125,8 @@ layout: default
         <h2>{{ d5.tieu_de }}</h2>
         <p>{{ d5.dong_phu }}</p>
         <a class="btn btn--black" href="#bao-gia-form" data-bao-gia>Nhận báo giá</a>
+        {% assign qt = site.quy_trinh | sort: "thu_tu" %}
+        <p class="tf-process__more">{% for q in qt %}<a href="{{ q.url | relative_url }}">{{ q.title }} →</a>{% endfor %}</p>
       </div>
       <ol class="tf-steps">
         {% for s in d5.buoc %}
