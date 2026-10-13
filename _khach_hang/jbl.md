@@ -1,6 +1,7 @@
 ---
 title: "JBL"
 logo: /assets/img/demo/client-jbl.png
+nhom: dong-phuc
 nganh: "Thiết bị âm thanh"
 da_may: ""
 thu_tu: 1
