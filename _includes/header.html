@@ -6,7 +6,7 @@
     <a class="tf-logo" href="{{ '/' | relative_url }}" aria-label="TrueFit – Trang chủ">TRUEFIT</a>
     <button class="tf-burger" aria-expanded="false" aria-controls="menu" aria-label="Mở menu"><span></span><span></span><span></span></button>
     <nav id="menu" class="tf-nav">
-      {% assign links = "Trang chủ|/,Giới thiệu|/#gioi-thieu,Quy trình|/#quy-trinh,Khách hàng|/#khach-hang,Sản phẩm|/#san-pham,Chính sách|/chinh-sach/,Bảo quản|/#bao-quan,Liên hệ|#lien-he" | split: "," %}
+      {% assign links = "Trang chủ|/,Đồng phục|/san-pham/dong-phuc/,Quà tặng|/san-pham/merchandise/,Dự án|/khach-hang/,Quy trình|/#quy-trinh,Chính sách|/chinh-sach/,Báo giá|/#bao-gia" | split: "," %}
       {% for l in links %}{% assign p = l | split: "|" %}
       <a href="{% if p[1] contains '/' %}{{ p[1] | relative_url }}{% else %}{{ p[1] }}{% endif %}"{% if p[1] != '/' and page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>
       {% endfor %}
