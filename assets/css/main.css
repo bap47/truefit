@@ -575,3 +575,18 @@ body.tf-lock { overflow: hidden; }
 .tf-chips button[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: #fff; }
 .tf-story__tags .is-nhom { background: var(--orange); color: #fff; }
 .tf-empty { text-align: center; color: var(--ink-soft); padding: 2rem 0; }
+
+/* ---------- Form báo giá điền trực tiếp ở trang chủ ---------- */
+.tf-quotebox { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.tf-quotebox__info h2 { font-size: var(--fs-xl); font-weight: 800; text-transform: uppercase; line-height: 1.15; margin: 0 0 .75rem; }
+.tf-quotebox__info h2 span { color: var(--orange); }
+.tf-quotebox__lead { color: var(--ink-soft); margin: 0 0 1.5rem; }
+.tf-quotebox__ways { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.tf-quotebox__ways a { display: flex; align-items: center; gap: .9rem; background: #fff; border-radius: 18px; padding: .8rem 1rem; text-decoration: none; transition: transform .25s var(--ease), box-shadow .25s; }
+.tf-quotebox__ways a:hover { transform: translateX(4px); box-shadow: 0 12px 24px -16px rgba(0,0,0,.3); }
+.tf-quotebox__ways strong { display: block; text-transform: uppercase; font-weight: 800; color: var(--ink); }
+.tf-quotebox__ways em { font-style: normal; font-size: var(--fs-sm); color: var(--ink-soft); }
+.tf-quotebox__ways .tf-ci { width: 46px; height: 46px; }
+.tf-quotebox__form { background: #fff; border-radius: 28px; padding: clamp(1.25rem, 3.5vw, 2.25rem); box-shadow: 0 30px 60px -36px rgba(0,0,0,.35); }
+@media (max-width: 900px) { .tf-quotebox { grid-template-columns: 1fr; } }
+.tf-quotebox .tf-qform__alt { display: none; }
