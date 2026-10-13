@@ -579,7 +579,7 @@ body.tf-lock { overflow: hidden; }
 .tf-empty { text-align: center; color: var(--ink-soft); padding: 2rem 0; }
 
 /* ---------- Form báo giá điền trực tiếp ở trang chủ ---------- */
-.tf-quotebox { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.tf-quotebox { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
 .tf-quotebox__info h2 { font-size: var(--fs-xl); font-weight: 700; text-transform: uppercase; line-height: 1.15; margin: 0 0 .75rem; }
 .tf-quotebox__info h2 span { color: var(--orange); }
 .tf-quotebox__lead { color: var(--ink-soft); margin: 0 0 1.5rem; }
@@ -648,3 +648,6 @@ body.tf-lock { overflow: hidden; }
 .tf-quotebox__ways .tf-ci--fb,
 .tf-quotebox__ways .tf-ci--tel { background: var(--orange) !important; color: #fff !important; }
 .tf-quotebox__ways .tf-ci svg { fill: #fff !important; width: 22px; height: 22px; }
+/* Cụm chữ báo giá: canh đầu bằng mép trên khung form */
+.tf-quotebox__info { padding-top: clamp(.5rem, 1.5vw, 1rem); }
+.tf-quotebox__info .tf-eyebrow, .tf-quotebox__info > :first-child { margin-top: 0; }
