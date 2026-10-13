@@ -46,6 +46,15 @@ content:
     fields:
       - { name: title, label: Tên khách hàng, type: string, required: true }
       - { name: logo, label: Logo, type: image, required: true, description: "PNG nền trong, khoảng 600×400" }
+      - name: nhom
+        label: Đã làm hạng mục
+        type: select
+        default: dong-phuc
+        options:
+          values:
+            - { value: dong-phuc, label: Đồng phục }
+            - { value: qua-tang, label: Quà tặng }
+            - { value: ca-hai, label: Cả đồng phục & quà tặng }
       - { name: nganh, label: Ngành, type: string, description: "VD: F&B, Tài chính" }
       - { name: da_may, label: Đã làm, type: string, description: "VD: 500 áo polo, 300 túi tote" }
       - { name: noi_bat, label: Hiện ở «Câu chuyện khách hàng tiêu biểu» trang chủ, type: boolean, default: false }
