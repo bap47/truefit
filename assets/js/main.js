@@ -24,6 +24,41 @@
     onScroll();
   }
 
+  /* Hero trượt ngang */
+  document.querySelectorAll('.tf-slider').forEach(function (sl) {
+    var track = sl.querySelector('.tf-slider__track');
+    var slides = [].slice.call(sl.querySelectorAll('.tf-slide'));
+    var dots = [].slice.call(sl.querySelectorAll('.tf-slider__dots button'));
+    var cur = 0, timer = null, delay = (parseFloat(sl.dataset.autoplay) || 5) * 1000;
+    function mark(i) {
+      cur = i;
+      slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+      dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+    }
+    function go(i) {
+      i = (i + slides.length) % slides.length;
+      track.scrollTo({ left: slides[i].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+      mark(i);
+    }
+    function play() { stop(); if (!reduce && slides.length > 1) timer = setInterval(function () { go(cur + 1); }, delay); }
+    function stop() { if (timer) clearInterval(timer); timer = null; }
+    mark(0);
+    var t;
+    track.addEventListener('scroll', function () {
+      clearTimeout(t);
+      t = setTimeout(function () { var i = Math.round(track.scrollLeft / track.clientWidth); if (i !== cur) mark(i); }, 80);
+    }, { passive: true });
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); play(); }); });
+    var prev = sl.querySelector('.tf-slider__arrow--prev'), next = sl.querySelector('.tf-slider__arrow--next');
+    if (prev) prev.addEventListener('click', function () { go(cur - 1); play(); });
+    if (next) next.addEventListener('click', function () { go(cur + 1); play(); });
+    sl.addEventListener('mouseenter', stop); sl.addEventListener('mouseleave', play);
+    sl.addEventListener('touchstart', stop, { passive: true }); sl.addEventListener('touchend', play);
+    track.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { go(cur + 1); play(); } if (e.key === 'ArrowLeft') { go(cur - 1); play(); } });
+    window.addEventListener('resize', function () { track.scrollLeft = slides[cur].offsetLeft; });
+    play();
+  });
+
   /* Đếm số chạy lên */
   function countUp(el) {
     var label = el.dataset.label || el.textContent.trim();
