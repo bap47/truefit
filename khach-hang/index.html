@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Dự án & khách hàng
+title: Đối tác
 ---
 {% assign kh = site.khach_hang | sort: "thu_tu" %}
 <section class="tf-section">
   <div class="wrap">
-    <p class="tf-eyebrow rise">Câu chuyện khách hàng</p>
-    <h1 class="tf-title rise">Dự án <span>TrueFit đã đồng hành</span></h1>
-    <p class="tf-lead rise" style="--d:.1s">Hơn 500 doanh nghiệp, quán cafe, nhà hàng, đội nhóm đã tin chọn TrueFit.</p>
+    <p class="tf-eyebrow rise">Đối tác của TrueFit</p>
+    <h1 class="tf-title rise">Đối tác <span>đồng hành cùng TrueFit</span></h1>
+    <p class="tf-lead rise" style="--d:.1s">Hơn 500 doanh nghiệp, quán cafe, nhà hàng, đội nhóm đã hợp tác cùng TrueFit.</p>
     {% assign nganh = kh | map: "nganh" | uniq | compact %}
     {% if nganh.size > 1 %}
     <div class="tf-switch tf-filter rise" style="--d:.15s" aria-label="Lọc theo ngành">
