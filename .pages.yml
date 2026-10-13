@@ -100,15 +100,15 @@ content:
       - { name: dong_nho, label: Dòng chữ nhỏ trên tiêu đề, type: string }
       - { name: tieu_de, label: Tiêu đề, type: string, description: "Bọc *dấu sao* để tô cam" }
       - { name: mo_ta, label: Mô tả, type: text }
-      - { name: nhan, label: 3 ô có icon (theo thứ tự áo · máy may · xe tải), type: string, list: true }
-      - name: anh_cuon
-        label: Ảnh sản phẩm tự chạy ngang
+      - { name: tu_chuyen_giay, label: Khung ảnh tự chuyển sau (giây), type: number, default: 4 }
+      - name: anh_khung
+        label: Khung ảnh bên trái (bỏ ảnh gì tuỳ ý)
         type: object
         list: true
-        description: "Ảnh vuông nền trong (PNG). Để trống thì tự lấy ảnh ở mục «Sản phẩm & quà tặng»"
+        description: "Ảnh tự chuyển lần lượt, lấp đầy khung (nên dùng ảnh ngang ~1400×1000). Kéo ⋮⋮ để đổi thứ tự. Để trống thì tự lấy ảnh sản phẩm"
         fields:
-          - { name: ten, label: Tên (nhãn cam phía trên), type: string }
           - { name: anh, label: Ảnh, type: image }
+          - { name: mo_ta, label: Mô tả ngắn (cho Google), type: string }
 
   - name: tc_3
     label: "Trang chủ ② Đến với TrueFit – Cam kết & số liệu"
@@ -171,7 +171,7 @@ content:
     fields:
       - { name: tieu_de, label: Tiêu đề, type: string, description: "Logo chạy ngang & các card lấy từ mục «Đối tác»" }
       - { name: mo_ta, label: Mô tả, type: text }
-      - { name: tieu_de_cau_chuyen, label: Tiêu đề hàng câu chuyện, type: string, description: "Bọc *dấu sao* để tô cam" }
+      - { name: tieu_de_cau_chuyen, label: Tiêu đề hàng đối tác tiêu biểu, type: string, description: "Bọc *dấu sao* để tô cam" }
 
   - name: tc_7
     label: "Trang chủ ④ Được đặt nhiều nhất"
@@ -187,12 +187,11 @@ content:
     type: file
     path: _data/trang_chu/9_cuoi_trang.yml
     fields:
-      - { name: tieu_de_footer, label: Tiêu đề footer, type: string }
-      - { name: mo_ta_footer, label: Mô tả footer, type: text }
+      - { name: mo_ta_footer, label: Giới thiệu ngắn ở footer, type: text }
       - { name: tieu_de_bao_gia, label: Tiêu đề khối báo giá (cuối trang chủ), type: string, description: "Bọc *dấu sao* để tô đen" }
       - { name: mo_ta_bao_gia, label: Mô tả khối báo giá, type: text }
       - { name: can_gui, label: Danh sách «Chỉ cần gửi», type: string, list: true }
-      - { name: tieu_de_keu_goi, label: Tiêu đề khối kêu gọi (cuối các trang con), type: string }
+      - { name: tieu_de_keu_goi, label: Tiêu đề dải kêu gọi trên footer, type: string }
       - { name: mo_ta_keu_goi, label: Mô tả khối kêu gọi, type: text }
 
   # =================== CÀI ĐẶT CHUNG ===================
@@ -207,6 +206,8 @@ content:
       - { name: email, label: Email, type: string }
       - { name: facebook_chat, label: Link chat Facebook (Messenger), type: string, description: "VD: https://m.me/truefituniform" }
       - { name: gio_lam_viec, label: Giờ làm việc, type: string }
+      - { name: ngay_lam_viec, label: Ngày làm việc, type: string }
+      - { name: dia_chi, label: Địa chỉ xưởng (hiện ở footer), type: text }
       - { name: email_bao_gia, label: Email nhận form báo giá, type: string, description: "Lần đầu có khách gửi form, hộp thư này nhận mail xác nhận từ FormSubmit – bấm Activate 1 lần là xong" }
       - name: kenh
         label: Icon liên hệ ở footer

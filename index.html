@@ -32,7 +32,6 @@ layout: default
 
 <!-- ② ĐẾN VỚI TRUEFIT: ảnh sản phẩm tự chạy + cam kết + số liệu -->
 {% assign hien = sp | where_exp: "p", "p.an != true" %}
-{% assign cuon = d2.anh_cuon %}
 <section class="tf-section" id="gioi-thieu">
   <div class="wrap">
     <div class="tf-intro__head">
@@ -41,32 +40,16 @@ layout: default
       {% if d2.mo_ta %}<p class="tf-intro__lead reveal">{{ d2.mo_ta }}</p>{% endif %}
     </div>
     <div class="tf-intro">
-      <div class="tf-intro__show reveal">
-        {% if d2.nhan and d2.nhan.size > 0 %}
-        <ul class="tf-perks">
-          {% for n in d2.nhan %}
-          <li>
-            {% case forloop.index %}
-            {% when 1 %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0Z"/></svg>
-            {% when 2 %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20v-6h11v6M5 10h13a2 2 0 0 1 2 2v2h-4M8 10V6h8v4M12 14v3"/></svg>
-            {% else %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8M6 19a2 2 0 1 0 0-.01M17 19a2 2 0 1 0 0-.01"/></svg>
-            {% endcase %}
-            <span>{{ n }}</span>
-          </li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-        <div class="tf-reel" aria-label="Sản phẩm TrueFit">
-          <div class="tf-reel__track">
-            {% for k in (1..2) %}
-              {% if cuon and cuon.size > 0 %}
-                {% for a in cuon %}<figure class="tf-reel__item"{% if k == 2 %} aria-hidden="true"{% endif %}><figcaption>{{ a.ten }}</figcaption><img src="{{ a.anh | relative_url }}" alt="{% if k == 1 %}{{ a.ten }}{% endif %}" loading="lazy" width="600" height="600"></figure>{% endfor %}
-              {% else %}
-                {% for p in hien limit: 8 %}<figure class="tf-reel__item"{% if k == 2 %} aria-hidden="true"{% endif %}><figcaption>{{ p.title }}</figcaption><img src="{{ p.anh | relative_url }}" alt="{% if k == 1 %}{{ p.title }}{% endif %}" loading="lazy" width="600" height="600"></figure>{% endfor %}
-              {% endif %}
-            {% endfor %}
-          </div>
+      <div class="tf-intro__show reveal" data-frame data-giay="{{ d2.tu_chuyen_giay | default: 4 }}">
+        {% assign khung = d2.anh_khung %}
+        <div class="tf-frame__track">
+          {% if khung and khung.size > 0 %}
+            {% for a in khung %}<img class="tf-frame__img{% if forloop.first %} is-on{% endif %}" src="{{ a.anh | relative_url }}" alt="{{ a.mo_ta | default: 'Hình ảnh TrueFit' }}"{% unless forloop.first %} loading="lazy"{% endunless %}>{% endfor %}
+          {% else %}
+            {% for p in hien limit: 5 %}<img class="tf-frame__img{% if forloop.first %} is-on{% endif %}" src="{{ p.anh | relative_url }}" alt="{{ p.title }}"{% unless forloop.first %} loading="lazy"{% endunless %}>{% endfor %}
+          {% endif %}
         </div>
+        <div class="tf-frame__dots" aria-hidden="true"></div>
       </div>
 
       <div class="tf-intro__commit reveal" style="--d:.1s">
@@ -174,8 +157,8 @@ layout: default
     <div class="tf-stories__head">
       <h3 class="tf-stories__title reveal">{% include cam.html t=d6.tieu_de_cau_chuyen %}</h3>
       <div class="tf-stories__nav">
-        <button class="tf-round" data-scroll="-1" aria-label="Câu chuyện trước">‹</button>
-        <button class="tf-round" data-scroll="1" aria-label="Câu chuyện sau">›</button>
+        <button class="tf-round" data-scroll="-1" aria-label="Trước">‹</button>
+        <button class="tf-round" data-scroll="1" aria-label="Sau">›</button>
       </div>
     </div>
     <div class="tf-stories__row" tabindex="0" aria-label="Đối tác tiêu biểu">
