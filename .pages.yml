@@ -227,6 +227,15 @@ content:
       - { name: mo_ta_keu_goi, label: Mô tả khối kêu gọi, type: text }
 
   # =================== CÀI ĐẶT CHUNG ===================
+  - name: seo
+    label: Favicon & ảnh chia sẻ link
+    type: file
+    path: _data/seo.yml
+    fields:
+      - { name: favicon, label: Favicon (icon trên tab trình duyệt), type: image, description: "Ảnh vuông, nền trong suốt, PNG 512×512" }
+      - { name: anh_chia_se, label: Ảnh bìa khi gửi link (Zalo, Facebook…), type: image, description: "Ảnh ngang 1200×630, JPG/PNG dưới 1MB" }
+      - { name: mo_ta_chia_se, label: Mô tả khi gửi link, type: text, description: "1–2 câu, dưới 160 ký tự" }
+
   - name: lien_he
     label: Liên hệ & mạng xã hội
     type: file
