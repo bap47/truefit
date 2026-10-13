@@ -3,6 +3,10 @@ hotline: "0909 914 059"
 hotline_so: "0909914059"
 zalo: "https://zalo.me/0909914059"
 email: "truefit.hello@gmail.com"
+facebook_chat: "https://m.me/truefituniform"
+gio_lam_viec: "08H - 17H30"
+# Email nhận form "Yêu cầu báo giá" (lần đầu có khách gửi, FormSubmit sẽ gửi mail xác nhận – bấm Activate 1 lần)
+email_bao_gia: "truefit.hello@gmail.com"
 
 # Các icon tròn ở footer (thêm/bớt/đổi icon tuỳ ý)
 kenh:
