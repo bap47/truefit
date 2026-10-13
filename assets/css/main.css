@@ -232,6 +232,28 @@ html { scroll-padding-top: 130px; }
   html { scroll-padding-top: 110px; }
 }
 
+/* ---------- Hero trượt ngang ---------- */
+.tf-slider { position: relative; background: linear-gradient(180deg, var(--cream-soft), #fff); }
+.tf-slider__track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; outline: none; }
+.tf-slider__track::-webkit-scrollbar { display: none; }
+.tf-slide { flex: 0 0 100%; scroll-snap-align: start; min-height: clamp(420px, 42vw, 620px); display: flex; align-items: center; text-align: center; background: var(--slide-bg, none) center / cover no-repeat; position: relative; }
+.tf-slide--img::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 45% 55% at 50% 50%, rgba(255,255,255,.85), rgba(255,255,255,0) 75%); }
+.tf-slide__in { position: relative; padding-block: 3rem 4rem; }
+.tf-slide .tf-hero__title { margin: 0 auto; }
+.tf-slide__btn { margin-top: 1.75rem; }
+.js .tf-slide .tf-hero__title, .js .tf-slide .tf-hotline, .js .tf-slide .tf-slide__btn, .js .tf-slide .tf-hero__tagline { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.tf-slide.is-active .tf-hero__title, .tf-slide.is-active .tf-hotline, .tf-slide.is-active .tf-slide__btn, .tf-slide.is-active .tf-hero__tagline { opacity: 1; transform: none; }
+.tf-slide.is-active .tf-hotline, .tf-slide.is-active .tf-slide__btn { transition-delay: .12s; }
+.tf-slide.is-active .tf-hero__tagline { transition-delay: .22s; }
+.tf-slider__arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(255,255,255,.9); color: var(--ink); font-size: 1.8rem; line-height: 1; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(0,0,0,.35); transition: background .2s, color .2s; z-index: 2; }
+.tf-slider__arrow:hover { background: var(--orange); color: #fff; }
+.tf-slider__arrow--prev { left: clamp(.5rem, 2vw, 1.5rem); }
+.tf-slider__arrow--next { right: clamp(.5rem, 2vw, 1.5rem); }
+.tf-slider__dots { position: absolute; left: 0; right: 0; bottom: 1.25rem; display: flex; justify-content: center; gap: .5rem; z-index: 2; }
+.tf-slider__dots button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; background: rgba(0,0,0,.2); cursor: pointer; transition: width .3s var(--ease), background .3s; }
+.tf-slider__dots button[aria-current="true"] { width: 28px; background: var(--orange); }
+@media (max-width: 600px) { .tf-slider__arrow { display: none; } .tf-slide { min-height: 380px; } }
+
 /* ---------- Icon liên hệ ở footer ---------- */
 .tf-social { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
 .tf-social a { display: block; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; transition: transform .25s var(--ease), box-shadow .25s; }
