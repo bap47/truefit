@@ -1,20 +1,22 @@
 ---
 layout: default
-title: Khách hàng & dự án
+title: Dự án & khách hàng
 ---
 {% assign kh = site.khach_hang | sort: "thu_tu" %}
 <section class="tf-section">
   <div class="wrap">
-    <h1 class="tf-title rise">Khách hàng <span>tin chọn TrueFit</span></h1>
-    <p class="tf-lead rise" style="--d:.1s">Hơn 500 doanh nghiệp, quán cafe, nhà hàng, đội nhóm đã đồng hành cùng TrueFit.</p>
-    <div class="tf-clients">
-      {% for c in kh %}
-      <a class="tf-client reveal" style="--d:{{ forloop.index0 | modulo: 4 | times: 0.08 }}s" href="{{ c.url | relative_url }}">
-        <span class="tf-client__logo"><img src="{{ c.logo | relative_url }}" alt="{{ c.title }}" loading="lazy"></span>
-        <strong>{{ c.title }}</strong>
-        {% if c.nganh %}<span>{{ c.nganh }}</span>{% endif %}
-      </a>
-      {% endfor %}
+    <p class="tf-eyebrow rise">Câu chuyện khách hàng</p>
+    <h1 class="tf-title rise">Dự án <span>TrueFit đã đồng hành</span></h1>
+    <p class="tf-lead rise" style="--d:.1s">Hơn 500 doanh nghiệp, quán cafe, nhà hàng, đội nhóm đã tin chọn TrueFit.</p>
+    {% assign nganh = kh | map: "nganh" | uniq | compact %}
+    {% if nganh.size > 1 %}
+    <div class="tf-switch tf-filter rise" style="--d:.15s" aria-label="Lọc theo ngành">
+      <button aria-pressed="true" data-f="">Tất cả</button>
+      {% for n in nganh %}{% if n != "" %}<button aria-pressed="false" data-f="{{ n }}">{{ n }}</button>{% endif %}{% endfor %}
+    </div>
+    {% endif %}
+    <div class="tf-stories__grid">
+      {% for c in kh %}{% include case-card.html c=c %}{% endfor %}
     </div>
   </div>
 </section>
