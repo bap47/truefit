@@ -17,7 +17,7 @@ buoc:
   - ten: Thiết kế mockup – Duyệt mẫu
     mo_ta: Thiết kế mockup logo lên từng sản phẩm, chỉnh sửa đến khi duyệt.
     chi_tiet:
-      - Mockup đồng bộ nhận diện thương hiệu
+      - Thiết kế mockup miễn phí, đồng bộ nhận diện thương hiệu
       - Làm mẫu thực tế trước khi sản xuất hàng loạt
   - ten: Sản xuất – Gia công logo
     mo_ta: Sản xuất và gia công logo tại xưởng, kiểm soát chất lượng từng công đoạn.
