@@ -1,25 +1,68 @@
 {% assign home = site.data.trang_chu['9_cuoi_trang'] %}
-<footer class="tf-footer" id="lien-he">
-  <div class="wrap tf-footer__grid">
-    <div>
-      <h3>{{ home.tieu_de_footer }}</h3>
-      <p>{{ home.mo_ta_footer }}</p>
-      <p class="tf-social">
-        {% for k in site.data.lien_he.kenh %}<a href="{{ k.link }}"{% unless k.link contains 'tel:' or k.link contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ k.ten }}" title="{{ k.ten }}"><img src="{{ k.icon | relative_url }}" alt="{{ k.ten }}" width="40" height="40"></a>{% endfor %}
-      </p>
+{% assign lh = site.data.lien_he %}
+<footer class="tf-footer{% if page.url == '/' %} tf-footer--home{% endif %}" id="lien-he">
+  <div class="wrap">
+    {% unless page.url == '/' %}
+    <div class="tf-fcta">
+      <div>
+        <p class="tf-fcta__h">{{ home.tieu_de_keu_goi | default: "Gửi logo, nhận mẫu thiết kế miễn phí" }}</p>
+        <p class="tf-fcta__p">{{ home.mo_ta_keu_goi }}</p>
+      </div>
+      <div class="tf-btns">
+        <a class="btn" href="#bao-gia-form" data-bao-gia>Yêu cầu báo giá</a>
+        <a class="btn btn--ghost" href="{{ lh.zalo }}" target="_blank" rel="noopener">Chat Zalo</a>
+      </div>
     </div>
-    <div>
-      <h3>Chính sách</h3>
-      <ul>
-        {% assign ps = site.chinh_sach | sort: "thu_tu" %}
-        {% for p in ps %}<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}
-      </ul>
+    {% endunless %}
+
+    <div class="tf-footer__grid">
+      <div class="tf-fcol tf-fcol--brand">
+        <p class="tf-footer__logo">TRUEFIT</p>
+        <p class="tf-footer__slogan">Fit your brand – Fit your team</p>
+        <p>{{ home.mo_ta_footer }}</p>
+        <p class="tf-social">
+          {% for k in lh.kenh %}<a href="{{ k.link }}"{% unless k.link contains 'tel:' or k.link contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ k.ten }}" title="{{ k.ten }}"><img src="{{ k.icon | relative_url }}" alt="{{ k.ten }}" width="40" height="40"></a>{% endfor %}
+        </p>
+      </div>
+      <div class="tf-fcol">
+        <h3>Sản phẩm</h3>
+        <ul>
+          <li><a href="{{ '/san-pham/dong-phuc/' | relative_url }}">Đồng phục</a></li>
+          <li><a href="{{ '/san-pham/merchandise/' | relative_url }}">Quà tặng</a></li>
+          <li><a href="{{ '/#san-pham' | relative_url }}">Được đặt nhiều nhất</a></li>
+          <li><a href="{{ '/san-pham/' | relative_url }}">Tất cả sản phẩm</a></li>
+        </ul>
+      </div>
+      <div class="tf-fcol">
+        <h3>Về TrueFit</h3>
+        <ul>
+          <li><a href="{{ '/#gioi-thieu' | relative_url }}">Giới thiệu</a></li>
+          <li><a href="{{ '/khach-hang/' | relative_url }}">Đối tác</a></li>
+          <li><a href="{{ '/#quy-trinh' | relative_url }}">Quy trình làm việc</a></li>
+          <li><a href="{{ '/tin-tuc/' | relative_url }}">Tin tức</a></li>
+        </ul>
+      </div>
+      <div class="tf-fcol">
+        <h3>Chính sách</h3>
+        <ul>
+          {% assign ps = site.chinh_sach | sort: "thu_tu" %}
+          {% for p in ps %}<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      <div class="tf-fcol">
+        <h3>Liên hệ</h3>
+        <ul class="tf-fcontact">
+          <li><span>Hotline</span><a href="tel:{{ lh.hotline_so }}"><strong>{{ lh.hotline }}</strong></a></li>
+          <li><span>Email</span><a href="mailto:{{ lh.email }}"><strong>{{ lh.email }}</strong></a></li>
+          {% if lh.gio_lam_viec %}<li><span>Giờ làm việc</span><strong>{{ lh.gio_lam_viec }}{% if lh.ngay_lam_viec %} · {{ lh.ngay_lam_viec }}{% endif %}</strong></li>{% endif %}
+          {% if lh.dia_chi and lh.dia_chi != '' %}<li><span>Xưởng may</span><strong>{{ lh.dia_chi }}</strong></li>{% endif %}
+        </ul>
+      </div>
     </div>
-    <div>
-      <h3>Dịch vụ khách hàng</h3>
-      <p>Hotline<br><a href="tel:{{ site.data.lien_he.hotline_so }}"><strong>{{ site.data.lien_he.hotline }}</strong></a></p>
-      <p>Email<br><a href="mailto:{{ site.data.lien_he.email }}"><strong>{{ site.data.lien_he.email }}</strong></a></p>
+
+    <div class="tf-footer__bottom">
+      <p>© {{ site.time | date: "%Y" }} TrueFit – Đồng phục & quà tặng doanh nghiệp.</p>
+      <p class="tf-footer__links"><a href="{{ '/chinh-sach/' | relative_url }}">Chính sách</a><a href="#bao-gia-form" data-bao-gia>Báo giá</a><a href="#trang-chu" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Lên đầu trang ↑</a></p>
     </div>
   </div>
-  <p class="wrap tf-footer__copy">© {{ site.time | date: "%Y" }} TrueFit – Fit your brand, fit your team.</p>
 </footer>
