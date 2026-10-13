@@ -8,13 +8,20 @@ title: Đối tác
     <p class="tf-eyebrow rise">Đối tác của TrueFit</p>
     <h1 class="tf-title rise">Đối tác <span>đồng hành cùng TrueFit</span></h1>
     <p class="tf-lead rise" style="--d:.1s">Hơn 500 doanh nghiệp, quán cafe, nhà hàng, đội nhóm đã hợp tác cùng TrueFit.</p>
+    <div class="tf-switch tf-pfilter rise" style="--d:.15s" role="tablist" aria-label="Hạng mục">
+      <button aria-pressed="true" data-nhom="">Tất cả</button>
+      <button aria-pressed="false" data-nhom="dong-phuc">Đồng phục</button>
+      <button aria-pressed="false" data-nhom="qua-tang">Quà tặng</button>
+    </div>
     {% assign nganh = kh | map: "nganh" | uniq | compact %}
     {% if nganh.size > 1 %}
-    <div class="tf-switch tf-filter rise" style="--d:.15s" aria-label="Lọc theo ngành">
+    <div class="tf-chips tf-filter rise" style="--d:.2s" aria-label="Lọc theo ngành">
+      <span>Ngành:</span>
       <button aria-pressed="true" data-f="">Tất cả</button>
       {% for n in nganh %}{% if n != "" %}<button aria-pressed="false" data-f="{{ n }}">{{ n }}</button>{% endif %}{% endfor %}
     </div>
     {% endif %}
+    <p class="tf-empty" hidden>Chưa có đối tác trong mục này.</p>
     <div class="tf-stories__grid">
       {% for c in kh %}{% include case-card.html c=c %}{% endfor %}
     </div>
