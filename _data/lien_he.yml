@@ -7,9 +7,6 @@ gio_lam_viec: 08H - 17H30
 ngay_lam_viec: Thứ 2 – Thứ 7
 email_bao_gia: truefit.hello@gmail.com
 kenh:
-  - ten: Facebook
-    link: https://www.facebook.com/truefituniform
-    icon: /assets/uploads/Group 5.png
   - ten: Zalo
     link: https://zalo.me/0909914059
     icon: /assets/uploads/image 1.png
@@ -19,3 +16,6 @@ kenh:
   - ten: Gmail
     link: mailto:truefit.hello@gmail.com
     icon: /assets/uploads/Group 2.png
+  - ten: Facebook
+    link: https://www.facebook.com/truefituniform
+    icon: /assets/uploads/Group 5.png
