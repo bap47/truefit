@@ -166,7 +166,6 @@
 (function () {
   var modal = document.getElementById('bao-gia-form');
   if (!modal) return;
-  var form = modal.querySelector('form'), msg = modal.querySelector('.tf-qform__msg'), send = modal.querySelector('.tf-qform__send');
   var last = null;
   function open(sp) {
     last = document.activeElement;
@@ -183,14 +182,18 @@
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
   if (location.hash === '#bao-gia-form') open();
-  form.addEventListener('submit', function (e) {
-    if (!window.fetch) return;
-    e.preventDefault();
-    send.disabled = true; msg.className = 'tf-qform__msg'; msg.textContent = 'Đang gửi…';
-    fetch(form.dataset.ajax, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
-      .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === 'false') throw j; return j; }); })
-      .then(function () { msg.className = 'tf-qform__msg is-ok'; msg.textContent = '✓ Đã gửi! TrueFit sẽ liên hệ bạn sớm nhất.'; form.reset(); send.disabled = false; })
-      .catch(function () { msg.className = 'tf-qform__msg is-err'; msg.textContent = 'Chưa gửi được. Bạn nhắn Zalo hoặc gọi hotline giúp TrueFit nhé.'; send.disabled = false; });
+  document.querySelectorAll('form.tf-qform').forEach(function (form) {
+    var msg = form.querySelector('.tf-qform__msg'), send = form.querySelector('.tf-qform__send');
+    form.addEventListener('submit', function (e) {
+      if (!window.fetch) return;
+      e.preventDefault();
+      var tr = form.querySelector('[data-trang]'); if (tr) tr.value = location.href;
+      send.disabled = true; msg.className = 'tf-qform__msg'; msg.textContent = 'Đang gửi…';
+      fetch(form.dataset.ajax, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === 'false') throw j; return j; }); })
+        .then(function () { msg.className = 'tf-qform__msg is-ok'; msg.textContent = '✓ Đã gửi! TrueFit sẽ liên hệ bạn sớm nhất.'; form.reset(); send.disabled = false; })
+        .catch(function () { msg.className = 'tf-qform__msg is-err'; msg.textContent = 'Chưa gửi được. Bạn nhắn Zalo hoặc gọi hotline giúp TrueFit nhé.'; send.disabled = false; });
+    });
   });
 })();
 
