@@ -6,12 +6,27 @@ layout: default
 {% assign sp = site.san_pham | sort: "thu_tu" %}
 
 <!-- HERO -->
-<section class="tf-hero" id="trang-chu"{% if d1.anh_nen != "" %} style="--hero-bg:url('{{ d1.anh_nen | relative_url }}')"{% endif %}>
-  <div class="wrap">
-    <h1 class="tf-hero__title rise">{% include cam.html t=d1.tieu_de %}</h1>
-    <a class="tf-hotline rise" style="--d:.12s" href="tel:{{ site.data.lien_he.hotline_so }}"><span>{{ d1.nut_tu_van }}</span><strong>{{ site.data.lien_he.hotline }}</strong></a>
-    <p class="tf-hero__tagline rise" style="--d:.2s">{{ d1.slogan }}<br>{{ d1.slogan_phu }}</p>
+<section class="tf-slider" id="trang-chu" aria-roledescription="carousel" aria-label="Banner" data-autoplay="{{ d1.tu_chuyen_giay | default: 5 }}">
+  <div class="tf-slider__track" tabindex="0">
+    {% for s in d1.slides %}
+    <div class="tf-slide{% if s.anh and s.anh != '' %} tf-slide--img{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} / {{ d1.slides.size }}"{% if s.anh and s.anh != '' %} style="--slide-bg:url('{{ s.anh | relative_url }}')"{% endif %}>
+      <div class="wrap tf-slide__in">
+        {% if forloop.first %}<h1 class="tf-hero__title">{% include cam.html t=s.tieu_de %}</h1>{% else %}<p class="tf-hero__title">{% include cam.html t=s.tieu_de %}</p>{% endif %}
+        {% if s.nut_chu and s.nut_chu != '' %}
+        <a class="btn tf-slide__btn" href="{% if s.nut_link contains 'http' %}{{ s.nut_link }}{% else %}{{ s.nut_link | relative_url }}{% endif %}">{{ s.nut_chu }}</a>
+        {% else %}
+        <a class="tf-hotline" href="tel:{{ site.data.lien_he.hotline_so }}"><span>{{ d1.nut_tu_van }}</span><strong>{{ site.data.lien_he.hotline }}</strong></a>
+        {% endif %}
+        {% if s.dong_phu %}<p class="tf-hero__tagline">{{ s.dong_phu | strip | newline_to_br }}</p>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
   </div>
+  {% if d1.slides.size > 1 %}
+  <button class="tf-slider__arrow tf-slider__arrow--prev" aria-label="Slide trước">‹</button>
+  <button class="tf-slider__arrow tf-slider__arrow--next" aria-label="Slide sau">›</button>
+  <div class="tf-slider__dots">{% for s in d1.slides %}<button aria-label="Tới slide {{ forloop.index }}"{% if forloop.first %} aria-current="true"{% endif %}></button>{% endfor %}</div>
+  {% endif %}
 </section>
 
 <!-- GIỚI THIỆU -->

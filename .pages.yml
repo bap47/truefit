@@ -68,16 +68,24 @@ content:
 
   # =================== TRANG CHỦ (theo thứ tự từ trên xuống) ===================
   - name: tc_1
-    label: "Trang chủ ① Đầu trang"
+    label: "Trang chủ ① Đầu trang (banner trượt)"
     type: file
     path: _data/trang_chu/1_dau_trang.yml
     fields:
       - { name: uu_dai, label: Thanh ưu đãi trên cùng, type: string }
-      - { name: tieu_de, label: Tiêu đề lớn, type: string, description: "Chữ muốn tô cam thì bọc trong dấu sao. VD: *Giải pháp* đồng phục doanh nghiệp *trọn gói*" }
-      - { name: nut_tu_van, label: Chữ trên nút hotline, type: string }
-      - { name: slogan, label: Slogan dòng 1, type: string }
-      - { name: slogan_phu, label: Slogan dòng 2, type: string }
-      - { name: anh_nen, label: Ảnh nền (không bắt buộc), type: image, description: "Ảnh ngang 1920×1080, hiện mờ phía sau tiêu đề" }
+      - { name: nut_tu_van, label: Chữ trên nút hotline, type: string, description: "Nút hotline hiện ở slide không có nút riêng" }
+      - { name: tu_chuyen_giay, label: Tự chuyển slide sau (giây), type: number, default: 5 }
+      - name: slides
+        label: Các slide banner
+        type: object
+        list: true
+        description: "Kéo ⋮⋮ để đổi thứ tự slide. Slide đầu tiên hiện đầu tiên khi mở web."
+        fields:
+          - { name: tieu_de, label: Tiêu đề lớn, type: string, description: "Bọc *dấu sao* để tô cam. VD: *Giải pháp* đồng phục doanh nghiệp *trọn gói*" }
+          - { name: dong_phu, label: Dòng chữ nhỏ bên dưới, type: text, description: "Xuống dòng bằng Enter" }
+          - { name: anh, label: Ảnh banner, type: image, description: "Ảnh ngang 1920×800. Để chữ đọc rõ, chừa khoảng trống ở giữa ảnh (VD người mẫu đứng 2 bên)" }
+          - { name: nut_chu, label: Chữ trên nút (không bắt buộc), type: string, description: "Để trống thì hiện nút hotline" }
+          - { name: nut_link, label: Link của nút, type: string, description: "VD: /#qua-tang, /san-pham/ hoặc link Zalo" }
 
   - name: tc_2
     label: "Trang chủ ② Giới thiệu"
