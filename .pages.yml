@@ -47,9 +47,13 @@ content:
       - { name: logo, label: Logo, type: image, required: true, description: "PNG nền trong, khoảng 600×400" }
       - { name: nganh, label: Ngành, type: string, description: "VD: F&B, Tài chính" }
       - { name: da_may, label: Đã làm, type: string, description: "VD: 500 áo polo, 300 túi tote" }
+      - { name: noi_bat, label: Hiện ở «Câu chuyện khách hàng tiêu biểu» trang chủ, type: boolean, default: false }
+      - { name: anh_bia, label: Ảnh bìa câu chuyện, type: image, description: "Ảnh ngang 4:3, ảnh thật dự án. Để trống sẽ hiện logo" }
+      - { name: tieu_de_bai, label: Tiêu đề câu chuyện, type: string, description: "VD: Đồng bộ 500 nhân viên trong 10 ngày" }
+      - { name: tom_tat, label: Tóm tắt 1 dòng, type: text }
       - { name: thu_vien, label: Ảnh dự án thực tế, type: image, options: { multiple: true } }
       - { name: thu_tu, label: Thứ tự, type: number, default: 50 }
-      - { name: body, label: Câu chuyện dự án, type: rich-text }
+      - { name: body, label: "Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)", type: rich-text }
 
   - name: tin_tuc
     label: Tin tức
@@ -88,46 +92,39 @@ content:
           - { name: nut_link, label: Link của nút, type: string, description: "VD: /#qua-tang, /san-pham/ hoặc link Zalo" }
 
   - name: tc_2
-    label: "Trang chủ ② Giới thiệu"
+    label: "Trang chủ ② Hai hướng: Đồng phục | Quà tặng"
     type: file
     path: _data/trang_chu/2_gioi_thieu.yml
     fields:
       - { name: dong_nho, label: Dòng chữ nhỏ trên tiêu đề, type: string }
       - { name: tieu_de, label: Tiêu đề, type: string, description: "Bọc *dấu sao* để tô cam" }
-      - { name: mo_ta, label: Mô tả, type: text }
-      - name: san_pham_noi_bat
-        label: 3 sản phẩm nổi bật
+      - name: cua
+        label: 2 ô lớn (Đồng phục / Quà tặng)
         type: object
         list: true
         fields:
           - { name: ten, label: Tên, type: string }
-          - { name: anh, label: Ảnh, type: image }
-      - { name: nhan, label: Nhãn cam bên dưới, type: string, list: true }
+          - { name: mo_ta, label: Mô tả ngắn, type: string }
+          - { name: anh, label: Ảnh, type: image, description: "Ảnh vuông, ưu tiên ảnh thật sản phẩm" }
+          - { name: link, label: Link, type: string, description: "VD: /san-pham/dong-phuc/" }
+          - { name: nut, label: Chữ trên nút, type: string }
 
   - name: tc_3
-    label: "Trang chủ ③ Cam kết & số liệu"
+    label: "Trang chủ ④ Số liệu"
     type: file
     path: _data/trang_chu/3_cam_ket.yml
     fields:
-      - { name: tieu_de, label: Tiêu đề, type: string }
-      - name: cam_ket
-        label: Các ô cam kết
-        type: object
-        list: true
-        fields:
-          - { name: ten, label: Tên cam kết, type: string }
-          - { name: y, label: Các ý, type: string, list: true }
       - name: so_lieu
         label: Các ô số liệu
         type: object
         list: true
         fields:
           - { name: nhom, label: Dòng nhỏ phía trên, type: string }
-          - { name: so, label: Con số, type: string, description: "VD: 40.000 hoặc 12+ – số sẽ tự chạy đếm" }
+          - { name: so, label: Con số, type: string, description: "VD: 40.000 hoặc 500+ – số sẽ tự chạy đếm" }
           - { name: nhan, label: Dòng phía dưới, type: string }
 
   - name: tc_4
-    label: "Trang chủ ④ Tại sao chọn TrueFit"
+    label: "Trang chủ ⑤ Vì sao chọn TrueFit"
     type: file
     path: _data/trang_chu/4_ly_do.yml
     fields:
@@ -141,7 +138,7 @@ content:
           - { name: mo_ta, label: Mô tả, type: text }
 
   - name: tc_5
-    label: "Trang chủ ⑤ Quy trình"
+    label: "Trang chủ ⑥ Quy trình"
     type: file
     path: _data/trang_chu/5_quy_trinh.yml
     fields:
@@ -156,38 +153,34 @@ content:
           - { name: mo_ta, label: Mô tả, type: text }
 
   - name: tc_6
-    label: "Trang chủ ⑥ Khách hàng"
+    label: "Trang chủ ⑦ Khách hàng & câu chuyện"
     type: file
     path: _data/trang_chu/6_khach_hang.yml
     fields:
-      - { name: tieu_de, label: Tiêu đề, type: string, description: "Logo khách hàng sửa ở mục «Khách hàng & dự án»" }
+      - { name: tieu_de, label: Tiêu đề, type: string, description: "Logo chạy ngang & các card lấy từ mục «Khách hàng & dự án»" }
       - { name: mo_ta, label: Mô tả, type: text }
+      - { name: tieu_de_cau_chuyen, label: Tiêu đề hàng câu chuyện, type: string, description: "Bọc *dấu sao* để tô cam" }
 
   - name: tc_7
-    label: "Trang chủ ⑦ Sản phẩm & quà tặng"
+    label: "Trang chủ ③ Sản phẩm nổi bật"
     type: file
     path: _data/trang_chu/7_san_pham.yml
     fields:
-      - { name: tieu_de_san_pham, label: Tiêu đề phần sản phẩm, type: string, description: "Danh sách sản phẩm sửa ở mục «Sản phẩm & quà tặng»" }
-      - { name: tieu_de_qua_tang, label: Tiêu đề phần quà tặng, type: string }
-      - { name: luu_y_qua_tang, label: Lưu ý dưới phần quà tặng, type: text }
-
-  - name: tc_8
-    label: "Trang chủ ⑧ Hướng dẫn bảo quản"
-    type: file
-    path: _data/trang_chu/8_bao_quan.yml
-    fields:
-      - { name: tieu_de, label: Tiêu đề, type: string }
-      - { name: luu_y, label: Lưu ý, type: text }
-      - { name: buoc, label: Các bước bảo quản, type: string, list: true }
+      - { name: tieu_de_san_pham, label: Tiêu đề, type: string, description: "Sản phẩm lấy theo «Thứ tự» ở mục «Sản phẩm & quà tặng» (số nhỏ hiện trước)" }
+      - { name: tab_dong_phuc, label: Chữ trên tab đồng phục, type: string }
+      - { name: tab_qua_tang, label: Chữ trên tab quà tặng, type: string }
+      - { name: so_luong, label: Số sản phẩm mỗi tab, type: number, default: 4 }
 
   - name: tc_9
-    label: "Trang chủ ⑨ Cuối trang"
+    label: "Trang chủ ⑧ Báo giá & cuối trang"
     type: file
     path: _data/trang_chu/9_cuoi_trang.yml
     fields:
       - { name: tieu_de_footer, label: Tiêu đề footer, type: string }
       - { name: mo_ta_footer, label: Mô tả footer, type: text }
+      - { name: tieu_de_bao_gia, label: Tiêu đề khối báo giá (cuối trang chủ), type: string, description: "Bọc *dấu sao* để tô đen" }
+      - { name: mo_ta_bao_gia, label: Mô tả khối báo giá, type: text }
+      - { name: can_gui, label: Danh sách «Chỉ cần gửi», type: string, list: true }
       - { name: tieu_de_keu_goi, label: Tiêu đề khối kêu gọi (cuối các trang con), type: string }
       - { name: mo_ta_keu_goi, label: Mô tả khối kêu gọi, type: text }
 

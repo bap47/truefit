@@ -2,10 +2,11 @@
 layout: default
 ---
 {% assign t = site.data.trang_chu %}
-{% assign d1 = t['1_dau_trang'] %}{% assign d2 = t['2_gioi_thieu'] %}{% assign d3 = t['3_cam_ket'] %}{% assign d4 = t['4_ly_do'] %}{% assign d5 = t['5_quy_trinh'] %}{% assign d6 = t['6_khach_hang'] %}{% assign d7 = t['7_san_pham'] %}{% assign d8 = t['8_bao_quan'] %}
+{% assign d1 = t['1_dau_trang'] %}{% assign d2 = t['2_gioi_thieu'] %}{% assign d3 = t['3_cam_ket'] %}{% assign d4 = t['4_ly_do'] %}{% assign d5 = t['5_quy_trinh'] %}{% assign d6 = t['6_khach_hang'] %}{% assign d7 = t['7_san_pham'] %}{% assign d9 = t['9_cuoi_trang'] %}
 {% assign sp = site.san_pham | sort: "thu_tu" %}
+{% assign so_sp = d7.so_luong | default: 4 %}
 
-<!-- HERO -->
+<!-- ① HERO -->
 <section class="tf-slider" id="trang-chu" aria-roledescription="carousel" aria-label="Banner" data-autoplay="{{ d1.tu_chuyen_giay | default: 5 }}">
   <div class="tf-slider__track" tabindex="0">
     {% for s in d1.slides %}
@@ -29,36 +30,54 @@ layout: default
   {% endif %}
 </section>
 
-<!-- GIỚI THIỆU -->
+<!-- ② HAI HƯỚNG: ĐỒNG PHỤC | QUÀ TẶNG -->
 <section class="tf-section" id="gioi-thieu">
   <div class="wrap">
-    <p class="tf-eyebrow reveal">{{ d2.dong_nho }}</p>
+    {% if d2.dong_nho %}<p class="tf-eyebrow reveal">{{ d2.dong_nho }}</p>{% endif %}
     <h2 class="tf-title reveal">{% include cam.html t=d2.tieu_de %}</h2>
-    <p class="tf-lead reveal">{{ d2.mo_ta }}</p>
-    <div class="tf-feature">
-      {% for p in d2.san_pham_noi_bat %}
-      <div class="tf-feature__item reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
-        <img src="{{ p.anh | relative_url }}" alt="{{ p.ten }}" loading="lazy" width="800" height="800">
-        <span>{{ p.ten }}</span>
-      </div>
+    <div class="tf-doors">
+      {% for c in d2.cua %}
+      <a class="tf-door reveal" style="--d:{{ forloop.index0 | times: 0.12 }}s" href="{% if c.link contains 'http' %}{{ c.link }}{% else %}{{ c.link | relative_url }}{% endif %}">
+        <span class="tf-door__img"><img src="{{ c.anh | relative_url }}" alt="{{ c.ten }}" loading="lazy" width="800" height="800"></span>
+        <span class="tf-door__txt">
+          <strong>{{ c.ten }}</strong>
+          <span>{{ c.mo_ta }}</span>
+          <em class="tf-door__go">{{ c.nut | default: "Khám phá" }} →</em>
+        </span>
+      </a>
       {% endfor %}
     </div>
-    <p class="tf-badges reveal">{% for n in d2.nhan %}<span>✓ {{ n }}</span>{% endfor %}</p>
+  </div>
+</section>
 
-    <h3 class="tf-subtitle reveal">{{ d3.tieu_de }}</h3>
-    <div class="tf-commit">
-      {% for c in d3.cam_ket %}
-      <div class="tf-commit__item reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
-        <h4>{{ c.ten }}</h4>
-        <ul>{% for y in c.y %}<li>{{ y }}</li>{% endfor %}</ul>
-      </div>
-      {% endfor %}
+<!-- ③ SẢN PHẨM NỔI BẬT (tab) -->
+{% assign uni = sp | where: "danh_muc", "dong-phuc" | where_exp: "p", "p.an != true" %}
+{% assign gift = sp | where: "danh_muc", "merchandise" | where_exp: "p", "p.an != true" %}
+<section class="tf-section tf-section--cream" id="san-pham">
+  <div class="wrap">
+    <h2 class="tf-title reveal">{% include cam.html t=d7.tieu_de_san_pham %}</h2>
+    <div class="tf-switch tf-tabs reveal" role="tablist" aria-label="Chọn nhóm sản phẩm">
+      <button role="tab" aria-selected="true" aria-controls="tab-dong-phuc" id="t-dong-phuc">{{ d7.tab_dong_phuc | default: "Đồng phục" }}</button>
+      <button role="tab" aria-selected="false" aria-controls="tab-qua-tang" id="t-qua-tang">{{ d7.tab_qua_tang | default: "Quà tặng" }}</button>
     </div>
+    <div class="tf-tabpanel" role="tabpanel" id="tab-dong-phuc" aria-labelledby="t-dong-phuc">
+      <div class="tf-grid tf-grid--4">{% for p in uni limit: so_sp %}{% include product-card.html p=p %}{% endfor %}</div>
+      <p class="tf-more"><a class="btn btn--black" href="{{ '/san-pham/dong-phuc/' | relative_url }}">Xem tất cả đồng phục</a></p>
+    </div>
+    <div class="tf-tabpanel" role="tabpanel" id="tab-qua-tang" aria-labelledby="t-qua-tang" hidden>
+      <div class="tf-grid tf-grid--4">{% for p in gift limit: so_sp %}{% include product-card.html p=p %}{% endfor %}</div>
+      <p class="tf-more"><a class="btn btn--black" href="{{ '/san-pham/merchandise/' | relative_url }}">Xem tất cả quà tặng</a></p>
+    </div>
+  </div>
+</section>
 
+<!-- ④ SỐ LIỆU -->
+<section class="tf-section tf-section--tight">
+  <div class="wrap">
     <div class="tf-stats tf-stats--4">
       {% for s in d3.so_lieu %}
       <div class="tf-stat reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
-        <p class="tf-stat__group">{{ s.nhom }}</p>
+        {% if s.nhom %}<p class="tf-stat__group">{{ s.nhom }}</p>{% endif %}
         <p class="tf-stat__num" data-count>{{ s.so }}</p>
         <p class="tf-stat__label">{{ s.nhan }}</p>
       </div>
@@ -67,13 +86,14 @@ layout: default
   </div>
 </section>
 
-<!-- TẠI SAO CHỌN -->
+<!-- ⑤ VÌ SAO CHỌN TRUEFIT -->
 <section class="tf-section tf-section--cream">
   <div class="wrap">
     <h2 class="tf-title reveal">{% include cam.html t=d4.tieu_de %}</h2>
     <div class="tf-reasons">
       {% for r in d4.ly_do %}
       <div class="tf-reason tf-reason--white reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
+        <span class="tf-reason__no">{{ forloop.index | prepend: '0' }}</span>
         <h3>{{ r.ten }}</h3>
         <p>{{ r.mo_ta }}</p>
       </div>
@@ -82,14 +102,14 @@ layout: default
   </div>
 </section>
 
-<!-- QUY TRÌNH -->
+<!-- ⑥ QUY TRÌNH -->
 <section class="tf-section" id="quy-trinh">
   <div class="wrap">
     <div class="tf-process reveal">
       <div class="tf-process__intro">
         <h2>{{ d5.tieu_de }}</h2>
         <p>{{ d5.dong_phu }}</p>
-        <a class="btn btn--black" href="{{ site.data.lien_he.zalo }}" target="_blank" rel="noopener">Đặt hàng ngay</a>
+        <a class="btn btn--black" href="#bao-gia">Nhận báo giá</a>
       </div>
       <ol class="tf-steps">
         {% for s in d5.buoc %}
@@ -100,12 +120,12 @@ layout: default
   </div>
 </section>
 
-<!-- KHÁCH HÀNG -->
+<!-- ⑦ KHÁCH HÀNG: logo chạy ngang + câu chuyện tiêu biểu -->
 {% assign kh = site.khach_hang | sort: "thu_tu" %}
 <section class="tf-section tf-section--cream" id="khach-hang">
   <div class="wrap">
     <h2 class="tf-title reveal">{% include cam.html t=d6.tieu_de %}</h2>
-    <p class="tf-lead reveal">{{ d6.mo_ta }}</p>
+    {% if d6.mo_ta %}<p class="tf-lead reveal">{{ d6.mo_ta }}</p>{% endif %}
   </div>
   {% if kh.size > 0 %}
   <div class="tf-marquee" aria-label="Logo khách hàng">
@@ -115,39 +135,43 @@ layout: default
       {% endfor %}{% if kh.size < 6 %}{% for c in kh %}<a class="tf-marquee__item" href="{{ c.url | relative_url }}" aria-hidden="true" tabindex="-1"><img src="{{ c.logo | relative_url }}" alt="" loading="lazy"></a>{% endfor %}{% endif %}{% endfor %}
     </div>
   </div>
+
+  {% assign tieu_bieu = kh | where: "noi_bat", true %}
+  {% if tieu_bieu.size == 0 %}{% assign tieu_bieu = kh %}{% endif %}
+  <div class="wrap tf-stories">
+    <div class="tf-stories__head">
+      <h3 class="tf-stories__title reveal">{% include cam.html t=d6.tieu_de_cau_chuyen %}</h3>
+      <div class="tf-stories__nav">
+        <button class="tf-round" data-scroll="-1" aria-label="Câu chuyện trước">‹</button>
+        <button class="tf-round" data-scroll="1" aria-label="Câu chuyện sau">›</button>
+      </div>
+    </div>
+    <div class="tf-stories__row" tabindex="0" aria-label="Khách hàng tiêu biểu">
+      {% for c in tieu_bieu limit: 8 %}{% include case-card.html c=c %}{% endfor %}
+    </div>
+    <p class="tf-more"><a class="btn btn--line" href="{{ '/khach-hang/' | relative_url }}">Xem tất cả dự án</a></p>
+  </div>
   {% endif %}
 </section>
 
-<!-- SẢN PHẨM -->
-{% assign uni = sp | where: "danh_muc", "dong-phuc" %}
-<section class="tf-section" id="san-pham">
+<!-- ⑧ NHẬN BÁO GIÁ -->
+<section class="tf-section" id="bao-gia">
   <div class="wrap">
-    <h2 class="tf-title reveal">{% include cam.html t=d7.tieu_de_san_pham %}</h2>
-    <div class="tf-grid">
-      {% for p in uni %}{% unless p.an %}{% include product-card.html p=p %}{% endunless %}{% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- QUÀ TẶNG SỰ KIỆN -->
-{% assign gift = sp | where: "danh_muc", "merchandise" %}
-<section class="tf-section tf-section--cream" id="qua-tang">
-  <div class="wrap">
-    <h2 class="tf-title reveal">{% include cam.html t=d7.tieu_de_qua_tang %}</h2>
-    <div class="tf-grid">
-      {% for p in gift %}{% unless p.an %}{% include product-card.html p=p %}{% endunless %}{% endfor %}
-    </div>
-    <p class="tf-note reveal">{{ d7.luu_y_qua_tang }}</p>
-  </div>
-</section>
-
-<!-- BẢO QUẢN -->
-<section class="tf-section" id="bao-quan">
-  <div class="wrap">
-    <h2 class="tf-title reveal">{{ d8.tieu_de }}</h2>
-    <p class="tf-note reveal">{{ d8.luu_y }}</p>
-    <div class="tf-care">
-      {% for c in d8.buoc %}<p class="reveal" style="--d:{{ forloop.index0 | modulo: 3 | times: 0.1 }}s"><span>{{ forloop.index }}</span>{{ c }}</p>{% endfor %}
+    <div class="tf-quote reveal">
+      <div class="tf-quote__txt">
+        <h2>{% include cam.html t=d9.tieu_de_bao_gia %}</h2>
+        <p>{{ d9.mo_ta_bao_gia }}</p>
+        <div class="tf-btns">
+          <a class="btn btn--white" href="{{ site.data.lien_he.zalo }}" target="_blank" rel="noopener">Nhắn Zalo báo giá</a>
+          <a class="btn btn--ghost" href="tel:{{ site.data.lien_he.hotline_so }}">Gọi {{ site.data.lien_he.hotline }}</a>
+        </div>
+      </div>
+      {% if d9.can_gui and d9.can_gui.size > 0 %}
+      <div class="tf-quote__list">
+        <p class="tf-quote__label">Chỉ cần gửi:</p>
+        <ol>{% for x in d9.can_gui %}<li>{{ x }}</li>{% endfor %}</ol>
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>
