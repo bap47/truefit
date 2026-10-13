@@ -1,7 +1,19 @@
-# Sửa trong CMS: Trang chủ
+# Sửa trong CMS: Trang chủ ① Đầu trang
 uu_dai: 'Ưu đãi dành riêng cho khách hàng của TRUEFIT: Tặng gói thiết kế trị giá 500K'
-tieu_de: '*Giải pháp* đồng phục doanh nghiệp *trọn gói*'
 nut_tu_van: Tư vấn nhanh
-slogan: Fit your brand - Fit your team
-slogan_phu: Khẳng định giá trị - Khơi nguồn sức mạnh
-anh_nen: ''
+tu_chuyen_giay: 5
+slides:
+- tieu_de: '*Giải pháp* đồng phục doanh nghiệp *trọn gói*'
+  dong_phu: 'Fit your brand - Fit your team
+
+    Khẳng định giá trị - Khơi nguồn sức mạnh'
+  anh: ''
+  nut_chu: ''
+  nut_link: ''
+- tieu_de: '*Merchandise* in logo *thương hiệu*'
+  dong_phu: 'Quà sự kiện, welcome kit, quà tri ân khách hàng
+
+    Đồng bộ nhận diện – sản xuất tại xưởng'
+  anh: ''
+  nut_chu: Xem quà tặng
+  nut_link: /#qua-tang
