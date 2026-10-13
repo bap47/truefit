@@ -5,6 +5,9 @@ zalo: "https://zalo.me/0909914059"
 email: "truefit.hello@gmail.com"
 facebook_chat: "https://m.me/truefituniform"
 gio_lam_viec: "08H - 17H30"
+ngay_lam_viec: "Thứ 2 – Thứ 7"
+# Địa chỉ xưởng (để trống thì không hiện)
+dia_chi: ""
 # Email nhận form "Yêu cầu báo giá" (lần đầu có khách gửi, FormSubmit sẽ gửi mail xác nhận – bấm Activate 1 lần)
 email_bao_gia: "truefit.hello@gmail.com"
 
