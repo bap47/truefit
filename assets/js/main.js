@@ -149,3 +149,35 @@
     });
   });
 })();
+
+/* Popup Yêu cầu báo giá (gửi qua FormSubmit) */
+(function () {
+  var modal = document.getElementById('bao-gia-form');
+  if (!modal) return;
+  var form = modal.querySelector('form'), msg = modal.querySelector('.tf-qform__msg'), send = modal.querySelector('.tf-qform__send');
+  var last = null;
+  function open(sp) {
+    last = document.activeElement;
+    modal.hidden = false; document.body.classList.add('tf-lock');
+    if (sp) { var f = modal.querySelector('[data-sp-field]'); if (f) f.value = sp; }
+    modal.querySelector('[data-trang]').value = location.href;
+    setTimeout(function () { modal.querySelector('input:not([type=hidden]):not(.tf-hp)').focus(); }, 50);
+  }
+  function close() { modal.hidden = true; document.body.classList.remove('tf-lock'); if (last) last.focus(); }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-bao-gia], a[href$="#bao-gia-form"]');
+    if (a) { e.preventDefault(); open(a.dataset.sp); var nav = document.getElementById('menu'); if (nav) nav.classList.remove('is-open'); return; }
+    if (e.target.closest('[data-dong]')) close();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+  if (location.hash === '#bao-gia-form') open();
+  form.addEventListener('submit', function (e) {
+    if (!window.fetch) return;
+    e.preventDefault();
+    send.disabled = true; msg.className = 'tf-qform__msg'; msg.textContent = 'Đang gửi…';
+    fetch(form.dataset.ajax, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === 'false') throw j; return j; }); })
+      .then(function () { msg.className = 'tf-qform__msg is-ok'; msg.textContent = '✓ Đã gửi! TrueFit sẽ liên hệ bạn sớm nhất.'; form.reset(); send.disabled = false; })
+      .catch(function () { msg.className = 'tf-qform__msg is-err'; msg.textContent = 'Chưa gửi được. Bạn nhắn Zalo hoặc gọi hotline giúp TrueFit nhé.'; send.disabled = false; });
+  });
+})();
