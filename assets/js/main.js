@@ -137,17 +137,29 @@
     });
   });
 
-  /* Lọc dự án theo ngành */
-  document.querySelectorAll('.tf-filter').forEach(function (bar) {
-    var btns = [].slice.call(bar.querySelectorAll('button'));
-    var cards = [].slice.call(document.querySelectorAll('.tf-stories__grid .tf-story'));
-    btns.forEach(function (b) {
-      b.addEventListener('click', function () {
-        btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
-        cards.forEach(function (c) { c.hidden = b.dataset.f !== '' && c.dataset.nganh !== b.dataset.f; c.classList.add('is-in'); });
+  /* Lọc đối tác: hạng mục (đồng phục / quà tặng) + ngành */
+  var grid = document.querySelector('.tf-stories__grid');
+  if (grid) {
+    var cards = [].slice.call(grid.querySelectorAll('.tf-story'));
+    var st = { nhom: '', nganh: '' };
+    var empty = document.querySelector('.tf-empty');
+    function apply() {
+      var shown = 0;
+      cards.forEach(function (c) {
+        var n = c.dataset.nhom || 'dong-phuc';
+        var okN = !st.nhom || n === st.nhom || n === 'ca-hai';
+        var okG = !st.nganh || c.dataset.nganh === st.nganh;
+        c.hidden = !(okN && okG); c.classList.add('is-in'); if (!c.hidden) shown++;
       });
-    });
-  });
+      if (empty) empty.hidden = shown > 0;
+    }
+    function press(bar, attr, val) { bar.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x.dataset[attr] === val); }); }
+    var pf = document.querySelector('.tf-pfilter'), gf = document.querySelector('.tf-filter');
+    if (pf) pf.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; st.nhom = b.dataset.nhom; press(pf, 'nhom', st.nhom); history.replaceState(null, '', st.nhom ? '#' + st.nhom : location.pathname); apply(); });
+    if (gf) gf.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; st.nganh = b.dataset.f; press(gf, 'f', st.nganh); apply(); });
+    function fromHash() { var h = location.hash.slice(1); st.nhom = (h === 'dong-phuc' || h === 'qua-tang') ? h : ''; if (pf) press(pf, 'nhom', st.nhom); apply(); }
+    window.addEventListener('hashchange', fromHash); fromHash();
+  }
 })();
 
 /* Popup Yêu cầu báo giá (gửi qua FormSubmit) */
