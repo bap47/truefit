@@ -103,3 +103,49 @@
 
   items.forEach(function (el) { io.observe(el); });
 })();
+
+/* Trang chủ mới: tab sản phẩm · hàng câu chuyện · lọc dự án */
+(function () {
+  /* Tab Đồng phục / Quà tặng */
+  document.querySelectorAll('.tf-tabs').forEach(function (bar) {
+    var tabs = [].slice.call(bar.querySelectorAll('[role="tab"]'));
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) {
+          var on = t === tab;
+          t.setAttribute('aria-selected', on);
+          var panel = document.getElementById(t.getAttribute('aria-controls'));
+          if (panel) {
+            panel.hidden = !on;
+            if (on) panel.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-in'); });
+          }
+        });
+      });
+    });
+  });
+
+  /* Nút ‹ › cho hàng câu chuyện khách hàng */
+  document.querySelectorAll('.tf-stories').forEach(function (box) {
+    var row = box.querySelector('.tf-stories__row');
+    if (!row) return;
+    box.querySelectorAll('[data-scroll]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var card = row.querySelector('.tf-story');
+        var step = card ? card.offsetWidth + 20 : row.clientWidth * .8;
+        row.scrollBy({ left: step * parseInt(b.dataset.scroll, 10), behavior: 'smooth' });
+      });
+    });
+  });
+
+  /* Lọc dự án theo ngành */
+  document.querySelectorAll('.tf-filter').forEach(function (bar) {
+    var btns = [].slice.call(bar.querySelectorAll('button'));
+    var cards = [].slice.call(document.querySelectorAll('.tf-stories__grid .tf-story'));
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+        cards.forEach(function (c) { c.hidden = b.dataset.f !== '' && c.dataset.nganh !== b.dataset.f; c.classList.add('is-in'); });
+      });
+    });
+  });
+})();
