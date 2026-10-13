@@ -1,14 +1,14 @@
-# Sửa trong CMS: Trang chủ
-dong_nho: Đến với Truefit
-tieu_de: '*MIỄN PHÍ* may mẫu - *MIỄN PHÍ* vận chuyển'
-mo_ta: 'Cung cấp giải pháp đồng phục cho doanh nghiệp: cam kết chất lượng cao cấp, quy trình phục vụ trọn gói: Tận tay - tận tình - tận nơi.'
-san_pham_noi_bat:
-- ten: Áo thun cổ tròn
-  anh: /assets/img/demo/ao-thun-co-tron.png
-- ten: Áo khoác gió
-  anh: /assets/img/demo/ao-khoac-gio.png
-- ten: Áo thun cổ trụ
+# Sửa trong CMS: Trang chủ ② Hai hướng: Đồng phục | Quà tặng
+dong_nho: Đến với TrueFit
+tieu_de: '*Miễn phí* may mẫu - *Miễn phí* vận chuyển'
+cua:
+- ten: Đồng phục
+  mo_ta: Polo, thun, khoác gió, bảo hộ… đặt từ 20 áo
   anh: /assets/img/demo/ao-polo.png
-nhan:
-- Đa dạng mẫu mã
-- May mẫu miễn phí
+  link: /san-pham/dong-phuc/
+  nut: Xem đồng phục
+- ten: Quà tặng
+  mo_ta: Túi tote, pouch, lanyard, móc khóa… in logo thương hiệu
+  anh: /assets/img/demo/tui-tote.png
+  link: /san-pham/merchandise/
+  nut: Xem quà tặng
