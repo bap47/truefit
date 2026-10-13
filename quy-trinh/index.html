@@ -1,0 +1,21 @@
+---
+layout: default
+title: Quy trình làm việc
+---
+{% assign ds = site.quy_trinh | sort: "thu_tu" %}
+<section class="tf-section">
+  <div class="wrap">
+    <p class="tf-eyebrow rise">Quy trình làm việc</p>
+    <h1 class="tf-title rise">Quy trình <span>rõ ràng từ đầu</span></h1>
+    <p class="tf-lead rise" style="--d:.1s">Chọn hạng mục bạn quan tâm để xem chi tiết từng bước.</p>
+    <div class="tf-doors">
+      {% for q in ds %}
+      <a class="tf-proc-pick reveal" href="{{ q.url | relative_url }}">
+        <strong>{{ q.title }}</strong>
+        <span>{{ q.mo_ta }}</span>
+        <em>Xem {{ q.buoc.size }} bước →</em>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
