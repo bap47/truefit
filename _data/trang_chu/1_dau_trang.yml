@@ -1,6 +1,6 @@
 # Sửa trong CMS: Trang chủ ① Đầu trang
 uu_dai: 'Ưu đãi dành riêng cho khách hàng của TRUEFIT: Tặng gói thiết kế trị giá 500K'
-nut_tu_van: Tư vấn nhanh
+nut_tu_van: Liên hệ ngay
 tu_chuyen_giay: 5
 slides:
 - tieu_de: '*Giải pháp* đồng phục doanh nghiệp *trọn gói*'
@@ -8,12 +8,12 @@ slides:
 
     Khẳng định giá trị - Khơi nguồn sức mạnh'
   anh: /assets/img/demo/banner.png
-  nut_chu: Xem đồng phục
-  nut_link: /san-pham/dong-phuc/
+  nut_chu: ''
+  nut_link: ''
 - tieu_de: '*Merchandise* in logo *thương hiệu*'
   dong_phu: 'Quà sự kiện, welcome kit, quà tri ân khách hàng
 
     Đồng bộ nhận diện – sản xuất tại xưởng'
   anh: /assets/img/demo/banner.png
-  nut_chu: Xem quà tặng
-  nut_link: /san-pham/merchandise/
+  nut_chu: ''
+  nut_link: ''
