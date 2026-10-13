@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{% assign ds = site.quy_trinh | sort: "thu_tu" %}
+<section class="tf-section tf-proc-hero">
+  <div class="wrap">
+    <p class="tf-eyebrow rise">Quy trình làm việc</p>
+    <h1 class="tf-title rise">{{ page.title }}</h1>
+    {% if page.mo_ta %}<p class="tf-lead rise" style="--d:.1s">{{ page.mo_ta }}</p>{% endif %}
+    <nav class="tf-switch rise" style="--d:.15s" aria-label="Chọn quy trình">
+      {% for q in ds %}<a href="{{ q.url | relative_url }}"{% if q.url == page.url %} aria-current="page"{% endif %}>{{ q.nhom | default: q.title }}</a>{% endfor %}
+    </nav>
+  </div>
+</section>
+<section class="tf-section tf-section--tight">
+  <div class="wrap">
+    <ol class="tf-timeline">
+      {% for b in page.buoc %}
+      <li class="tf-timeline__step reveal">
+        <span class="tf-timeline__no">{{ forloop.index | prepend: '0' }}</span>
+        <div class="tf-timeline__card">
+          <h2>{{ b.ten }}</h2>
+          {% if b.mo_ta %}<p>{{ b.mo_ta }}</p>{% endif %}
+          {% if b.chi_tiet and b.chi_tiet.size > 0 %}<ul>{% for c in b.chi_tiet %}<li>{{ c }}</li>{% endfor %}</ul>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% if content != "" %}<div class="tf-prose tf-proc-body">{{ content }}</div>{% endif %}
+  </div>
+</section>
+<section class="tf-section tf-section--cream">
+  <div class="wrap tf-quotebox">
+    <div class="tf-quotebox__info reveal">
+      <p class="tf-eyebrow" style="text-align:left">Bắt đầu bước 1</p>
+      <h2>Gửi nhu cầu, <span>TrueFit tư vấn ngay</span></h2>
+      <p class="tf-quotebox__lead">Để lại thông tin, đội ngũ TrueFit sẽ liên hệ tư vấn và báo giá chi tiết.</p>
+    </div>
+    <div class="tf-quotebox__form reveal" style="--d:.1s">{% include quote-form.html %}</div>
+  </div>
+</section>
