@@ -181,3 +181,24 @@
       .catch(function () { msg.className = 'tf-qform__msg is-err'; msg.textContent = 'Chưa gửi được. Bạn nhắn Zalo hoặc gọi hotline giúp TrueFit nhé.'; send.disabled = false; });
   });
 })();
+
+/* Khung ảnh tự chuyển ở khối Đến với TrueFit */
+(function () {
+  document.querySelectorAll('[data-frame]').forEach(function (box) {
+    var imgs = [].slice.call(box.querySelectorAll('.tf-frame__img'));
+    var dotsBox = box.querySelector('.tf-frame__dots');
+    if (imgs.length < 2) return;
+    var cur = 0, t = null, ms = (parseFloat(box.dataset.giay) || 4) * 1000;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dots = imgs.map(function (_, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ảnh ' + (i + 1));
+      b.addEventListener('click', function () { go(i); play(); }); dotsBox.appendChild(b); return b;
+    });
+    dotsBox.removeAttribute('aria-hidden');
+    function go(i) { cur = (i + imgs.length) % imgs.length; imgs.forEach(function (im, k) { im.classList.toggle('is-on', k === cur); }); dots.forEach(function (d, k) { d.setAttribute('aria-current', k === cur); }); }
+    function play() { clearInterval(t); if (!reduce) t = setInterval(function () { go(cur + 1); }, ms); }
+    go(0); play();
+    box.addEventListener('mouseenter', function () { clearInterval(t); });
+    box.addEventListener('mouseleave', play);
+  });
+})();
