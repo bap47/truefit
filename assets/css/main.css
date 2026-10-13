@@ -651,3 +651,5 @@ body.tf-lock { overflow: hidden; }
 /* Cụm chữ báo giá: canh đầu bằng mép trên khung form */
 .tf-quotebox__info { padding-top: clamp(.5rem, 1.5vw, 1rem); }
 .tf-quotebox__info .tf-eyebrow, .tf-quotebox__info > :first-child { margin-top: 0; }
+/* Cửa: không cắt chữ khi khung hẹp */
+#hai-huong .tf-door { aspect-ratio: auto; min-height: clamp(260px, 28vw, 400px); }
