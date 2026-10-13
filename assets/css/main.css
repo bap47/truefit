@@ -596,3 +596,40 @@ body.tf-lock { overflow: hidden; }
 .tf-logo img { height: 30px; width: auto; display: block; }
 .tf-footer__logo img { height: 38px; width: auto; display: block; }
 @media (max-width: 600px) { .tf-logo img { height: 24px; } }
+
+/* ---------- 2 ô Đồng phục | Quà tặng: ảnh lớn phủ kín, chữ nằm trên ảnh (kiểu Coolmate) ---------- */
+#hai-huong .tf-doors { margin-top: 0; gap: 1rem; }
+.tf-door, .tf-door:nth-child(2) { position: relative; display: block; aspect-ratio: 16 / 10; padding: 0; border: 0; border-radius: 24px; background: var(--mist); overflow: hidden; }
+.tf-door:hover { transform: none; border: 0; box-shadow: 0 24px 44px -26px rgba(0,0,0,.45); }
+.tf-door__img { position: absolute; inset: 0; border-radius: 0; background: transparent; }
+.tf-door__img img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; transition: transform .7s var(--ease); }
+.tf-door:hover .tf-door__img img { transform: scale(1.05); }
+.tf-door::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.15) 45%, rgba(0,0,0,0) 70%); pointer-events: none; }
+.tf-door__txt { position: absolute; left: clamp(1.25rem, 3vw, 2.25rem); right: clamp(1.25rem, 3vw, 2.25rem); bottom: clamp(1.25rem, 3vw, 2rem); z-index: 2; gap: .35rem; color: #fff; }
+.tf-door__txt strong { font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3rem); color: #fff; letter-spacing: -.01em; }
+.tf-door__txt > span { color: rgba(255,255,255,.9); font-size: var(--fs-sm); max-width: 28rem; }
+.tf-door__go { justify-self: start; margin-top: .6rem; background: #fff; color: var(--ink) !important; padding: .65rem 1.4rem; border-radius: 999px; font-size: .85rem; transition: background .25s, color .25s; }
+.tf-door:hover .tf-door__go { background: var(--orange); color: #fff !important; }
+@media (max-width: 760px) { .tf-door, .tf-door:nth-child(2) { aspect-ratio: 4 / 3; } }
+
+/* ---------- Trang quy trình ---------- */
+.tf-proc-hero { padding-bottom: 1rem; }
+.tf-timeline { list-style: none; margin: 0 auto; padding: 0; max-width: 860px; position: relative; }
+.tf-timeline::before { content: ""; position: absolute; left: 27px; top: 10px; bottom: 10px; width: 2px; background: var(--cream); }
+.tf-timeline__step { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 1.25rem; padding-bottom: 1.5rem; }
+.tf-timeline__no { position: relative; z-index: 1; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--orange); color: #fff; font-weight: 800; font-size: 1.1rem; box-shadow: 0 0 0 6px #fff; }
+.tf-timeline__card { background: var(--cream-soft); border-radius: 20px; padding: 1.4rem 1.6rem; }
+.tf-timeline__card h2 { font-size: var(--fs-md); font-weight: 800; text-transform: uppercase; margin: 0 0 .4rem; }
+.tf-timeline__card p { margin: 0 0 .6rem; color: var(--ink-soft); }
+.tf-timeline__card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .35rem; }
+.tf-timeline__card li { position: relative; padding-left: 1.5rem; font-weight: 500; }
+.tf-timeline__card li::before { content: "✓"; position: absolute; left: 0; color: var(--orange); font-weight: 800; }
+.tf-proc-body { max-width: 860px; margin: 1.5rem auto 0; }
+.tf-proc-pick { display: grid; gap: .5rem; padding: 2rem; border-radius: 24px; background: var(--cream-soft); text-decoration: none; border: 2px solid transparent; transition: border-color .25s, transform .3s var(--ease); }
+.tf-proc-pick:hover { border-color: var(--orange); transform: translateY(-4px); }
+.tf-proc-pick strong { font-size: var(--fs-lg); text-transform: uppercase; font-weight: 800; }
+.tf-proc-pick span { color: var(--ink-soft); }
+.tf-proc-pick em { font-style: normal; color: var(--orange); font-weight: 700; }
+.tf-process__more { display: grid; gap: .35rem; margin: 1rem 0 0 !important; font-size: var(--fs-sm); font-weight: 700; }
+.tf-process__more a { color: var(--orange); text-decoration: none; }
+@media (max-width: 560px) { .tf-timeline__step { grid-template-columns: 44px 1fr; gap: .9rem; } .tf-timeline__no { width: 44px; height: 44px; } .tf-timeline::before { left: 21px; } }
