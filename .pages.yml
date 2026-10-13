@@ -31,11 +31,12 @@ content:
       - { name: mo_ta, label: Mô tả ngắn, type: text }
       - { name: thu_vien, label: Ảnh thực tế, type: image, options: { multiple: true }, description: "Có thể chọn nhiều ảnh – hiện thành lưới dưới trang sản phẩm" }
       - { name: thu_tu, label: Thứ tự, type: number, default: 50, description: "Số nhỏ hiện trước" }
+      - { name: ban_chay, label: Bán chạy (hiện ở trang chủ), type: boolean, default: false }
       - { name: an, label: Ẩn khỏi web, type: boolean, default: false }
       - { name: body, label: Nội dung chi tiết (không bắt buộc), type: rich-text }
 
   - name: khach_hang
-    label: Khách hàng & dự án
+    label: Đối tác
     type: collection
     path: _khach_hang
     filename: "{primary}.md"
@@ -92,12 +93,51 @@ content:
           - { name: nut_link, label: Link của nút, type: string, description: "VD: /#qua-tang, /san-pham/ hoặc link Zalo" }
 
   - name: tc_2
-    label: "Trang chủ ② Hai hướng: Đồng phục | Quà tặng"
+    label: "Trang chủ ② Đến với TrueFit"
     type: file
     path: _data/trang_chu/2_gioi_thieu.yml
     fields:
       - { name: dong_nho, label: Dòng chữ nhỏ trên tiêu đề, type: string }
       - { name: tieu_de, label: Tiêu đề, type: string, description: "Bọc *dấu sao* để tô cam" }
+      - { name: mo_ta, label: Mô tả, type: text }
+      - { name: nhan, label: 3 ô có icon (theo thứ tự áo · máy may · xe tải), type: string, list: true }
+      - name: anh_cuon
+        label: Ảnh sản phẩm tự chạy ngang
+        type: object
+        list: true
+        description: "Ảnh vuông nền trong (PNG). Để trống thì tự lấy ảnh ở mục «Sản phẩm & quà tặng»"
+        fields:
+          - { name: ten, label: Tên (nhãn cam phía trên), type: string }
+          - { name: anh, label: Ảnh, type: image }
+
+  - name: tc_3
+    label: "Trang chủ ② Đến với TrueFit – Cam kết & số liệu"
+    type: file
+    path: _data/trang_chu/3_cam_ket.yml
+    fields:
+      - { name: tieu_de, label: Tiêu đề cột cam kết, type: string }
+      - name: cam_ket
+        label: Các ô cam kết
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tên cam kết, type: string }
+          - { name: y, label: Các ý, type: string, list: true }
+      - name: so_lieu
+        label: Các ô số liệu (nên để 3 ô)
+        type: object
+        list: true
+        fields:
+          - { name: nhom, label: Dòng phía trên, type: string }
+          - { name: so, label: Con số, type: string, description: "VD: 40.000 hoặc 12+ – số sẽ tự chạy đếm" }
+          - { name: nhan, label: Dòng phía dưới, type: string }
+
+  - name: tc_2b
+    label: "Trang chủ ③ Hai hướng: Đồng phục | Quà tặng"
+    type: file
+    path: _data/trang_chu/2b_hai_huong.yml
+    fields:
+      - { name: tieu_de, label: Tiêu đề (không bắt buộc), type: string, description: "Để trống thì chỉ hiện 2 ô lớn" }
       - name: cua
         label: 2 ô lớn (Đồng phục / Quà tặng)
         type: object
@@ -105,40 +145,12 @@ content:
         fields:
           - { name: ten, label: Tên, type: string }
           - { name: mo_ta, label: Mô tả ngắn, type: string }
-          - { name: anh, label: Ảnh, type: image, description: "Ảnh vuông, ưu tiên ảnh thật sản phẩm" }
+          - { name: anh, label: Ảnh, type: image, description: "Ảnh thật dạng lifestyle (team mặc đồng phục / set quà tặng) – tránh trùng ảnh sản phẩm" }
           - { name: link, label: Link, type: string, description: "VD: /san-pham/dong-phuc/" }
           - { name: nut, label: Chữ trên nút, type: string }
 
-  - name: tc_3
-    label: "Trang chủ ④ Số liệu"
-    type: file
-    path: _data/trang_chu/3_cam_ket.yml
-    fields:
-      - name: so_lieu
-        label: Các ô số liệu
-        type: object
-        list: true
-        fields:
-          - { name: nhom, label: Dòng nhỏ phía trên, type: string }
-          - { name: so, label: Con số, type: string, description: "VD: 40.000 hoặc 500+ – số sẽ tự chạy đếm" }
-          - { name: nhan, label: Dòng phía dưới, type: string }
-
-  - name: tc_4
-    label: "Trang chủ ⑤ Vì sao chọn TrueFit"
-    type: file
-    path: _data/trang_chu/4_ly_do.yml
-    fields:
-      - { name: tieu_de, label: Tiêu đề, type: string, description: "Bọc *dấu sao* để tô cam" }
-      - name: ly_do
-        label: Các lý do
-        type: object
-        list: true
-        fields:
-          - { name: ten, label: Tiêu đề, type: string }
-          - { name: mo_ta, label: Mô tả, type: text }
-
   - name: tc_5
-    label: "Trang chủ ⑥ Quy trình"
+    label: "Trang chủ ⑤ Quy trình"
     type: file
     path: _data/trang_chu/5_quy_trinh.yml
     fields:
@@ -153,26 +165,25 @@ content:
           - { name: mo_ta, label: Mô tả, type: text }
 
   - name: tc_6
-    label: "Trang chủ ⑦ Khách hàng & câu chuyện"
+    label: "Trang chủ ⑥ Đối tác & câu chuyện"
     type: file
     path: _data/trang_chu/6_khach_hang.yml
     fields:
-      - { name: tieu_de, label: Tiêu đề, type: string, description: "Logo chạy ngang & các card lấy từ mục «Khách hàng & dự án»" }
+      - { name: tieu_de, label: Tiêu đề, type: string, description: "Logo chạy ngang & các card lấy từ mục «Đối tác»" }
       - { name: mo_ta, label: Mô tả, type: text }
       - { name: tieu_de_cau_chuyen, label: Tiêu đề hàng câu chuyện, type: string, description: "Bọc *dấu sao* để tô cam" }
 
   - name: tc_7
-    label: "Trang chủ ③ Sản phẩm nổi bật"
+    label: "Trang chủ ④ Được đặt nhiều nhất"
     type: file
     path: _data/trang_chu/7_san_pham.yml
     fields:
-      - { name: tieu_de_san_pham, label: Tiêu đề, type: string, description: "Sản phẩm lấy theo «Thứ tự» ở mục «Sản phẩm & quà tặng» (số nhỏ hiện trước)" }
-      - { name: tab_dong_phuc, label: Chữ trên tab đồng phục, type: string }
-      - { name: tab_qua_tang, label: Chữ trên tab quà tặng, type: string }
-      - { name: so_luong, label: Số sản phẩm mỗi tab, type: number, default: 4 }
+      - { name: tieu_de_san_pham, label: Tiêu đề, type: string, description: "Sản phẩm hiện ở đây: tick «Bán chạy» trong mục «Sản phẩm & quà tặng». Chưa tick sản phẩm nào thì tự lấy nửa đồng phục, nửa quà tặng theo «Thứ tự»" }
+      - { name: mo_ta, label: Mô tả ngắn, type: string }
+      - { name: so_luong, label: Số sản phẩm hiện, type: number, default: 4 }
 
   - name: tc_9
-    label: "Trang chủ ⑧ Báo giá & cuối trang"
+    label: "Trang chủ ⑦ Báo giá & cuối trang"
     type: file
     path: _data/trang_chu/9_cuoi_trang.yml
     fields:
@@ -194,6 +205,9 @@ content:
       - { name: hotline_so, label: Hotline (chỉ số), type: string, description: "VD: 0909914059 – dùng cho nút gọi" }
       - { name: zalo, label: Link Zalo, type: string }
       - { name: email, label: Email, type: string }
+      - { name: facebook_chat, label: Link chat Facebook (Messenger), type: string, description: "VD: https://m.me/truefituniform" }
+      - { name: gio_lam_viec, label: Giờ làm việc, type: string }
+      - { name: email_bao_gia, label: Email nhận form báo giá, type: string, description: "Lần đầu có khách gửi form, hộp thư này nhận mail xác nhận từ FormSubmit – bấm Activate 1 lần là xong" }
       - name: kenh
         label: Icon liên hệ ở footer
         type: object
