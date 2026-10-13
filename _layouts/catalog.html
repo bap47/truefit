@@ -9,8 +9,8 @@ layout: default
     {% if page.mo_ta %}<p class="tf-lead rise" style="--d:.1s">{{ page.mo_ta }}</p>{% endif %}
     <nav class="tf-switch rise" style="--d:.2s" aria-label="Danh mục">
       <a href="{{ '/san-pham/' | relative_url }}"{% unless page.danh_muc %} aria-current="page"{% endunless %}>Tất cả</a>
-      <a href="{{ '/san-pham/dong-phuc/' | relative_url }}"{% if page.danh_muc == "dong-phuc" %} aria-current="page"{% endif %}>Sản phẩm</a>
-      <a href="{{ '/san-pham/merchandise/' | relative_url }}"{% if page.danh_muc == "merchandise" %} aria-current="page"{% endif %}>Quà tặng sự kiện</a>
+      <a href="{{ '/san-pham/dong-phuc/' | relative_url }}"{% if page.danh_muc == "dong-phuc" %} aria-current="page"{% endif %}>Đồng phục</a>
+      <a href="{{ '/san-pham/merchandise/' | relative_url }}"{% if page.danh_muc == "merchandise" %} aria-current="page"{% endif %}>Quà tặng</a>
     </nav>
     {{ content }}
     <div class="tf-grid">

@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign ten_dm = "Sản phẩm" %}{% if page.danh_muc == "merchandise" %}{% assign ten_dm = "Quà tặng sự kiện" %}{% endif %}
+{% assign ten_dm = "Đồng phục" %}{% if page.danh_muc == "merchandise" %}{% assign ten_dm = "Quà tặng" %}{% endif %}
 <section class="tf-section">
   <div class="wrap tf-product">
     <div class="tf-product__img rise"><img src="{{ page.anh | relative_url }}" alt="{{ page.title }}" width="800" height="800"></div>
@@ -13,6 +13,7 @@ layout: default
         {% if page.dat_tu and page.dat_tu != "" %}<div><dt>Đặt từ</dt><dd>{{ page.dat_tu }}</dd></div>{% endif %}
         {% if page.chat_lieu and page.chat_lieu != "" %}<div><dt>Chất liệu</dt><dd>{{ page.chat_lieu }}</dd></div>{% endif %}
         <div><dt>Gia công logo</dt><dd>In hoặc thêu theo yêu cầu</dd></div>
+        <div><dt>Bảo hành</dt><dd>3 tháng · <a href="{{ '/chinh-sach/bao-quan/' | relative_url }}">Hướng dẫn bảo quản</a></dd></div>
       </dl>
       <div class="tf-btns rise" style="--d:.32s">
         <a class="btn" href="{{ site.data.lien_he.zalo }}" target="_blank" rel="noopener">Báo giá mẫu này</a>
