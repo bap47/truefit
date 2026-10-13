@@ -567,3 +567,11 @@ body.tf-lock { overflow: hidden; }
 .tf-story__img--logo { padding: 0; display: block; }
 .tf-story__img--logo img, .tf-story__img img { width: 100%; height: 100%; object-fit: cover; }
 .tf-footer--home { margin-top: 0 !important; padding-top: clamp(3rem, 6vw, 4.5rem); }
+
+/* Lọc đối tác */
+.tf-chips { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .45rem; margin: -1rem 0 2rem; font-size: var(--fs-sm); }
+.tf-chips span { color: var(--ink-soft); margin-right: .25rem; }
+.tf-chips button { font: inherit; cursor: pointer; padding: .35rem .9rem; border-radius: 999px; border: 1px solid var(--line); background: #fff; }
+.tf-chips button[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: #fff; }
+.tf-story__tags .is-nhom { background: var(--orange); color: #fff; }
+.tf-empty { text-align: center; color: var(--ink-soft); padding: 2rem 0; }
