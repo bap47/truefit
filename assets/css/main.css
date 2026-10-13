@@ -590,3 +590,9 @@ body.tf-lock { overflow: hidden; }
 .tf-quotebox__form { background: #fff; border-radius: 28px; padding: clamp(1.25rem, 3.5vw, 2.25rem); box-shadow: 0 30px 60px -36px rgba(0,0,0,.35); }
 @media (max-width: 900px) { .tf-quotebox { grid-template-columns: 1fr; } }
 .tf-quotebox .tf-qform__alt { display: none; }
+
+/* Logo hình TrueFit */
+.tf-logo { display: inline-flex; align-items: center; }
+.tf-logo img { height: 30px; width: auto; display: block; }
+.tf-footer__logo img { height: 38px; width: auto; display: block; }
+@media (max-width: 600px) { .tf-logo img { height: 24px; } }
