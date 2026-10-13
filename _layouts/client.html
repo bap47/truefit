@@ -5,7 +5,7 @@ layout: default
   <div class="wrap tf-product">
     {% if page.anh_bia and page.anh_bia != "" %}<div class="tf-product__img tf-product__img--cover rise"><img src="{{ page.anh_bia | relative_url }}" alt="Dự án {{ page.title }}"></div>{% else %}<div class="tf-product__img tf-product__img--logo rise"><img src="{{ page.logo | relative_url }}" alt="Logo {{ page.title }}"></div>{% endif %}
     <div class="tf-product__info">
-      <a class="tf-eyebrow rise" href="{{ '/khach-hang/' | relative_url }}">Dự án · {{ page.title }}</a>
+      <a class="tf-eyebrow rise" href="{{ '/khach-hang/' | relative_url }}">Đối tác · {{ page.title }}</a>
       <h1 class="rise" style="--d:.08s">{% if page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }}{% else %}{{ page.title }}{% endif %}</h1>
       {% if page.tom_tat and page.tom_tat != "" %}<p class="rise" style="--d:.12s">{{ page.tom_tat }}</p>{% endif %}
       <dl class="tf-spec rise" style="--d:.16s">
