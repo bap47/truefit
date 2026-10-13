@@ -1,0 +1,32 @@
+{% assign lh = site.data.lien_he %}
+<div class="tf-modal" id="bao-gia-form" role="dialog" aria-modal="true" aria-labelledby="bg-title" hidden>
+  <div class="tf-modal__back" data-dong></div>
+  <div class="tf-modal__box">
+    <button class="tf-modal__x" type="button" data-dong aria-label="Đóng">×</button>
+    <form class="tf-qform" action="https://formsubmit.co/{{ lh.email_bao_gia | default: lh.email }}" method="POST" data-ajax="https://formsubmit.co/ajax/{{ lh.email_bao_gia | default: lh.email }}">
+      <p class="tf-eyebrow" style="text-align:left">Yêu cầu báo giá</p>
+      <h2 id="bg-title">Để lại thông tin, TrueFit liên hệ ngay</h2>
+      <div class="tf-qform__grid">
+        <label>Họ và tên *<input name="Họ tên" required autocomplete="name"></label>
+        <label>Số điện thoại / Zalo *<input name="Số điện thoại" type="tel" required inputmode="tel" pattern="[0-9 +.]{9,15}" autocomplete="tel"></label>
+        <label class="is-full">Công ty / thương hiệu<input name="Công ty" autocomplete="organization"></label>
+        <fieldset class="is-full"><legend>Nhu cầu</legend>
+          <label class="tf-chip"><input type="radio" name="Nhu cầu" value="Đồng phục" checked><span>Đồng phục</span></label>
+          <label class="tf-chip"><input type="radio" name="Nhu cầu" value="Quà tặng"><span>Quà tặng</span></label>
+          <label class="tf-chip"><input type="radio" name="Nhu cầu" value="Cả hai"><span>Cả hai</span></label>
+        </fieldset>
+        <label>Sản phẩm<input name="Sản phẩm" placeholder="VD: Áo polo" data-sp-field></label>
+        <label>Số lượng dự kiến<input name="Số lượng" inputmode="numeric" placeholder="VD: 100"></label>
+        <label class="is-full">Ghi chú<textarea name="Ghi chú" rows="3" placeholder="Màu sắc, thời gian cần hàng, link logo…"></textarea></label>
+      </div>
+      <input type="hidden" name="_subject" value="[Web TrueFit] Yêu cầu báo giá mới">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="Trang gửi" value="" data-trang>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="tf-hp" aria-hidden="true">
+      <button class="btn tf-qform__send" type="submit">Gửi yêu cầu báo giá</button>
+      <p class="tf-qform__msg" role="status" aria-live="polite"></p>
+      <p class="tf-qform__alt">Cần gấp? <a href="{{ lh.zalo }}" target="_blank" rel="noopener">Nhắn Zalo</a> hoặc gọi <a href="tel:{{ lh.hotline_so }}">{{ lh.hotline }}</a></p>
+    </form>
+  </div>
+</div>

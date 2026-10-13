@@ -1,15 +1,51 @@
 {% assign home = site.data.trang_chu['1_dau_trang'] %}
+{% assign cua = site.data.trang_chu['2b_hai_huong'].cua %}
+{% assign tat_ca_sp = site.san_pham | sort: "thu_tu" | where_exp: "p", "p.an != true" %}
 <div class="tf-top">
-<div class="tf-promo"><span>🎁 {{ home.uu_dai }}</span> <a class="btn btn--sm" href="{{ site.data.lien_he.zalo }}" target="_blank" rel="noopener">Đặt hàng ngay</a></div>
+<div class="tf-promo"><span>🎁 {{ home.uu_dai }}</span> <a class="btn btn--sm" href="#bao-gia-form" data-bao-gia>Đặt hàng ngay</a></div>
 <header class="tf-header">
   <div class="wrap tf-header__in">
     <a class="tf-logo" href="{{ '/' | relative_url }}" aria-label="TrueFit – Trang chủ">TRUEFIT</a>
     <button class="tf-burger" aria-expanded="false" aria-controls="menu" aria-label="Mở menu"><span></span><span></span><span></span></button>
     <nav id="menu" class="tf-nav">
-      {% assign links = "Trang chủ|/,Đồng phục|/san-pham/dong-phuc/,Quà tặng|/san-pham/merchandise/,Dự án|/khach-hang/,Quy trình|/#quy-trinh,Chính sách|/chinh-sach/,Báo giá|/#bao-gia" | split: "," %}
-      {% for l in links %}{% assign p = l | split: "|" %}
-      <a href="{% if p[1] contains '/' %}{{ p[1] | relative_url }}{% else %}{{ p[1] }}{% endif %}"{% if p[1] != '/' and page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>
+      <a href="{{ '/' | relative_url }}">Trang chủ</a>
+      {% assign nhom = "dong-phuc|Đồng phục|0,merchandise|Quà tặng|1" | split: "," %}
+      {% for n in nhom %}{% assign g = n | split: "|" %}{% assign idx = g[2] | plus: 0 %}
+      {% assign ds = tat_ca_sp | where: "danh_muc", g[0] %}
+      {% assign url = '/san-pham/' | append: g[0] | append: '/' %}
+      <div class="tf-nav__item">
+        <a href="{{ url | relative_url }}" aria-haspopup="true"{% if page.url contains url %} aria-current="page"{% endif %}>{{ g[1] }} <span class="tf-nav__caret" aria-hidden="true">▾</span></a>
+        <div class="tf-mega">
+          <div class="tf-mega__in">
+            <div class="tf-mega__cols">
+              <div class="tf-mega__col">
+                <p class="tf-mega__h">Khám phá</p>
+                <a href="{{ url | relative_url }}"><strong>Tất cả {{ g[1] | downcase }}</strong></a>
+                <a href="{{ '/#san-pham' | relative_url }}">Được đặt nhiều nhất</a>
+                <a href="{{ '/khach-hang/' | relative_url }}">Đối tác đã làm</a>
+                <a href="#bao-gia-form" data-bao-gia>Yêu cầu báo giá</a>
+              </div>
+              <div class="tf-mega__col tf-mega__col--list">
+                <a class="tf-mega__h" href="{{ url | relative_url }}">{{ g[1] }} <span>→</span></a>
+                <div class="tf-mega__list">{% for p in ds %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% endfor %}</div>
+              </div>
+            </div>
+            {% if cua and cua[idx] %}{% assign c = cua[idx] %}
+            <a class="tf-mega__card" href="{{ url | relative_url }}">
+              <img src="{{ c.anh | relative_url }}" alt="{{ c.ten }}" loading="lazy" width="600" height="600">
+              <span>{{ c.nut | default: c.ten }} →</span>
+            </a>
+            {% endif %}
+          </div>
+          <div class="tf-mega__bar"><span>Ưu đãi</span><em>May mẫu miễn phí</em><em>Miễn phí vận chuyển</em><em>Bảo hành 3 tháng</em><a href="#bao-gia-form" data-bao-gia>Nhận báo giá →</a></div>
+        </div>
+      </div>
       {% endfor %}
+      {% assign links = "Đối tác|/khach-hang/,Quy trình|/#quy-trinh,Chính sách|/chinh-sach/" | split: "," %}
+      {% for l in links %}{% assign p = l | split: "|" %}
+      <a href="{{ p[1] | relative_url }}"{% if page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>
+      {% endfor %}
+      <a class="tf-nav__cta" href="#bao-gia-form" data-bao-gia>Báo giá</a>
     </nav>
   </div>
 </header>
