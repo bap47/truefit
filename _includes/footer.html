@@ -55,7 +55,7 @@
         <ul class="tf-fcontact">
           <li><span>Hotline</span><a href="tel:{{ lh.hotline_so }}"><strong>{{ lh.hotline }}</strong></a></li>
           <li><span>Email</span><a href="mailto:{{ lh.email }}"><strong>{{ lh.email }}</strong></a></li>
-          {% if lh.gio_lam_viec %}<li><span>Giờ làm việc</span><strong>{{ lh.gio_lam_viec }}{% if lh.ngay_lam_viec %} · {{ lh.ngay_lam_viec }}{% endif %}</strong></li>{% endif %}
+          {% if lh.gio_lam_viec %}<li><span>Giờ làm việc</span><strong>{{ lh.gio_lam_viec }}{% if lh.ngay_lam_viec %}<br>{{ lh.ngay_lam_viec }}{% endif %}</strong></li>{% endif %}
           {% if lh.dia_chi and lh.dia_chi != '' %}<li><span>Xưởng may</span><strong>{{ lh.dia_chi }}</strong></li>{% endif %}
         </ul>
       </div>
