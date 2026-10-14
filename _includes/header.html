@@ -2,7 +2,7 @@
 {% assign cua = site.data.trang_chu['2b_hai_huong'].cua %}
 {% assign tat_ca_sp = site.san_pham | sort: "thu_tu" | where_exp: "p", "p.an != true" %}
 <div class="tf-top">
-<div class="tf-promo"><span>🎁 {{ home.uu_dai }}</span></div>
+<div class="tf-promo"><span>🎁 {{ site.data.chung.uu_dai | default: home.uu_dai }}</span></div>
 <header class="tf-header">
   <div class="wrap tf-header__in">
     <a class="tf-logo" href="{{ '/' | relative_url }}" aria-label="TrueFit – Trang chủ"><img src="{{ '/assets/img/logo-truefit.png' | relative_url }}" alt="TrueFit" width="140" height="40"></a>
@@ -38,7 +38,7 @@
             </a>
             {% endif %}
           </div>
-          <div class="tf-mega__bar"><span>Ưu đãi</span><em>Thiết kế miễn phí</em><em>May mẫu miễn phí</em><em>Miễn phí vận chuyển</em><em>Bảo hành 3 tháng</em><a href="#bao-gia-form" data-bao-gia>Nhận báo giá →</a></div>
+          <div class="tf-mega__bar"><span>Ưu đãi</span>{% for u in site.data.chung.uu_diem %}<em>{{ u }}</em>{% endfor %}<a href="#bao-gia-form" data-bao-gia>Nhận báo giá →</a></div>
         </div>
       </div>
       {% endfor %}
