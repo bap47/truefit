@@ -7,5 +7,5 @@ chat_lieu: "Vải mè thoáng khí"
 mo_ta: "In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu và báo giá."
 thu_tu: 4
 an: false
-thu_vien: []
+thu_vien: ["/assets/img/demo/ao-khoac-gio.png", "/assets/img/demo/ao-polo.png", "/assets/img/demo/ao-teambuilding.png"]
 ---

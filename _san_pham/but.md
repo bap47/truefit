@@ -7,5 +7,5 @@ chat_lieu: ""
 mo_ta: "In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu và báo giá."
 thu_tu: 13
 an: false
-thu_vien: []
+thu_vien: ["/assets/img/demo/balo.png", "/assets/img/demo/mini-bag.png", "/assets/img/demo/huy-hieu.png"]
 ---
