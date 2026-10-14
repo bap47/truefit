@@ -60,3 +60,16 @@ layout: default
     </div>
   </div>
 </section>
+
+{% assign khac = site.khach_hang | sort: "thu_tu" | where_exp: "c", "c.url != page.url" %}
+{% if khac.size > 0 %}
+<section class="tf-section" id="doi-tac-khac">
+  <div class="wrap">
+    <h2 class="tf-title reveal">Đối tác <span>khác</span> của TrueFit</h2>
+    <div class="tf-stories__grid">
+      {% for c in khac limit: 3 %}{% include case-card.html c=c %}{% endfor %}
+    </div>
+    <p class="tf-pd__more" style="text-align:center"><a href="{{ '/khach-hang/' | relative_url }}">Xem tất cả đối tác →</a></p>
+  </div>
+</section>
+{% endif %}
