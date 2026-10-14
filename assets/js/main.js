@@ -217,3 +217,16 @@
     box.addEventListener('mouseleave', play);
   });
 })();
+
+/* Trang chi tiết: bấm ảnh nhỏ đổi ảnh lớn */
+(function () {
+  document.querySelectorAll('[data-gallery]').forEach(function (g) {
+    var main = g.querySelector('[data-gallery-main]'); if (!main) return;
+    g.querySelectorAll('.tf-pd__thumbs button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        main.src = b.dataset.src;
+        g.querySelectorAll('.tf-pd__thumbs button').forEach(function (x) { x.classList.toggle('is-on', x === b); });
+      });
+    });
+  });
+})();
