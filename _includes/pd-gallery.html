@@ -1,6 +1,6 @@
 {% comment %}Ảnh lớn + dải ảnh nhỏ. include.anh = ảnh chính, include.ds = danh sách ảnh thêm, include.alt{% endcomment %}
 {% assign _n = include.ds.size | default: 0 %}
-<div class="tf-pd__media rise" data-gallery>
+<div class="tf-pd__media rise" data-gallery data-giay="2">
   <div class="tf-pd__main">{% if include.anh and include.anh != "" %}<img src="{{ include.anh | relative_url }}" alt="{{ include.alt }}" data-gallery-main>{% else %}<span class="tf-pd__empty" aria-hidden="true"></span>{% endif %}</div>
   {% if _n > 0 %}
   <div class="tf-pd__thumbs">
