@@ -35,6 +35,7 @@ content:
       - { name: email, label: Email, type: string }
       - { name: facebook_chat, label: Link chat Facebook (Messenger), type: string, description: "VD: https://m.me/truefituniform" }
       - { name: gio_lam_viec, label: Giờ làm việc, type: string }
+      - { name: gio_chat, label: Giờ chat Zalo & Facebook, type: string, description: "VD: Online 24/7 – hiện ở ô Chat Zalo và Chat Facebook" }
       - { name: ngay_lam_viec, label: Ngày làm việc, type: string }
       - { name: dia_chi, label: Địa chỉ xưởng (hiện ở footer), type: text }
       - { name: email_bao_gia, label: Email nhận form báo giá, type: string, description: "Lần đầu có khách gửi form, hộp thư này nhận mail xác nhận từ FormSubmit – bấm Activate 1 lần là xong" }
