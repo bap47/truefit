@@ -754,3 +754,4 @@ body.is-searching { overflow: hidden; }
 .tf-search__row > span:nth-child(2) { min-width: 0; flex: 1; }
 .tf-search__row small { max-width: 100%; }
 @media (max-width: 600px) { .tf-search__tag { display: none; } .tf-search__barin { gap: .5rem; } }
+[data-search-idle][hidden], [data-search-results][hidden], [data-search-recent][hidden] { display: none !important; }
