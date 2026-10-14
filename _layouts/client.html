@@ -7,7 +7,7 @@ layout: default
 {% for ten in page.san_pham %}{% assign f = tat_ca | where: "title", ten %}{% assign da_lam = da_lam | concat: f %}{% endfor %}
 {% assign anh_chinh = page.anh_bia %}
 {% if anh_chinh == nil or anh_chinh == "" %}{% if page.thu_vien and page.thu_vien.size > 0 %}{% assign anh_chinh = page.thu_vien[0] %}{% elsif da_lam.size > 0 %}{% assign anh_chinh = da_lam[0].anh %}{% endif %}{% endif %}
-<section class="tf-section tf-pd">
+<section class="tf-section tf-pd" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ anh_chinh | default: page.logo | relative_url }}">
   <div class="wrap tf-pd__top">
     {% include pd-gallery.html anh=anh_chinh ds=page.thu_vien alt=page.title %}
     <div class="tf-pd__info">
@@ -15,35 +15,26 @@ layout: default
       {% if page.logo %}<p class="tf-pd__logo rise"><img src="{{ page.logo | relative_url }}" alt="Logo {{ page.title }}"></p>{% endif %}
       <h1 class="rise" style="--d:.08s">{% if page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }}{% else %}{{ page.title }}{% endif %}</h1>
       {% if page.tom_tat and page.tom_tat != "" %}<p class="tf-pd__lead rise" style="--d:.12s">{{ page.tom_tat }}</p>{% endif %}
-      <ul class="tf-pd__keys rise" style="--d:.16s">
-        <li><span>Khách hàng</span><strong>{{ page.title }}</strong></li>
-        {% if page.nganh and page.nganh != "" %}<li><span>Ngành</span><strong>{{ page.nganh }}</strong></li>{% endif %}
-        {% if page.da_may and page.da_may != "" %}<li><span>Đã làm</span><strong>{{ page.da_may }}</strong></li>{% endif %}
-      </ul>
-      <div class="tf-btns rise" style="--d:.2s">
+      <div class="tf-btns rise" style="--d:.16s">
         <a class="btn" href="#bao-gia-form" data-bao-gia>Làm giống dự án này</a>
         <a class="btn btn--line" href="tel:{{ site.data.lien_he.hotline_so }}">Gọi {{ site.data.lien_he.hotline }}</a>
       </div>
-      <nav class="tf-pd__nav rise" style="--d:.24s" aria-label="Mục lục"><a href="#thong-tin">Thông tin</a><a href="#mo-ta">Mô tả</a><a href="#san-pham">Sản phẩm</a><a href="#dat-hang">Quy trình đặt hàng</a></nav>
+      <div class="tf-pd__sec rise" style="--d:.2s">
+        <h2>Thông tin dự án</h2>
+        <dl class="tf-spec">
+          <div><dt>Khách hàng</dt><dd>{{ page.title }}</dd></div>
+          {% if page.nganh and page.nganh != "" %}<div><dt>Ngành</dt><dd>{{ page.nganh }}</dd></div>{% endif %}
+          <div><dt>Hạng mục</dt><dd>{{ ten_nhom }}</dd></div>
+          {% if da_lam.size > 0 %}<div><dt>Sản phẩm</dt><dd>{% for p in da_lam %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>{% endif %}
+          {% if page.da_may and page.da_may != "" %}<div><dt>Số lượng</dt><dd>{{ page.da_may }}</dd></div>{% endif %}
+          {% if page.thoi_gian and page.thoi_gian != "" %}<div><dt>Thời gian</dt><dd>{{ page.thoi_gian }}</dd></div>{% endif %}
+        </dl>
+      </div>
+      <div class="tf-pd__sec rise" style="--d:.24s"><h2>Mô tả dự án</h2><div class="tf-prose">{% if content != "" %}{{ content }}{% else %}<p>TrueFit đồng hành cùng {{ page.title }} từ khâu tư vấn, thiết kế, làm mẫu đến sản xuất và giao hàng tận nơi.</p>{% endif %}</div></div>
     </div>
   </div>
 
   <div class="wrap tf-pd__body">
-    <section id="thong-tin" class="tf-pd__block reveal">
-      <h2>Thông tin dự án</h2>
-      <dl class="tf-spec">
-        <div><dt>Khách hàng</dt><dd>{{ page.title }}</dd></div>
-        {% if page.nganh and page.nganh != "" %}<div><dt>Ngành</dt><dd>{{ page.nganh }}</dd></div>{% endif %}
-        <div><dt>Hạng mục</dt><dd>{{ ten_nhom }}</dd></div>
-        {% if da_lam.size > 0 %}<div><dt>Sản phẩm</dt><dd>{% for p in da_lam %}{{ p.title }}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>{% endif %}
-        {% if page.da_may and page.da_may != "" %}<div><dt>Số lượng</dt><dd>{{ page.da_may }}</dd></div>{% endif %}
-        {% if page.thoi_gian and page.thoi_gian != "" %}<div><dt>Thời gian</dt><dd>{{ page.thoi_gian }}</dd></div>{% endif %}
-      </dl>
-    </section>
-    <section id="mo-ta" class="tf-pd__block reveal">
-      <h2>Mô tả dự án</h2>
-      <div class="tf-prose">{% if content != "" %}{{ content }}{% elsif page.tom_tat and page.tom_tat != "" %}<p>{{ page.tom_tat }}</p>{% else %}<p>TrueFit đồng hành cùng {{ page.title }} từ khâu tư vấn, thiết kế, làm mẫu đến sản xuất và giao hàng tận nơi.</p>{% endif %}</div>
-    </section>
     <section id="dat-hang" class="tf-pd__block reveal">
       <h2>Quy trình đặt hàng</h2>
       {% include pd-steps.html slug=qslug %}

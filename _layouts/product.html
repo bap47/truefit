@@ -2,44 +2,36 @@
 layout: default
 ---
 {% assign ten_dm = "Đồng phục" %}{% assign qslug = "dong-phuc" %}{% if page.danh_muc == "merchandise" %}{% assign ten_dm = "Quà tặng" %}{% assign qslug = "qua-tang" %}{% endif %}
-<section class="tf-section tf-pd">
+<section class="tf-section tf-pd" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ page.anh | relative_url }}">
   <div class="wrap tf-pd__top">
     {% include pd-gallery.html anh=page.anh ds=page.thu_vien alt=page.title %}
     <div class="tf-pd__info">
       <a class="tf-eyebrow rise" href="{{ '/san-pham/' | append: page.danh_muc | append: '/' | relative_url }}">{{ ten_dm }}</a>
       <h1 class="rise" style="--d:.08s">{{ page.title }}</h1>
       {% if page.mo_ta %}<p class="tf-pd__lead rise" style="--d:.12s">{{ page.mo_ta }}</p>{% endif %}
-      <ul class="tf-pd__keys rise" style="--d:.16s">
-        {% if page.dat_tu and page.dat_tu != "" %}<li><span>Đặt từ</span><strong>{{ page.dat_tu }}</strong></li>{% endif %}
-        <li><span>Thiết kế</span><strong>Miễn phí</strong></li>
-        <li><span>Bảo hành</span><strong>3 tháng</strong></li>
-      </ul>
-      <div class="tf-btns rise" style="--d:.2s">
+      <div class="tf-btns rise" style="--d:.16s">
         <a class="btn" href="#bao-gia-form" data-bao-gia data-sp="{{ page.title }}">Báo giá mẫu này</a>
         <a class="btn btn--line" href="tel:{{ site.data.lien_he.hotline_so }}">Gọi {{ site.data.lien_he.hotline }}</a>
       </div>
-      <nav class="tf-pd__nav rise" style="--d:.24s" aria-label="Mục lục"><a href="#thong-tin">Thông tin sản phẩm</a><a href="#mo-ta">Mô tả</a><a href="#dat-hang">Quy trình đặt hàng</a></nav>
+      <div class="tf-pd__sec rise" style="--d:.2s">
+        <h2>Thông tin sản phẩm</h2>
+        <dl class="tf-spec">
+          <div><dt>Danh mục</dt><dd>{{ ten_dm }}</dd></div>
+          {% if page.dat_tu and page.dat_tu != "" %}<div><dt>Đặt từ</dt><dd>{{ page.dat_tu }}</dd></div>{% endif %}
+          {% if page.chat_lieu and page.chat_lieu != "" %}<div><dt>Chất liệu</dt><dd>{{ page.chat_lieu }}</dd></div>{% endif %}
+          {% if page.mau_sac and page.mau_sac != "" %}<div><dt>Màu sắc</dt><dd>{{ page.mau_sac }}</dd></div>{% endif %}
+          {% if page.kich_thuoc and page.kich_thuoc != "" %}<div><dt>Size / kích thước</dt><dd>{{ page.kich_thuoc }}</dd></div>{% endif %}
+          <div><dt>Gia công logo</dt><dd>{{ page.gia_cong | default: "In hoặc thêu theo yêu cầu" }}</dd></div>
+          {% if page.thoi_gian and page.thoi_gian != "" %}<div><dt>Thời gian sản xuất</dt><dd>{{ page.thoi_gian }}</dd></div>{% endif %}
+          <div><dt>Thiết kế</dt><dd>Miễn phí</dd></div>
+          <div><dt>Bảo hành</dt><dd>3 tháng · <a href="{{ '/chinh-sach/bao-quan/' | relative_url }}">Hướng dẫn bảo quản</a></dd></div>
+        </dl>
+      </div>
+      {% if content != "" %}<div class="tf-pd__sec rise" style="--d:.24s"><h2>Mô tả sản phẩm</h2><div class="tf-prose">{{ content }}</div></div>{% endif %}
     </div>
   </div>
 
   <div class="wrap tf-pd__body">
-    <section id="thong-tin" class="tf-pd__block reveal">
-      <h2>Thông tin sản phẩm</h2>
-      <dl class="tf-spec">
-        <div><dt>Danh mục</dt><dd>{{ ten_dm }}</dd></div>
-        {% if page.dat_tu and page.dat_tu != "" %}<div><dt>Đặt từ</dt><dd>{{ page.dat_tu }}</dd></div>{% endif %}
-        {% if page.chat_lieu and page.chat_lieu != "" %}<div><dt>Chất liệu</dt><dd>{{ page.chat_lieu }}</dd></div>{% endif %}
-        {% if page.mau_sac and page.mau_sac != "" %}<div><dt>Màu sắc</dt><dd>{{ page.mau_sac }}</dd></div>{% endif %}
-        {% if page.kich_thuoc and page.kich_thuoc != "" %}<div><dt>Size / kích thước</dt><dd>{{ page.kich_thuoc }}</dd></div>{% endif %}
-        <div><dt>Gia công logo</dt><dd>{{ page.gia_cong | default: "In hoặc thêu theo yêu cầu" }}</dd></div>
-        {% if page.thoi_gian and page.thoi_gian != "" %}<div><dt>Thời gian sản xuất</dt><dd>{{ page.thoi_gian }}</dd></div>{% endif %}
-        <div><dt>Bảo hành</dt><dd>3 tháng · <a href="{{ '/chinh-sach/bao-quan/' | relative_url }}">Hướng dẫn bảo quản</a></dd></div>
-      </dl>
-    </section>
-    <section id="mo-ta" class="tf-pd__block reveal">
-      <h2>Mô tả sản phẩm</h2>
-      <div class="tf-prose">{% if content != "" %}{{ content }}{% else %}<p>{{ page.mo_ta }}</p>{% endif %}</div>
-    </section>
     <section id="dat-hang" class="tf-pd__block reveal">
       <h2>Quy trình đặt hàng</h2>
       {% include pd-steps.html slug=qslug %}
