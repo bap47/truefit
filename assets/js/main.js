@@ -336,3 +336,18 @@
     } catch (e) {}
   }
 })();
+
+/* Tab trong trang chi tiết */
+(function () {
+  document.querySelectorAll('[data-tabs]').forEach(function (box) {
+    var btns = [].slice.call(box.querySelectorAll('[data-tab]'));
+    function show(id) {
+      btns.forEach(function (b) {
+        var on = b.dataset.tab === id; b.setAttribute('aria-selected', on);
+        var p = document.getElementById(b.dataset.tab); if (p) p.hidden = !on;
+      });
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.tab); }); });
+    var h = location.hash.slice(1); show(btns.some(function (b) { return b.dataset.tab === h; }) ? h : btns[0].dataset.tab);
+  });
+})();
