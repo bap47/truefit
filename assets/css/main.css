@@ -74,7 +74,7 @@ h4, h5, h6, th { font-weight: 600; }
 .tf-hero { padding-block: clamp(3rem, 7vw, 5.5rem); text-align: center; background: linear-gradient(180deg, var(--cream-soft), #fff); position: relative; overflow: hidden; }
 .tf-hero::before { content: ""; position: absolute; inset: 0; background: var(--hero-bg, none) center/cover; opacity: .18; }
 .tf-hero > .wrap { position: relative; }
-.tf-hero__title { font-size: var(--fs-display); font-weight: 700; text-transform: uppercase; max-width: 22ch; margin: 0 auto; }
+.tf-hero__title { line-height: 1.2; font-size: var(--fs-display); font-weight: 700; text-transform: uppercase; max-width: 22ch; margin: 0 auto; }
 .tf-hero__tagline { font-style: italic; font-weight: 500; margin: 1rem 0 0; }
 .tf-paths { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2.5rem; text-align: left; }
 .tf-path { display: grid; grid-template-columns: 42% 1fr; align-items: center; gap: 1rem; padding: 1.25rem; border-radius: 24px; background: #fff; text-decoration: none; border: 2px solid var(--line); transition: transform .35s var(--ease), border-color .3s, box-shadow .35s; }
