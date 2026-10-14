@@ -10,5 +10,5 @@ tieu_de_bai: ""
 tom_tat: ""
 noi_bat: true
 san_pham: ["Đồng phục PG", "Tạp dề"]
-thu_vien: []
+thu_vien: ["/assets/img/demo/dong-phuc-pg.png", "/assets/img/demo/tap-de.png", "/assets/img/demo/ao-chay-bo.png"]
 ---
