@@ -25,15 +25,19 @@ content:
           values:
             - { value: dong-phuc, label: Các sản phẩm của TrueFit }
             - { value: merchandise, label: Quà tặng sự kiện }
-      - { name: anh, label: Ảnh chính, type: image, required: true, description: "Ảnh vuông 800×800, ưu tiên PNG nền trong" }
+      - { name: anh, label: Ảnh chính, type: image, required: true, description: "Ảnh vuông 1200×1200, ảnh thật sản phẩm – hiện to ở đầu trang" }
       - { name: dat_tu, label: Đặt từ, type: string, description: "VD: 50 áo – để trống nếu không muốn hiện" }
       - { name: chat_lieu, label: Chất liệu, type: string }
-      - { name: mo_ta, label: Mô tả ngắn, type: text }
-      - { name: thu_vien, label: Ảnh thực tế, type: image, options: { multiple: true }, description: "Có thể chọn nhiều ảnh – hiện thành lưới dưới trang sản phẩm" }
+      - { name: mau_sac, label: Màu sắc, type: string, description: "VD: Theo bảng màu vải hoặc theo nhận diện thương hiệu" }
+      - { name: kich_thuoc, label: Size / kích thước, type: string, description: "VD: S – 3XL hoặc 20×25cm" }
+      - { name: gia_cong, label: Gia công logo, type: string, description: "Để trống = In hoặc thêu theo yêu cầu" }
+      - { name: thoi_gian, label: Thời gian sản xuất, type: string, description: "VD: 7–10 ngày sau khi duyệt mẫu" }
+      - { name: mo_ta, label: Mô tả ngắn (dưới tên sản phẩm), type: text }
+      - { name: thu_vien, label: Ảnh thêm, type: image, options: { multiple: true }, description: "Hiện thành dải ảnh nhỏ dưới ảnh chính – bấm để xem to" }
       - { name: thu_tu, label: Thứ tự, type: number, default: 50, description: "Số nhỏ hiện trước" }
       - { name: ban_chay, label: Bán chạy (hiện ở trang chủ), type: boolean, default: false }
       - { name: an, label: Ẩn khỏi web, type: boolean, default: false }
-      - { name: body, label: Nội dung chi tiết (không bắt buộc), type: rich-text }
+      - { name: body, label: Mô tả sản phẩm (hiện ở mục «Mô tả sản phẩm»), type: rich-text }
 
   - name: khach_hang
     label: Đối tác
@@ -61,7 +65,9 @@ content:
       - { name: anh_bia, label: Ảnh bìa câu chuyện, type: image, description: "Ảnh ngang 4:3, ảnh thật dự án. Để trống sẽ hiện logo" }
       - { name: tieu_de_bai, label: Tiêu đề câu chuyện, type: string, description: "VD: Đồng bộ 500 nhân viên trong 10 ngày" }
       - { name: tom_tat, label: Tóm tắt 1 dòng, type: text }
-      - { name: thu_vien, label: Ảnh dự án thực tế, type: image, options: { multiple: true } }
+      - { name: thu_vien, label: Ảnh dự án thực tế, type: image, options: { multiple: true }, description: "Ảnh đầu tiên hiện to ở đầu trang nếu không có ảnh bìa" }
+      - { name: san_pham, label: Sản phẩm đã làm, type: string, list: true, description: "Gõ đúng tên sản phẩm trong mục Sản phẩm, VD: Áo Polo" }
+      - { name: thoi_gian, label: Thời gian thực hiện, type: string, description: "VD: 10 ngày" }
       - { name: thu_tu, label: Thứ tự, type: number, default: 50 }
       - { name: body, label: "Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)", type: rich-text }
 
