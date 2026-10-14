@@ -18,7 +18,7 @@ buoc:
     mo_ta: Thiết kế mẫu demo theo nhận diện thương hiệu, chỉnh sửa đến khi khách hài lòng.
     chi_tiet:
       - Thiết kế miễn phí, gửi file demo để duyệt
-      - May mẫu thực tế miễn phí (với đơn hàng đủ điều kiện)
+      - May mẫu thực tế để duyệt trước khi sản xuất
   - ten: Ký kết – Sản xuất
     mo_ta: Chốt bảng size, ký hợp đồng và tiến hành sản xuất tại xưởng.
     chi_tiet:
