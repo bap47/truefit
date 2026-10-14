@@ -1,1 +1,1 @@
-{% comment %}Chữ trong *dấu sao* hiện màu cam{% endcomment %}{% assign _p = include.t | split: "*" %}{% for _s in _p %}{% assign _m = forloop.index0 | modulo: 2 %}{% if _m == 1 %}<span>{{ _s }}</span>{% else %}{{ _s }}{% endif %}{% endfor %}
+{% comment %}Chữ trong *dấu sao* hiện màu cam{% endcomment %}{% assign _p = include.t | split: "*" %}{% for _s in _p %}{% assign _m = forloop.index0 | modulo: 2 %}{% if _m == 1 %}<span>{{ _s | newline_to_br }}</span>{% else %}{{ _s | newline_to_br }}{% endif %}{% endfor %}
