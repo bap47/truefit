@@ -218,16 +218,25 @@
   });
 })();
 
-/* Trang chi tiết: bấm ảnh nhỏ đổi ảnh lớn */
+/* Trang chi tiết: ảnh lớn tự chạy 2s + bấm ảnh nhỏ để chọn */
 (function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-gallery]').forEach(function (g) {
     var main = g.querySelector('[data-gallery-main]'); if (!main) return;
-    g.querySelectorAll('.tf-pd__thumbs button').forEach(function (b) {
-      b.addEventListener('click', function () {
-        main.src = b.dataset.src;
-        g.querySelectorAll('.tf-pd__thumbs button').forEach(function (x) { x.classList.toggle('is-on', x === b); });
-      });
-    });
+    var btns = [].slice.call(g.querySelectorAll('.tf-pd__thumbs button'));
+    if (btns.length < 2) return;
+    var cur = 0, t = null, ms = (parseFloat(g.dataset.giay) || 2) * 1000;
+    function go(i) {
+      cur = (i + btns.length) % btns.length; var b = btns[cur];
+      main.style.opacity = '0';
+      setTimeout(function () { main.src = b.dataset.src; main.style.opacity = '1'; }, 180);
+      btns.forEach(function (x) { x.classList.toggle('is-on', x === b); });
+    }
+    function play() { clearInterval(t); if (!reduce) t = setInterval(function () { go(cur + 1); }, ms); }
+    btns.forEach(function (b, i) { b.addEventListener('click', function () { go(i); play(); }); });
+    g.addEventListener('mouseenter', function () { clearInterval(t); });
+    g.addEventListener('mouseleave', play);
+    play();
   });
 })();
 
