@@ -30,15 +30,22 @@ layout: default
           {% if page.thoi_gian and page.thoi_gian != "" %}<div><dt>Thời gian</dt><dd>{{ page.thoi_gian }}</dd></div>{% endif %}
         </dl>
       </div>
-      <div class="tf-pd__sec rise" style="--d:.24s"><h2>Mô tả dự án</h2><div class="tf-prose">{% if content != "" %}{{ content }}{% else %}<p>TrueFit đồng hành cùng {{ page.title }} từ khâu tư vấn, thiết kế, làm mẫu đến sản xuất và giao hàng tận nơi.</p>{% endif %}</div></div>
     </div>
   </div>
 
   <div class="wrap tf-pd__body">
-    <section id="dat-hang" class="tf-pd__block reveal">
-      <h2>Quy trình đặt hàng</h2>
-      {% include pd-steps.html slug=qslug %}
-    </section>
+    <div class="tf-tabs reveal" data-tabs>
+      <div class="tf-tabs__nav" role="tablist">
+        <button type="button" role="tab" aria-selected="true" aria-controls="mo-ta" data-tab="mo-ta">Mô tả dự án</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="dat-hang" data-tab="dat-hang">Quy trình đặt hàng</button>
+      </div>
+      <section id="mo-ta" class="tf-tabs__panel" role="tabpanel">
+        <div class="tf-prose">{% if content != "" %}{{ content }}{% else %}<p>TrueFit đồng hành cùng {{ page.title }} từ khâu tư vấn, thiết kế, làm mẫu đến sản xuất và giao hàng tận nơi.</p>{% endif %}</div>
+      </section>
+      <section id="dat-hang" class="tf-tabs__panel" role="tabpanel">
+        {% include pd-steps.html slug=qslug %}
+      </section>
+    </div>
   </div>
 </section>
 
