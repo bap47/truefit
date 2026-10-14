@@ -9,5 +9,6 @@ anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""
 noi_bat: true
+san_pham: ["Đồng phục PG", "Tạp dề"]
 thu_vien: []
 ---
