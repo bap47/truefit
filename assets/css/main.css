@@ -755,3 +755,11 @@ body.is-searching { overflow: hidden; }
 .tf-search__row small { max-width: 100%; }
 @media (max-width: 600px) { .tf-search__tag { display: none; } .tf-search__barin { gap: .5rem; } }
 [data-search-idle][hidden], [data-search-results][hidden], [data-search-recent][hidden] { display: none !important; }
+/* Nút tìm kiếm: icon gọn bên phải, cạnh nút Báo giá */
+.tf-header__in .tf-nav { order: 2; margin-left: auto; }
+.tf-header__in .tf-sbtn { order: 3; }
+.tf-sbtn, .tf-sbtn:hover { min-width: 0; width: 38px; height: 38px; padding: 0; margin: 0 0 0 .6rem; justify-content: center; border: 0; border-radius: 50%; background: transparent; }
+.tf-sbtn:hover { background: rgba(255,255,255,.2); }
+.tf-sbtn svg { width: 20px; height: 20px; stroke-width: 2.2; }
+.tf-sbtn span { display: none; }
+@media (max-width: 860px) { .tf-header__in .tf-sbtn { margin-left: auto; } .tf-header__in .tf-nav { margin-left: 0; } }
