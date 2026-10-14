@@ -118,7 +118,7 @@ content:
         list: true
         description: "Kéo ⋮⋮ để đổi thứ tự slide. Slide đầu tiên hiện đầu tiên khi mở web."
         fields:
-          - { name: tieu_de, label: Tiêu đề lớn, type: string, description: "Bọc *dấu sao* để tô cam. VD: *Giải pháp* đồng phục doanh nghiệp *trọn gói*" }
+          - { name: tieu_de, label: Tiêu đề lớn, type: text, description: "Bọc *dấu sao* để tô cam. Nhấn Enter để xuống dòng. VD: *Giải pháp* đồng phục doanh nghiệp *trọn gói*" }
           - { name: dong_phu, label: Dòng chữ nhỏ bên dưới, type: text, description: "Xuống dòng bằng Enter" }
           - { name: anh, label: Ảnh banner, type: image, description: "Ảnh ngang 1920×800. Để chữ đọc rõ, chừa khoảng trống ở giữa ảnh (VD người mẫu đứng 2 bên)" }
           - { name: nut_chu, label: Chữ trên nút (không bắt buộc), type: string, description: "Để trống thì hiện nút hotline" }
