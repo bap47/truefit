@@ -1,0 +1,28 @@
+{% assign tk = site.data.tim_kiem %}
+<div class="tf-search" id="tim-kiem" role="dialog" aria-modal="true" aria-label="Tìm kiếm" hidden data-src="{{ '/search.json' | relative_url }}">
+  <div class="tf-search__bar">
+    <div class="wrap tf-search__barin">
+      <label class="tf-search__field">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" placeholder="Tìm sản phẩm, đối tác, chính sách…" autocomplete="off" aria-label="Tìm kiếm" data-search-input>
+      </label>
+      <button type="button" class="tf-search__close" aria-label="Đóng tìm kiếm" data-search-close>✕</button>
+    </div>
+  </div>
+  <div class="tf-search__panel">
+    <div class="tf-search__in" data-search-body>
+      <div data-search-idle>
+        {% if tk.tu_khoa and tk.tu_khoa.size > 0 %}
+        <p class="tf-search__h">{{ tk.tieu_de_goi_y | default: "Từ khóa nổi bật" }}</p>
+        <div class="tf-search__chips">{% for k in tk.tu_khoa %}<button type="button" data-q="{{ k }}">{{ k }}</button>{% endfor %}</div>
+        {% endif %}
+        <div data-search-recent hidden>
+          <p class="tf-search__h">Đã xem gần đây</p>
+          <div class="tf-search__cards" data-search-recent-list></div>
+        </div>
+      </div>
+      <div data-search-results hidden></div>
+    </div>
+  </div>
+  <div class="tf-search__backdrop" data-search-close></div>
+</div>
