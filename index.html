@@ -66,7 +66,7 @@ layout: default
         {% for s in d3.so_lieu %}
         <div class="tf-intro__stat reveal" style="--d:{{ forloop.index0 | times: 0.1 | plus: 0.2 }}s">
           <p class="tf-intro__k">{{ s.nhom }}</p>
-          <p class="tf-intro__num" data-count>{{ s.so }}</p>
+          {% assign so = s.so %}{% assign so_n = s.so | downcase %}{% if so_n == "tự động" or so_n == "tu dong" or so_n == "auto" %}{% assign so = sp | where_exp: "p", "p.an != true" | size | append: "+" %}{% endif %}<p class="tf-intro__num" data-count>{{ so }}</p>
           <p class="tf-intro__v">{{ s.nhan }}</p>
         </div>
         {% endfor %}
@@ -129,7 +129,10 @@ layout: default
         <p class="tf-process__more">{% for q in qt %}<a href="{{ q.url | relative_url }}">{{ q.title }} →</a>{% endfor %}</p>
       </div>
       <ol class="tf-steps">
-        {% for s in d5.buoc %}
+        {% assign qslug = site.data.chung.quy_trinh_trang_chu | default: "dong-phuc" %}
+        {% assign q_tc = site.quy_trinh | where_exp: "q", "q.url contains qslug" | first %}
+        {% if q_tc %}{% assign ds_buoc = q_tc.buoc %}{% else %}{% assign ds_buoc = d5.buoc %}{% endif %}
+        {% for s in ds_buoc %}
         <li class="reveal" style="--d:{{ forloop.index0 | times: 0.12 }}s"><strong>{{ s.ten }}</strong>{{ s.mo_ta }}</li>
         {% endfor %}
       </ol>

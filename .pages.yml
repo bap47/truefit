@@ -5,9 +5,68 @@ media:
   extensions: [jpg, jpeg, png, webp, gif, svg]
 
 content:
-  # =================== NỘI DUNG ĐĂNG THƯỜNG XUYÊN ===================
+  # ===== ⚙️ CÀI ĐẶT CHUNG – sửa 1 chỗ, cả web cập nhật =====
+  - name: chung
+    label: "⚙️ Thông tin chung – sửa 1 lần, cập nhật mọi trang"
+    type: file
+    path: _data/chung.yml
+    fields:
+      - { name: uu_dai, label: Thanh ưu đãi trên cùng, type: string, description: "Hiện ở dải trên cùng mọi trang" }
+      - { name: slogan, label: Slogan, type: string, description: "Hiện dưới logo ở footer" }
+      - { name: gioi_thieu, label: Giới thiệu ngắn TrueFit, type: text, description: "Hiện ở footer mọi trang" }
+      - { name: uu_diem, label: Ưu đãi nổi bật, type: string, list: true, description: "Hiện ở menu sổ xuống Đồng phục / Quà tặng. VD: Thiết kế miễn phí" }
+      - { name: thiet_ke, label: Phí thiết kế, type: string, description: "Hiện trong bảng Thông tin của mọi sản phẩm. Để trống thì ẩn dòng này" }
+      - { name: bao_hanh, label: Bảo hành, type: string, description: "Hiện trong bảng Thông tin của mọi sản phẩm. VD: 3 tháng" }
+      - { name: gia_cong, label: Gia công logo (mặc định), type: string, description: "Sản phẩm nào không ghi riêng thì dùng câu này" }
+      - name: quy_trinh_trang_chu
+        label: Quy trình hiện ở trang chủ
+        type: select
+        options: { values: [ { value: dong-phuc, label: "Quy trình đồng phục" }, { value: qua-tang, label: "Quy trình quà tặng" } ] }
+        description: "Các bước lấy thẳng từ mục «Quy trình» – sửa ở đó là trang chủ, trang sản phẩm, trang đối tác cùng đổi"
+
+  - name: lien_he
+    label: "⚙️ Liên hệ: hotline, Zalo, email, giờ làm việc"
+    type: file
+    path: _data/lien_he.yml
+    fields:
+      - { name: hotline, label: Hotline (cách hiển thị), type: string, description: "VD: 0909 914 059" }
+      - { name: hotline_so, label: Hotline (chỉ số), type: string, description: "VD: 0909914059 – dùng cho nút gọi" }
+      - { name: zalo, label: Link Zalo, type: string }
+      - { name: email, label: Email, type: string }
+      - { name: facebook_chat, label: Link chat Facebook (Messenger), type: string, description: "VD: https://m.me/truefituniform" }
+      - { name: gio_lam_viec, label: Giờ làm việc, type: string }
+      - { name: ngay_lam_viec, label: Ngày làm việc, type: string }
+      - { name: dia_chi, label: Địa chỉ xưởng (hiện ở footer), type: text }
+      - { name: email_bao_gia, label: Email nhận form báo giá, type: string, description: "Lần đầu có khách gửi form, hộp thư này nhận mail xác nhận từ FormSubmit – bấm Activate 1 lần là xong" }
+      - name: kenh
+        label: Icon liên hệ ở footer
+        type: object
+        list: true
+        fields:
+          - { name: ten, label: Tên kênh, type: string }
+          - { name: link, label: Link, type: string, description: "Gọi điện: tel:0909914059 · Email: mailto:ten@gmail.com" }
+          - { name: icon, label: Icon (ảnh vuông), type: image }
+
+  - name: seo
+    label: "⚙️ Favicon & ảnh khi gửi link"
+    type: file
+    path: _data/seo.yml
+    fields:
+      - { name: favicon, label: Favicon (icon trên tab trình duyệt), type: image, description: "Ảnh vuông, nền trong suốt, PNG 512×512" }
+      - { name: anh_chia_se, label: Ảnh bìa khi gửi link (Zalo, Facebook…), type: image, description: "Ảnh ngang 1200×630, JPG/PNG dưới 1MB" }
+      - { name: mo_ta_chia_se, label: Mô tả khi gửi link, type: text, description: "1–2 câu, dưới 160 ký tự" }
+
+  - name: tim_kiem
+    label: "⚙️ Tìm kiếm – từ khóa gợi ý"
+    type: file
+    path: _data/tim_kiem.yml
+    fields:
+      - { name: tieu_de_goi_y, label: Tiêu đề, type: string, description: "VD: Từ khóa nổi bật" }
+      - { name: tu_khoa, label: Từ khóa gợi ý, type: string, list: true, description: "Hiện thành nút bấm khi khách mở ô tìm kiếm" }
+
+  # ===== NỘI DUNG – thêm/sửa thường xuyên =====
   - name: san_pham
-    label: Sản phẩm & quà tặng
+    label: "📦 Sản phẩm (đồng phục & quà tặng)"
     type: collection
     path: _san_pham
     filename: "{primary}.md"
@@ -40,7 +99,7 @@ content:
       - { name: body, label: Mô tả sản phẩm (hiện ở mục «Mô tả sản phẩm»), type: rich-text }
 
   - name: khach_hang
-    label: Đối tác
+    label: "🤝 Đối tác"
     type: collection
     path: _khach_hang
     filename: "{primary}.md"
@@ -72,7 +131,7 @@ content:
       - { name: body, label: "Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)", type: rich-text }
 
   - name: quy_trinh
-    label: Quy trình (trang riêng)
+    label: "🔁 Quy trình đặt hàng"
     type: collection
     path: _quy_trinh
     filename: "{primary}.md"
@@ -94,8 +153,20 @@ content:
           - { name: chi_tiet, label: Ý chi tiết, type: string, list: true }
       - { name: body, label: Nội dung thêm bên dưới (không bắt buộc), type: rich-text }
 
+  - name: chinh_sach
+    label: "📄 Chính sách"
+    type: collection
+    path: _chinh_sach
+    filename: "{primary}.md"
+    view:
+      default: { sort: thu_tu, order: asc }
+    fields:
+      - { name: title, label: Tiêu đề, type: string, required: true }
+      - { name: thu_tu, label: Thứ tự, type: number }
+      - { name: body, label: Nội dung, type: rich-text }
+
   - name: tin_tuc
-    label: Tin tức
+    label: "📰 Tin tức"
     type: collection
     path: _posts
     filename: "{year}-{month}-{day}-{primary}.md"
@@ -109,13 +180,12 @@ content:
       - { name: mo_ta, label: Tóm tắt, type: text }
       - { name: body, label: Nội dung, type: rich-text }
 
-  # =================== TRANG CHỦ (theo thứ tự từ trên xuống) ===================
+  # ===== 🏠 TRANG CHỦ – theo thứ tự từ trên xuống =====
   - name: tc_1
-    label: "Trang chủ ① Đầu trang (banner trượt)"
+    label: "🏠 Trang chủ ① Banner trượt"
     type: file
     path: _data/trang_chu/1_dau_trang.yml
     fields:
-      - { name: uu_dai, label: Thanh ưu đãi trên cùng, type: string }
       - { name: nut_tu_van, label: Chữ trên nút hotline, type: string, description: "Nút hotline hiện ở slide không có nút riêng" }
       - { name: tu_chuyen_giay, label: Tự chuyển slide sau (giây), type: number, default: 5 }
       - name: slides
@@ -131,7 +201,7 @@ content:
           - { name: nut_link, label: Link của nút, type: string, description: "VD: /#qua-tang, /san-pham/ hoặc link Zalo" }
 
   - name: tc_2
-    label: "Trang chủ ② Đến với TrueFit"
+    label: "🏠 Trang chủ ② Đến với TrueFit"
     type: file
     path: _data/trang_chu/2_gioi_thieu.yml
     fields:
@@ -149,7 +219,7 @@ content:
           - { name: mo_ta, label: Mô tả ngắn (cho Google), type: string }
 
   - name: tc_3
-    label: "Trang chủ ② Đến với TrueFit – Cam kết & số liệu"
+    label: "🏠 Trang chủ ② Đến với TrueFit – cam kết & số liệu"
     type: file
     path: _data/trang_chu/3_cam_ket.yml
     fields:
@@ -167,11 +237,11 @@ content:
         list: true
         fields:
           - { name: nhom, label: Dòng phía trên, type: string }
-          - { name: so, label: Con số, type: string, description: "VD: 40.000 hoặc 12+ – số sẽ tự chạy đếm" }
+          - { name: so, label: Con số, type: string, description: "VD: 40.000 – số sẽ tự chạy đếm. Gõ «tự động» để tự đếm số sản phẩm đang có trên web" }
           - { name: nhan, label: Dòng phía dưới, type: string }
 
   - name: tc_2b
-    label: "Trang chủ ③ Hai hướng: Đồng phục | Quà tặng"
+    label: "🏠 Trang chủ ③ Đồng phục | Quà tặng"
     type: file
     path: _data/trang_chu/2b_hai_huong.yml
     fields:
@@ -187,32 +257,8 @@ content:
           - { name: link, label: Link, type: string, description: "VD: /san-pham/dong-phuc/" }
           - { name: nut, label: Chữ trên nút, type: string }
 
-  - name: tc_5
-    label: "Trang chủ ⑤ Quy trình"
-    type: file
-    path: _data/trang_chu/5_quy_trinh.yml
-    fields:
-      - { name: tieu_de, label: Tiêu đề, type: string }
-      - { name: dong_phu, label: Dòng phụ, type: string }
-      - name: buoc
-        label: Các bước
-        type: object
-        list: true
-        fields:
-          - { name: ten, label: Tên bước, type: string }
-          - { name: mo_ta, label: Mô tả, type: text }
-
-  - name: tc_6
-    label: "Trang chủ ⑥ Đối tác & câu chuyện"
-    type: file
-    path: _data/trang_chu/6_khach_hang.yml
-    fields:
-      - { name: tieu_de, label: Tiêu đề, type: string, description: "Logo chạy ngang & các card lấy từ mục «Đối tác»" }
-      - { name: mo_ta, label: Mô tả, type: text }
-      - { name: tieu_de_cau_chuyen, label: Tiêu đề hàng đối tác tiêu biểu, type: string, description: "Bọc *dấu sao* để tô cam" }
-
   - name: tc_7
-    label: "Trang chủ ④ Được đặt nhiều nhất"
+    label: "🏠 Trang chủ ④ Được đặt nhiều nhất"
     type: file
     path: _data/trang_chu/7_san_pham.yml
     fields:
@@ -220,67 +266,30 @@ content:
       - { name: mo_ta, label: Mô tả ngắn, type: string }
       - { name: so_luong, label: Số sản phẩm hiện, type: number, default: 4 }
 
+  - name: tc_5
+    label: "🏠 Trang chủ ⑤ Quy trình (tiêu đề)"
+    type: file
+    path: _data/trang_chu/5_quy_trinh.yml
+    fields:
+      - { name: tieu_de, label: Tiêu đề, type: string }
+      - { name: dong_phu, label: Dòng phụ, type: string, description: "Các bước tự lấy từ mục «🔁 Quy trình đặt hàng» (chọn quy trình nào ở «⚙️ Thông tin chung»)" }
+
+  - name: tc_6
+    label: "🏠 Trang chủ ⑥ Đối tác"
+    type: file
+    path: _data/trang_chu/6_khach_hang.yml
+    fields:
+      - { name: tieu_de, label: Tiêu đề, type: string, description: "Logo chạy ngang & các card lấy từ mục «Đối tác»" }
+      - { name: mo_ta, label: Mô tả, type: text }
+      - { name: tieu_de_cau_chuyen, label: Tiêu đề hàng đối tác tiêu biểu, type: string, description: "Bọc *dấu sao* để tô cam" }
+
   - name: tc_9
-    label: "Trang chủ ⑦ Báo giá & cuối trang"
+    label: "🏠 Trang chủ ⑦ Báo giá & dải kêu gọi"
     type: file
     path: _data/trang_chu/9_cuoi_trang.yml
     fields:
-      - { name: mo_ta_footer, label: Giới thiệu ngắn ở footer, type: text }
       - { name: tieu_de_bao_gia, label: Tiêu đề khối báo giá (cuối trang chủ), type: string, description: "Bọc *dấu sao* để tô đen" }
       - { name: mo_ta_bao_gia, label: Mô tả khối báo giá, type: text }
       - { name: can_gui, label: Danh sách «Chỉ cần gửi», type: string, list: true }
       - { name: tieu_de_keu_goi, label: Tiêu đề dải kêu gọi trên footer, type: string }
       - { name: mo_ta_keu_goi, label: Mô tả khối kêu gọi, type: text }
-
-  # =================== CÀI ĐẶT CHUNG ===================
-  - name: tim_kiem
-    label: Tìm kiếm – từ khóa gợi ý
-    type: file
-    path: _data/tim_kiem.yml
-    fields:
-      - { name: tieu_de_goi_y, label: Tiêu đề, type: string, description: "VD: Từ khóa nổi bật" }
-      - { name: tu_khoa, label: Từ khóa gợi ý, type: string, list: true, description: "Hiện thành nút bấm khi khách mở ô tìm kiếm" }
-
-  - name: seo
-    label: Favicon & ảnh chia sẻ link
-    type: file
-    path: _data/seo.yml
-    fields:
-      - { name: favicon, label: Favicon (icon trên tab trình duyệt), type: image, description: "Ảnh vuông, nền trong suốt, PNG 512×512" }
-      - { name: anh_chia_se, label: Ảnh bìa khi gửi link (Zalo, Facebook…), type: image, description: "Ảnh ngang 1200×630, JPG/PNG dưới 1MB" }
-      - { name: mo_ta_chia_se, label: Mô tả khi gửi link, type: text, description: "1–2 câu, dưới 160 ký tự" }
-
-  - name: lien_he
-    label: Liên hệ & mạng xã hội
-    type: file
-    path: _data/lien_he.yml
-    fields:
-      - { name: hotline, label: Hotline (cách hiển thị), type: string, description: "VD: 0909 914 059" }
-      - { name: hotline_so, label: Hotline (chỉ số), type: string, description: "VD: 0909914059 – dùng cho nút gọi" }
-      - { name: zalo, label: Link Zalo, type: string }
-      - { name: email, label: Email, type: string }
-      - { name: facebook_chat, label: Link chat Facebook (Messenger), type: string, description: "VD: https://m.me/truefituniform" }
-      - { name: gio_lam_viec, label: Giờ làm việc, type: string }
-      - { name: ngay_lam_viec, label: Ngày làm việc, type: string }
-      - { name: dia_chi, label: Địa chỉ xưởng (hiện ở footer), type: text }
-      - { name: email_bao_gia, label: Email nhận form báo giá, type: string, description: "Lần đầu có khách gửi form, hộp thư này nhận mail xác nhận từ FormSubmit – bấm Activate 1 lần là xong" }
-      - name: kenh
-        label: Icon liên hệ ở footer
-        type: object
-        list: true
-        fields:
-          - { name: ten, label: Tên kênh, type: string }
-          - { name: link, label: Link, type: string, description: "Gọi điện: tel:0909914059 · Email: mailto:ten@gmail.com" }
-          - { name: icon, label: Icon (ảnh vuông), type: image }
-
-  - name: chinh_sach
-    label: Chính sách
-    type: collection
-    path: _chinh_sach
-    filename: "{primary}.md"
-    view:
-      default: { sort: thu_tu, order: asc }
-    fields:
-      - { name: title, label: Tiêu đề, type: string, required: true }
-      - { name: thu_tu, label: Thứ tự, type: number }
-      - { name: body, label: Nội dung, type: rich-text }

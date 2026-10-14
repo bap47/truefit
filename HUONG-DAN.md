@@ -14,13 +14,32 @@
 2. Đổi lại `baseurl: ""` trong `_config.yml`.
 3. Người quản lý tên miền vào DNS, thêm 4 bản ghi **A** cho `@`: 185.199.108.153 · 185.199.109.153 · 185.199.110.153 · 185.199.111.153, và 1 bản ghi **CNAME** `www` → `<tentaikhoan>.github.io`.
 
-## C. Đăng bài hằng ngày
-1. Vào **app.pagescms.org** → đăng nhập GitHub → chọn repo `truefit`.
-2. Chọn mục: **Sản phẩm / Khách hàng & dự án / Tin tức / Chính sách / Trang chủ**.
-3. **Add an entry** → điền form, tải ảnh → **Save**. Web tự cập nhật sau 1–2 phút.
+## C. Sửa nội dung (app.pagescms.org → repo `truefit`)
+Menu CMS chia 3 nhóm:
+
+**⚙️ Cài đặt chung – sửa 1 chỗ, cả web cập nhật**
+| Muốn đổi | Sửa ở | Tự cập nhật ở |
+|---|---|---|
+| Thanh ưu đãi, slogan, giới thiệu ngắn | ⚙️ Thông tin chung | Dải trên cùng, footer – mọi trang |
+| Ưu đãi nổi bật (Thiết kế miễn phí…) | ⚙️ Thông tin chung | Menu sổ xuống Đồng phục / Quà tặng |
+| Bảo hành, phí thiết kế, gia công logo | ⚙️ Thông tin chung | Bảng thông tin của mọi sản phẩm |
+| Hotline, Zalo, email, giờ làm việc | ⚙️ Liên hệ | Nút gọi, nút Zalo, khối báo giá, footer, popup |
+| Email nhận form báo giá | ⚙️ Liên hệ | Mọi form báo giá |
+| Favicon, ảnh khi gửi link | ⚙️ Favicon & ảnh khi gửi link | Toàn web |
+
+**Nội dung – thêm/sửa thường xuyên**
+| Muốn đổi | Sửa ở | Tự cập nhật ở |
+|---|---|---|
+| Thêm/sửa sản phẩm | 📦 Sản phẩm | Menu, trang danh mục, tìm kiếm, «Được đặt nhiều nhất» (tick Bán chạy), «Sản phẩm cùng loại», số «tự động» ở trang chủ |
+| Thêm/sửa đối tác | 🤝 Đối tác | Logo chạy ngang, đối tác tiêu biểu (tick Nổi bật), trang Đối tác, tìm kiếm |
+| Các bước quy trình | 🔁 Quy trình đặt hàng | Trang chủ, trang quy trình, cuối mọi trang sản phẩm & đối tác |
+| Chính sách | 📄 Chính sách | Menu, footer, tìm kiếm |
+
+**🏠 Trang chủ** – xếp theo thứ tự từ trên xuống, chỉ chứa chữ/ảnh riêng của trang chủ.
 
 Mẹo:
-- Sản phẩm: chọn danh mục *Merchandise* hoặc *Đồng phục*; "Thứ tự" số nhỏ hiện trước (6 sản phẩm đầu mỗi loại hiện ở trang chủ).
-- Ảnh thực tế: thêm vào ô "Ảnh thực tế" → hiện thành lưới ảnh dưới trang sản phẩm/dự án.
-- Tiêu đề trang chủ: chữ nào muốn tô cam thì bọc trong `<span>…</span>`.
-- Nén ảnh trước khi tải (dưới ~500KB/ảnh) để web nhanh – dùng squoosh.app.
+- Chữ muốn tô cam: bọc trong *dấu sao*. Tiêu đề banner: nhấn Enter để xuống dòng.
+- Sản phẩm: «Ảnh chính» + «Ảnh thêm» → ảnh tự chạy 2 giây ở trang sản phẩm.
+- Đối tác: «Sản phẩm đã làm» gõ đúng tên sản phẩm (VD: Áo Polo).
+- Ô số liệu trang chủ: gõ «tự động» để tự đếm số sản phẩm.
+- Nén ảnh dưới ~500KB/ảnh (squoosh.app) để web nhanh.
