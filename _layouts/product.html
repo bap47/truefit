@@ -21,10 +21,10 @@ layout: default
           {% if page.chat_lieu and page.chat_lieu != "" %}<div><dt>Chất liệu</dt><dd>{{ page.chat_lieu }}</dd></div>{% endif %}
           {% if page.mau_sac and page.mau_sac != "" %}<div><dt>Màu sắc</dt><dd>{{ page.mau_sac }}</dd></div>{% endif %}
           {% if page.kich_thuoc and page.kich_thuoc != "" %}<div><dt>Size / kích thước</dt><dd>{{ page.kich_thuoc }}</dd></div>{% endif %}
-          <div><dt>Gia công logo</dt><dd>{{ page.gia_cong | default: "In hoặc thêu theo yêu cầu" }}</dd></div>
+          <div><dt>Gia công logo</dt><dd>{{ page.gia_cong | default: site.data.chung.gia_cong }}</dd></div>
           {% if page.thoi_gian and page.thoi_gian != "" %}<div><dt>Thời gian sản xuất</dt><dd>{{ page.thoi_gian }}</dd></div>{% endif %}
-          <div><dt>Thiết kế</dt><dd>Miễn phí</dd></div>
-          <div><dt>Bảo hành</dt><dd>3 tháng · <a href="{{ '/chinh-sach/bao-quan/' | relative_url }}">Hướng dẫn bảo quản</a></dd></div>
+          {% if site.data.chung.thiet_ke %}<div><dt>Thiết kế</dt><dd>{{ site.data.chung.thiet_ke }}</dd></div>{% endif %}
+          <div><dt>Bảo hành</dt><dd>{{ site.data.chung.bao_hanh | default: "3 tháng" }} · <a href="{{ '/chinh-sach/bao-quan/' | relative_url }}">Hướng dẫn bảo quản</a></dd></div>
         </dl>
       </div>
     </div>
