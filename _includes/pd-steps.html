@@ -1,0 +1,8 @@
+{% comment %}Quy trình đặt hàng rút gọn. include.slug = dong-phuc | qua-tang{% endcomment %}
+{% assign _q = site.quy_trinh | where_exp: "q", "q.url contains include.slug" | first %}
+{% if _q %}
+<ol class="tf-pd__steps">
+  {% for b in _q.buoc %}<li class="reveal" style="--d:{{ forloop.index0 | times: 0.06 }}s"><span>{{ forloop.index | prepend: '0' }}</span><strong>{{ b.ten }}</strong>{% if b.mo_ta %}<p>{{ b.mo_ta }}</p>{% endif %}</li>{% endfor %}
+</ol>
+<p class="tf-pd__more"><a href="{{ _q.url | relative_url }}">Xem chi tiết {{ _q.title | downcase }} →</a></p>
+{% endif %}
