@@ -771,3 +771,11 @@ body.is-searching { overflow: hidden; }
 .tf-tabs__nav button:hover { color: var(--ink); }
 .js .tf-tabs__panel[hidden] { display: none; }
 .tf-tabs__panel .tf-prose { max-width: 820px; color: var(--ink-soft); }
+/* Ô tìm kiếm dạng khung trắng (nhìn là biết) */
+.tf-sbtn, .tf-sbtn:hover { width: auto; min-width: 170px; height: 36px; padding: 0 1rem 0 .8rem; margin-left: .9rem; justify-content: flex-start; gap: .5rem; border-radius: 999px; background: #fff; color: var(--ink-soft); border: 1px solid rgba(0,0,0,.06); box-shadow: inset 0 1px 2px rgba(0,0,0,.06); font-size: var(--fs-sm); }
+.tf-sbtn:hover { color: var(--ink); box-shadow: 0 0 0 3px rgba(255,255,255,.35); }
+.tf-sbtn svg { width: 17px; height: 17px; color: var(--ink-soft); }
+.tf-sbtn span { display: inline; opacity: 1; }
+@media (max-width: 1280px) { .tf-sbtn, .tf-sbtn:hover { min-width: 130px; } }
+@media (max-width: 1100px) { .tf-sbtn, .tf-sbtn:hover { min-width: 0; width: 36px; padding: 0; justify-content: center; } .tf-sbtn span { display: none; } }
+@media (max-width: 860px) { .tf-sbtn, .tf-sbtn:hover { width: auto; min-width: 0; flex: 1; max-width: 220px; padding: 0 .9rem 0 .75rem; justify-content: flex-start; margin: 0 .5rem 0 auto; } .tf-sbtn span { display: inline; } }
