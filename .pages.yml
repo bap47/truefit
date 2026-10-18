@@ -304,7 +304,7 @@ content:
     - name: tieu_de_bai
       label: Tên dự án hiện trên thẻ
       type: string
-      description: 'Để trống thì tự ghép: tên sản phẩm + tên khách (VD: Khăn bandana PGI)'
+      description: 'Để trống thì tự ghép: tên sản phẩm + tên khách (VD: Khăn bandana - PGI)'
     - name: tom_tat
       label: Tóm tắt 1 dòng
       type: text
