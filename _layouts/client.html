@@ -12,7 +12,7 @@ layout: default
     {% include pd-gallery.html anh=anh_chinh ds=page.thu_vien alt=page.title %}
     <div class="tf-pd__info">
       <a class="tf-eyebrow rise" href="{{ '/khach-hang/#' | append: qslug | relative_url }}">Đối tác {{ ten_nhom | downcase }}</a>
-      {% if page.logo %}<p class="tf-pd__logo rise"><img src="{{ page.logo | relative_url }}" alt="Logo {{ page.title }}"></p>{% endif %}
+      {% if page.logo %}<p class="tf-pd__logo rise"><img src="{{ page.logo | prepend: site.baseurl }}" alt="Logo {{ page.title }}"></p>{% endif %}
       <h1 class="rise" style="--d:.08s">{% if page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }}{% else %}{{ page.title }}{% endif %}</h1>
       {% if page.tom_tat and page.tom_tat != "" %}<p class="tf-pd__lead rise" style="--d:.12s">{{ page.tom_tat }}</p>{% endif %}
       <div class="tf-btns rise" style="--d:.16s">
@@ -49,15 +49,16 @@ layout: default
   </div>
 </section>
 
+{% if da_lam.size > 0 %}
 <section class="tf-section tf-section--cream" id="san-pham">
   <div class="wrap">
-    <h2 class="tf-title reveal">{% if da_lam.size > 0 %}Sản phẩm <span>đã làm</span> cho {{ page.title }}{% else %}Sản phẩm <span>{{ ten_nhom | downcase }}</span> TrueFit{% endif %}</h2>
+    <h2 class="tf-title reveal">Sản phẩm <span>đã làm</span> cho {{ page.title }}</h2>
     <div class="tf-grid">
-      {% if da_lam.size > 0 %}{% for p in da_lam %}{% include product-card.html p=p %}{% endfor %}
-      {% else %}{% assign cung = tat_ca | where: "danh_muc", dm | sort: "thu_tu" %}{% for p in cung limit: 4 %}{% include product-card.html p=p %}{% endfor %}{% endif %}
+      {% for p in da_lam %}{% include product-card.html p=p %}{% endfor %}
     </div>
   </div>
 </section>
+{% endif %}
 
 {% assign khac = site.khach_hang | sort: "thu_tu" | where_exp: "c", "c.url != page.url" %}
 {% if khac.size > 0 %}

@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign ten_dm = "Đồng phục" %}{% assign qslug = "dong-phuc" %}{% if page.danh_muc == "merchandise" %}{% assign ten_dm = "Quà tặng" %}{% assign qslug = "qua-tang" %}{% endif %}
-<section class="tf-section tf-pd" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ page.anh | relative_url }}">
+<section class="tf-section tf-pd" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ page.anh | prepend: site.baseurl }}">
   <div class="wrap tf-pd__top">
     {% include pd-gallery.html anh=page.anh ds=page.thu_vien alt=page.title %}
     <div class="tf-pd__info">
