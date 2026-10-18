@@ -1,13 +1,14 @@
 ---
-title: "JBL"
-logo: "/assets/img/demo/client-jbl.png"
-da_may: "5.000 combo"
-ngay_tao: "2026-10-01T08:02"
-anh_bia: ""
-tieu_de_bai: "Combo túi Pouch + túi tote - JBL"
-tom_tat: ""
+title: JBL
+logo: /assets/uploads/Logo2-2.png
+thu_vien:
+  - /assets/img/demo/pouch.png
+  - /assets/img/demo/tui-tote.png
+san_pham:
+  - Pouch
+  - Túi tote
+da_may: 5.000 combo
 noi_bat: false
-san_pham: ["Pouch", "Túi tote"]
-thu_vien: ["/assets/img/demo/pouch.png", "/assets/img/demo/tui-tote.png"]
-thoi_gian: ""
+tieu_de_bai: Combo túi Pouch + túi tote - JBL
+ngay_tao: 2026-10-01T08:02
 ---
