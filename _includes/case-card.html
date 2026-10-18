@@ -9,7 +9,7 @@
   </span>
   <span class="tf-story__body">
     <span class="tf-story__tags">{% if c.nhom == "qua-tang" %}<span class="is-nhom">Quà tặng</span>{% elsif c.nhom == "ca-hai" %}<span class="is-nhom">Đồng phục & Quà tặng</span>{% else %}<span class="is-nhom">Đồng phục</span>{% endif %}{% for ten in c.san_pham %}<span>{{ ten }}</span>{% endfor %}</span>
-    <strong>{% if c.tieu_de_bai and c.tieu_de_bai != '' %}{{ c.tieu_de_bai }}{% elsif c.san_pham and c.san_pham.size > 0 %}{{ c.san_pham | join: ' + ' }} {{ c.title }}{% else %}{{ c.title }}{% endif %}</strong>
+    <strong>{% if c.tieu_de_bai and c.tieu_de_bai != '' %}{{ c.tieu_de_bai }}{% elsif c.nhom == 'qua-tang' and c.san_pham and c.san_pham.size > 0 %}{{ c.san_pham | join: ' + ' }} {{ c.title }}{% else %}{{ c.title }}{% endif %}</strong>
     {% if c.tom_tat and c.tom_tat != '' %}<span class="tf-story__sum">{{ c.tom_tat }}</span>{% endif %}
     <em>Xem chi tiết →</em>
   </span>
