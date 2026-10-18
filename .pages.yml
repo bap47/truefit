@@ -126,7 +126,7 @@ content:
       - { name: tieu_de_bai, label: Tiêu đề câu chuyện, type: string, description: "VD: Đồng bộ 500 nhân viên trong 10 ngày" }
       - { name: tom_tat, label: Tóm tắt 1 dòng, type: text }
       - { name: thu_vien, label: Ảnh dự án thực tế, type: image, options: { multiple: true }, description: "Ảnh đầu tiên hiện to ở đầu trang nếu không có ảnh bìa" }
-      - { name: san_pham, label: Sản phẩm đã làm, type: string, list: true, description: "Gõ đúng tên sản phẩm trong mục Sản phẩm, VD: Áo Polo" }
+      - { name: san_pham, label: Sản phẩm đã làm, type: reference, options: { collection: san_pham, search: title, value: "{title}", label: "{title}", multiple: true }, description: "Bấm chọn sản phẩm đã làm cho khách này (chọn nhiều được). Có chọn thì trang khách hàng tự hiện mục «Sản phẩm đã làm»; để trống thì mục đó tự ẩn" }
       - { name: thoi_gian, label: Thời gian thực hiện, type: string, description: "VD: 10 ngày" }
       - { name: thu_tu, label: Thứ tự, type: number, default: 50 }
       - { name: body, label: "Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)", type: rich-text }
