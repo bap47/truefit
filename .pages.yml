@@ -216,7 +216,7 @@ content:
         multiple: true
       description: Bấm chọn sản phẩm đã làm cho khách này (chọn nhiều được). Có chọn thì trang khách hàng tự hiện mục «Sản phẩm đã làm»; để trống thì mục đó tự ẩn
     - name: da_may
-      label: Đã làm
+      label: Số lượng đã làm
       type: string
       description: 'VD: 500 áo polo, 300 túi tote'
     - name: thoi_gian
@@ -286,7 +286,7 @@ content:
         multiple: true
       description: Bấm chọn sản phẩm đã làm cho khách này (chọn nhiều được). Có chọn thì trang khách hàng tự hiện mục «Sản phẩm đã làm»; để trống thì mục đó tự ẩn
     - name: da_may
-      label: Đã làm
+      label: Số lượng đã làm
       type: string
       description: 'VD: 500 áo polo, 300 túi tote'
     - name: thoi_gian
