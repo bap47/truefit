@@ -24,7 +24,6 @@ layout: default
         <h2>Thông tin dự án</h2>
         <dl class="tf-spec">
           <div><dt>Khách hàng</dt><dd>{{ page.title }}</dd></div>
-          {% if page.nganh and page.nganh != "" %}<div><dt>Ngành</dt><dd>{{ page.nganh }}</dd></div>{% endif %}
           <div><dt>Hạng mục</dt><dd>{{ ten_nhom }}</dd></div>
           {% if da_lam.size > 0 %}<div><dt>Sản phẩm</dt><dd>{% for p in da_lam %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>{% endif %}
           {% if page.da_may and page.da_may != "" %}<div><dt>Số lượng</dt><dd>{{ page.da_may }}</dd></div>{% endif %}
