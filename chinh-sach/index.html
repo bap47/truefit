@@ -2,7 +2,7 @@
 layout: default
 title: Chính sách
 ---
-{% assign ps = site.chinh_sach | sort: "thu_tu" %}
+{% assign ps = site.chinh_sach | sort: "thu_tu", "last" %}
 <section class="tf-section">
   <div class="wrap">
     <h1 class="tf-title rise">Chính sách</h1>
