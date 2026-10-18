@@ -800,3 +800,10 @@ body.is-searching { overflow: hidden; }
 .tf-story__img .tf-logo-text { position: absolute; inset: 0; background: var(--cream-soft); }
 .tf-story__img { position: relative; }
 .tf-marquee__item .tf-logo-text { width: auto; height: auto; padding: 0 .5rem; font-size: .95rem; white-space: nowrap; color: var(--ink-soft); }
+
+/* Banner: chữ co theo chiều ngang màn hình để không đè lên người mẫu 2 bên */
+@media (min-width: 601px) {
+  .tf-slide .tf-hero__title { font-size: min(var(--fs-display), 3.2vw); }
+  .tf-slide .tf-hero__tagline { font-size: clamp(.85rem, 1.25vw, 1.05rem); }
+  .tf-slide .tf-hotline { font-size: clamp(.85rem, 1.15vw, 1rem); }
+}
