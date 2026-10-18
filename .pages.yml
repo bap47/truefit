@@ -283,6 +283,25 @@ content:
       options:
         multiple: true
       description: 'Ảnh ngang 1200×900 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.'
+    - name: can_anh
+      label: Khung ảnh – chọn phần muốn thấy
+      type: select
+      default: giua
+      options:
+        values:
+        - value: giua
+          label: Giữa ảnh (mặc định)
+        - value: tren
+          label: Phần trên
+        - value: duoi
+          label: Phần dưới
+        - value: trai
+          label: Bên trái
+        - value: phai
+          label: Bên phải
+        - value: du
+          label: Hiện đủ ảnh, không cắt
+      description: Áp dụng cho ảnh bìa trên thẻ và ảnh lớn đầu trang
     - name: san_pham
       label: Sản phẩm đã làm
       type: reference
@@ -374,6 +393,25 @@ content:
       options:
         multiple: true
       description: 'Ảnh ngang 1200×900 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.'
+    - name: can_anh
+      label: Khung ảnh – chọn phần muốn thấy
+      type: select
+      default: giua
+      options:
+        values:
+        - value: giua
+          label: Giữa ảnh (mặc định)
+        - value: tren
+          label: Phần trên
+        - value: duoi
+          label: Phần dưới
+        - value: trai
+          label: Bên trái
+        - value: phai
+          label: Bên phải
+        - value: du
+          label: Hiện đủ ảnh, không cắt
+      description: Áp dụng cho ảnh bìa trên thẻ và ảnh lớn đầu trang
     - name: san_pham
       label: Sản phẩm đã làm
       type: reference
