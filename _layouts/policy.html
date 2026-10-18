@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign ps = site.chinh_sach | sort: "thu_tu" %}
+{% assign ps = site.chinh_sach | sort: "thu_tu", "last" %}
 <section class="tf-section">
   <div class="wrap tf-article">
     <nav class="tf-policy-nav" aria-label="Chính sách">

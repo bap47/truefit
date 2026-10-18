@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign sp = site.san_pham | sort: "thu_tu" %}
+{% assign sp = site.san_pham | sort: "ngay_tao", "last" %}
 {% if page.danh_muc %}{% assign sp = sp | where: "danh_muc", page.danh_muc %}{% endif %}
 <section class="tf-section">
   <div class="wrap">

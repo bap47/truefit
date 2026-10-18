@@ -38,7 +38,7 @@ layout: default
   </div>
 </section>
 
-{% assign da_dat = site.khach_hang | where_exp: "c", "c.san_pham contains page.title" | sort: "thu_tu" %}
+{% assign da_dat = site.khach_hang | where_exp: "c", "c.san_pham contains page.title" | sort: "ngay_tao", "last" %}
 {% if da_dat.size > 0 %}
 <section class="tf-section" id="doi-tac-da-dat">
   <div class="wrap">
@@ -50,7 +50,7 @@ layout: default
 </section>
 {% endif %}
 
-{% assign cung = site.san_pham | where: "danh_muc", page.danh_muc | sort: "thu_tu" %}
+{% assign cung = site.san_pham | where: "danh_muc", page.danh_muc | sort: "ngay_tao", "last" %}
 <section class="tf-section tf-section--cream">
   <div class="wrap">
     <h2 class="tf-title reveal">Sản phẩm <span>cùng loại</span></h2>
