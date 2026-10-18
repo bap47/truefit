@@ -21,7 +21,7 @@
         <p class="tf-footer__slogan">{{ site.data.chung.slogan }}</p>
         <p>{{ site.data.chung.gioi_thieu | default: home.mo_ta_footer }}</p>
         <p class="tf-social">
-          {% for k in lh.kenh %}<a href="{{ k.link }}"{% unless k.link contains 'tel:' or k.link contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ k.ten }}" title="{{ k.ten }}"><img src="{{ k.icon | relative_url }}" alt="{{ k.ten }}" width="40" height="40"></a>{% endfor %}
+          {% for k in lh.kenh %}<a href="{{ k.link }}"{% unless k.link contains 'tel:' or k.link contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ k.ten }}" title="{{ k.ten }}"><img src="{{ k.icon | prepend: site.baseurl }}" alt="{{ k.ten }}" width="40" height="40"></a>{% endfor %}
         </p>
       </div>
       <div class="tf-fcol">

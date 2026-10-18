@@ -1,6 +1,6 @@
 {% assign p = include.p %}
 <a class="tf-card reveal" href="{{ p.url | relative_url }}" data-cat="{{ p.danh_muc }}">
-  <span class="tf-card__img"><img src="{{ p.anh | relative_url }}" alt="{{ p.title }}" loading="lazy" width="800" height="800"></span>
+  <span class="tf-card__img"><img src="{{ p.anh | prepend: site.baseurl }}" alt="{{ p.title }}" loading="lazy" width="800" height="800"></span>
   <span class="tf-card__name">{{ p.title }}</span>
   {% if p.dat_tu and p.dat_tu != "" %}<span class="tf-card__meta">Đặt từ <em>{{ p.dat_tu }}</em></span>{% endif %}
 </a>
