@@ -52,7 +52,7 @@ layout: default
 {% if da_lam.size > 0 %}
 <section class="tf-section tf-section--cream" id="san-pham">
   <div class="wrap">
-    <h2 class="tf-title reveal">Sản phẩm <span>đã làm</span> cho {{ page.title }}</h2>
+    <h2 class="tf-title reveal">Sản phẩm <span>đã làm</span> cho<br>{{ page.title }}</h2>
     <div class="tf-grid">
       {% for p in da_lam %}{% include product-card.html p=p %}{% endfor %}
     </div>
