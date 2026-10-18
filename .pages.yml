@@ -361,9 +361,13 @@ content:
             label: Canh trái
         description: Chọn «Canh trái» khi ảnh có sản phẩm/người mẫu nằm bên phải
       - name: anh
-        label: Ảnh banner
+        label: Ảnh banner (máy tính)
         type: image
         description: Ảnh ngang 1920×800. Để chữ đọc rõ, chừa khoảng trống ở giữa ảnh (VD người mẫu đứng 2 bên)
+      - name: anh_dt
+        label: Ảnh banner (điện thoại) – không bắt buộc
+        type: image
+        description: Ảnh dọc 1080×1350. Chừa khoảng trống phía trên khoảng 1/2 ảnh để đặt chữ. Để trống thì điện thoại tự dùng ảnh máy tính (hiện bên dưới chữ)
       - name: nut_chu
         label: Chữ trên nút (không bắt buộc)
         type: string
