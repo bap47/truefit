@@ -18,7 +18,7 @@ layout: default
       <h1 class="rise" style="--d:.08s">{% if page.nhom == "qua-tang" %}{% if page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }} - {% elsif page.san_pham and page.san_pham.size > 0 %}{{ page.san_pham | join: " + " }} - {% endif %}{{ page.title }}{% elsif page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }}{% else %}{{ page.title }}{% endif %}</h1>
       {% if page.tom_tat and page.tom_tat != "" %}<p class="tf-pd__lead rise" style="--d:.12s">{{ page.tom_tat }}</p>{% endif %}
       <div class="tf-btns rise" style="--d:.16s">
-        <a class="btn" href="#bao-gia-form" data-bao-gia>Làm giống dự án này</a>
+        <a class="btn" href="#bao-gia-form" data-bao-gia>Báo giá mẫu này</a>
         <a class="btn btn--line" href="tel:{{ site.data.lien_he.hotline_so }}">Gọi {{ site.data.lien_he.hotline }}</a>
       </div>
       <div class="tf-pd__sec rise" style="--d:.2s">
