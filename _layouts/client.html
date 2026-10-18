@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign qslug = "dong-phuc" %}{% assign dm = "dong-phuc" %}{% assign ten_nhom = "Đồng phục" %}{% if page.nhom == "qua-tang" %}{% assign qslug = "qua-tang" %}{% assign dm = "merchandise" %}{% assign ten_nhom = "Quà tặng" %}{% endif %}
-{% assign tat_ca = site.san_pham | where_exp: "p", "p.an != true" %}
+{% assign tat_ca = site.san_pham %}
 {% assign da_lam = "" | split: "" %}
 {% for ten in page.san_pham %}{% assign f = tat_ca | where: "title", ten %}{% assign da_lam = da_lam | concat: f %}{% endfor %}
 {% assign anh_chinh = page.anh_bia %}
