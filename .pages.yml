@@ -14,6 +14,39 @@ content:
   label: 📦 Sản phẩm
   type: group
   items:
+  - name: xep_san_pham
+    label: ↕️ Sắp xếp thứ tự (kéo thả)
+    type: file
+    path: _data/sap_xep_san_pham.yml
+    fields:
+    - name: dong_phuc
+      label: 👕 Sản phẩm đồng phục
+      description: Giữ ⋮⋮ và kéo lên/xuống để đổi vị trí. Mục mới chưa có trong danh sách sẽ tự xếp cuối.
+      type: object
+      list: true
+      fields:
+      - name: muc
+        label: Mục
+        type: reference
+        options:
+          collection: sp_dong_phuc
+          search: title
+          value: '{path}'
+          label: '{title}'
+    - name: qua_tang
+      label: 🎁 Sản phẩm quà tặng
+      description: Giữ ⋮⋮ và kéo lên/xuống để đổi vị trí. Mục mới chưa có trong danh sách sẽ tự xếp cuối.
+      type: object
+      list: true
+      fields:
+      - name: muc
+        label: Mục
+        type: reference
+        options:
+          collection: sp_qua_tang
+          search: title
+          value: '{path}'
+          label: '{title}'
   - name: sp_dong_phuc
     label: 👕 Đồng phục
     type: collection
@@ -178,6 +211,39 @@ content:
   label: 🤝 Đối tác
   type: group
   items:
+  - name: xep_doi_tac
+    label: ↕️ Sắp xếp thứ tự (kéo thả)
+    type: file
+    path: _data/sap_xep_doi_tac.yml
+    fields:
+    - name: qua_tang
+      label: 🎁 Đối tác quà tặng
+      description: Giữ ⋮⋮ và kéo lên/xuống để đổi vị trí. Mục mới chưa có trong danh sách sẽ tự xếp cuối.
+      type: object
+      list: true
+      fields:
+      - name: muc
+        label: Mục
+        type: reference
+        options:
+          collection: kh_qua_tang
+          search: title
+          value: '{path}'
+          label: '{title} – {tieu_de_bai}'
+    - name: dong_phuc
+      label: 👕 Đối tác đồng phục
+      description: Giữ ⋮⋮ và kéo lên/xuống để đổi vị trí. Mục mới chưa có trong danh sách sẽ tự xếp cuối.
+      type: object
+      list: true
+      fields:
+      - name: muc
+        label: Mục
+        type: reference
+        options:
+          collection: kh_dong_phuc
+          search: title
+          value: '{path}'
+          label: '{title}'
   - name: kh_dong_phuc
     label: 👕 Đối tác đồng phục
     type: collection
