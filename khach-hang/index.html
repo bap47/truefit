@@ -2,7 +2,7 @@
 layout: default
 title: Đối tác
 ---
-{% assign kh = site.khach_hang | sort: "ngay_tao", "last" %}
+{% include xep.html loai="kh" %}{% assign kh = xep %}
 <section class="tf-section">
   <div class="wrap">
     <p class="tf-eyebrow rise">Đối tác của TrueFit</p>
