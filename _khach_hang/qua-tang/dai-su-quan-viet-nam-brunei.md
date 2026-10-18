@@ -4,7 +4,7 @@ logo: ""
 da_may: ""
 ngay_tao: "2026-10-01T08:03"
 anh_bia: ""
-tieu_de_bai: "Túi pouch đa năng Đại sứ quán Việt Nam tại Brunei"
+tieu_de_bai: "Túi pouch đa năng - Đại sứ quán Việt Nam tại Brunei"
 tom_tat: ""
 noi_bat: false
 san_pham: ["Pouch"]
