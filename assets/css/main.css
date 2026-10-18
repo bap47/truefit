@@ -789,8 +789,8 @@ body.is-searching { overflow: hidden; }
   .tf-sbtn, .tf-sbtn:hover { margin-left: -.35rem; }
 }
 
-/* Banner: nội dung canh trái */
-.tf-slide { text-align: left; }
-.tf-slide .tf-hero__title { margin: 0; max-width: none; }
-.tf-slide--img::before { background: linear-gradient(90deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.65) 38%, rgba(255,255,255,0) 62%); }
-@media (max-width: 600px) { .tf-slide--img::before { background: linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,.55)); } }
+/* Banner: slide chọn «Canh trái» */
+.tf-slide--left { text-align: left; }
+.tf-slide--left .tf-hero__title { margin: 0; max-width: none; }
+.tf-slide--left.tf-slide--img::before { background: linear-gradient(90deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.65) 38%, rgba(255,255,255,0) 62%); }
+@media (max-width: 600px) { .tf-slide--left.tf-slide--img::before { background: linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,.55)); } }
