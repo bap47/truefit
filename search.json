@@ -5,7 +5,7 @@ sitemap: false
 ---
 {% assign sp = site.san_pham | where_exp: "p", "p.an != true" | sort: "ngay_tao", "last" %}[
 {% for p in sp %}{"n":"sp","t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"i":{{ p.anh | prepend: site.baseurl | jsonify }},"d":{{ p.mo_ta | default: "" | strip_html | jsonify }},"k":{{ p.danh_muc | append: " " | append: p.chat_lieu | append: " " | append: p.tu_khoa | jsonify }},"m":{% if p.danh_muc == "merchandise" %}"Quà tặng"{% else %}"Đồng phục"{% endif %}},
-{% endfor %}{% for c in site.khach_hang %}{"n":"kh","t":{{ c.title | jsonify }},"u":{{ c.url | relative_url | jsonify }},"i":{{ c.logo | prepend: site.baseurl | jsonify }},"d":{{ c.tieu_de_bai | default: c.tom_tat | default: "" | jsonify }},"k":{{ c.nganh | append: " " | append: c.da_may | append: " " | append: c.san_pham | jsonify }},"m":"Đối tác"},
+{% endfor %}{% for c in site.khach_hang %}{"n":"kh","t":{{ c.title | jsonify }},"u":{{ c.url | relative_url | jsonify }},"i":{% if c.logo and c.logo != "" %}{{ c.logo | prepend: site.baseurl | jsonify }}{% else %}""{% endif %},"d":{{ c.tieu_de_bai | default: c.tom_tat | default: "" | jsonify }},"k":{{ c.nganh | append: " " | append: c.da_may | append: " " | append: c.san_pham | jsonify }},"m":"Đối tác"},
 {% endfor %}{% for q in site.quy_trinh %}{"n":"tt","t":{{ q.title | jsonify }},"u":{{ q.url | relative_url | jsonify }},"i":"","d":{{ q.mo_ta | default: "" | jsonify }},"k":"quy trinh dat hang","m":"Quy trình"},
 {% endfor %}{% for c in site.chinh_sach %}{"n":"tt","t":{{ c.title | jsonify }},"u":{{ c.url | relative_url | jsonify }},"i":"","d":"","k":{{ c.content | strip_html | truncatewords: 40 | jsonify }},"m":"Chính sách"}{% unless forloop.last %},{% endunless %}
 {% endfor %}]

@@ -151,8 +151,8 @@ layout: default
   <div class="tf-marquee" aria-label="Logo khách hàng">
     <div class="tf-marquee__track">
       {% for n in (1..2) %}{% for c in kh %}
-      <a class="tf-marquee__item" href="{{ c.url | relative_url }}"{% if n == 2 %} aria-hidden="true" tabindex="-1"{% endif %}><img src="{{ c.logo | prepend: site.baseurl }}" alt="{{ c.title }}" loading="lazy"></a>
-      {% endfor %}{% if kh.size < 6 %}{% for c in kh %}<a class="tf-marquee__item" href="{{ c.url | relative_url }}" aria-hidden="true" tabindex="-1"><img src="{{ c.logo | prepend: site.baseurl }}" alt="" loading="lazy"></a>{% endfor %}{% endif %}{% endfor %}
+      <a class="tf-marquee__item" href="{{ c.url | relative_url }}"{% if n == 2 %} aria-hidden="true" tabindex="-1"{% endif %}>{% if c.logo and c.logo != '' %}<img src="{{ c.logo | prepend: site.baseurl }}" alt="{{ c.title }}" loading="lazy">{% else %}<span class="tf-logo-text">{{ c.title }}</span>{% endif %}</a>
+      {% endfor %}{% if kh.size < 6 %}{% for c in kh %}<a class="tf-marquee__item" href="{{ c.url | relative_url }}" aria-hidden="true" tabindex="-1">{% if c.logo and c.logo != '' %}<img src="{{ c.logo | prepend: site.baseurl }}" alt="" loading="lazy">{% else %}<span class="tf-logo-text">{{ c.title }}</span>{% endif %}</a>{% endfor %}{% endif %}{% endfor %}
     </div>
   </div>
 
