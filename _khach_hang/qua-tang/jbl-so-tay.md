@@ -1,13 +1,10 @@
 ---
-title: "JBL"
-logo: "/assets/img/demo/client-jbl.png"
-da_may: "2.000 sổ tay"
-ngay_tao: "2026-10-01T08:06"
-anh_bia: ""
-tieu_de_bai: "Sổ tay - JBL"
-tom_tat: ""
+title: JBL
+logo: /assets/uploads/Logo2-4.png
+san_pham:
+  - Notebook
+da_may: 2.000 sổ tay
 noi_bat: false
-san_pham: ["Notebook"]
-thu_vien: []
-thoi_gian: ""
+tieu_de_bai: Sổ tay - JBL
+ngay_tao: 2026-10-01T08:06
 ---
