@@ -49,7 +49,7 @@ content:
         path: _khach_hang
         filename: "{primary}.md"
         view:
-          fields: [title, nganh]
+          fields: [title, nhom]
           default: { sort: ngay_tao, order: asc }
         fields:
           - { name: title, label: Tên khách hàng, type: string, required: true }
@@ -63,7 +63,6 @@ content:
                 - { value: dong-phuc, label: Đồng phục }
                 - { value: qua-tang, label: Quà tặng }
                 - { value: ca-hai, label: Cả đồng phục & quà tặng }
-          - { name: nganh, label: Ngành, type: string, description: "VD: F&B, Tài chính" }
           - { name: thu_vien, label: Ảnh dự án thực tế, type: image, options: { multiple: true }, description: "Ảnh đầu tiên hiện to ở đầu trang nếu không có ảnh bìa" }
           - { name: san_pham, label: Sản phẩm đã làm, type: reference, options: { collection: san_pham, search: title, value: "{title}", label: "{title}", multiple: true }, description: "Bấm chọn sản phẩm đã làm cho khách này (chọn nhiều được). Có chọn thì trang khách hàng tự hiện mục «Sản phẩm đã làm»; để trống thì mục đó tự ẩn" }
           - { name: da_may, label: Đã làm, type: string, description: "VD: 500 áo polo, 300 túi tote" }
