@@ -273,8 +273,7 @@ content:
     - name: logo
       label: Logo
       type: image
-      required: true
-      description: PNG nền trong, khoảng 600×400
+      description: PNG nền trong, khoảng 600×400. Không bắt buộc – để trống thì đối tác không hiện ở dải logo trang chủ.
     - name: thu_vien
       label: Hình ảnh dự án
       type: image
@@ -341,8 +340,7 @@ content:
     - name: logo
       label: Logo
       type: image
-      required: true
-      description: PNG nền trong, khoảng 600×400
+      description: PNG nền trong, khoảng 600×400. Không bắt buộc – để trống thì đối tác không hiện ở dải logo trang chủ.
     - name: thu_vien
       label: Hình ảnh dự án
       type: image
