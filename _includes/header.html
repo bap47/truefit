@@ -1,6 +1,6 @@
 {% assign home = site.data.trang_chu['1_dau_trang'] %}
 {% assign cua = site.data.trang_chu['2b_hai_huong'].cua %}
-{% assign tat_ca_sp = site.san_pham | sort: "ngay_tao", "last" | where_exp: "p", "p.an != true" %}
+{% include xep.html loai="sp" %}{% assign tat_ca_sp = xep | where_exp: "p", "p.an != true" %}
 <div class="tf-top">
 <div class="tf-promo"><span>🎁 {{ site.data.chung.uu_dai | default: home.uu_dai }}</span></div>
 <header class="tf-header">
