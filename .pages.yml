@@ -48,6 +48,11 @@ content:
     - name: mo_ta
       label: Mô tả ngắn (dưới tên sản phẩm)
       type: text
+    - name: gom
+      label: Bộ gồm (không bắt buộc)
+      type: string
+      list: true
+      description: 'Dùng cho sản phẩm là một bộ. VD Đồng phục công sở: Áo sơ mi · Quần tây · Váy bút chì'
     - name: dat_tu
       label: Đặt từ
       type: string
@@ -123,6 +128,11 @@ content:
     - name: mo_ta
       label: Mô tả ngắn (dưới tên sản phẩm)
       type: text
+    - name: gom
+      label: Bộ gồm (không bắt buộc)
+      type: string
+      list: true
+      description: 'Dùng cho sản phẩm là một bộ. VD Đồng phục công sở: Áo sơ mi · Quần tây · Váy bút chì'
     - name: dat_tu
       label: Đặt từ
       type: string
