@@ -830,3 +830,10 @@ body.is-searching { overflow: hidden; }
 @media (max-width: 600px) {
   .tf-slide--mimg { background-image: var(--slide-bg-m); background-size: cover; background-position: center bottom; padding-bottom: 0; min-height: 125vw; }
 }
+
+/* Trang Chính sách dạng tab */
+.tf-tabs--policy { max-width: 900px; margin: 2rem auto 0; }
+.tf-tabs__nav { overflow-x: auto; scrollbar-width: none; flex-wrap: nowrap; }
+.tf-tabs__nav::-webkit-scrollbar { display: none; }
+.tf-tabs__nav button { white-space: nowrap; flex: none; }
+.tf-tabs--policy .tf-tabs__panel { scroll-margin-top: 220px; }
