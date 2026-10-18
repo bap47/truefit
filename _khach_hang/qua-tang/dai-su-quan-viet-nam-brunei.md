@@ -1,6 +1,11 @@
 ---
 title: Đại sứ quán Việt Nam tại Brunei
 logo: /assets/uploads/Logo1.png
+thu_vien:
+  - /assets/uploads/Logo 17.png
+  - /assets/uploads/Logo 16.png
+  - /assets/uploads/Logo 18.png
+  - /assets/uploads/Logo 15.png
 san_pham:
   - Pouch
 da_may: 100 túi
