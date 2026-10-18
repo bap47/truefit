@@ -269,7 +269,10 @@ html { scroll-padding-top: 130px; }
 .tf-hero { padding-block: clamp(4rem, 9vw, 7rem); }
 .tf-hotline { display: inline-flex; align-items: center; gap: .75rem; margin-top: 1.75rem; padding: .6rem .6rem .6rem 1.4rem; border-radius: 999px; background: var(--black); color: #fff; text-decoration: none; font-weight: 600; text-transform: uppercase; transition: transform .3s var(--ease); }
 .tf-hotline strong { background: var(--orange); border-radius: 999px; padding: .45rem 1.1rem; }
-.tf-hotline:hover { transform: translateY(-2px); }
+.tf-hotline { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+.tf-hotline strong { transition: background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease); }
+.tf-hotline:hover, .tf-slide.is-active .tf-hotline:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -10px rgba(232,135,58,.75); transition-delay: 0s; }
+.tf-hotline:hover strong { background: #fff; color: var(--orange); transform: scale(1.05); }
 .tf-feature { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .tf-feature__item { background: var(--cream); border-radius: var(--radius); padding: 1rem 1rem 1.25rem; text-align: center; font-weight: 600; }
 .tf-feature__item img { width: 100%; aspect-ratio: 1; object-fit: contain; transition: transform .5s var(--ease); }
