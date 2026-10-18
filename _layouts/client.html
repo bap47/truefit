@@ -41,7 +41,7 @@ layout: default
         <button type="button" role="tab" aria-selected="false" aria-controls="dat-hang" data-tab="dat-hang">Quy trình đặt hàng</button>
       </div>
       <section id="mo-ta" class="tf-tabs__panel" role="tabpanel">
-        <div class="tf-prose">{% if content != "" %}{{ content }}{% else %}<p>TrueFit đồng hành cùng {{ page.title }} từ khâu tư vấn, thiết kế, làm mẫu đến sản xuất và giao hàng tận nơi.</p>{% endif %}</div>
+        <div class="tf-prose">{% assign nd_bai = content | strip_html | strip %}{% assign co_cc = false %}{% if page.cc_khach_hang != blank or page.cc_bai_toan != blank or page.cc_giai_phap != blank or page.cc_ket_qua != blank %}{% assign co_cc = true %}{% endif %}{% if co_cc %}{% if page.cc_khach_hang != blank %}<h3>Khách hàng</h3>{{ page.cc_khach_hang | markdownify }}{% endif %}{% if page.cc_bai_toan != blank %}<h3>Bài toán</h3>{{ page.cc_bai_toan | markdownify }}{% endif %}{% if page.cc_giai_phap != blank %}<h3>Giải pháp</h3>{{ page.cc_giai_phap | markdownify }}{% endif %}{% if page.cc_ket_qua != blank %}<h3>Kết quả</h3>{{ page.cc_ket_qua | markdownify }}{% endif %}{% elsif nd_bai != "" %}{{ content }}{% else %}<p>TrueFit đồng hành cùng {{ page.title }} từ khâu tư vấn, thiết kế, làm mẫu đến sản xuất và giao hàng tận nơi.</p>{% endif %}</div>
       </section>
       <section id="dat-hang" class="tf-tabs__panel" role="tabpanel">
         {% include pd-steps.html slug=qslug %}
@@ -50,12 +50,14 @@ layout: default
   </div>
 </section>
 
-{% if da_lam.size > 0 %}
+{% assign lien_quan = "" | split: "" %}
+{% for ten in page.sp_lien_quan %}{% assign f = site.san_pham | where: "title", ten %}{% assign lien_quan = lien_quan | concat: f %}{% endfor %}
+{% if lien_quan.size > 0 %}
 <section class="tf-section tf-section--cream" id="san-pham">
   <div class="wrap">
-    <h2 class="tf-title reveal">Sản phẩm <span>đã làm</span> cho<br>{{ page.title }}</h2>
+    <h2 class="tf-title reveal">Sản phẩm <span>liên quan</span></h2>
     <div class="tf-grid">
-      {% for p in da_lam %}{% include product-card.html p=p %}{% endfor %}
+      {% for p in lien_quan %}{% include product-card.html p=p %}{% endfor %}
     </div>
   </div>
 </section>
