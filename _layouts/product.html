@@ -40,7 +40,7 @@ layout: default
   </div>
 </section>
 
-{% assign cung = site.san_pham | where: "danh_muc", page.danh_muc | sort: "ngay_tao", "last" %}
+{% include xep.html loai="sp" %}{% assign cung = xep | where: "danh_muc", page.danh_muc %}
 <section class="tf-section tf-section--cream">
   <div class="wrap">
     <h2 class="tf-title reveal">Sản phẩm <span>cùng loại</span></h2>

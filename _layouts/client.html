@@ -60,7 +60,7 @@ layout: default
 </section>
 {% endif %}
 
-{% assign khac = site.khach_hang | sort: "ngay_tao", "last" | where_exp: "c", "c.url != page.url" %}
+{% include xep.html loai="kh" %}{% assign khac = xep | where_exp: "c", "c.url != page.url" %}
 {% if khac.size > 0 %}
 <section class="tf-section" id="doi-tac-khac">
   <div class="wrap">
