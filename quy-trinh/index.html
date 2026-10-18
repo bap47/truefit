@@ -2,7 +2,7 @@
 layout: default
 title: Quy trình làm việc
 ---
-{% assign ds = site.quy_trinh | sort: "thu_tu" %}
+{% assign ds = site.quy_trinh | sort: "thu_tu", "last" %}
 <section class="tf-section">
   <div class="wrap">
     <p class="tf-eyebrow rise">Quy trình làm việc</p>
