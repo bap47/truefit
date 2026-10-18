@@ -81,10 +81,11 @@ content:
         label: Hiện ở mục
         type: select
         required: true
+        description: "Chọn trang mà sản phẩm này sẽ nằm: Đồng phục hoặc Quà tặng"
         options:
           values:
-            - { value: dong-phuc, label: Các sản phẩm của TrueFit }
-            - { value: merchandise, label: Quà tặng sự kiện }
+            - { value: dong-phuc, label: "👕 Đồng phục (trang Đồng phục)" }
+            - { value: merchandise, label: "🎁 Quà tặng (trang Quà tặng)" }
       - { name: anh, label: Ảnh chính, type: image, required: true, description: "Ảnh vuông 1200×1200, ảnh thật sản phẩm – hiện to ở đầu trang" }
       - { name: dat_tu, label: Đặt từ, type: string, description: "VD: 50 áo – để trống nếu không muốn hiện" }
       - { name: chat_lieu, label: Chất liệu, type: string }
@@ -97,7 +98,7 @@ content:
       - { name: thu_tu, label: Thứ tự, type: number, default: 50, description: "Số nhỏ hiện trước" }
       - { name: ban_chay, label: Bán chạy (hiện ở trang chủ), type: boolean, default: false }
       - { name: an, label: Ẩn khỏi web, type: boolean, default: false }
-      - { name: body, label: Mô tả sản phẩm (hiện ở mục «Mô tả sản phẩm»), type: rich-text }
+      - { name: body, label: Ghi chú nội bộ (không hiện trên web), type: rich-text }
 
   - name: khach_hang
     label: "🤝 Đối tác"
