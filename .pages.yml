@@ -258,7 +258,9 @@ content:
     path: _khach_hang/dong-phuc
     filename: '{primary}.md'
     view:
+      primary: title
       fields:
+      - san_pham
       - title
       default:
         sort: ngay_tao
@@ -328,7 +330,9 @@ content:
     path: _khach_hang/qua-tang
     filename: '{primary}.md'
     view:
+      primary: title
       fields:
+      - san_pham
       - title
       default:
         sort: ngay_tao
