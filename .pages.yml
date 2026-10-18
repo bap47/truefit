@@ -289,7 +289,17 @@ content:
         value: '{title}'
         label: '{title}'
         multiple: true
-      description: Bấm chọn sản phẩm đã làm cho khách này (chọn nhiều được). Có chọn thì trang khách hàng tự hiện mục «Sản phẩm đã làm»; để trống thì mục đó tự ẩn
+      description: Chọn sản phẩm đã làm cho khách này (chọn nhiều được). Hiện ở tag thẻ và dòng «Sản phẩm» trong thông tin dự án
+    - name: sp_lien_quan
+      label: Sản phẩm liên quan (không bắt buộc)
+      type: reference
+      options:
+        collection: sp_dong_phuc
+        search: title
+        value: '{title}'
+        label: '{title}'
+        multiple: true
+      description: Chọn thì cuối trang hiện mục «Sản phẩm liên quan»; để trống thì không hiện
     - name: da_may
       label: Số lượng đã làm
       type: string
@@ -309,9 +319,22 @@ content:
     - name: tom_tat
       label: Tóm tắt 1 dòng
       type: text
-    - name: body
-      label: 'Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)'
-      type: rich-text
+    - name: cc_khach_hang
+      label: 'Câu chuyện ① Khách hàng'
+      type: text
+      description: Họ là ai, làm lĩnh vực gì. Bỏ trống mục nào thì mục đó không hiện.
+    - name: cc_bai_toan
+      label: 'Câu chuyện ② Bài toán'
+      type: text
+      description: Khách cần gì, khó ở đâu (số lượng, thời gian, chất liệu…)
+    - name: cc_giai_phap
+      label: 'Câu chuyện ③ Giải pháp'
+      type: text
+      description: TrueFit đã tư vấn, thiết kế, sản xuất thế nào
+    - name: cc_ket_qua
+      label: 'Câu chuyện ④ Kết quả'
+      type: text
+      description: 'Giao bao nhiêu, đúng hạn, phản hồi của khách. Mẹo: xuống dòng 2 lần để tách đoạn, bọc **chữ** để in đậm'
     - name: ngay_tao
       label: Ngày thêm (tự động – mục mới tự xếp sau cùng)
       type: date
@@ -356,7 +379,17 @@ content:
         value: '{title}'
         label: '{title}'
         multiple: true
-      description: Bấm chọn sản phẩm đã làm cho khách này (chọn nhiều được). Có chọn thì trang khách hàng tự hiện mục «Sản phẩm đã làm»; để trống thì mục đó tự ẩn
+      description: Chọn sản phẩm đã làm cho khách này (chọn nhiều được). Hiện ở tag thẻ và dòng «Sản phẩm» trong thông tin dự án
+    - name: sp_lien_quan
+      label: Sản phẩm liên quan (không bắt buộc)
+      type: reference
+      options:
+        collection: sp_qua_tang
+        search: title
+        value: '{title}'
+        label: '{title}'
+        multiple: true
+      description: Chọn thì cuối trang hiện mục «Sản phẩm liên quan»; để trống thì không hiện
     - name: da_may
       label: Số lượng đã làm
       type: string
@@ -377,9 +410,22 @@ content:
     - name: tom_tat
       label: Tóm tắt 1 dòng
       type: text
-    - name: body
-      label: 'Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)'
-      type: rich-text
+    - name: cc_khach_hang
+      label: 'Câu chuyện ① Khách hàng'
+      type: text
+      description: Họ là ai, làm lĩnh vực gì. Bỏ trống mục nào thì mục đó không hiện.
+    - name: cc_bai_toan
+      label: 'Câu chuyện ② Bài toán'
+      type: text
+      description: Khách cần gì, khó ở đâu (số lượng, thời gian, chất liệu…)
+    - name: cc_giai_phap
+      label: 'Câu chuyện ③ Giải pháp'
+      type: text
+      description: TrueFit đã tư vấn, thiết kế, sản xuất thế nào
+    - name: cc_ket_qua
+      label: 'Câu chuyện ④ Kết quả'
+      type: text
+      description: 'Giao bao nhiêu, đúng hạn, phản hồi của khách. Mẹo: xuống dòng 2 lần để tách đoạn, bọc **chữ** để in đậm'
     - name: ngay_tao
       label: Ngày thêm (tự động – mục mới tự xếp sau cùng)
       type: date
