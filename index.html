@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign t = site.data.trang_chu %}
 {% assign d1 = t['1_dau_trang'] %}{% assign d2 = t['2_gioi_thieu'] %}{% assign d2b = t['2b_hai_huong'] %}{% assign d3 = t['3_cam_ket'] %}{% assign d4 = t['4_ly_do'] %}{% assign d5 = t['5_quy_trinh'] %}{% assign d6 = t['6_khach_hang'] %}{% assign d7 = t['7_san_pham'] %}{% assign d9 = t['9_cuoi_trang'] %}
-{% assign sp = site.san_pham | sort: "thu_tu" %}
+{% assign sp = site.san_pham | sort: "ngay_tao", "last" %}
 {% assign so_sp = d7.so_luong | default: 4 %}
 
 <!-- ① HERO -->
@@ -125,7 +125,7 @@ layout: default
         <h2>{{ d5.tieu_de }}</h2>
         <p>{{ d5.dong_phu }}</p>
         <a class="btn btn--black" href="#bao-gia-form" data-bao-gia>Nhận báo giá</a>
-        {% assign qt = site.quy_trinh | sort: "thu_tu" %}
+        {% assign qt = site.quy_trinh | sort: "thu_tu", "last" %}
         <p class="tf-process__more">{% for q in qt %}<a href="{{ q.url | relative_url }}">{{ q.title }} →</a>{% endfor %}</p>
       </div>
       <ol class="tf-steps">
@@ -141,7 +141,7 @@ layout: default
 </section>
 
 <!-- ⑥ ĐỐI TÁC: logo chạy ngang + câu chuyện tiêu biểu -->
-{% assign kh = site.khach_hang | sort: "thu_tu" %}
+{% assign kh = site.khach_hang | sort: "ngay_tao", "last" %}
 <section class="tf-section" id="khach-hang">
   <div class="wrap">
     <h2 class="tf-title reveal">{% include cam.html t=d6.tieu_de %}</h2>
