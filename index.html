@@ -24,8 +24,8 @@ layout: default
     {% endfor %}
   </div>
   {% if d1.slides.size > 1 %}
-  <button class="tf-slider__arrow tf-slider__arrow--prev" aria-label="Slide trước">‹</button>
-  <button class="tf-slider__arrow tf-slider__arrow--next" aria-label="Slide sau">›</button>
+  <button class="tf-slider__arrow tf-slider__arrow--prev" aria-label="Slide trước"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="tf-slider__arrow tf-slider__arrow--next" aria-label="Slide sau"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <div class="tf-slider__dots">{% for s in d1.slides %}<button aria-label="Tới slide {{ forloop.index }}"{% if forloop.first %} aria-current="true"{% endif %}></button>{% endfor %}</div>
   {% endif %}
 </section>
@@ -162,8 +162,8 @@ layout: default
     <div class="tf-stories__head">
       <h3 class="tf-stories__title reveal">{% include cam.html t=d6.tieu_de_cau_chuyen %}</h3>
       <div class="tf-stories__nav">
-        <button class="tf-round" data-scroll="-1" aria-label="Trước">‹</button>
-        <button class="tf-round" data-scroll="1" aria-label="Sau">›</button>
+        <button class="tf-round" data-scroll="-1" aria-label="Trước"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="tf-round" data-scroll="1" aria-label="Sau"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
     <div class="tf-stories__row" tabindex="0" aria-label="Đối tác tiêu biểu">
