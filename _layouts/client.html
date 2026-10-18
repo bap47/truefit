@@ -9,13 +9,13 @@ layout: default
 {% if anh_chinh == nil or anh_chinh == "" %}{% if page.thu_vien and page.thu_vien.size > 0 %}{% assign anh_chinh = page.thu_vien[0] %}{% elsif da_lam.size > 0 %}{% assign anh_chinh = da_lam[0].anh %}{% endif %}{% endif %}
 {% if anh_chinh == nil or anh_chinh == "" %}{% assign anh_chinh = "/assets/img/ph.svg" %}{% endif %}
 {% assign ds_them = page.thu_vien %}{% if page.thu_vien and page.thu_vien.size > 0 and anh_chinh == page.thu_vien[0] %}{% capture _s %}{% for a in page.thu_vien offset:1 %}{{ a }}|{% endfor %}{% endcapture %}{% assign ds_them = _s | split: "|" %}{% endif %}
-<section class="tf-section tf-pd" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ anh_chinh | prepend: site.baseurl }}">
+<section class="tf-section tf-pd tf-pd--kh" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ anh_chinh | prepend: site.baseurl }}">
   <div class="wrap tf-pd__top">
     {% include pd-gallery.html anh=anh_chinh ds=ds_them alt=page.title %}
     <div class="tf-pd__info">
       <a class="tf-eyebrow rise" href="{{ '/khach-hang/#' | append: qslug | relative_url }}">Đối tác {{ ten_nhom | downcase }}</a>
       {% if page.logo and page.logo != "" %}<p class="tf-pd__logo rise"><img src="{{ page.logo | prepend: site.baseurl }}" alt="Logo {{ page.title }}"></p>{% endif %}
-      <h1 class="rise" style="--d:.08s">{% if page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }}{% elsif page.nhom == "qua-tang" and page.san_pham and page.san_pham.size > 0 %}{{ page.san_pham | join: " + " }} - {{ page.title }}{% else %}{{ page.title }}{% endif %}</h1>
+      <h1 class="rise" style="--d:.08s">{% if page.nhom == "qua-tang" %}{% if page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }} - {% elsif page.san_pham and page.san_pham.size > 0 %}{{ page.san_pham | join: " + " }} - {% endif %}{{ page.title }}{% elsif page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }}{% else %}{{ page.title }}{% endif %}</h1>
       {% if page.tom_tat and page.tom_tat != "" %}<p class="tf-pd__lead rise" style="--d:.12s">{{ page.tom_tat }}</p>{% endif %}
       <div class="tf-btns rise" style="--d:.16s">
         <a class="btn" href="#bao-gia-form" data-bao-gia>Làm giống dự án này</a>
