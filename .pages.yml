@@ -279,7 +279,7 @@ content:
       type: image
       options:
         multiple: true
-      description: 'Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB), để sản phẩm ở giữa ảnh. Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.'
+      description: 'Ảnh ngang 1200×900 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.'
     - name: san_pham
       label: Sản phẩm đã làm
       type: reference
@@ -325,9 +325,10 @@ content:
     path: _khach_hang/qua-tang
     filename: '{primary}.md'
     view:
-      primary: tieu_de_bai
+      primary: title
       fields:
       - tieu_de_bai
+      - title
       default:
         sort: ngay_tao
         order: asc
@@ -345,7 +346,7 @@ content:
       type: image
       options:
         multiple: true
-      description: 'Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB), để sản phẩm ở giữa ảnh. Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.'
+      description: 'Ảnh ngang 1200×900 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.'
     - name: san_pham
       label: Sản phẩm đã làm
       type: reference
@@ -369,10 +370,10 @@ content:
       type: boolean
       default: false
     - name: tieu_de_bai
-      label: Tên dự án (Loại sản phẩm - Tên khách hàng)
+      label: Loại sản phẩm (hiện trên thẻ)
       type: string
       required: true
-      description: 'VD: Khăn bandana - PGI. Tên này hiện trên thẻ và trong danh sách CMS'
+      description: 'Chỉ ghi loại, VD: Khăn bandana hoặc Combo túi Pouch + túi tote. Web tự ghép thành «Khăn bandana - PGI»'
     - name: tom_tat
       label: Tóm tắt 1 dòng
       type: text
