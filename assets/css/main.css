@@ -779,3 +779,9 @@ body.is-searching { overflow: hidden; }
 @media (max-width: 1280px) { .tf-sbtn, .tf-sbtn:hover { min-width: 130px; } }
 @media (max-width: 1100px) { .tf-sbtn, .tf-sbtn:hover { min-width: 0; width: 36px; padding: 0; justify-content: center; } .tf-sbtn span { display: none; } }
 @media (max-width: 860px) { .tf-sbtn, .tf-sbtn:hover { width: auto; min-width: 0; flex: 1; max-width: 220px; padding: 0 .9rem 0 .75rem; justify-content: flex-start; margin: 0 .5rem 0 auto; } .tf-sbtn span { display: inline; } }
+/* Báo giá + ô tìm kiếm: cùng chiều cao, phân biệt rõ */
+@media (min-width: 861px) {
+  .tf-nav__cta { height: 36px; display: inline-flex; align-items: center; padding: 0 1.1rem !important; background: var(--black, #1a1a1a) !important; color: #fff !important; }
+  .tf-nav__cta:hover { background: #fff !important; color: var(--orange) !important; }
+  .tf-sbtn, .tf-sbtn:hover { margin-left: -.35rem; }
+}
