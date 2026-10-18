@@ -1,15 +1,15 @@
 ---
-title: "Kè Cafe"
-logo: /assets/img/demo/client-ke-cafe.png
+title: "Kè Café"
+logo: "/assets/img/demo/client-ke-cafe.png"
 nhom: dong-phuc
 nganh: "F&B"
 da_may: ""
-thu_tu: 3
-ngay_tao: "2026-10-01T08:02"
+ngay_tao: "2026-10-01T08:10"
 anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""
 noi_bat: true
-san_pham: ["Đồng phục PG", "Tạp dề"]
-thu_vien: ["/assets/img/demo/dong-phuc-pg.png", "/assets/img/demo/tap-de.png", "/assets/img/demo/ao-chay-bo.png"]
+san_pham: ["Áo Thun"]
+thu_vien: ["/assets/img/demo/ao-thun-co-tron.png"]
+thoi_gian: ""
 ---
