@@ -1,8 +1,8 @@
 ---
 title: "Công ty TNHH Cơ khí Thương Mại D&T"
 logo: ""
-da_may: ""
-ngay_tao: "2026-10-01T08:13"
+da_may: "200 áo"
+ngay_tao: "2026-10-01T08:17"
 anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""

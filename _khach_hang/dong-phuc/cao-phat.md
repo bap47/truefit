@@ -1,8 +1,8 @@
 ---
 title: "Công ty TNHH Cao Phát"
 logo: ""
-da_may: ""
-ngay_tao: "2026-10-01T08:06"
+da_may: "1.000 áo mỗi năm"
+ngay_tao: "2026-10-01T08:12"
 anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""

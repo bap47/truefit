@@ -1,8 +1,8 @@
 ---
 title: "Gia Nguyễn"
 logo: ""
-da_may: ""
-ngay_tao: "2026-10-01T08:12"
+da_may: "70 áo"
+ngay_tao: "2026-10-01T08:16"
 anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""

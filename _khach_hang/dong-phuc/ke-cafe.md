@@ -1,8 +1,8 @@
 ---
 title: "Kè Café"
 logo: "/assets/img/demo/client-ke-cafe.png"
-da_may: ""
-ngay_tao: "2026-10-01T08:10"
+da_may: "50 áo"
+ngay_tao: "2026-10-01T08:19"
 anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""
