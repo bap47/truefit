@@ -232,9 +232,9 @@ content:
       type: image
       description: Ảnh ngang 4:3, ảnh thật dự án. Để trống sẽ hiện logo
     - name: tieu_de_bai
-      label: Tiêu đề câu chuyện
+      label: Tên dự án hiện trên thẻ
       type: string
-      description: 'VD: Đồng bộ 500 nhân viên trong 10 ngày'
+      description: 'Để trống thì tự ghép: tên sản phẩm + tên khách (VD: Áo thun cổ trụ F88 Đông Nam Bộ)'
     - name: tom_tat
       label: Tóm tắt 1 dòng
       type: text
@@ -302,9 +302,9 @@ content:
       type: image
       description: Ảnh ngang 4:3, ảnh thật dự án. Để trống sẽ hiện logo
     - name: tieu_de_bai
-      label: Tiêu đề câu chuyện
+      label: Tên dự án hiện trên thẻ
       type: string
-      description: 'VD: Đồng bộ 500 nhân viên trong 10 ngày'
+      description: 'Để trống thì tự ghép: tên sản phẩm + tên khách (VD: Áo thun cổ trụ F88 Đông Nam Bộ)'
     - name: tom_tat
       label: Tóm tắt 1 dòng
       type: text
