@@ -1,13 +1,10 @@
 ---
-title: "PGI"
-logo: ""
-da_may: "500 khăn bandana"
-ngay_tao: "2026-10-01T08:04"
-anh_bia: ""
-tieu_de_bai: "Khăn bandana - PGI"
-tom_tat: ""
+title: PGI
+logo: /assets/uploads/Logo2-1-1.png
+san_pham:
+  - Khăn bandana
+da_may: 500 khăn bandana
 noi_bat: false
-san_pham: ["Khăn bandana"]
-thu_vien: []
-thoi_gian: ""
+tieu_de_bai: Khăn bandana - PGI
+ngay_tao: 2026-10-01T08:04
 ---
