@@ -8,9 +8,10 @@ layout: default
 {% assign anh_chinh = page.anh_bia %}
 {% if anh_chinh == nil or anh_chinh == "" %}{% if page.thu_vien and page.thu_vien.size > 0 %}{% assign anh_chinh = page.thu_vien[0] %}{% elsif da_lam.size > 0 %}{% assign anh_chinh = da_lam[0].anh %}{% endif %}{% endif %}
 {% if anh_chinh == nil or anh_chinh == "" %}{% assign anh_chinh = "/assets/img/ph.svg" %}{% endif %}
+{% assign ds_them = page.thu_vien %}{% if page.thu_vien and page.thu_vien.size > 0 and anh_chinh == page.thu_vien[0] %}{% capture _s %}{% for a in page.thu_vien offset:1 %}{{ a }}|{% endfor %}{% endcapture %}{% assign ds_them = _s | split: "|" %}{% endif %}
 <section class="tf-section tf-pd" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ anh_chinh | prepend: site.baseurl }}">
   <div class="wrap tf-pd__top">
-    {% include pd-gallery.html anh=anh_chinh ds=page.thu_vien alt=page.title %}
+    {% include pd-gallery.html anh=anh_chinh ds=ds_them alt=page.title %}
     <div class="tf-pd__info">
       <a class="tf-eyebrow rise" href="{{ '/khach-hang/#' | append: qslug | relative_url }}">Đối tác {{ ten_nhom | downcase }}</a>
       {% if page.logo and page.logo != "" %}<p class="tf-pd__logo rise"><img src="{{ page.logo | prepend: site.baseurl }}" alt="Logo {{ page.title }}"></p>{% endif %}
