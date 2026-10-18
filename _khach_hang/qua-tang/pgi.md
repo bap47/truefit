@@ -4,7 +4,7 @@ logo: ""
 da_may: "500 khăn bandana"
 ngay_tao: "2026-10-01T08:04"
 anh_bia: ""
-tieu_de_bai: ""
+tieu_de_bai: "Khăn bandana - PGI"
 tom_tat: ""
 noi_bat: false
 san_pham: ["Khăn bandana"]
