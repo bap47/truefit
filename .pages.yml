@@ -276,11 +276,11 @@ content:
       required: true
       description: PNG nền trong, khoảng 600×400
     - name: thu_vien
-      label: Ảnh dự án thực tế
+      label: Hình ảnh dự án
       type: image
       options:
         multiple: true
-      description: Ảnh đầu tiên hiện to ở đầu trang nếu không có ảnh bìa
+      description: Chọn được nhiều ảnh cùng lúc, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.
     - name: san_pham
       label: Sản phẩm đã làm
       type: reference
@@ -303,10 +303,6 @@ content:
       label: Hiện ở «Câu chuyện khách hàng tiêu biểu» trang chủ
       type: boolean
       default: false
-    - name: anh_bia
-      label: Ảnh bìa câu chuyện
-      type: image
-      description: Ảnh ngang 4:3, ảnh thật dự án. Để trống sẽ hiện logo
     - name: tieu_de_bai
       label: Tên dự án hiện trên thẻ
       type: string
@@ -348,11 +344,11 @@ content:
       required: true
       description: PNG nền trong, khoảng 600×400
     - name: thu_vien
-      label: Ảnh dự án thực tế
+      label: Hình ảnh dự án
       type: image
       options:
         multiple: true
-      description: Ảnh đầu tiên hiện to ở đầu trang nếu không có ảnh bìa
+      description: Chọn được nhiều ảnh cùng lúc, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.
     - name: san_pham
       label: Sản phẩm đã làm
       type: reference
@@ -375,10 +371,6 @@ content:
       label: Hiện ở «Câu chuyện khách hàng tiêu biểu» trang chủ
       type: boolean
       default: false
-    - name: anh_bia
-      label: Ảnh bìa câu chuyện
-      type: image
-      description: Ảnh ngang 4:3, ảnh thật dự án. Để trống sẽ hiện logo
     - name: tieu_de_bai
       label: Tên dự án hiện trên thẻ
       type: string
