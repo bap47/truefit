@@ -860,8 +860,7 @@ body.is-searching { overflow: hidden; }
 .tf-marquee__item img { filter: none; opacity: 1; transition: transform .3s var(--ease); }
 .tf-marquee__item:hover img { transform: scale(1.12); }
 /* Không để 1 chữ rớt xuống dòng một mình (mọi thiết bị) */
-h1, h2, h3, h4, .tf-title, .tf-hero__title, .tf-story strong, .tf-card__name { text-wrap: balance; }
-p, li, dd, .tf-lead, .tf-hero__tagline { text-wrap: pretty; }
+h1, h2, h3, h4, .tf-title, .tf-hero__title, .tf-story strong, .tf-card__name, p, li, dd { text-wrap: wrap; } /* lấp đầy dòng; 2 chữ cuối được JS dính lại */
 /* "MIỄN PHÍ thiết kế - vận chuyển": luôn 1 dòng, chữ tự co theo màn hình */
 .tf-intro__title { white-space: nowrap; }
 @media (max-width: 760px) { .tf-intro__title { font-size: min(1.5rem, calc((100vw - 2.2rem) / 15.3)); } }
