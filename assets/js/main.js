@@ -1,3 +1,24 @@
+/* Xuống dòng tự chọn: gõ dấu | trong tiêu đề ở CMS = xuống dòng tại đó. Chỗ khác thì dấu | tự ẩn */
+(function () {
+  var sel = 'h1, h2, h3, h4, .tf-title, .tf-hero__title, .tf-story strong, .tf-story__sum, .tf-card__name, .tf-lead, .tf-hero__tagline, .tf-intro__lead';
+  function run() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) { var p = n.parentNode; return n.nodeValue.indexOf('|') > -1 && p && !/^(SCRIPT|STYLE|TEXTAREA|INPUT|CODE|PRE)$/.test(p.nodeName) ? 1 : 2; }
+    }), list = [], n;
+    while ((n = w.nextNode())) list.push(n);
+    list.forEach(function (t) {
+      var host = t.parentNode.closest(sel);
+      if (!host) { t.nodeValue = t.nodeValue.replace(/\s*\|\s*/g, ' '); return; }
+      var parts = t.nodeValue.split(/\s*\|\s*/), frag = document.createDocumentFragment();
+      parts.forEach(function (s, i) { if (i) { var br = document.createElement('br'); br.className = 'tf-br'; frag.appendChild(br); } frag.appendChild(document.createTextNode(s)); });
+      t.parentNode.replaceChild(frag, t);
+    });
+    document.querySelectorAll('[alt*="|"],[aria-label*="|"],[data-recent-t*="|"]').forEach(function (e) {
+      ['alt', 'aria-label', 'data-recent-t'].forEach(function (a) { var v = e.getAttribute(a); if (v) e.setAttribute(a, v.replace(/\s*\|\s*/g, ' ')); });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
 /* TrueFit – animation & menu (không cần thư viện ngoài) */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
