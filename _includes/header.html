@@ -1,6 +1,6 @@
 {% assign home = site.data.trang_chu['1_dau_trang'] %}
 {% assign cua = site.data.trang_chu['2b_hai_huong'].cua %}
-{% assign tat_ca_sp = site.san_pham | sort: "thu_tu" | where_exp: "p", "p.an != true" %}
+{% assign tat_ca_sp = site.san_pham | sort: "ngay_tao", "last" | where_exp: "p", "p.an != true" %}
 <div class="tf-top">
 <div class="tf-promo"><span>🎁 {{ site.data.chung.uu_dai | default: home.uu_dai }}</span></div>
 <header class="tf-header">
@@ -50,14 +50,14 @@
           <a href="{{ '/khach-hang/' | relative_url }}">Tất cả đối tác</a>
         </div>
       </div>
-      {% assign qt = site.quy_trinh | sort: "thu_tu" %}
+      {% assign qt = site.quy_trinh | sort: "thu_tu", "last" %}
       <div class="tf-nav__item tf-nav__item--drop">
         <a href="{{ '/quy-trinh/' | relative_url }}" aria-haspopup="true"{% if page.url contains '/quy-trinh/' %} aria-current="page"{% endif %}>Quy trình <span class="tf-nav__caret" aria-hidden="true">▾</span></a>
         <div class="tf-drop">
           {% for q in qt %}<a href="{{ q.url | relative_url }}">{{ q.title }}</a>{% endfor %}
         </div>
       </div>
-      {% assign cs = site.chinh_sach | sort: "thu_tu" %}
+      {% assign cs = site.chinh_sach | sort: "thu_tu", "last" %}
       <div class="tf-nav__item tf-nav__item--drop">
         <a href="{{ '/chinh-sach/' | relative_url }}" aria-haspopup="true"{% if page.url contains '/chinh-sach/' %} aria-current="page"{% endif %}>Chính sách <span class="tf-nav__caret" aria-hidden="true">▾</span></a>
         <div class="tf-drop">

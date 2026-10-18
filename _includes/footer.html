@@ -46,7 +46,7 @@
       <div class="tf-fcol">
         <h3>Chính sách</h3>
         <ul>
-          {% assign ps = site.chinh_sach | sort: "thu_tu" %}
+          {% assign ps = site.chinh_sach | sort: "thu_tu", "last" %}
           {% for p in ps %}<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}
         </ul>
       </div>
