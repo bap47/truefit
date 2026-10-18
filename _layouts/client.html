@@ -14,7 +14,7 @@ layout: default
     <div class="tf-pd__info">
       <a class="tf-eyebrow rise" href="{{ '/khach-hang/#' | append: qslug | relative_url }}">Đối tác {{ ten_nhom | downcase }}</a>
       {% if page.logo and page.logo != "" %}<p class="tf-pd__logo rise"><img src="{{ page.logo | prepend: site.baseurl }}" alt="Logo {{ page.title }}"></p>{% endif %}
-      <h1 class="rise" style="--d:.08s">{% if page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }}{% elsif page.san_pham and page.san_pham.size > 0 %}{{ page.san_pham | join: " + " }} {{ page.title }}{% else %}{{ page.title }}{% endif %}</h1>
+      <h1 class="rise" style="--d:.08s">{% if page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }}{% elsif page.nhom == "qua-tang" and page.san_pham and page.san_pham.size > 0 %}{{ page.san_pham | join: " + " }} {{ page.title }}{% else %}{{ page.title }}{% endif %}</h1>
       {% if page.tom_tat and page.tom_tat != "" %}<p class="tf-pd__lead rise" style="--d:.12s">{{ page.tom_tat }}</p>{% endif %}
       <div class="tf-btns rise" style="--d:.16s">
         <a class="btn" href="#bao-gia-form" data-bao-gia>Làm giống dự án này</a>
