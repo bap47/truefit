@@ -147,7 +147,7 @@ layout: default
     <h2 class="tf-title reveal">{% include cam.html t=d6.tieu_de %}</h2>
     {% if d6.mo_ta %}<p class="tf-lead reveal">{{ d6.mo_ta }}</p>{% endif %}
   </div>
-  {% assign kl = "" | split: "" %}{% for c in kh %}{% if c.logo and c.logo != "" %}{% assign one = kh | where: "url", c.url %}{% assign kl = kl | concat: one %}{% endif %}{% endfor %}
+  {% assign kl = "" | split: "" %}{% assign da_co = "|" %}{% for c in kh %}{% assign key = "|" | append: c.title | append: "|" %}{% if c.logo and c.logo != "" %}{% unless da_co contains key %}{% assign one = kh | where: "url", c.url %}{% assign kl = kl | concat: one %}{% assign da_co = da_co | append: c.title | append: "|" %}{% endunless %}{% endif %}{% endfor %}
   {% if kl.size > 0 %}
   <div class="tf-marquee" aria-label="Logo khách hàng">
     <div class="tf-marquee__track">
