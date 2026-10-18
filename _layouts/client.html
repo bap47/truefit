@@ -7,12 +7,13 @@ layout: default
 {% for ten in page.san_pham %}{% assign f = tat_ca | where: "title", ten %}{% assign da_lam = da_lam | concat: f %}{% endfor %}
 {% assign anh_chinh = page.anh_bia %}
 {% if anh_chinh == nil or anh_chinh == "" %}{% if page.thu_vien and page.thu_vien.size > 0 %}{% assign anh_chinh = page.thu_vien[0] %}{% elsif da_lam.size > 0 %}{% assign anh_chinh = da_lam[0].anh %}{% endif %}{% endif %}
-<section class="tf-section tf-pd" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ anh_chinh | default: page.logo | relative_url }}">
+{% if anh_chinh == nil or anh_chinh == "" %}{% assign anh_chinh = "/assets/img/ph.svg" %}{% endif %}
+<section class="tf-section tf-pd" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ anh_chinh | prepend: site.baseurl }}">
   <div class="wrap tf-pd__top">
     {% include pd-gallery.html anh=anh_chinh ds=page.thu_vien alt=page.title %}
     <div class="tf-pd__info">
       <a class="tf-eyebrow rise" href="{{ '/khach-hang/#' | append: qslug | relative_url }}">Đối tác {{ ten_nhom | downcase }}</a>
-      {% if page.logo %}<p class="tf-pd__logo rise"><img src="{{ page.logo | prepend: site.baseurl }}" alt="Logo {{ page.title }}"></p>{% endif %}
+      {% if page.logo and page.logo != "" %}<p class="tf-pd__logo rise"><img src="{{ page.logo | prepend: site.baseurl }}" alt="Logo {{ page.title }}"></p>{% endif %}
       <h1 class="rise" style="--d:.08s">{% if page.tieu_de_bai and page.tieu_de_bai != "" %}{{ page.tieu_de_bai }}{% else %}{{ page.title }}{% endif %}</h1>
       {% if page.tom_tat and page.tom_tat != "" %}<p class="tf-pd__lead rise" style="--d:.12s">{{ page.tom_tat }}</p>{% endif %}
       <div class="tf-btns rise" style="--d:.16s">
