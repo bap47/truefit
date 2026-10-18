@@ -37,6 +37,14 @@ defaults:
     values: { layout: product }
   - scope: { path: "", type: khach_hang }
     values: { layout: client }
+  - scope: { path: "_san_pham/dong-phuc", type: san_pham }
+    values: { danh_muc: dong-phuc }
+  - scope: { path: "_san_pham/qua-tang", type: san_pham }
+    values: { danh_muc: merchandise }
+  - scope: { path: "_khach_hang/dong-phuc", type: khach_hang }
+    values: { nhom: dong-phuc }
+  - scope: { path: "_khach_hang/qua-tang", type: khach_hang }
+    values: { nhom: qua-tang }
   - scope: { path: "", type: chinh_sach }
     values: { layout: policy }
   - scope: { path: "", type: quy_trinh }
@@ -50,3 +58,39 @@ exclude:
   - .pages.yml
   - Gemfile
   - Gemfile.lock
+  # File cũ trước khi tách thư mục (đã chuyển vào dong-phuc/ và qua-tang/) – có thể xoá
+  - _san_pham/ao-chay-bo.md
+  - _san_pham/ao-khoac-gio.md
+  - _san_pham/ao-polo.md
+  - _san_pham/ao-teambuilding.md
+  - _san_pham/ao-thun.md
+  - _san_pham/balo.md
+  - _san_pham/but.md
+  - _san_pham/dong-phuc-bao-ho.md
+  - _san_pham/dong-phuc-cong-so.md
+  - _san_pham/dong-phuc-pg.md
+  - _san_pham/khan-bandana.md
+  - _san_pham/lot-ly-gom.md
+  - _san_pham/mini-bag.md
+  - _san_pham/moc-khoa-huy-hieu.md
+  - _san_pham/mu-luoi-trai.md
+  - _san_pham/pouch.md
+  - _san_pham/strap-lanyard.md
+  - _san_pham/tap-de.md
+  - _san_pham/toiletry-bag.md
+  - _san_pham/tui-tote.md
+  - _san_pham/tui-vai-rut.md
+  - _khach_hang/cao-phat.md
+  - _khach_hang/co-khi-dt.md
+  - _khach_hang/dai-su-quan-viet-nam-brunei.md
+  - _khach_hang/f88.md
+  - _khach_hang/gia-nguyen.md
+  - _khach_hang/hausland.md
+  - _khach_hang/jbl.md
+  - _khach_hang/ke-cafe.md
+  - _khach_hang/pgi.md
+  - _khach_hang/qua-dap-le-tot-nghiep.md
+  - _khach_hang/rong-do.md
+  - _khach_hang/tenis-club.md
+  - _khach_hang/truong-th-hiep-tan.md
+  - _khach_hang/xu-ly-moi-truong-viet-nam.md

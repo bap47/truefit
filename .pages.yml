@@ -2,316 +2,761 @@
 media:
   input: assets/uploads
   output: /assets/uploads
-  extensions: [jpg, jpeg, png, webp, gif, svg]
-
+  extensions:
+  - jpg
+  - jpeg
+  - png
+  - webp
+  - gif
+  - svg
 content:
-  - name: g_noi_dung
-    label: "📦 Sản phẩm & Đối tác"
-    type: group
-    items:
-      - name: san_pham
-        label: "Sản phẩm"
-        type: collection
-        path: _san_pham
-        filename: "{primary}.md"
-        view:
-          fields: [title, danh_muc, an]
-          sort: [ngay_tao, title]
-          default: { sort: ngay_tao, order: asc }
-        fields:
-          - { name: title, label: Tên sản phẩm, type: string, required: true }
-          - name: danh_muc
-            label: Hiện ở mục
-            type: select
-            required: true
-            description: "Chọn trang mà sản phẩm này sẽ nằm: Đồng phục hoặc Quà tặng"
-            options:
-              values:
-                - { value: dong-phuc, label: "👕 Đồng phục (trang Đồng phục)" }
-                - { value: merchandise, label: "🎁 Quà tặng (trang Quà tặng)" }
-          - { name: anh, label: Ảnh chính, type: image, required: true, description: "Ảnh vuông 1200×1200, ảnh thật sản phẩm – hiện to ở đầu trang" }
-          - { name: thu_vien, label: Ảnh thêm, type: image, options: { multiple: true }, description: "Hiện thành dải ảnh nhỏ dưới ảnh chính – bấm để xem to" }
-          - { name: mo_ta, label: Mô tả ngắn (dưới tên sản phẩm), type: text }
-          - { name: dat_tu, label: Đặt từ, type: string, description: "VD: 50 áo – để trống nếu không muốn hiện" }
-          - { name: chat_lieu, label: Chất liệu, type: string }
-          - { name: mau_sac, label: Màu sắc, type: string, description: "VD: Theo bảng màu vải hoặc theo nhận diện thương hiệu" }
-          - { name: kich_thuoc, label: Size / kích thước, type: string, description: "VD: S – 3XL hoặc 20×25cm" }
-          - { name: gia_cong, label: Gia công logo, type: string, description: "Để trống = In hoặc thêu theo yêu cầu" }
-          - { name: thoi_gian, label: Thời gian sản xuất, type: string, description: "VD: 7–10 ngày sau khi duyệt mẫu" }
-          - { name: ban_chay, label: Bán chạy (hiện ở trang chủ), type: boolean, default: false }
-          - { name: an, label: Ẩn khỏi web, type: boolean, default: false }
-          - { name: ngay_tao, label: "Ngày thêm (tự động – mục mới tự xếp sau cùng)", type: date, readonly: true, options: { time: true, format: "yyyy-MM-dd'T'HH:mm" } }
-          - { name: body, label: Ghi chú nội bộ (không hiện trên web), type: rich-text }
-
-      - name: khach_hang
-        label: "Đối tác (khách hàng)"
-        type: collection
-        path: _khach_hang
-        filename: "{primary}.md"
-        view:
-          fields: [title, nhom]
-          default: { sort: ngay_tao, order: asc }
-        fields:
-          - { name: title, label: Tên khách hàng, type: string, required: true }
-          - { name: logo, label: Logo, type: image, required: true, description: "PNG nền trong, khoảng 600×400" }
-          - name: nhom
-            label: Đã làm hạng mục
-            type: select
-            default: dong-phuc
-            options:
-              values:
-                - { value: dong-phuc, label: Đồng phục }
-                - { value: qua-tang, label: Quà tặng }
-                - { value: ca-hai, label: Cả đồng phục & quà tặng }
-          - { name: thu_vien, label: Ảnh dự án thực tế, type: image, options: { multiple: true }, description: "Ảnh đầu tiên hiện to ở đầu trang nếu không có ảnh bìa" }
-          - { name: san_pham, label: Sản phẩm đã làm, type: reference, options: { collection: san_pham, search: title, value: "{title}", label: "{title}", multiple: true }, description: "Bấm chọn sản phẩm đã làm cho khách này (chọn nhiều được). Có chọn thì trang khách hàng tự hiện mục «Sản phẩm đã làm»; để trống thì mục đó tự ẩn" }
-          - { name: da_may, label: Đã làm, type: string, description: "VD: 500 áo polo, 300 túi tote" }
-          - { name: thoi_gian, label: Thời gian thực hiện, type: string, description: "VD: 10 ngày" }
-          - { name: noi_bat, label: Hiện ở «Câu chuyện khách hàng tiêu biểu» trang chủ, type: boolean, default: false }
-          - { name: anh_bia, label: Ảnh bìa câu chuyện, type: image, description: "Ảnh ngang 4:3, ảnh thật dự án. Để trống sẽ hiện logo" }
-          - { name: tieu_de_bai, label: Tiêu đề câu chuyện, type: string, description: "VD: Đồng bộ 500 nhân viên trong 10 ngày" }
-          - { name: tom_tat, label: Tóm tắt 1 dòng, type: text }
-          - { name: body, label: "Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)", type: rich-text }
-          - { name: ngay_tao, label: "Ngày thêm (tự động – mục mới tự xếp sau cùng)", type: date, readonly: true, options: { time: true, format: "yyyy-MM-dd'T'HH:mm" } }
-
-  - name: g_trang_chu
-    label: "🏠 Trang chủ (từ trên xuống)"
-    type: group
-    items:
-      - name: tc_1
-        label: "1. Banner trượt"
-        type: file
-        path: _data/trang_chu/1_dau_trang.yml
-        fields:
-          - { name: nut_tu_van, label: Chữ trên nút hotline, type: string, description: "Nút hotline hiện ở slide không có nút riêng" }
-          - { name: tu_chuyen_giay, label: Tự chuyển slide sau (giây), type: number, default: 5 }
-          - name: slides
-            label: Các slide banner
-            type: object
-            list: true
-            description: "Kéo ⋮⋮ để đổi thứ tự slide. Slide đầu tiên hiện đầu tiên khi mở web."
-            fields:
-              - { name: tieu_de, label: Tiêu đề lớn, type: text, description: "Bọc *dấu sao* để tô cam. Nhấn Enter để xuống dòng. VD: *Giải pháp* đồng phục doanh nghiệp *trọn gói*" }
-              - { name: dong_phu, label: Dòng chữ nhỏ bên dưới, type: text, description: "Xuống dòng bằng Enter" }
-              - name: canh
-                label: Vị trí chữ
-                type: select
-                default: giua
-                options: { values: [ { value: giua, label: "Giữa" }, { value: trai, label: "Canh trái" } ] }
-                description: "Chọn «Canh trái» khi ảnh có sản phẩm/người mẫu nằm bên phải"
-              - { name: anh, label: Ảnh banner, type: image, description: "Ảnh ngang 1920×800. Để chữ đọc rõ, chừa khoảng trống ở giữa ảnh (VD người mẫu đứng 2 bên)" }
-              - { name: nut_chu, label: Chữ trên nút (không bắt buộc), type: string, description: "Để trống thì hiện nút hotline" }
-              - { name: nut_link, label: Link của nút, type: string, description: "VD: /#qua-tang, /san-pham/ hoặc link Zalo" }
-
-      - name: tc_2
-        label: "2. Giới thiệu + khung ảnh"
-        type: file
-        path: _data/trang_chu/2_gioi_thieu.yml
-        fields:
-          - { name: dong_nho, label: Dòng chữ nhỏ trên tiêu đề, type: string }
-          - { name: tieu_de, label: Tiêu đề, type: string, description: "Bọc *dấu sao* để tô cam" }
-          - { name: mo_ta, label: Mô tả, type: text }
-          - { name: tu_chuyen_giay, label: Khung ảnh tự chuyển sau (giây), type: number, default: 4 }
-          - name: anh_khung
-            label: Khung ảnh bên trái (bỏ ảnh gì tuỳ ý)
-            type: object
-            list: true
-            description: "Ảnh tự chuyển lần lượt, lấp đầy khung (nên dùng ảnh ngang ~1400×1000). Kéo ⋮⋮ để đổi thứ tự. Để trống thì tự lấy ảnh sản phẩm"
-            fields:
-              - { name: anh, label: Ảnh, type: image }
-              - { name: mo_ta, label: Mô tả ngắn (cho Google), type: string }
-
-      - name: tc_3
-        label: "3. Cam kết & số liệu"
-        type: file
-        path: _data/trang_chu/3_cam_ket.yml
-        fields:
-          - { name: tieu_de, label: Tiêu đề cột cam kết, type: string }
-          - name: cam_ket
-            label: Các ô cam kết
-            type: object
-            list: true
-            fields:
-              - { name: ten, label: Tên cam kết, type: string }
-              - { name: y, label: Các ý, type: string, list: true }
-          - name: so_lieu
-            label: Các ô số liệu (nên để 3 ô)
-            type: object
-            list: true
-            fields:
-              - { name: nhom, label: Dòng phía trên, type: string }
-              - { name: so, label: Con số, type: string, description: "VD: 40.000 – số sẽ tự chạy đếm. Gõ «tự động» để tự đếm số sản phẩm đang có trên web" }
-              - { name: nhan, label: Dòng phía dưới, type: string }
-
-      - name: tc_2b
-        label: "4. Ô Đồng phục | Quà tặng"
-        type: file
-        path: _data/trang_chu/2b_hai_huong.yml
-        fields:
-          - { name: tieu_de, label: Tiêu đề (không bắt buộc), type: string, description: "Để trống thì chỉ hiện 2 ô lớn" }
-          - name: cua
-            label: 2 ô lớn (Đồng phục / Quà tặng)
-            type: object
-            list: true
-            fields:
-              - { name: ten, label: Tên, type: string }
-              - { name: mo_ta, label: Mô tả ngắn, type: string }
-              - { name: anh, label: Ảnh, type: image, description: "Ảnh ngang ~1600×1000, ảnh thật lifestyle (team mặc đồng phục / set quà tặng). Chữ nằm góc dưới bên trái nên chừa khoảng đó. Ảnh này cũng hiện ở ô ảnh lớn trong menu sổ xuống Đồng phục / Quà tặng" }
-              - { name: link, label: Link, type: string, description: "VD: /san-pham/dong-phuc/" }
-              - { name: nut, label: Chữ trên nút, type: string }
-
-      - name: tc_7
-        label: "5. Được đặt nhiều nhất"
-        type: file
-        path: _data/trang_chu/7_san_pham.yml
-        fields:
-          - { name: tieu_de_san_pham, label: Tiêu đề, type: string, description: "Sản phẩm hiện ở đây: tick «Bán chạy» trong mục Sản phẩm. Chưa tick sản phẩm nào thì tự lấy nửa đồng phục, nửa quà tặng" }
-          - { name: mo_ta, label: Mô tả ngắn, type: string }
-          - { name: so_luong, label: Số sản phẩm hiện, type: number, default: 4 }
-
-      - name: tc_5
-        label: "6. Quy trình"
-        type: file
-        path: _data/trang_chu/5_quy_trinh.yml
-        fields:
-          - { name: tieu_de, label: Tiêu đề, type: string }
-          - { name: dong_phu, label: Dòng phụ, type: string, description: "Các bước tự lấy từ «📄 Trang thông tin › Quy trình đặt hàng» (chọn quy trình nào ở «⚙️ Cài đặt chung › Thông tin chung»)" }
-
-      - name: tc_6
-        label: "7. Đối tác"
-        type: file
-        path: _data/trang_chu/6_khach_hang.yml
-        fields:
-          - { name: tieu_de, label: Tiêu đề, type: string, description: "Logo chạy ngang & các card lấy từ mục «Đối tác»" }
-          - { name: mo_ta, label: Mô tả, type: text }
-          - { name: tieu_de_cau_chuyen, label: Tiêu đề hàng đối tác tiêu biểu, type: string, description: "Bọc *dấu sao* để tô cam" }
-
-      - name: tc_9
-        label: "8. Báo giá & cuối trang"
-        type: file
-        path: _data/trang_chu/9_cuoi_trang.yml
-        fields:
-          - { name: tieu_de_bao_gia, label: Tiêu đề khối báo giá (cuối trang chủ), type: string, description: "Bọc *dấu sao* để tô đen" }
-          - { name: mo_ta_bao_gia, label: Mô tả khối báo giá, type: text }
-          - { name: can_gui, label: Danh sách «Chỉ cần gửi», type: string, list: true }
-          - { name: tieu_de_keu_goi, label: Tiêu đề dải kêu gọi trên footer, type: string }
-          - { name: mo_ta_keu_goi, label: Mô tả khối kêu gọi, type: text }
-
-  - name: g_trang_khac
-    label: "📄 Trang thông tin"
-    type: group
-    items:
-      - name: quy_trinh
-        label: "Quy trình đặt hàng"
-        type: collection
-        path: _quy_trinh
-        filename: "{primary}.md"
-        view:
-          fields: [title]
-          default: { sort: thu_tu, order: asc }
-        fields:
-          - { name: title, label: Tiêu đề trang, type: string, required: true }
-          - { name: nhom, label: Tên ngắn trên nút chuyển, type: string, description: "VD: Đồng phục" }
-          - { name: mo_ta, label: Mô tả ngắn, type: text }
-          - { name: thu_tu, label: Thứ tự, type: number, hidden: true }
-          - name: buoc
-            label: Các bước
-            type: object
-            list: true
-            fields:
-              - { name: ten, label: Tên bước, type: string }
-              - { name: mo_ta, label: Mô tả, type: text }
-              - { name: chi_tiet, label: Ý chi tiết, type: string, list: true }
-          - { name: body, label: Nội dung thêm bên dưới (không bắt buộc), type: rich-text }
-
-      - name: chinh_sach
-        label: "Chính sách"
-        type: collection
-        path: _chinh_sach
-        filename: "{primary}.md"
-        view:
-          default: { sort: thu_tu, order: asc }
-        fields:
-          - { name: title, label: Tiêu đề, type: string, required: true }
-          - { name: thu_tu, label: Thứ tự, type: number, hidden: true }
-          - { name: body, label: Nội dung, type: rich-text }
-
-      - name: tin_tuc
-        label: "Tin tức"
-        type: collection
-        path: _posts
-        filename: "{year}-{month}-{day}-{primary}.md"
-        view:
-          fields: [title, date]
-          default: { sort: date, order: desc }
-        fields:
-          - { name: title, label: Tiêu đề, type: string, required: true }
-          - { name: date, label: Ngày đăng, type: date }
-          - { name: anh, label: Ảnh bìa, type: image }
-          - { name: mo_ta, label: Tóm tắt, type: text }
-          - { name: body, label: Nội dung, type: rich-text }
-
-
-  - name: g_cai_dat
-    label: "⚙️ Cài đặt chung (cả web)"
-    type: group
-    items:
-      - name: chung
-        label: "Thông tin chung"
-        type: file
-        path: _data/chung.yml
-        fields:
-          - { name: uu_dai, label: Thanh ưu đãi trên cùng, type: string, description: "Hiện ở dải trên cùng mọi trang" }
-          - { name: slogan, label: Slogan, type: string, description: "Hiện dưới logo ở footer" }
-          - { name: gioi_thieu, label: Giới thiệu ngắn TrueFit, type: text, description: "Hiện ở footer mọi trang" }
-          - { name: uu_diem, label: Ưu đãi nổi bật, type: string, list: true, description: "Hiện ở menu sổ xuống Đồng phục / Quà tặng. VD: Thiết kế miễn phí" }
-          - { name: thiet_ke, label: Phí thiết kế, type: string, description: "Hiện trong bảng Thông tin của mọi sản phẩm. Để trống thì ẩn dòng này" }
-          - { name: bao_hanh, label: Bảo hành, type: string, description: "Hiện trong bảng Thông tin của mọi sản phẩm. VD: 3 tháng" }
-          - { name: gia_cong, label: Gia công logo (mặc định), type: string, description: "Sản phẩm nào không ghi riêng thì dùng câu này" }
-          - name: quy_trinh_trang_chu
-            label: Quy trình hiện ở trang chủ
-            type: select
-            options: { values: [ { value: dong-phuc, label: "Quy trình đồng phục" }, { value: qua-tang, label: "Quy trình quà tặng" } ] }
-            description: "Các bước lấy thẳng từ mục «Quy trình» – sửa ở đó là trang chủ, trang sản phẩm, trang đối tác cùng đổi"
-
-      - name: lien_he
-        label: "Liên hệ: hotline, Zalo, email"
-        type: file
-        path: _data/lien_he.yml
-        fields:
-          - { name: hotline, label: Hotline (cách hiển thị), type: string, description: "VD: 0909 914 059" }
-          - { name: hotline_so, label: Hotline (chỉ số), type: string, description: "VD: 0909914059 – dùng cho nút gọi" }
-          - { name: zalo, label: Link Zalo, type: string }
-          - { name: email, label: Email, type: string }
-          - { name: facebook_chat, label: Link chat Facebook (Messenger), type: string, description: "VD: https://m.me/truefituniform" }
-          - { name: gio_lam_viec, label: Giờ làm việc, type: string }
-          - { name: gio_chat, label: Giờ chat Zalo & Facebook, type: string, description: "VD: Online 24/7 – hiện ở ô Chat Zalo và Chat Facebook" }
-          - { name: ngay_lam_viec, label: Ngày làm việc, type: string }
-          - { name: dia_chi, label: Địa chỉ xưởng (hiện ở footer), type: text }
-          - { name: email_bao_gia, label: Email nhận form báo giá, type: string, description: "Lần đầu có khách gửi form, hộp thư này nhận mail xác nhận từ FormSubmit – bấm Activate 1 lần là xong" }
-          - name: kenh
-            label: Icon liên hệ ở footer
-            type: object
-            list: true
-            fields:
-              - { name: ten, label: Tên kênh, type: string }
-              - { name: link, label: Link, type: string, description: "Gọi điện: tel:0909914059 · Email: mailto:ten@gmail.com" }
-              - { name: icon, label: Icon (ảnh vuông), type: image }
-
-      - name: seo
-        label: "Favicon & ảnh khi gửi link"
-        type: file
-        path: _data/seo.yml
-        fields:
-          - { name: favicon, label: Favicon (icon trên tab trình duyệt), type: image, description: "Ảnh vuông, nền trong suốt, PNG 512×512" }
-          - { name: anh_chia_se, label: Ảnh bìa khi gửi link (Zalo, Facebook…), type: image, description: "Ảnh ngang 1200×630, JPG/PNG dưới 1MB" }
-          - { name: mo_ta_chia_se, label: Mô tả khi gửi link, type: text, description: "1–2 câu, dưới 160 ký tự" }
-
-      - name: tim_kiem
-        label: "Tìm kiếm – từ khóa gợi ý"
-        type: file
-        path: _data/tim_kiem.yml
-        fields:
-          - { name: tieu_de_goi_y, label: Tiêu đề, type: string, description: "VD: Từ khóa nổi bật" }
-          - { name: tu_khoa, label: Từ khóa gợi ý, type: string, list: true, description: "Hiện thành nút bấm khi khách mở ô tìm kiếm" }
-
+- name: g_san_pham
+  label: 📦 Sản phẩm
+  type: group
+  items:
+  - name: sp_dong_phuc
+    label: 👕 Đồng phục
+    type: collection
+    path: _san_pham/dong-phuc
+    filename: '{primary}.md'
+    view:
+      fields:
+      - title
+      - an
+      sort:
+      - ngay_tao
+      - title
+      default:
+        sort: ngay_tao
+        order: asc
+    fields:
+    - name: title
+      label: Tên sản phẩm
+      type: string
+      required: true
+    - name: anh
+      label: Ảnh chính
+      type: image
+      required: true
+      description: Ảnh vuông 1200×1200, ảnh thật sản phẩm – hiện to ở đầu trang
+    - name: thu_vien
+      label: Ảnh thêm
+      type: image
+      options:
+        multiple: true
+      description: Hiện thành dải ảnh nhỏ dưới ảnh chính – bấm để xem to
+    - name: mo_ta
+      label: Mô tả ngắn (dưới tên sản phẩm)
+      type: text
+    - name: dat_tu
+      label: Đặt từ
+      type: string
+      description: 'VD: 50 áo – để trống nếu không muốn hiện'
+    - name: chat_lieu
+      label: Chất liệu
+      type: string
+    - name: mau_sac
+      label: Màu sắc
+      type: string
+      description: 'VD: Theo bảng màu vải hoặc theo nhận diện thương hiệu'
+    - name: kich_thuoc
+      label: Size / kích thước
+      type: string
+      description: 'VD: S – 3XL hoặc 20×25cm'
+    - name: gia_cong
+      label: Gia công logo
+      type: string
+      description: Để trống = In hoặc thêu theo yêu cầu
+    - name: thoi_gian
+      label: Thời gian sản xuất
+      type: string
+      description: 'VD: 7–10 ngày sau khi duyệt mẫu'
+    - name: ban_chay
+      label: Bán chạy (hiện ở trang chủ)
+      type: boolean
+      default: false
+    - name: an
+      label: Ẩn khỏi web
+      type: boolean
+      default: false
+    - name: ngay_tao
+      label: Ngày thêm (tự động – mục mới tự xếp sau cùng)
+      type: date
+      readonly: true
+      options:
+        time: true
+        format: yyyy-MM-dd'T'HH:mm
+    - name: body
+      label: Ghi chú nội bộ (không hiện trên web)
+      type: rich-text
+  - name: sp_qua_tang
+    label: 🎁 Quà tặng
+    type: collection
+    path: _san_pham/qua-tang
+    filename: '{primary}.md'
+    view:
+      fields:
+      - title
+      - an
+      sort:
+      - ngay_tao
+      - title
+      default:
+        sort: ngay_tao
+        order: asc
+    fields:
+    - name: title
+      label: Tên sản phẩm
+      type: string
+      required: true
+    - name: anh
+      label: Ảnh chính
+      type: image
+      required: true
+      description: Ảnh vuông 1200×1200, ảnh thật sản phẩm – hiện to ở đầu trang
+    - name: thu_vien
+      label: Ảnh thêm
+      type: image
+      options:
+        multiple: true
+      description: Hiện thành dải ảnh nhỏ dưới ảnh chính – bấm để xem to
+    - name: mo_ta
+      label: Mô tả ngắn (dưới tên sản phẩm)
+      type: text
+    - name: dat_tu
+      label: Đặt từ
+      type: string
+      description: 'VD: 50 áo – để trống nếu không muốn hiện'
+    - name: chat_lieu
+      label: Chất liệu
+      type: string
+    - name: mau_sac
+      label: Màu sắc
+      type: string
+      description: 'VD: Theo bảng màu vải hoặc theo nhận diện thương hiệu'
+    - name: kich_thuoc
+      label: Size / kích thước
+      type: string
+      description: 'VD: S – 3XL hoặc 20×25cm'
+    - name: gia_cong
+      label: Gia công logo
+      type: string
+      description: Để trống = In hoặc thêu theo yêu cầu
+    - name: thoi_gian
+      label: Thời gian sản xuất
+      type: string
+      description: 'VD: 7–10 ngày sau khi duyệt mẫu'
+    - name: ban_chay
+      label: Bán chạy (hiện ở trang chủ)
+      type: boolean
+      default: false
+    - name: an
+      label: Ẩn khỏi web
+      type: boolean
+      default: false
+    - name: ngay_tao
+      label: Ngày thêm (tự động – mục mới tự xếp sau cùng)
+      type: date
+      readonly: true
+      options:
+        time: true
+        format: yyyy-MM-dd'T'HH:mm
+    - name: body
+      label: Ghi chú nội bộ (không hiện trên web)
+      type: rich-text
+- name: g_doi_tac
+  label: 🤝 Đối tác
+  type: group
+  items:
+  - name: kh_dong_phuc
+    label: 👕 Đối tác đồng phục
+    type: collection
+    path: _khach_hang/dong-phuc
+    filename: '{primary}.md'
+    view:
+      fields:
+      - title
+      default:
+        sort: ngay_tao
+        order: asc
+    fields:
+    - name: title
+      label: Tên khách hàng
+      type: string
+      required: true
+    - name: logo
+      label: Logo
+      type: image
+      required: true
+      description: PNG nền trong, khoảng 600×400
+    - name: thu_vien
+      label: Ảnh dự án thực tế
+      type: image
+      options:
+        multiple: true
+      description: Ảnh đầu tiên hiện to ở đầu trang nếu không có ảnh bìa
+    - name: san_pham
+      label: Sản phẩm đã làm
+      type: reference
+      options:
+        collection: sp_dong_phuc
+        search: title
+        value: '{title}'
+        label: '{title}'
+        multiple: true
+      description: Bấm chọn sản phẩm đã làm cho khách này (chọn nhiều được). Có chọn thì trang khách hàng tự hiện mục «Sản phẩm đã làm»; để trống thì mục đó tự ẩn
+    - name: da_may
+      label: Đã làm
+      type: string
+      description: 'VD: 500 áo polo, 300 túi tote'
+    - name: thoi_gian
+      label: Thời gian thực hiện
+      type: string
+      description: 'VD: 10 ngày'
+    - name: noi_bat
+      label: Hiện ở «Câu chuyện khách hàng tiêu biểu» trang chủ
+      type: boolean
+      default: false
+    - name: anh_bia
+      label: Ảnh bìa câu chuyện
+      type: image
+      description: Ảnh ngang 4:3, ảnh thật dự án. Để trống sẽ hiện logo
+    - name: tieu_de_bai
+      label: Tiêu đề câu chuyện
+      type: string
+      description: 'VD: Đồng bộ 500 nhân viên trong 10 ngày'
+    - name: tom_tat
+      label: Tóm tắt 1 dòng
+      type: text
+    - name: body
+      label: 'Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)'
+      type: rich-text
+    - name: ngay_tao
+      label: Ngày thêm (tự động – mục mới tự xếp sau cùng)
+      type: date
+      readonly: true
+      options:
+        time: true
+        format: yyyy-MM-dd'T'HH:mm
+  - name: kh_qua_tang
+    label: 🎁 Đối tác quà tặng
+    type: collection
+    path: _khach_hang/qua-tang
+    filename: '{primary}.md'
+    view:
+      fields:
+      - title
+      default:
+        sort: ngay_tao
+        order: asc
+    fields:
+    - name: title
+      label: Tên khách hàng
+      type: string
+      required: true
+    - name: logo
+      label: Logo
+      type: image
+      required: true
+      description: PNG nền trong, khoảng 600×400
+    - name: thu_vien
+      label: Ảnh dự án thực tế
+      type: image
+      options:
+        multiple: true
+      description: Ảnh đầu tiên hiện to ở đầu trang nếu không có ảnh bìa
+    - name: san_pham
+      label: Sản phẩm đã làm
+      type: reference
+      options:
+        collection: sp_qua_tang
+        search: title
+        value: '{title}'
+        label: '{title}'
+        multiple: true
+      description: Bấm chọn sản phẩm đã làm cho khách này (chọn nhiều được). Có chọn thì trang khách hàng tự hiện mục «Sản phẩm đã làm»; để trống thì mục đó tự ẩn
+    - name: da_may
+      label: Đã làm
+      type: string
+      description: 'VD: 500 áo polo, 300 túi tote'
+    - name: thoi_gian
+      label: Thời gian thực hiện
+      type: string
+      description: 'VD: 10 ngày'
+    - name: noi_bat
+      label: Hiện ở «Câu chuyện khách hàng tiêu biểu» trang chủ
+      type: boolean
+      default: false
+    - name: anh_bia
+      label: Ảnh bìa câu chuyện
+      type: image
+      description: Ảnh ngang 4:3, ảnh thật dự án. Để trống sẽ hiện logo
+    - name: tieu_de_bai
+      label: Tiêu đề câu chuyện
+      type: string
+      description: 'VD: Đồng bộ 500 nhân viên trong 10 ngày'
+    - name: tom_tat
+      label: Tóm tắt 1 dòng
+      type: text
+    - name: body
+      label: 'Câu chuyện dự án (gợi ý: Khách hàng · Bài toán · Giải pháp · Kết quả)'
+      type: rich-text
+    - name: ngay_tao
+      label: Ngày thêm (tự động – mục mới tự xếp sau cùng)
+      type: date
+      readonly: true
+      options:
+        time: true
+        format: yyyy-MM-dd'T'HH:mm
+- name: g_trang_chu
+  label: 🏠 Trang chủ (từ trên xuống)
+  type: group
+  items:
+  - name: tc_1
+    label: 1. Banner trượt
+    type: file
+    path: _data/trang_chu/1_dau_trang.yml
+    fields:
+    - name: nut_tu_van
+      label: Chữ trên nút hotline
+      type: string
+      description: Nút hotline hiện ở slide không có nút riêng
+    - name: tu_chuyen_giay
+      label: Tự chuyển slide sau (giây)
+      type: number
+      default: 5
+    - name: slides
+      label: Các slide banner
+      type: object
+      list: true
+      description: Kéo ⋮⋮ để đổi thứ tự slide. Slide đầu tiên hiện đầu tiên khi mở web.
+      fields:
+      - name: tieu_de
+        label: Tiêu đề lớn
+        type: text
+        description: 'Bọc *dấu sao* để tô cam. Nhấn Enter để xuống dòng. VD: *Giải pháp* đồng phục doanh nghiệp *trọn gói*'
+      - name: dong_phu
+        label: Dòng chữ nhỏ bên dưới
+        type: text
+        description: Xuống dòng bằng Enter
+      - name: canh
+        label: Vị trí chữ
+        type: select
+        default: giua
+        options:
+          values:
+          - value: giua
+            label: Giữa
+          - value: trai
+            label: Canh trái
+        description: Chọn «Canh trái» khi ảnh có sản phẩm/người mẫu nằm bên phải
+      - name: anh
+        label: Ảnh banner
+        type: image
+        description: Ảnh ngang 1920×800. Để chữ đọc rõ, chừa khoảng trống ở giữa ảnh (VD người mẫu đứng 2 bên)
+      - name: nut_chu
+        label: Chữ trên nút (không bắt buộc)
+        type: string
+        description: Để trống thì hiện nút hotline
+      - name: nut_link
+        label: Link của nút
+        type: string
+        description: 'VD: /#qua-tang, /san-pham/ hoặc link Zalo'
+  - name: tc_2
+    label: 2. Giới thiệu + khung ảnh
+    type: file
+    path: _data/trang_chu/2_gioi_thieu.yml
+    fields:
+    - name: dong_nho
+      label: Dòng chữ nhỏ trên tiêu đề
+      type: string
+    - name: tieu_de
+      label: Tiêu đề
+      type: string
+      description: Bọc *dấu sao* để tô cam
+    - name: mo_ta
+      label: Mô tả
+      type: text
+    - name: tu_chuyen_giay
+      label: Khung ảnh tự chuyển sau (giây)
+      type: number
+      default: 4
+    - name: anh_khung
+      label: Khung ảnh bên trái (bỏ ảnh gì tuỳ ý)
+      type: object
+      list: true
+      description: Ảnh tự chuyển lần lượt, lấp đầy khung (nên dùng ảnh ngang ~1400×1000). Kéo ⋮⋮ để đổi thứ tự. Để trống thì tự lấy ảnh sản phẩm
+      fields:
+      - name: anh
+        label: Ảnh
+        type: image
+      - name: mo_ta
+        label: Mô tả ngắn (cho Google)
+        type: string
+  - name: tc_3
+    label: 3. Cam kết & số liệu
+    type: file
+    path: _data/trang_chu/3_cam_ket.yml
+    fields:
+    - name: tieu_de
+      label: Tiêu đề cột cam kết
+      type: string
+    - name: cam_ket
+      label: Các ô cam kết
+      type: object
+      list: true
+      fields:
+      - name: ten
+        label: Tên cam kết
+        type: string
+      - name: y
+        label: Các ý
+        type: string
+        list: true
+    - name: so_lieu
+      label: Các ô số liệu (nên để 3 ô)
+      type: object
+      list: true
+      fields:
+      - name: nhom
+        label: Dòng phía trên
+        type: string
+      - name: so
+        label: Con số
+        type: string
+        description: 'VD: 40.000 – số sẽ tự chạy đếm. Gõ «tự động» để tự đếm số sản phẩm đang có trên web'
+      - name: nhan
+        label: Dòng phía dưới
+        type: string
+  - name: tc_2b
+    label: 4. Ô Đồng phục | Quà tặng
+    type: file
+    path: _data/trang_chu/2b_hai_huong.yml
+    fields:
+    - name: tieu_de
+      label: Tiêu đề (không bắt buộc)
+      type: string
+      description: Để trống thì chỉ hiện 2 ô lớn
+    - name: cua
+      label: 2 ô lớn (Đồng phục / Quà tặng)
+      type: object
+      list: true
+      fields:
+      - name: ten
+        label: Tên
+        type: string
+      - name: mo_ta
+        label: Mô tả ngắn
+        type: string
+      - name: anh
+        label: Ảnh
+        type: image
+        description: Ảnh ngang ~1600×1000, ảnh thật lifestyle (team mặc đồng phục / set quà tặng). Chữ nằm góc dưới bên trái nên chừa khoảng đó. Ảnh này cũng hiện ở ô ảnh lớn trong menu sổ xuống Đồng phục
+          / Quà tặng
+      - name: link
+        label: Link
+        type: string
+        description: 'VD: /san-pham/dong-phuc/'
+      - name: nut
+        label: Chữ trên nút
+        type: string
+  - name: tc_7
+    label: 5. Được đặt nhiều nhất
+    type: file
+    path: _data/trang_chu/7_san_pham.yml
+    fields:
+    - name: tieu_de_san_pham
+      label: Tiêu đề
+      type: string
+      description: 'Sản phẩm hiện ở đây: tick «Bán chạy» trong mục Sản phẩm. Chưa tick sản phẩm nào thì tự lấy nửa đồng phục, nửa quà tặng'
+    - name: mo_ta
+      label: Mô tả ngắn
+      type: string
+    - name: so_luong
+      label: Số sản phẩm hiện
+      type: number
+      default: 4
+  - name: tc_5
+    label: 6. Quy trình
+    type: file
+    path: _data/trang_chu/5_quy_trinh.yml
+    fields:
+    - name: tieu_de
+      label: Tiêu đề
+      type: string
+    - name: dong_phu
+      label: Dòng phụ
+      type: string
+      description: Các bước tự lấy từ «📄 Trang thông tin › Quy trình đặt hàng» (chọn quy trình nào ở «⚙️ Cài đặt chung › Thông tin chung»)
+  - name: tc_6
+    label: 7. Đối tác
+    type: file
+    path: _data/trang_chu/6_khach_hang.yml
+    fields:
+    - name: tieu_de
+      label: Tiêu đề
+      type: string
+      description: Logo chạy ngang & các card lấy từ mục «Đối tác»
+    - name: mo_ta
+      label: Mô tả
+      type: text
+    - name: tieu_de_cau_chuyen
+      label: Tiêu đề hàng đối tác tiêu biểu
+      type: string
+      description: Bọc *dấu sao* để tô cam
+  - name: tc_9
+    label: 8. Báo giá & cuối trang
+    type: file
+    path: _data/trang_chu/9_cuoi_trang.yml
+    fields:
+    - name: tieu_de_bao_gia
+      label: Tiêu đề khối báo giá (cuối trang chủ)
+      type: string
+      description: Bọc *dấu sao* để tô đen
+    - name: mo_ta_bao_gia
+      label: Mô tả khối báo giá
+      type: text
+    - name: can_gui
+      label: Danh sách «Chỉ cần gửi»
+      type: string
+      list: true
+    - name: tieu_de_keu_goi
+      label: Tiêu đề dải kêu gọi trên footer
+      type: string
+    - name: mo_ta_keu_goi
+      label: Mô tả khối kêu gọi
+      type: text
+- name: g_trang_khac
+  label: 📄 Trang thông tin
+  type: group
+  items:
+  - name: quy_trinh
+    label: Quy trình đặt hàng
+    type: collection
+    path: _quy_trinh
+    filename: '{primary}.md'
+    view:
+      fields:
+      - title
+      default:
+        sort: thu_tu
+        order: asc
+    fields:
+    - name: title
+      label: Tiêu đề trang
+      type: string
+      required: true
+    - name: nhom
+      label: Tên ngắn trên nút chuyển
+      type: string
+      description: 'VD: Đồng phục'
+    - name: mo_ta
+      label: Mô tả ngắn
+      type: text
+    - name: thu_tu
+      label: Thứ tự
+      type: number
+      hidden: true
+    - name: buoc
+      label: Các bước
+      type: object
+      list: true
+      fields:
+      - name: ten
+        label: Tên bước
+        type: string
+      - name: mo_ta
+        label: Mô tả
+        type: text
+      - name: chi_tiet
+        label: Ý chi tiết
+        type: string
+        list: true
+    - name: body
+      label: Nội dung thêm bên dưới (không bắt buộc)
+      type: rich-text
+  - name: chinh_sach
+    label: Chính sách
+    type: collection
+    path: _chinh_sach
+    filename: '{primary}.md'
+    view:
+      default:
+        sort: thu_tu
+        order: asc
+    fields:
+    - name: title
+      label: Tiêu đề
+      type: string
+      required: true
+    - name: thu_tu
+      label: Thứ tự
+      type: number
+      hidden: true
+    - name: body
+      label: Nội dung
+      type: rich-text
+  - name: tin_tuc
+    label: Tin tức
+    type: collection
+    path: _posts
+    filename: '{year}-{month}-{day}-{primary}.md'
+    view:
+      fields:
+      - title
+      - date
+      default:
+        sort: date
+        order: desc
+    fields:
+    - name: title
+      label: Tiêu đề
+      type: string
+      required: true
+    - name: date
+      label: Ngày đăng
+      type: date
+    - name: anh
+      label: Ảnh bìa
+      type: image
+    - name: mo_ta
+      label: Tóm tắt
+      type: text
+    - name: body
+      label: Nội dung
+      type: rich-text
+- name: g_cai_dat
+  label: ⚙️ Cài đặt chung (cả web)
+  type: group
+  items:
+  - name: chung
+    label: Thông tin chung
+    type: file
+    path: _data/chung.yml
+    fields:
+    - name: uu_dai
+      label: Thanh ưu đãi trên cùng
+      type: string
+      description: Hiện ở dải trên cùng mọi trang
+    - name: slogan
+      label: Slogan
+      type: string
+      description: Hiện dưới logo ở footer
+    - name: gioi_thieu
+      label: Giới thiệu ngắn TrueFit
+      type: text
+      description: Hiện ở footer mọi trang
+    - name: uu_diem
+      label: Ưu đãi nổi bật
+      type: string
+      list: true
+      description: 'Hiện ở menu sổ xuống Đồng phục / Quà tặng. VD: Thiết kế miễn phí'
+    - name: thiet_ke
+      label: Phí thiết kế
+      type: string
+      description: Hiện trong bảng Thông tin của mọi sản phẩm. Để trống thì ẩn dòng này
+    - name: bao_hanh
+      label: Bảo hành
+      type: string
+      description: 'Hiện trong bảng Thông tin của mọi sản phẩm. VD: 3 tháng'
+    - name: gia_cong
+      label: Gia công logo (mặc định)
+      type: string
+      description: Sản phẩm nào không ghi riêng thì dùng câu này
+    - name: quy_trinh_trang_chu
+      label: Quy trình hiện ở trang chủ
+      type: select
+      options:
+        values:
+        - value: dong-phuc
+          label: Quy trình đồng phục
+        - value: qua-tang
+          label: Quy trình quà tặng
+      description: Các bước lấy thẳng từ mục «Quy trình» – sửa ở đó là trang chủ, trang sản phẩm, trang đối tác cùng đổi
+  - name: lien_he
+    label: 'Liên hệ: hotline, Zalo, email'
+    type: file
+    path: _data/lien_he.yml
+    fields:
+    - name: hotline
+      label: Hotline (cách hiển thị)
+      type: string
+      description: 'VD: 0909 914 059'
+    - name: hotline_so
+      label: Hotline (chỉ số)
+      type: string
+      description: 'VD: 0909914059 – dùng cho nút gọi'
+    - name: zalo
+      label: Link Zalo
+      type: string
+    - name: email
+      label: Email
+      type: string
+    - name: facebook_chat
+      label: Link chat Facebook (Messenger)
+      type: string
+      description: 'VD: https://m.me/truefituniform'
+    - name: gio_lam_viec
+      label: Giờ làm việc
+      type: string
+    - name: gio_chat
+      label: Giờ chat Zalo & Facebook
+      type: string
+      description: 'VD: Online 24/7 – hiện ở ô Chat Zalo và Chat Facebook'
+    - name: ngay_lam_viec
+      label: Ngày làm việc
+      type: string
+    - name: dia_chi
+      label: Địa chỉ xưởng (hiện ở footer)
+      type: text
+    - name: email_bao_gia
+      label: Email nhận form báo giá
+      type: string
+      description: Lần đầu có khách gửi form, hộp thư này nhận mail xác nhận từ FormSubmit – bấm Activate 1 lần là xong
+    - name: kenh
+      label: Icon liên hệ ở footer
+      type: object
+      list: true
+      fields:
+      - name: ten
+        label: Tên kênh
+        type: string
+      - name: link
+        label: Link
+        type: string
+        description: 'Gọi điện: tel:0909914059 · Email: mailto:ten@gmail.com'
+      - name: icon
+        label: Icon (ảnh vuông)
+        type: image
+  - name: seo
+    label: Favicon & ảnh khi gửi link
+    type: file
+    path: _data/seo.yml
+    fields:
+    - name: favicon
+      label: Favicon (icon trên tab trình duyệt)
+      type: image
+      description: Ảnh vuông, nền trong suốt, PNG 512×512
+    - name: anh_chia_se
+      label: Ảnh bìa khi gửi link (Zalo
+      Facebook…): null
+      type: image
+      description: Ảnh ngang 1200×630, JPG/PNG dưới 1MB
+    - name: mo_ta_chia_se
+      label: Mô tả khi gửi link
+      type: text
+      description: 1–2 câu, dưới 160 ký tự
+  - name: tim_kiem
+    label: Tìm kiếm – từ khóa gợi ý
+    type: file
+    path: _data/tim_kiem.yml
+    fields:
+    - name: tieu_de_goi_y
+      label: Tiêu đề
+      type: string
+      description: 'VD: Từ khóa nổi bật'
+    - name: tu_khoa
+      label: Từ khóa gợi ý
+      type: string
+      list: true
+      description: Hiện thành nút bấm khi khách mở ô tìm kiếm
