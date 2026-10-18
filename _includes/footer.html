@@ -48,7 +48,7 @@
         <h3>Chính sách</h3>
         <ul>
           {% assign ps = site.chinh_sach | sort: "thu_tu", "last" %}
-          {% for p in ps %}<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>{% endfor %}
+          {% for p in ps %}{% assign cid = p.url | split: "/" | last %}<li><a href="{{ '/chinh-sach/' | relative_url }}#{{ cid }}">{{ p.title }}</a></li>{% endfor %}
         </ul>
       </div>
       <div class="tf-fcol">

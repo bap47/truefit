@@ -61,7 +61,7 @@
       <div class="tf-nav__item tf-nav__item--drop">
         <a href="{{ '/chinh-sach/' | relative_url }}" aria-haspopup="true"{% if page.url contains '/chinh-sach/' %} aria-current="page"{% endif %}>Chính sách <span class="tf-nav__caret" aria-hidden="true">▾</span></a>
         <div class="tf-drop">
-          {% for p in cs %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% endfor %}
+          {% for p in cs %}{% assign cid = p.url | split: "/" | last %}<a href="{{ '/chinh-sach/' | relative_url }}#{{ cid }}">{{ p.title }}</a>{% endfor %}
         </div>
       </div>
       <a class="tf-nav__cta" href="#bao-gia-form" data-bao-gia>Báo giá</a>
