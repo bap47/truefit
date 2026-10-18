@@ -1,13 +1,12 @@
 ---
-title: "JBL"
-logo: "/assets/img/demo/client-jbl.png"
-da_may: "5.000 mini bag"
-ngay_tao: "2026-10-01T08:00"
-anh_bia: ""
-tieu_de_bai: "Mini bag - JBL"
-tom_tat: ""
+title: JBL
+logo: /assets/uploads/Logo2-5.png
+thu_vien:
+  - /assets/img/demo/mini-bag.png
+san_pham:
+  - Mini bag
+da_may: 5.000 mini bag
 noi_bat: true
-san_pham: ["Mini bag"]
-thu_vien: ["/assets/img/demo/mini-bag.png"]
-thoi_gian: ""
+tieu_de_bai: Mini bag - JBL
+ngay_tao: 2026-10-01T08:00
 ---
