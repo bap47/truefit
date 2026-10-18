@@ -71,6 +71,7 @@ content:
       label: Tên sản phẩm
       type: string
       required: true
+      description: 'Muốn tự chọn chỗ xuống dòng thì gõ dấu | tại đó (VD: Đại sứ quán Việt Nam | tại Brunei)'
     - name: anh
       label: Ảnh chính
       type: image
@@ -151,6 +152,7 @@ content:
       label: Tên sản phẩm
       type: string
       required: true
+      description: 'Muốn tự chọn chỗ xuống dòng thì gõ dấu | tại đó (VD: Đại sứ quán Việt Nam | tại Brunei)'
     - name: anh
       label: Ảnh chính
       type: image
@@ -270,6 +272,7 @@ content:
       label: Tên khách hàng
       type: string
       required: true
+      description: 'Muốn tự chọn chỗ xuống dòng thì gõ dấu | tại đó (VD: Đại sứ quán Việt Nam | tại Brunei)'
     - name: logo
       label: Logo
       type: image
@@ -360,6 +363,7 @@ content:
       label: Tên khách hàng
       type: string
       required: true
+      description: 'Muốn tự chọn chỗ xuống dòng thì gõ dấu | tại đó (VD: Đại sứ quán Việt Nam | tại Brunei)'
     - name: logo
       label: Logo
       type: image
@@ -406,7 +410,7 @@ content:
       label: Loại sản phẩm (hiện trên thẻ)
       type: string
       required: true
-      description: 'Chỉ ghi loại, VD: Khăn bandana hoặc Combo túi Pouch + túi tote. Web tự ghép thành «Khăn bandana - PGI»'
+      description: 'Chỉ ghi loại, VD: Khăn bandana. Web tự ghép thành «Khăn bandana - PGI». Gõ dấu | để chọn chỗ xuống dòng'
     - name: tom_tat
       label: Tóm tắt 1 dòng
       type: text
