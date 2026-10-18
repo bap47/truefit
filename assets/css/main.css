@@ -837,3 +837,13 @@ body.is-searching { overflow: hidden; }
 .tf-tabs__nav::-webkit-scrollbar { display: none; }
 .tf-tabs__nav button { white-space: nowrap; flex: none; }
 .tf-tabs--policy .tf-tabs__panel { scroll-margin-top: 220px; }
+
+/* Banner co giãn theo tỉ lệ màn hình: phóng to / thu nhỏ chữ vẫn không đè lên ảnh */
+@media (min-width: 601px) {
+  .tf-slide { min-height: 42vw; }
+  .tf-slide .tf-hero__title { font-size: 3.2vw; }
+  .tf-slide .tf-hotline { font-size: max(.75rem, 1.1vw); padding: .5vw .5vw .5vw 1.3vw; gap: .8vw; margin-top: 1.6vw; }
+  .tf-slide .tf-hotline strong { padding: .45vw 1.1vw; }
+  .tf-slide .tf-hero__tagline { font-size: max(.75rem, 1.15vw); margin-top: 1vw; }
+  .tf-slide--left .tf-slide__in { width: auto; max-width: 52vw; margin: 0; padding-left: 7vw; }
+}
