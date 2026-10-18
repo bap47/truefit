@@ -94,6 +94,12 @@ content:
             fields:
               - { name: tieu_de, label: Tiêu đề lớn, type: text, description: "Bọc *dấu sao* để tô cam. Nhấn Enter để xuống dòng. VD: *Giải pháp* đồng phục doanh nghiệp *trọn gói*" }
               - { name: dong_phu, label: Dòng chữ nhỏ bên dưới, type: text, description: "Xuống dòng bằng Enter" }
+              - name: canh
+                label: Vị trí chữ
+                type: select
+                default: giua
+                options: { values: [ { value: giua, label: "Giữa" }, { value: trai, label: "Canh trái" } ] }
+                description: "Chọn «Canh trái» khi ảnh có sản phẩm/người mẫu nằm bên phải"
               - { name: anh, label: Ảnh banner, type: image, description: "Ảnh ngang 1920×800. Để chữ đọc rõ, chừa khoảng trống ở giữa ảnh (VD người mẫu đứng 2 bên)" }
               - { name: nut_chu, label: Chữ trên nút (không bắt buộc), type: string, description: "Để trống thì hiện nút hotline" }
               - { name: nut_link, label: Link của nút, type: string, description: "VD: /#qua-tang, /san-pham/ hoặc link Zalo" }

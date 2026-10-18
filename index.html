@@ -10,7 +10,7 @@ layout: default
 <section class="tf-slider" id="trang-chu" aria-roledescription="carousel" aria-label="Banner" data-autoplay="{{ d1.tu_chuyen_giay | default: 5 }}">
   <div class="tf-slider__track" tabindex="0">
     {% for s in d1.slides %}
-    <div class="tf-slide{% if s.anh and s.anh != '' %} tf-slide--img{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} / {{ d1.slides.size }}"{% if s.anh and s.anh != '' %} style="--slide-bg:url('{{ s.anh | prepend: site.baseurl }}')"{% endif %}>
+    <div class="tf-slide{% if s.anh and s.anh != '' %} tf-slide--img{% endif %}{% if s.canh == 'trai' %} tf-slide--left{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} / {{ d1.slides.size }}"{% if s.anh and s.anh != '' %} style="--slide-bg:url('{{ s.anh | prepend: site.baseurl }}')"{% endif %}>
       <div class="wrap tf-slide__in">
         {% if forloop.first %}<h1 class="tf-hero__title">{% include cam.html t=s.tieu_de %}</h1>{% else %}<p class="tf-hero__title">{% include cam.html t=s.tieu_de %}</p>{% endif %}
         {% if s.nut_chu and s.nut_chu != '' %}
