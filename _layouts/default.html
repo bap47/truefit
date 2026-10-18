@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if page.title %}{% assign tf_title = page.title | append: " | " | append: site.title %}{% else %}{% assign tf_title = site.title | append: " – Đồng phục & Merchandise doanh nghiệp" %}{% endif %}
+  {% if page.title %}{% assign tf_title = page.title | replace: " | ", " " | remove: "|" | append: " | " | append: site.title %}{% else %}{% assign tf_title = site.title | append: " – Đồng phục & Merchandise doanh nghiệp" %}{% endif %}
   <title>{{ tf_title }}</title>
   <meta name="description" content="{{ page.mo_ta | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
   <meta property="og:title" content="{{ tf_title }}">
