@@ -13,14 +13,6 @@ title: Đối tác
       <button aria-pressed="false" data-nhom="dong-phuc">Đồng phục</button>
       <button aria-pressed="false" data-nhom="qua-tang">Quà tặng</button>
     </div>
-    {% assign nganh = kh | map: "nganh" | uniq | compact %}
-    {% if nganh.size > 1 %}
-    <div class="tf-chips tf-filter rise" style="--d:.2s" aria-label="Lọc theo ngành">
-      <span>Ngành:</span>
-      <button aria-pressed="true" data-f="">Tất cả</button>
-      {% for n in nganh %}{% if n != "" %}<button aria-pressed="false" data-f="{{ n }}">{{ n }}</button>{% endif %}{% endfor %}
-    </div>
-    {% endif %}
     <p class="tf-empty" hidden>Chưa có đối tác trong mục này.</p>
     <div class="tf-stories__grid">
       {% for c in kh %}{% include case-card.html c=c %}{% endfor %}
