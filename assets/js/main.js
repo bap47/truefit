@@ -352,3 +352,27 @@
     window.addEventListener('hashchange', function () { var h = location.hash.slice(1); if (btns.some(function (b) { return b.dataset.tab === h; })) show(h); });
   });
 })();
+/* Chống 1 chữ rớt dòng: dính 2 chữ cuối bằng khoảng trắng không ngắt (dòng cuối luôn ≥ 2 chữ) */
+(function () {
+  var sel = 'h1, h2, h3, h4, .tf-title, .tf-hero__title, .tf-story strong, .tf-story__sum, .tf-card__name, .tf-lead, .tf-hero__tagline, .tf-prose p, .tf-intro__lead';
+  function lastText(el) {
+    var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n, last = null;
+    while ((n = w.nextNode())) { if (/\S/.test(n.nodeValue)) last = n; }
+    return last;
+  }
+  function fix(el) {
+    if (el.dataset.nw) return; el.dataset.nw = 1;
+    var t = lastText(el); if (!t) return;
+    var v = t.nodeValue.replace(/\s+$/, ''), tail = t.nodeValue.slice(v.length);
+    var i = v.lastIndexOf(' ');
+    if (i > 0) { t.nodeValue = v.slice(0, i) + ' ' + v.slice(i + 1) + tail; }
+    else if (i === -1) {
+      /* chữ cuối nằm riêng trong node (VD sau thẻ <span>): dính với khoảng trắng ở node trước */
+      var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n, prev = null;
+      while ((n = w.nextNode()) && n !== t) { if (/\S/.test(n.nodeValue) || / $/.test(n.nodeValue)) prev = n; }
+      if (prev && / $/.test(prev.nodeValue)) prev.nodeValue = prev.nodeValue.replace(/ $/, ' ');
+    }
+  }
+  function run() { document.querySelectorAll(sel).forEach(fix); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
