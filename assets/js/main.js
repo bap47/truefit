@@ -349,5 +349,6 @@
     }
     btns.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.tab); }); });
     var h = location.hash.slice(1); show(btns.some(function (b) { return b.dataset.tab === h; }) ? h : btns[0].dataset.tab);
+    window.addEventListener('hashchange', function () { var h = location.hash.slice(1); if (btns.some(function (b) { return b.dataset.tab === h; })) show(h); });
   });
 })();
