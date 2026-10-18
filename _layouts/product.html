@@ -38,6 +38,18 @@ layout: default
   </div>
 </section>
 
+{% assign da_dat = site.khach_hang | where_exp: "c", "c.san_pham contains page.title" | sort: "thu_tu" %}
+{% if da_dat.size > 0 %}
+<section class="tf-section" id="doi-tac-da-dat">
+  <div class="wrap">
+    <h2 class="tf-title reveal">Đối tác <span>đã đặt</span> sản phẩm này</h2>
+    <div class="tf-stories__grid">
+      {% for c in da_dat limit: 3 %}{% include case-card.html c=c %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {% assign cung = site.san_pham | where: "danh_muc", page.danh_muc | sort: "thu_tu" %}
 <section class="tf-section tf-section--cream">
   <div class="wrap">
