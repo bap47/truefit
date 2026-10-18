@@ -18,6 +18,7 @@ layout: default
         <h2>Thông tin sản phẩm</h2>
         <dl class="tf-spec">
           <div><dt>Danh mục</dt><dd>{{ ten_dm }}</dd></div>
+          {% if page.gom and page.gom.size > 0 %}<div><dt>Bộ gồm</dt><dd>{{ page.gom | join: " · " }}</dd></div>{% endif %}
           {% if page.dat_tu and page.dat_tu != "" %}<div><dt>Đặt từ</dt><dd>{{ page.dat_tu }}</dd></div>{% endif %}
           {% if page.chat_lieu and page.chat_lieu != "" %}<div><dt>Chất liệu</dt><dd>{{ page.chat_lieu }}</dd></div>{% endif %}
           {% if page.mau_sac and page.mau_sac != "" %}<div><dt>Màu sắc</dt><dd>{{ page.mau_sac }}</dd></div>{% endif %}
