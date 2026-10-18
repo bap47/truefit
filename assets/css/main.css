@@ -865,3 +865,5 @@ p, li, dd, .tf-lead, .tf-hero__tagline { text-wrap: pretty; }
 /* "MIỄN PHÍ thiết kế - vận chuyển": luôn 1 dòng, chữ tự co theo màn hình */
 .tf-intro__title { white-space: nowrap; }
 @media (max-width: 760px) { .tf-intro__title { font-size: min(1.5rem, calc((100vw - 2.2rem) / 15.3)); } }
+/* Mô tả ngắn 1 dòng trên máy tính (trang Đối tác) */
+@media (min-width: 900px) { .tf-lead--1 { max-width: none; white-space: nowrap; } }
