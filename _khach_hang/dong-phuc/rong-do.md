@@ -7,7 +7,7 @@ anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""
 noi_bat: false
-san_pham: ["Đồng phục bảo hộ"]
+san_pham: ["Áo bảo hộ"]
 thu_vien: []
 thoi_gian: ""
 ---

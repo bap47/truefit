@@ -7,7 +7,7 @@ anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""
 noi_bat: true
-san_pham: ["Áo Thun"]
+san_pham: ["Áo thun cổ tròn"]
 thu_vien: ["/assets/img/demo/ao-thun-co-tron.png"]
 thoi_gian: ""
 ---

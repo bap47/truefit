@@ -7,7 +7,7 @@ anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""
 noi_bat: false
-san_pham: ["Áo Polo"]
+san_pham: ["Áo thun cổ trụ"]
 thu_vien: []
 thoi_gian: ""
 ---
