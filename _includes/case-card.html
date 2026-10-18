@@ -5,7 +5,7 @@
 {% if anh == nil or anh == "" %}{% assign anh = "/assets/img/ph.svg" %}{% endif %}
 <a class="tf-story reveal" href="{{ c.url | relative_url }}" data-nhom="{{ c.nhom | default: 'dong-phuc' }}">
   <span class="tf-story__img">
-    <img src="{{ anh | prepend: site.baseurl }}" alt="Sản phẩm làm cho {{ c.title }}" loading="lazy" width="800" height="600">
+    <img src="{{ anh | prepend: site.baseurl }}" alt="Sản phẩm làm cho {{ c.title }}" loading="lazy" width="800" height="600"{% if c.can_anh and c.can_anh != "" and c.can_anh != "giua" %} style="{% case c.can_anh %}{% when "tren" %}object-position:50% 0%;{% when "duoi" %}object-position:50% 100%;{% when "trai" %}object-position:0% 50%;{% when "phai" %}object-position:100% 50%;{% when "du" %}object-fit:contain;background:#fff;{% endcase %}"{% endif %}>
   </span>
   <span class="tf-story__body">
     <span class="tf-story__tags">{% if c.nhom == "qua-tang" %}<span class="is-nhom">Quà tặng</span>{% elsif c.nhom == "ca-hai" %}<span class="is-nhom">Đồng phục & Quà tặng</span>{% else %}<span class="is-nhom">Đồng phục</span>{% endif %}{% for ten in c.san_pham %}<span>{{ ten }}</span>{% endfor %}</span>
