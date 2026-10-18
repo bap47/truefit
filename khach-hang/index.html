@@ -2,7 +2,7 @@
 layout: default
 title: Đối tác
 ---
-{% assign kh = site.khach_hang | sort: "thu_tu" %}
+{% assign kh = site.khach_hang | sort: "ngay_tao", "last" %}
 <section class="tf-section">
   <div class="wrap">
     <p class="tf-eyebrow rise">Đối tác của TrueFit</p>
