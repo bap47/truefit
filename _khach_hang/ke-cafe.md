@@ -5,6 +5,7 @@ nhom: dong-phuc
 nganh: "F&B"
 da_may: ""
 thu_tu: 3
+ngay_tao: "2026-10-01T08:02"
 anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""
