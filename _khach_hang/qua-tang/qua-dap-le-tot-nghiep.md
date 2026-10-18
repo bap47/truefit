@@ -1,6 +1,10 @@
 ---
 title: Quà đáp lễ tốt nghiệp
 logo: /assets/uploads/Logo 14.png
+thu_vien:
+  - /assets/uploads/Logo 23.png
+  - /assets/uploads/Logo 24.png
+  - /assets/uploads/Logo 25.png
 san_pham:
   - Lót ly gốm
 da_may: 50 lót ly gốm
