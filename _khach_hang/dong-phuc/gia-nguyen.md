@@ -1,13 +1,9 @@
 ---
-title: "Gia Nguyễn"
-logo: ""
-da_may: "70 áo"
-ngay_tao: "2026-10-01T08:16"
-anh_bia: ""
-tieu_de_bai: ""
-tom_tat: ""
+title: Gia Nguyễn
+logo: /assets/uploads/Logo 6.png
+san_pham:
+  - Áo thun cổ trụ
+da_may: 70 áo
 noi_bat: false
-san_pham: ["Áo thun cổ trụ"]
-thu_vien: []
-thoi_gian: ""
+ngay_tao: 2026-10-01T08:16
 ---
