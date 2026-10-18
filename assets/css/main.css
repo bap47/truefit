@@ -825,3 +825,8 @@ body.is-searching { overflow: hidden; }
   .tf-slider__dots { bottom: .5rem; }
 }
 @media (max-width: 600px) { .tf-slider { background: #fff; } }
+
+/* Banner điện thoại: dùng ảnh riêng nếu có (ảnh dọc 1080×1350) */
+@media (max-width: 600px) {
+  .tf-slide--mimg { background-image: var(--slide-bg-m); background-size: cover; background-position: center bottom; padding-bottom: 0; min-height: 125vw; }
+}
