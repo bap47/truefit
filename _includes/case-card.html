@@ -1,7 +1,11 @@
 {% assign c = include.c %}
+{% assign anh = c.anh_bia %}
+{% if anh == nil or anh == "" %}{% if c.thu_vien and c.thu_vien.size > 0 %}{% assign anh = c.thu_vien[0] %}{% endif %}{% endif %}
+{% if anh == nil or anh == "" %}{% for ten in c.san_pham %}{% assign f = site.san_pham | where: "title", ten | first %}{% if f and f.anh and f.anh != "" %}{% assign anh = f.anh %}{% break %}{% endif %}{% endfor %}{% endif %}
+{% if anh == nil or anh == "" %}{% assign anh = "/assets/img/ph.svg" %}{% endif %}
 <a class="tf-story reveal" href="{{ c.url | relative_url }}" data-nhom="{{ c.nhom | default: 'dong-phuc' }}">
-  <span class="tf-story__img{% unless c.anh_bia and c.anh_bia != '' %} tf-story__img--logo{% endunless %}">
-    {% if c.anh_bia and c.anh_bia != '' %}<img src="{{ c.anh_bia | prepend: site.baseurl }}" alt="Dự án {{ c.title }}" loading="lazy" width="800" height="600">{% elsif c.logo and c.logo != '' %}<img src="{{ c.logo | prepend: site.baseurl }}" alt="Logo {{ c.title }}" loading="lazy">{% else %}<span class="tf-logo-text">{{ c.title }}</span>{% endif %}
+  <span class="tf-story__img">
+    <img src="{{ anh | prepend: site.baseurl }}" alt="Sản phẩm làm cho {{ c.title }}" loading="lazy" width="800" height="600">
   </span>
   <span class="tf-story__body">
     <span class="tf-story__tags">{% if c.nhom == "qua-tang" %}<span class="is-nhom">Quà tặng</span>{% elsif c.nhom == "ca-hai" %}<span class="is-nhom">Đồng phục & Quà tặng</span>{% else %}<span class="is-nhom">Đồng phục</span>{% endif %}{% if c.da_may and c.da_may != '' %}<span>{{ c.da_may }}</span>{% endif %}</span>

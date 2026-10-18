@@ -1,8 +1,9 @@
 {% assign home = site.data.trang_chu['9_cuoi_trang'] %}
 {% assign lh = site.data.lien_he %}
-<footer class="tf-footer{% if page.url == '/' %} tf-footer--home{% endif %}" id="lien-he">
+{% assign an_cta = false %}{% if page.url == '/' or page.layout == 'process' %}{% assign an_cta = true %}{% endif %}
+<footer class="tf-footer{% if an_cta %} tf-footer--home{% endif %}" id="lien-he">
   <div class="wrap">
-    {% unless page.url == '/' %}
+    {% unless an_cta %}
     <div class="tf-fcta">
       <div>
         <p class="tf-fcta__h">{{ home.tieu_de_keu_goi | default: "Gửi logo, nhận mẫu thiết kế miễn phí" }}</p>
