@@ -1,13 +1,9 @@
 ---
-title: "Công ty TNHH Đầu tư Bất động sản Hausland"
-logo: ""
-da_may: "70 áo"
-ngay_tao: "2026-10-01T08:20"
-anh_bia: ""
-tieu_de_bai: ""
-tom_tat: ""
+title: Công ty TNHH Đầu tư Bất động sản Hausland
+logo: /assets/uploads/Logo 7.png
+san_pham:
+  - Áo thun cổ tròn
+da_may: 70 áo
 noi_bat: false
-san_pham: ["Áo thun cổ tròn"]
-thu_vien: []
-thoi_gian: ""
+ngay_tao: 2026-10-01T08:20
 ---
