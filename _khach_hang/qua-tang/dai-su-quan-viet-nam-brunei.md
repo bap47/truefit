@@ -2,7 +2,7 @@
 title: "Đại sứ quán Việt Nam tại Brunei"
 logo: ""
 da_may: ""
-ngay_tao: "2026-10-01T08:01"
+ngay_tao: "2026-10-01T08:03"
 anh_bia: ""
 tieu_de_bai: ""
 tom_tat: ""
