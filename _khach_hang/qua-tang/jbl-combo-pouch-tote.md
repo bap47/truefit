@@ -9,6 +9,6 @@ san_pham:
   - Túi tote
 da_may: 5.000 combo
 noi_bat: false
-tieu_de_bai: Combo túi Pouch + túi tote - JBL
+tieu_de_bai: Combo túi Pouch + túi tote
 ngay_tao: 2026-10-01T08:02
 ---
