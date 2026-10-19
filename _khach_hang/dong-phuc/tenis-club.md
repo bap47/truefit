@@ -1,8 +1,8 @@
 ---
 title: Tenis Club
 thu_vien:
+  - /assets/uploads/Logo 74.png
   - /assets/uploads/Logo 65.png
-  - /assets/uploads/Logo 66.png
   - /assets/uploads/Logo 67.png
   - /assets/uploads/Logo 68.png
 can_anh: giua
