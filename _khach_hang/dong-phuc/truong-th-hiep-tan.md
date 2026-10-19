@@ -1,6 +1,9 @@
 ---
 title: Trường TH Hiệp Tân
 logo: /assets/uploads/Logo 10.png
+thu_vien:
+  - /assets/uploads/Logo 76.png
+can_anh: giua
 san_pham:
   - Áo thun cổ trụ
 da_may: 50 áo
