@@ -397,3 +397,40 @@
   function run() { document.querySelectorAll(sel).forEach(fix); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })();
+
+/* Xem ảnh lớn: bấm ảnh chính/ảnh nhỏ → mở toàn màn hình, ‹ › để chuyển ảnh, Esc hoặc bấm nền để đóng */
+(function () {
+  document.querySelectorAll('[data-gallery]').forEach(function (g) {
+    var main = g.querySelector('[data-gallery-main]'); if (!main) return;
+    var btns = [].slice.call(g.querySelectorAll('.tf-pd__thumbs button'));
+    var ds = btns.length ? btns.map(function (b) { return b.dataset.src; }) : [main.getAttribute('src')];
+    var box = null, img, so, cur = 0, sx = null;
+    function mo(i) {
+      if (!box) {
+        box = document.createElement('div'); box.className = 'tf-lb'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', 'Xem ảnh');
+        box.innerHTML = '<button type="button" class="tf-lb__x" aria-label="Đóng">×</button>' +
+          '<button type="button" class="tf-lb__nav tf-lb__prev" aria-label="Ảnh trước"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
+          '<img alt="">' +
+          '<button type="button" class="tf-lb__nav tf-lb__next" aria-label="Ảnh sau"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
+          '<span class="tf-lb__so"></span>';
+        document.body.appendChild(box);
+        img = box.querySelector('img'); so = box.querySelector('.tf-lb__so');
+        box.addEventListener('click', function (e) { if (e.target === box) dong(); });
+        box.querySelector('.tf-lb__x').addEventListener('click', dong);
+        box.querySelector('.tf-lb__prev').addEventListener('click', function () { den(cur - 1); });
+        box.querySelector('.tf-lb__next').addEventListener('click', function () { den(cur + 1); });
+        box.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+        box.addEventListener('touchend', function (e) { if (sx === null) return; var d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 40) den(cur + (d < 0 ? 1 : -1)); sx = null; });
+        if (ds.length < 2) box.classList.add('is-1');
+      }
+      den(i); box.classList.add('is-open'); document.documentElement.style.overflow = 'hidden';
+      document.addEventListener('keydown', phim);
+    }
+    function den(i) { cur = (i + ds.length) % ds.length; img.src = ds[cur]; so.textContent = (cur + 1) + ' / ' + ds.length; }
+    function dong() { box.classList.remove('is-open'); document.documentElement.style.overflow = ''; document.removeEventListener('keydown', phim); }
+    function phim(e) { if (e.key === 'Escape') dong(); else if (e.key === 'ArrowLeft') den(cur - 1); else if (e.key === 'ArrowRight') den(cur + 1); }
+    main.style.cursor = 'zoom-in';
+    main.addEventListener('click', function () { var i = btns.findIndex(function (b) { return b.classList.contains('is-on'); }); mo(i < 0 ? 0 : i); });
+    btns.forEach(function (b, i) { b.addEventListener('dblclick', function () { mo(i); }); });
+  });
+})();
