@@ -1,6 +1,6 @@
 {% assign p = include.p %}
 <a class="tf-card reveal" href="{{ p.url | relative_url }}" data-cat="{{ p.danh_muc }}">
-  <span class="tf-card__img">{% assign _pa = p.thu_vien | first %}{% if _pa == nil or _pa == '' %}{% assign _pa = p.anh %}{% endif %}{% if _pa == nil or _pa == '' %}{% assign _pa = '/assets/img/ph.svg' %}{% endif %}<img src="{{ _pa | prepend: site.baseurl }}" alt="{{ p.title }}" loading="lazy" width="800" height="800"{% include khung.html pos=p.can_anh zoom=p.phong_to %}></span>
+  <span class="tf-card__img">{% assign _pa = p.thu_vien | first %}{% if _pa == nil or _pa == '' %}{% assign _pa = p.anh %}{% endif %}{% if _pa == nil or _pa == '' %}{% assign _pa = '/assets/img/ph.svg' %}{% endif %}<img src="{{ _pa | prepend: site.baseurl }}" alt="{{ p.title }}" loading="lazy" width="800" height="600"{% include khung.html pos=p.can_anh zoom=p.phong_to %}></span>
   <span class="tf-card__name">{{ p.title }}</span>
   {% if p.dat_tu and p.dat_tu != "" %}<span class="tf-card__meta">Đặt từ <em>{{ p.dat_tu }}</em></span>{% endif %}
 </a>
