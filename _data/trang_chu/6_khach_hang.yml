@@ -1,11 +1,10 @@
-# Sửa trong CMS: Trang chủ ⑦ Khách hàng
-tieu_de: '*500+* đối tác đã đồng hành cùng TRUEFIT'
+tieu_de: "*500+* đối tác đã đồng hành cùng TRUEFIT"
 mo_ta: Công ty, xí nghiệp, quán cafe, nhà hàng, đội nhóm trên toàn quốc.
 tieu_de_cau_chuyen: Đối tác *tiêu biểu*
 tieu_bieu:
-  - qua_tang: _khach_hang/qua-tang/jbl.md
-  - qua_tang: _khach_hang/qua-tang/pgi.md
+  - dong_phuc: _khach_hang/dong-phuc/hausland.md
   - dong_phuc: _khach_hang/dong-phuc/cao-phat.md
   - qua_tang: _khach_hang/qua-tang/jbl-combo-pouch-tote.md
   - qua_tang: _khach_hang/qua-tang/dai-su-quan-viet-nam-brunei.md
-  - dong_phuc: _khach_hang/dong-phuc/hausland.md
+  - qua_tang: _khach_hang/qua-tang/jbl.md
+  - qua_tang: _khach_hang/qua-tang/pgi.md
