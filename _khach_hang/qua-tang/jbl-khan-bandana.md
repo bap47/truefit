@@ -1,11 +1,12 @@
 ---
 title: JBL
-logo: /assets/uploads/Logo2-3.png
+logo: /assets/uploads/Logo2.png
 thu_vien:
   - /assets/uploads/Logo 30.png
   - /assets/uploads/Logo 31.png
   - /assets/uploads/Logo 32.png
   - /assets/uploads/Logo 33.png
+can_anh: giua
 san_pham:
   - Khăn bandana
 da_may: 500 khăn bandana
