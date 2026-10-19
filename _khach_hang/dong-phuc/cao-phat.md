@@ -7,9 +7,10 @@ thu_vien:
   - /assets/uploads/Logo 47.png
   - /assets/uploads/Logo 48.png
 can_anh: giua
+phong_to: "1"
 san_pham:
   - Áo thun cổ trụ
 da_may: 1.000 áo mỗi năm
-noi_bat: false
+noi_bat: true
 ngay_tao: 2026-10-01T08:12
 ---
