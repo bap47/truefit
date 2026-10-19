@@ -1,6 +1,9 @@
-{% assign p = include.p %}
-<a class="tf-card reveal" href="{{ p.url | relative_url }}" data-cat="{{ p.danh_muc }}">
-  <span class="tf-card__img">{% assign _pa = p.thu_vien | first %}{% if _pa == nil or _pa == '' %}{% assign _pa = p.anh %}{% endif %}{% if _pa == nil or _pa == '' %}{% assign _pa = '/assets/img/ph.svg' %}{% endif %}<img src="{{ _pa | prepend: site.baseurl }}" alt="{{ p.title }}" loading="lazy" width="800" height="600"{% include khung.html pos=p.can_anh zoom=p.phong_to %}></span>
-  <span class="tf-card__name">{{ p.title }}</span>
-  {% if p.dat_tu and p.dat_tu != "" %}<span class="tf-card__meta">Đặt từ <em>{{ p.dat_tu }}</em></span>{% endif %}
+{% assign p = include.p %}{% assign _pa = p.thu_vien | first %}{% if _pa == nil or _pa == '' %}{% assign _pa = p.anh %}{% endif %}{% if _pa == nil or _pa == '' %}{% assign _pa = '/assets/img/ph.svg' %}{% endif %}
+<a class="tf-story tf-pcard reveal" href="{{ p.url | relative_url }}" data-cat="{{ p.danh_muc }}">
+  <span class="tf-story__img"><img src="{{ _pa | prepend: site.baseurl }}" alt="{{ p.title | replace: ' | ', ' ' | remove: '|' }}" loading="lazy" width="800" height="600"{% include khung.html pos=p.can_anh zoom=p.phong_to %}></span>
+  <span class="tf-story__body">
+    <span class="tf-story__tags"><span class="is-nhom">{% if p.danh_muc == "merchandise" %}Quà tặng{% else %}Đồng phục{% endif %}</span>{% if p.dat_tu and p.dat_tu != "" %}<span>Đặt từ {{ p.dat_tu }}</span>{% endif %}</span>
+    <strong>{{ p.title }}</strong>
+    <em>Xem chi tiết →</em>
+  </span>
 </a>
