@@ -284,7 +284,7 @@ content:
         multiple: true
       description: 'Ảnh ngang 1200×900 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.'
     - name: can_anh
-      label: Khung ảnh – chọn phần muốn thấy
+      label: Ảnh bìa – phần muốn thấy
       type: select
       default: giua
       options:
@@ -292,16 +292,39 @@ content:
         - value: giua
           label: Giữa ảnh (mặc định)
         - value: tren
-          label: Phần trên
+          label: Phía trên
         - value: duoi
-          label: Phần dưới
+          label: Phía dưới
         - value: trai
           label: Bên trái
         - value: phai
           label: Bên phải
+        - value: tren-trai
+          label: Góc trên trái
+        - value: tren-phai
+          label: Góc trên phải
+        - value: duoi-trai
+          label: Góc dưới trái
+        - value: duoi-phai
+          label: Góc dưới phải
         - value: du
           label: Hiện đủ ảnh, không cắt
-      description: Áp dụng cho ảnh bìa trên thẻ và ảnh lớn đầu trang
+      description: Chọn phần của ảnh đầu tiên được đưa vào khung (thẻ đối tác + ảnh lớn đầu trang). Ảnh gốc không bị cắt
+    - name: phong_to
+      label: Ảnh bìa – phóng to
+      type: select
+      default: '1'
+      options:
+        values:
+        - value: '1'
+          label: Không phóng (100%)
+        - value: '1.25'
+          label: Phóng 125%
+        - value: '1.5'
+          label: Phóng 150%
+        - value: '2'
+          label: Phóng 200%
+      description: Phóng to vào đúng phần đã chọn ở ô trên
     - name: san_pham
       label: Sản phẩm đã làm
       type: reference
@@ -394,7 +417,7 @@ content:
         multiple: true
       description: 'Ảnh ngang 1200×900 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh bìa trên thẻ và ảnh lớn đầu trang. Để trống sẽ lấy hình sản phẩm.'
     - name: can_anh
-      label: Khung ảnh – chọn phần muốn thấy
+      label: Ảnh bìa – phần muốn thấy
       type: select
       default: giua
       options:
@@ -402,16 +425,39 @@ content:
         - value: giua
           label: Giữa ảnh (mặc định)
         - value: tren
-          label: Phần trên
+          label: Phía trên
         - value: duoi
-          label: Phần dưới
+          label: Phía dưới
         - value: trai
           label: Bên trái
         - value: phai
           label: Bên phải
+        - value: tren-trai
+          label: Góc trên trái
+        - value: tren-phai
+          label: Góc trên phải
+        - value: duoi-trai
+          label: Góc dưới trái
+        - value: duoi-phai
+          label: Góc dưới phải
         - value: du
           label: Hiện đủ ảnh, không cắt
-      description: Áp dụng cho ảnh bìa trên thẻ và ảnh lớn đầu trang
+      description: Chọn phần của ảnh đầu tiên được đưa vào khung (thẻ đối tác + ảnh lớn đầu trang). Ảnh gốc không bị cắt
+    - name: phong_to
+      label: Ảnh bìa – phóng to
+      type: select
+      default: '1'
+      options:
+        values:
+        - value: '1'
+          label: Không phóng (100%)
+        - value: '1.25'
+          label: Phóng 125%
+        - value: '1.5'
+          label: Phóng 150%
+        - value: '2'
+          label: Phóng 200%
+      description: Phóng to vào đúng phần đã chọn ở ô trên
     - name: san_pham
       label: Sản phẩm đã làm
       type: reference
