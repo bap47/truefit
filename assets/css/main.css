@@ -907,3 +907,8 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 .tf-modal .tf-qform__send { margin-top: .9rem; padding-block: .7rem; }
 .tf-modal .tf-qform__alt { font-size: .8rem; margin-top: .4rem; }
 .tf-modal__x { width: 34px; height: 34px; font-size: 1.25rem; top: .6rem; right: .6rem; }
+
+/* Đối tác tiêu biểu trang chủ: 2 hàng × 3 (tối đa 6) */
+.tf-stories__six { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+@media (max-width: 900px) { .tf-stories__six { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .tf-stories__six { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: .75rem; } .tf-stories__six::-webkit-scrollbar { display: none; } .tf-stories__six .tf-story { flex: 0 0 84%; scroll-snap-align: start; } }
