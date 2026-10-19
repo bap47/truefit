@@ -5,10 +5,12 @@ thu_vien:
   - /assets/uploads/Logo 19.png
   - /assets/uploads/Logo 20.png
   - /assets/uploads/Logo 22.png
+can_anh: giua
+phong_to: "1"
 san_pham:
   - Khăn bandana
 da_may: 500 khăn bandana
-noi_bat: false
+noi_bat: true
 tieu_de_bai: Khăn bandana
 ngay_tao: 2026-10-01T08:04
 ---
