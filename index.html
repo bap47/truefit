@@ -46,7 +46,7 @@ layout: default
           {% if khung and khung.size > 0 %}
             {% for a in khung %}<img class="tf-frame__img{% if forloop.first %} is-on{% endif %}" src="{{ a.anh | prepend: site.baseurl }}" alt="{{ a.mo_ta | default: 'Hình ảnh TrueFit' }}"{% unless forloop.first %} loading="lazy"{% endunless %}>{% endfor %}
           {% else %}
-            {% for p in hien limit: 5 %}<img class="tf-frame__img{% if forloop.first %} is-on{% endif %}" src="{{ p.anh | prepend: site.baseurl }}" alt="{{ p.title }}"{% unless forloop.first %} loading="lazy"{% endunless %}>{% endfor %}
+            {% for p in hien limit: 5 %}{% assign _pa = p.thu_vien | first | default: p.anh %}<img class="tf-frame__img{% if forloop.first %} is-on{% endif %}" src="{{ _pa | prepend: site.baseurl }}" alt="{{ p.title }}"{% unless forloop.first %} loading="lazy"{% endunless %}>{% endfor %}
           {% endif %}
         </div>
         <div class="tf-frame__dots" aria-hidden="true"></div>
