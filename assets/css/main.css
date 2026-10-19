@@ -912,3 +912,4 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 .tf-stories__six { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 @media (max-width: 900px) { .tf-stories__six { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .tf-stories__six { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: .75rem; } .tf-stories__six::-webkit-scrollbar { display: none; } .tf-stories__six .tf-story { flex: 0 0 84%; scroll-snap-align: start; } }
+.tf-card:hover .tf-card__img img[data-khung] { transform: scale(calc(var(--z, 1) * 1.07)); }
