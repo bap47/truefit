@@ -878,3 +878,7 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
   .tf-pd--kh .tf-pd__media { position: static; display: flex; flex-direction: column; }
   .tf-pd--kh .tf-pd__main { flex: 1 1 auto; aspect-ratio: auto; min-height: 320px; }
 }
+@media (min-width: 901px) {
+  .tf-pd--kh .tf-pd__info { padding-top: 0; }
+  .tf-pd--kh .tf-pd__info > .tf-eyebrow:first-child { line-height: 1; margin-top: -1px; }
+}
