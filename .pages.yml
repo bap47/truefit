@@ -151,10 +151,6 @@ content:
       label: Thời gian sản xuất
       type: string
       description: 'VD: 7–10 ngày sau khi duyệt mẫu'
-    - name: ban_chay
-      label: Bán chạy (hiện ở trang chủ)
-      type: boolean
-      default: false
     - name: an
       label: Ẩn khỏi web
       type: boolean
@@ -269,10 +265,6 @@ content:
       label: Thời gian sản xuất
       type: string
       description: 'VD: 7–10 ngày sau khi duyệt mẫu'
-    - name: ban_chay
-      label: Bán chạy (hiện ở trang chủ)
-      type: boolean
-      default: false
     - name: an
       label: Ẩn khỏi web
       type: boolean
@@ -751,12 +743,37 @@ content:
     - name: tieu_de_san_pham
       label: Tiêu đề
       type: string
-      description: 'Sản phẩm hiện ở đây: tick «Bán chạy» trong mục Sản phẩm. Chưa tick sản phẩm nào thì tự lấy nửa đồng phục, nửa quà tặng'
     - name: mo_ta
       label: Mô tả ngắn
       type: string
+    - name: chon
+      label: Sản phẩm hiện ở đây (kéo ⋮⋮ để sắp xếp – riêng với thứ tự ở trang Sản phẩm)
+      type: object
+      list:
+        max: 8
+        collapsible:
+          collapsed: true
+          summary: '{fields.dong_phuc}{fields.qua_tang}'
+      fields:
+      - name: dong_phuc
+        label: Sản phẩm đồng phục
+        type: reference
+        options:
+          collection: sp_dong_phuc
+          search: title
+          value: '{path}'
+          label: '{title}'
+        description: Chọn 1 trong 2 ô – đồng phục HOẶC quà tặng
+      - name: qua_tang
+        label: Sản phẩm quà tặng
+        type: reference
+        options:
+          collection: sp_qua_tang
+          search: title
+          value: '{path}'
+          label: '{title}'
     - name: so_luong
-      label: Số sản phẩm hiện
+      label: Số sản phẩm hiện (chỉ dùng khi danh sách trên để trống)
       type: number
       default: 4
   - name: tc_5

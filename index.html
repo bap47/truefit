@@ -95,7 +95,8 @@ layout: default
 </section>
 
 <!-- ④ ĐƯỢC ĐẶT NHIỀU NHẤT (trộn đồng phục + quà tặng) -->
-{% assign hot = hien | where: "ban_chay", true %}
+{% assign hot = "" | split: "" %}
+{% for m in d7.chon %}{% assign _m = m.dong_phuc | default: m.qua_tang %}{% if _m and _m != "" %}{% assign _k = _m | split: "/" %}{% assign _n = _k.size | minus: 2 %}{% assign _key = _k[_n] | append: "/" | append: _k.last %}{% for d in hien %}{% assign _p = d.path | split: "/" %}{% assign _q = _p.size | minus: 2 %}{% assign _dk = _p[_q] | append: "/" | append: _p.last %}{% if _dk == _key %}{% assign _mot = hien | where: "url", d.url %}{% assign hot = hot | concat: _mot %}{% break %}{% endif %}{% endfor %}{% endif %}{% endfor %}
 {% if hot.size == 0 %}
   {% assign nua = so_sp | divided_by: 2 %}
   {% assign uni = hien | where: "danh_muc", "dong-phuc" %}
@@ -107,7 +108,7 @@ layout: default
     {% if d7.mo_ta and d7.mo_ta != '' %}<p class="tf-lead reveal">{{ d7.mo_ta }}</p>{% endif %}
     <div class="tf-grid tf-grid--4">
       {% if hot.size > 0 %}
-        {% for p in hot limit: so_sp %}{% include product-card.html p=p %}{% endfor %}
+        {% for p in hot %}{% include product-card.html p=p %}{% endfor %}
       {% else %}
         {% for p in uni limit: nua %}{% include product-card.html p=p %}{% endfor %}
         {% for p in gift limit: nua %}{% include product-card.html p=p %}{% endfor %}
