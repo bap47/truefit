@@ -866,3 +866,9 @@ h1, h2, h3, h4, .tf-title, .tf-hero__title, .tf-story strong, .tf-card__name, p,
 @media (max-width: 760px) { .tf-intro__title { font-size: min(1.5rem, calc((100vw - 2.2rem) / 15.3)); } }
 /* Mô tả ngắn 1 dòng trên máy tính (trang Đối tác) */
 @media (min-width: 900px) { .tf-lead--1 { max-width: none; white-space: nowrap; } }
+
+/* Khung ảnh chọn trong CMS (Vị trí + Phóng to) */
+img[data-khung] { object-position: var(--pos, 50% 50%); transform-origin: var(--pos, 50% 50%); transform: scale(var(--z, 1)); }
+img[data-khung="du"] { object-fit: contain !important; background: #fff; }
+.tf-story:hover .tf-story__img img[data-khung] { transform: scale(calc(var(--z, 1) * 1.05)); }
+img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit: cover !important; }
