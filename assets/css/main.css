@@ -921,3 +921,6 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
   .tf-pd--sp .tf-pd__info { padding-top: 0; }
   .tf-pd--sp .tf-pd__info > .tf-eyebrow:first-child { line-height: 1; margin-top: -1px; }
 }
+/* Thẻ sản phẩm dùng chung kiểu thẻ đối tác */
+.tf-grid--4 .tf-pcard .tf-story__body { padding: 1rem 1rem 1.15rem; }
+@media (max-width: 780px) { .tf-pcard .tf-story__body { padding: .8rem .85rem 1rem; gap: .35rem; } .tf-pcard .tf-story__tags span { font-size: .62rem; padding: .2rem .5rem; } .tf-pcard strong { font-size: .95rem; } }
