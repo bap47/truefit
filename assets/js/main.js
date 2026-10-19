@@ -250,7 +250,7 @@
     function go(i) {
       cur = (i + btns.length) % btns.length; var b = btns[cur];
       main.style.opacity = '0';
-      setTimeout(function () { main.src = b.dataset.src; main.style.opacity = '1'; }, 180);
+      setTimeout(function () { main.src = b.dataset.src; main.classList.toggle('is-khac', cur !== 0); main.style.opacity = '1'; }, 180);
       btns.forEach(function (x) { x.classList.toggle('is-on', x === b); });
     }
     function play() { clearInterval(t); if (!reduce) t = setInterval(function () { go(cur + 1); }, ms); }
