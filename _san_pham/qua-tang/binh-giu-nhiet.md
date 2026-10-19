@@ -1,7 +1,7 @@
 ---
 title: Bình giữ nhiệt
 thu_vien:
-  - /assets/uploads/Logo 38-1.png
+  - /assets/uploads/Logo 38-2.png
 can_anh: giua
 phong_to: "1"
 mo_ta: In logo theo nhận diện thương hiệu. Liên hệ TrueFit để được tư vấn chất
