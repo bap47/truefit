@@ -4,7 +4,7 @@ layout: default
 {% assign anh_sp = page.thu_vien | first %}{% assign ds_them = "" | split: "" %}
 {% if anh_sp and anh_sp != "" %}{% capture _s %}{% for a in page.thu_vien offset:1 %}{{ a }}|{% endfor %}{% endcapture %}{% assign ds_them = _s | split: "|" %}{% else %}{% assign anh_sp = page.anh | default: "/assets/img/ph.svg" %}{% endif %}
 {% assign ten_dm = "Đồng phục" %}{% assign qslug = "dong-phuc" %}{% if page.danh_muc == "merchandise" %}{% assign ten_dm = "Quà tặng" %}{% assign qslug = "qua-tang" %}{% endif %}
-<section class="tf-section tf-pd" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ anh_sp | prepend: site.baseurl }}">
+<section class="tf-section tf-pd tf-pd--sp" data-recent-t="{{ page.title }}" data-recent-u="{{ page.url | relative_url }}" data-recent-i="{{ anh_sp | prepend: site.baseurl }}">
   <div class="wrap tf-pd__top">
     {% include pd-gallery.html anh=anh_sp ds=ds_them alt=page.title pos=page.can_anh zoom=page.phong_to %}
     <div class="tf-pd__info">
