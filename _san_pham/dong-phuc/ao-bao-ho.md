@@ -1,10 +1,12 @@
 ---
-title: "Áo bảo hộ"
-anh: "/assets/img/demo/do-bao-ho.png"
-dat_tu: ""
-chat_lieu: ""
-mo_ta: "In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu và báo giá."
+title: Áo bảo hộ
+thu_vien:
+  - /assets/uploads/Logo 18-2.png
+can_anh: giua
+phong_to: "1"
+mo_ta: In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu
+  và báo giá.
+ban_chay: false
 an: false
-thu_vien: ["/assets/img/demo/do-bao-ho.png"]
-ngay_tao: "2026-10-01T08:03"
+ngay_tao: 2026-10-01T08:03
 ---
