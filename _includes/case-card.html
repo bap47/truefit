@@ -5,7 +5,7 @@
 {% if anh == nil or anh == "" %}{% assign anh = "/assets/img/ph.svg" %}{% endif %}
 <a class="tf-story reveal" href="{{ c.url | relative_url }}" data-nhom="{{ c.nhom | default: 'dong-phuc' }}">
   <span class="tf-story__img">
-    <img src="{{ anh | prepend: site.baseurl }}" alt="Sản phẩm làm cho {{ c.title }}" loading="lazy" width="800" height="600"{% if c.khung_anh %}{% include khung.html k=c.khung_anh %}{% endif %}>
+    <img src="{{ anh | prepend: site.baseurl }}" alt="Sản phẩm làm cho {{ c.title }}" loading="lazy" width="800" height="600"{% include khung.html pos=c.can_anh zoom=c.phong_to %}>
   </span>
   <span class="tf-story__body">
     <span class="tf-story__tags">{% if c.nhom == "qua-tang" %}<span class="is-nhom">Quà tặng</span>{% elsif c.nhom == "ca-hai" %}<span class="is-nhom">Đồng phục & Quà tặng</span>{% else %}<span class="is-nhom">Đồng phục</span>{% endif %}{% for ten in c.san_pham %}<span>{{ ten }}</span>{% endfor %}</span>
