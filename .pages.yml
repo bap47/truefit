@@ -77,7 +77,7 @@ content:
       type: image
       options:
         multiple: true
-      description: 'Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh chính trên thẻ và đầu trang. Bấm ảnh trên web để xem to.'
+      description: 'Ảnh ngang 1200×900 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh chính trên thẻ và đầu trang. Bấm ảnh trên web để xem to.'
     - name: can_anh
       label: Ảnh bìa – phần muốn thấy
       type: select
@@ -195,7 +195,7 @@ content:
       type: image
       options:
         multiple: true
-      description: 'Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh chính trên thẻ và đầu trang. Bấm ảnh trên web để xem to.'
+      description: 'Ảnh ngang 1200×900 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh chính trên thẻ và đầu trang. Bấm ảnh trên web để xem to.'
     - name: can_anh
       label: Ảnh bìa – phần muốn thấy
       type: select
