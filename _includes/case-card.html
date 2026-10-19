@@ -1,7 +1,7 @@
 {% assign c = include.c %}
 {% assign anh = c.anh_bia %}
 {% if anh == nil or anh == "" %}{% if c.thu_vien and c.thu_vien.size > 0 %}{% assign anh = c.thu_vien[0] %}{% endif %}{% endif %}
-{% if anh == nil or anh == "" %}{% for ten in c.san_pham %}{% assign f = site.san_pham | where: "title", ten | first %}{% if f and f.anh and f.anh != "" %}{% assign anh = f.anh %}{% break %}{% endif %}{% endfor %}{% endif %}
+{% if anh == nil or anh == "" %}{% for ten in c.san_pham %}{% assign f = site.san_pham | where: "title", ten | first %}{% if f %}{% assign _fa = f.thu_vien | first %}{% if _fa == nil or _fa == "" %}{% assign _fa = f.anh %}{% endif %}{% if _fa and _fa != "" %}{% assign anh = _fa %}{% break %}{% endif %}{% endif %}{% endfor %}{% endif %}
 {% if anh == nil or anh == "" %}{% assign anh = "/assets/img/ph.svg" %}{% endif %}
 <a class="tf-story reveal" href="{{ c.url | relative_url }}" data-nhom="{{ c.nhom | default: 'dong-phuc' }}">
   <span class="tf-story__img">
