@@ -1,10 +1,12 @@
 ---
-title: "Pouch"
-anh: /assets/img/demo/pouch.png
-dat_tu: ""
-chat_lieu: ""
-mo_ta: "In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu và báo giá."
-ngay_tao: "2026-10-01T08:03"
+title: Pouch
+thu_vien:
+  - /assets/uploads/Logo 28-1.png
+can_anh: giua
+phong_to: "1"
+mo_ta: In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu
+  và báo giá.
+ban_chay: false
 an: false
-thu_vien: ["/assets/img/demo/pouch.png", "/assets/img/demo/balo.png", "/assets/img/demo/but.png", "/assets/img/demo/mini-bag.png"]
+ngay_tao: 2026-10-01T08:03
 ---
