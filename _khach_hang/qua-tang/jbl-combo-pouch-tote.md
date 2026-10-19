@@ -2,13 +2,18 @@
 title: JBL
 logo: /assets/uploads/Logo2-2.png
 thu_vien:
-  - /assets/img/demo/pouch.png
-  - /assets/img/demo/tui-tote.png
+  - /assets/uploads/Logo 42.png
+  - /assets/uploads/Logo 43.png
+  - /assets/uploads/Logo 45.png
+  - /assets/uploads/Logo 44.jpg
+can_anh: giua
+phong_to: "1"
 san_pham:
   - Pouch
   - Túi tote
 da_may: 5.000 combo
-noi_bat: false
-tieu_de_bai: Combo túi Pouch + túi tote
+thoi_gian: 30 ngày
+noi_bat: true
+tieu_de_bai: Combo túi pouch + túi tote
 ngay_tao: 2026-10-01T08:02
 ---
