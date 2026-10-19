@@ -2,7 +2,9 @@
 title: Kè Café
 logo: /assets/uploads/Logo 8.png
 thu_vien:
-  - /assets/img/demo/ao-thun-co-tron.png
+  - /assets/uploads/Logo 88.png
+can_anh: giua
+phong_to: "1"
 san_pham:
   - Áo thun cổ tròn
 da_may: 50 áo
