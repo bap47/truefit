@@ -11,7 +11,7 @@
   <meta property="og:description" content="{{ page.mo_ta | default: seo.mo_ta_chia_se | default: site.description | strip_html | truncate: 160 }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  {% if page.url == '/' %}{% assign og = seo.anh_chia_se %}{% else %}{% assign og = page.anh | default: page.anh_bia | default: seo.anh_chia_se %}{% endif %}
+  {% if page.url == '/' %}{% assign og = seo.anh_chia_se %}{% else %}{% assign _tv = page.thu_vien | first %}{% assign og = _tv | default: page.anh | default: page.anh_bia | default: seo.anh_chia_se %}{% endif %}
   {% assign og = og | default: '/assets/img/demo/ao-polo.png' %}
   <meta property="og:image" content="{{ og | absolute_url }}">
   <meta name="twitter:card" content="summary_large_image">
