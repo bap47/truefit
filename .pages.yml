@@ -353,10 +353,6 @@ content:
       label: Thời gian thực hiện
       type: string
       description: 'VD: 10 ngày'
-    - name: noi_bat
-      label: Hiện ở «Câu chuyện khách hàng tiêu biểu» trang chủ
-      type: boolean
-      default: false
     - name: tieu_de_bai
       label: Tên dự án hiện trên thẻ
       type: string
@@ -486,10 +482,6 @@ content:
       label: Thời gian thực hiện
       type: string
       description: 'VD: 10 ngày'
-    - name: noi_bat
-      label: Hiện ở «Câu chuyện khách hàng tiêu biểu» trang chủ
-      type: boolean
-      default: false
     - name: tieu_de_bai
       label: Loại sản phẩm (hiện trên thẻ)
       type: string
@@ -721,6 +713,32 @@ content:
       label: Tiêu đề hàng đối tác tiêu biểu
       type: string
       description: Bọc *dấu sao* để tô cam
+    - name: tieu_bieu
+      label: Đối tác tiêu biểu (tối đa 6 – kéo ⋮⋮ để sắp xếp)
+      type: object
+      list:
+        max: 6
+        collapsible:
+          collapsed: true
+          summary: '{fields.dong_phuc}{fields.qua_tang}'
+      fields:
+      - name: dong_phuc
+        label: Đối tác đồng phục
+        type: reference
+        options:
+          collection: kh_dong_phuc
+          search: title
+          value: '{path}'
+          label: '{title}'
+        description: Chọn 1 trong 2 ô – đồng phục HOẶC quà tặng
+      - name: qua_tang
+        label: Đối tác quà tặng
+        type: reference
+        options:
+          collection: kh_qua_tang
+          search: title
+          value: '{path}'
+          label: '{title} – {tieu_de_bai}'
   - name: tc_9
     label: 8. Báo giá & cuối trang
     type: file

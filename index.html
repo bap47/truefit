@@ -157,18 +157,16 @@ layout: default
     </div>
   </div>
 
-  {% assign tieu_bieu = kh | where: "noi_bat", true %}
+  {% assign tieu_bieu = "" | split: "" %}
+  {% for m in d6.tieu_bieu %}{% assign _m = m.dong_phuc | default: m.qua_tang %}{% if _m and _m != "" %}{% assign _k = _m | split: "/" %}{% assign _n = _k.size | minus: 2 %}{% assign _key = _k[_n] | append: "/" | append: _k.last %}{% for d in kh %}{% assign _p = d.path | split: "/" %}{% assign _q = _p.size | minus: 2 %}{% assign _dk = _p[_q] | append: "/" | append: _p.last %}{% if _dk == _key %}{% assign _mot = kh | where: "url", d.url %}{% assign tieu_bieu = tieu_bieu | concat: _mot %}{% break %}{% endif %}{% endfor %}{% endif %}{% endfor %}
+  {% if tieu_bieu.size == 0 %}{% assign tieu_bieu = kh | where: "noi_bat", true %}{% endif %}
   {% if tieu_bieu.size == 0 %}{% assign tieu_bieu = kh %}{% endif %}
   <div class="wrap tf-stories">
     <div class="tf-stories__head">
       <h3 class="tf-stories__title reveal">{% include cam.html t=d6.tieu_de_cau_chuyen %}</h3>
-      <div class="tf-stories__nav">
-        <button class="tf-round" data-scroll="-1" aria-label="Trước"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="tf-round" data-scroll="1" aria-label="Sau"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </div>
     </div>
-    <div class="tf-stories__row" tabindex="0" aria-label="Đối tác tiêu biểu">
-      {% for c in tieu_bieu limit: 8 %}{% include case-card.html c=c %}{% endfor %}
+    <div class="tf-stories__six" aria-label="Đối tác tiêu biểu">
+      {% for c in tieu_bieu limit: 6 %}{% include case-card.html c=c %}{% endfor %}
     </div>
     <p class="tf-more"><a class="btn btn--line" href="{{ '/khach-hang/' | relative_url }}">Xem tất cả đối tác</a></p>
   </div>
