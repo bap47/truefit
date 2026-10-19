@@ -872,3 +872,9 @@ img[data-khung] { object-position: var(--pos, 50% 50%); transform-origin: var(--
 img[data-khung="du"] { object-fit: contain !important; background: #fff; }
 .tf-story:hover .tf-story__img img[data-khung] { transform: scale(calc(var(--z, 1) * 1.05)); }
 img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit: cover !important; }
+/* Trang đối tác (máy tính): ảnh chính cao bằng cột thông tin, dải ảnh nhỏ thẳng hàng dòng cuối */
+@media (min-width: 901px) {
+  .tf-pd--kh .tf-pd__top { align-items: stretch; }
+  .tf-pd--kh .tf-pd__media { position: static; display: flex; flex-direction: column; }
+  .tf-pd--kh .tf-pd__main { flex: 1 1 auto; aspect-ratio: auto; min-height: 320px; }
+}
