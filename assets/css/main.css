@@ -894,3 +894,16 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 .tf-lb.is-1 .tf-lb__nav, .tf-lb.is-1 .tf-lb__so { display: none; }
 .tf-lb__so { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); color: #fff; font-size: .9rem; background: rgba(255,255,255,.12); padding: 4px 12px; border-radius: 99px; }
 @media (max-width: 600px) { .tf-lb { padding: 56px 8px; } .tf-lb__nav { width: 40px; height: 40px; top: auto; bottom: 10px; transform: none; } .tf-lb__prev { left: 16px; } .tf-lb__next { right: 16px; } }
+/* Popup báo giá gọn hơn */
+.tf-modal__box { width: min(520px, 100%); padding: 1.5rem 1.6rem 1.25rem; border-radius: 20px; }
+.tf-modal .tf-eyebrow { font-size: .72rem; margin-bottom: .3rem; }
+.tf-modal .tf-qform h2 { font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.25; margin: 0 0 .9rem; }
+.tf-modal .tf-qform__grid { gap: .6rem .75rem; }
+.tf-modal .tf-qform label, .tf-modal .tf-qform legend { font-size: .82rem; gap: .25rem; }
+.tf-modal .tf-qform legend { margin-bottom: .25rem; }
+.tf-modal .tf-qform input:not([type=radio]), .tf-modal .tf-qform textarea { padding: .5rem .8rem; font-size: .92rem; border-radius: 10px; }
+.tf-modal .tf-qform textarea { min-height: 64px; height: 64px; resize: vertical; }
+.tf-modal .tf-chip span { padding: .32rem .9rem; font-size: .88rem; }
+.tf-modal .tf-qform__send { margin-top: .9rem; padding-block: .7rem; }
+.tf-modal .tf-qform__alt { font-size: .8rem; margin-top: .4rem; }
+.tf-modal__x { width: 34px; height: 34px; font-size: 1.25rem; top: .6rem; right: .6rem; }
