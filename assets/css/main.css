@@ -913,3 +913,11 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 @media (max-width: 900px) { .tf-stories__six { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .tf-stories__six { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: .75rem; } .tf-stories__six::-webkit-scrollbar { display: none; } .tf-stories__six .tf-story { flex: 0 0 84%; scroll-snap-align: start; } }
 .tf-card:hover .tf-card__img img[data-khung] { transform: scale(calc(var(--z, 1) * 1.07)); }
+/* Thống nhất khung ảnh 4:3 (1200×900) cho sản phẩm */
+.tf-card__img img { aspect-ratio: 4 / 3; }
+.tf-pd__main { aspect-ratio: 4 / 3; }
+/* Trang sản phẩm (máy tính): chữ đầu cột thông tin thẳng mép trên ảnh */
+@media (min-width: 901px) {
+  .tf-pd--sp .tf-pd__info { padding-top: 0; }
+  .tf-pd--sp .tf-pd__info > .tf-eyebrow:first-child { line-height: 1; margin-top: -1px; }
+}
