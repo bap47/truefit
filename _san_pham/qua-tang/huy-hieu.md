@@ -1,10 +1,12 @@
 ---
-title: "Huy hiệu"
-anh: "/assets/img/demo/huy-hieu.png"
-dat_tu: ""
-chat_lieu: ""
-mo_ta: "In logo theo nhận diện thương hiệu. Liên hệ TrueFit để được tư vấn chất liệu và báo giá."
+title: Huy hiệu
+thu_vien:
+  - /assets/uploads/Logo 25-1.png
+can_anh: giua
+phong_to: "1"
+mo_ta: In logo theo nhận diện thương hiệu. Liên hệ TrueFit để được tư vấn chất
+  liệu và báo giá.
+ban_chay: false
 an: false
-thu_vien: ["/assets/img/demo/huy-hieu.png"]
-ngay_tao: "2026-10-01T08:06"
+ngay_tao: 2026-10-01T08:06
 ---
