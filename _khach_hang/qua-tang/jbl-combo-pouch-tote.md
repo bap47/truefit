@@ -1,13 +1,12 @@
 ---
 title: JBL
-logo: /assets/uploads/Logo2-2.png
+logo: /assets/uploads/Logo2.png
 thu_vien:
   - /assets/uploads/Logo 42.png
   - /assets/uploads/Logo 43.png
   - /assets/uploads/Logo 45.png
   - /assets/uploads/Logo 44.jpg
 can_anh: giua
-phong_to: "1"
 san_pham:
   - Pouch
   - Túi tote
