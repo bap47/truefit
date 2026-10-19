@@ -72,17 +72,54 @@ content:
       type: string
       required: true
       description: 'Muốn tự chọn chỗ xuống dòng thì gõ dấu | tại đó (VD: Đại sứ quán Việt Nam | tại Brunei)'
-    - name: anh
-      label: Ảnh chính
-      type: image
-      required: true
-      description: Ảnh vuông 1200×1200, ảnh thật sản phẩm – hiện to ở đầu trang
     - name: thu_vien
-      label: Ảnh thêm
+      label: Hình ảnh sản phẩm
       type: image
       options:
         multiple: true
-      description: Hiện thành dải ảnh nhỏ dưới ảnh chính – bấm để xem to
+      description: 'Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh chính trên thẻ và đầu trang. Bấm ảnh trên web để xem to.'
+    - name: can_anh
+      label: Ảnh bìa – phần muốn thấy
+      type: select
+      default: giua
+      options:
+        values:
+        - value: giua
+          label: Giữa ảnh (mặc định)
+        - value: tren
+          label: Phía trên
+        - value: duoi
+          label: Phía dưới
+        - value: trai
+          label: Bên trái
+        - value: phai
+          label: Bên phải
+        - value: tren-trai
+          label: Góc trên trái
+        - value: tren-phai
+          label: Góc trên phải
+        - value: duoi-trai
+          label: Góc dưới trái
+        - value: duoi-phai
+          label: Góc dưới phải
+        - value: du
+          label: Hiện đủ ảnh, không cắt
+      description: Chọn phần của ảnh đầu tiên được đưa vào khung (thẻ sản phẩm + ảnh lớn đầu trang). Ảnh gốc không bị cắt
+    - name: phong_to
+      label: Ảnh bìa – phóng to
+      type: select
+      default: '1'
+      options:
+        values:
+        - value: '1'
+          label: Không phóng (100%)
+        - value: '1.25'
+          label: Phóng 125%
+        - value: '1.5'
+          label: Phóng 150%
+        - value: '2'
+          label: Phóng 200%
+      description: Phóng to vào đúng phần đã chọn ở ô trên
     - name: mo_ta
       label: Mô tả ngắn (dưới tên sản phẩm)
       type: text
@@ -153,17 +190,54 @@ content:
       type: string
       required: true
       description: 'Muốn tự chọn chỗ xuống dòng thì gõ dấu | tại đó (VD: Đại sứ quán Việt Nam | tại Brunei)'
-    - name: anh
-      label: Ảnh chính
-      type: image
-      required: true
-      description: Ảnh vuông 1200×1200, ảnh thật sản phẩm – hiện to ở đầu trang
     - name: thu_vien
-      label: Ảnh thêm
+      label: Hình ảnh sản phẩm
       type: image
       options:
         multiple: true
-      description: Hiện thành dải ảnh nhỏ dưới ảnh chính – bấm để xem to
+      description: 'Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB). Chọn được nhiều ảnh, kéo ⋮⋮ để đổi thứ tự. Ảnh đầu tiên là ảnh chính trên thẻ và đầu trang. Bấm ảnh trên web để xem to.'
+    - name: can_anh
+      label: Ảnh bìa – phần muốn thấy
+      type: select
+      default: giua
+      options:
+        values:
+        - value: giua
+          label: Giữa ảnh (mặc định)
+        - value: tren
+          label: Phía trên
+        - value: duoi
+          label: Phía dưới
+        - value: trai
+          label: Bên trái
+        - value: phai
+          label: Bên phải
+        - value: tren-trai
+          label: Góc trên trái
+        - value: tren-phai
+          label: Góc trên phải
+        - value: duoi-trai
+          label: Góc dưới trái
+        - value: duoi-phai
+          label: Góc dưới phải
+        - value: du
+          label: Hiện đủ ảnh, không cắt
+      description: Chọn phần của ảnh đầu tiên được đưa vào khung (thẻ sản phẩm + ảnh lớn đầu trang). Ảnh gốc không bị cắt
+    - name: phong_to
+      label: Ảnh bìa – phóng to
+      type: select
+      default: '1'
+      options:
+        values:
+        - value: '1'
+          label: Không phóng (100%)
+        - value: '1.25'
+          label: Phóng 125%
+        - value: '1.5'
+          label: Phóng 150%
+        - value: '2'
+          label: Phóng 200%
+      description: Phóng to vào đúng phần đã chọn ở ô trên
     - name: mo_ta
       label: Mô tả ngắn (dưới tên sản phẩm)
       type: text
