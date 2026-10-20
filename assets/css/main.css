@@ -924,7 +924,21 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 /* Thẻ sản phẩm dùng chung kiểu thẻ đối tác */
 .tf-grid--4 .tf-pcard .tf-story__body { padding: 1rem 1rem 1.15rem; }
 @media (max-width: 780px) { .tf-pcard .tf-story__body { padding: .8rem .85rem 1rem; gap: .35rem; } .tf-pcard .tf-story__tags span { font-size: .62rem; padding: .2rem .5rem; } .tf-pcard strong { font-size: .95rem; } }
-/* Ô Đồng phục | Quà tặng: chữ phụ dễ đọc trên ảnh nhiều chi tiết */
-#hai-huong .tf-door::after { background: linear-gradient(0deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.55) 38%, rgba(0,0,0,.18) 68%, rgba(0,0,0,0) 85%), linear-gradient(90deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 60%); }
-#hai-huong .tf-door__txt strong { text-shadow: 0 2px 14px rgba(0,0,0,.35); }
-#hai-huong .tf-door__txt > span { color: #fff; font-weight: 500; font-size: clamp(.95rem, .9rem + .2vw, 1.05rem); text-shadow: 0 1px 2px rgba(0,0,0,.7), 0 0 12px rgba(0,0,0,.5); }
+/* Ô Đồng phục | Quà tặng: khung ảnh vuông, chữ nằm dưới ảnh trên nền trơn */
+#hai-huong .tf-door, #hai-huong .tf-door:nth-child(2) { display: grid; grid-template-columns: minmax(0, 52%) 1fr; align-items: center; gap: 0; aspect-ratio: auto; min-height: 0; padding: .75rem; border-radius: 24px; background: var(--cream); }
+#hai-huong .tf-door:nth-child(2) { background: var(--mist); }
+#hai-huong .tf-door::after { display: none; }
+#hai-huong .tf-door__img { position: relative; inset: auto; aspect-ratio: 1; border-radius: 16px; overflow: hidden; }
+#hai-huong .tf-door__txt { position: static; color: var(--ink); gap: .4rem; padding: .5rem clamp(1rem, 2.2vw, 2rem); align-content: center; }
+#hai-huong .tf-door__txt strong { color: var(--ink); font-size: clamp(1.5rem, .9rem + 1.3vw, 2.2rem); }
+#hai-huong .tf-door__txt > span { color: var(--ink-soft); font-size: var(--fs-sm); }
+#hai-huong .tf-door__go { margin-top: .4rem; background: var(--ink); color: #fff !important; }
+@media (max-width: 760px) {
+  #hai-huong .tf-doors { grid-template-columns: 1fr 1fr; gap: .6rem; }
+  #hai-huong .tf-door, #hai-huong .tf-door:nth-child(2) { display: flex; flex-direction: column; align-items: stretch; padding: .45rem; border-radius: 18px; }
+  #hai-huong .tf-door__img { border-radius: 13px; }
+  #hai-huong .tf-door__txt { padding: .7rem .3rem .3rem; gap: .25rem; }
+  #hai-huong .tf-door__txt strong { font-size: 1.15rem; }
+  #hai-huong .tf-door__txt > span { font-size: .78rem; line-height: 1.35; }
+  #hai-huong .tf-door__go { padding: .45rem .85rem; font-size: .7rem; }
+}
