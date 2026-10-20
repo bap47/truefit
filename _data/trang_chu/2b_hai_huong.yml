@@ -1,13 +1,12 @@
-# Sửa trong CMS: Trang chủ ③ Hai hướng: Đồng phục | Quà tặng
-tieu_de: 'Bạn đang tìm *đồng phục* hay *quà tặng*?'
+tieu_de: Bạn đang tìm *đồng phục* hay *quà tặng*?
 cua:
-- ten: Đồng phục
-  mo_ta: Polo, thun, khoác gió, bảo hộ… đặt từ 20 áo
-  anh: /assets/img/demo/ao-teambuilding.png
-  link: /san-pham/dong-phuc/
-  nut: Khám phá
-- ten: Quà tặng
-  mo_ta: Pouch, lanyard, móc khóa, bút… in logo thương hiệu
-  anh: /assets/img/demo/pouch.png
-  link: /san-pham/merchandise/
-  nut: Khám phá
+  - ten: Đồng phục
+    mo_ta: Polo, thun, khoác gió, bảo hộ… đặt từ 20 áo
+    anh: /assets/uploads/Logo 73.png
+    link: /san-pham/dong-phuc/
+    nut: Khám phá
+  - ten: Quà tặng
+    mo_ta: Pouch, lanyard, móc khóa, bút… in logo thương hiệu
+    anh: /assets/uploads/Logo 19.png
+    link: /san-pham/qua-tang/
+    nut: Khám phá
