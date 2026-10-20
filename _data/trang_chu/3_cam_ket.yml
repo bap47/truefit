@@ -1,27 +1,26 @@
-# Sửa trong CMS: Trang chủ ② Đến với TrueFit (cam kết & số liệu)
 tieu_de: TRUEFIT cam kết
 cam_ket:
-- ten: Chất lượng - Bảo hành
-  y:
-  - Bảo hành 3 tháng/ sản phẩm.
-  - Miễn phí sửa chữa lỗi may thêu
-  - Tất cả sản phẩm đều đạt chuẩn
-- ten: Tiến độ - Dịch vụ
-  y:
-  - Cam kết đúng tiến độ
-  - Đáp ứng nhanh mọi nhu cầu
-  - Hỗ trợ tận tâm suốt quá trình
-- ten: Cam kết hoàn tiền
-  y:
-  - Hoàn tiền 100% những sản phẩm lỗi không thể khắc phục
-  - Luôn ưu tiên quyền lợi khách hàng lên hàng đầu
+  - ten: Chất lượng - Bảo hành
+    y:
+      - Bảo hành 3 tháng/ sản phẩm.
+      - Miễn phí sửa chữa lỗi may/ in thêu
+      - Tất cả sản phẩm đều đạt chuẩn
+  - ten: Tiến độ - Dịch vụ
+    y:
+      - Cam kết đúng tiến độ
+      - Đáp ứng nhanh mọi nhu cầu
+      - Hỗ trợ tận tâm suốt quá trình
+  - ten: Cam kết hoàn tiền
+    y:
+      - Hoàn tiền 100% những sản phẩm lỗi không thể khắc phục
+      - Luôn ưu tiên quyền lợi khách hàng lên hàng đầu
 so_lieu:
-- nhom: Công suất sản xuất
-  so: '40.000'
-  nhan: Sản phẩm/tháng
-- nhom: Quy mô sản xuất
-  so: '04'
-  nhan: Xưởng may chuyên biệt
-- nhom: Sản phẩm sản xuất
-  so: tự động
-  nhan: Sản phẩm/quà tặng
+  - nhom: Công suất sản xuất
+    so: "40.000"
+    nhan: Sản phẩm/tháng
+  - nhom: Quy mô sản xuất
+    so: "04"
+    nhan: Xưởng may chuyên biệt
+  - nhom: Sản phẩm sản xuất
+    so: tự động
+    nhan: Sản phẩm/quà tặng
