@@ -1,9 +1,8 @@
-# Sửa trong CMS: Trang chủ ③ Được đặt nhiều nhất
 tieu_de_san_pham: Được đặt *nhiều nhất*
 mo_ta: Những mẫu doanh nghiệp chọn nhiều nhất – cả đồng phục lẫn quà tặng.
 chon:
   - dong_phuc: _san_pham/dong-phuc/ao-polo.md
   - dong_phuc: _san_pham/dong-phuc/ao-thun.md
   - qua_tang: _san_pham/qua-tang/tui-tote.md
-  - qua_tang: _san_pham/qua-tang/non-luoi-trai.md
+  - qua_tang: _san_pham/qua-tang/pouch.md
 so_luong: 4
