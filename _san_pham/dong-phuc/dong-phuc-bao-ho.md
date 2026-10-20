@@ -1,10 +1,14 @@
 ---
-title: "Đồ bảo hộ"
-anh: /assets/img/demo/do-bao-ho.png
-dat_tu: "20 bộ"
-chat_lieu: "Kaki"
-mo_ta: "In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu và báo giá."
-ngay_tao: "2026-10-01T08:02"
+title: Đồ bảo hộ
+thu_vien:
+  - /assets/uploads/Logo 48.jpg
+  - /assets/uploads/Logo 49.jpg
+can_anh: giua
+phong_to: "1"
+mo_ta: In hoặc thêu logo theo yêu cầu. Liên hệ TrueFit để được tư vấn chất liệu
+  và báo giá.
+dat_tu: 20 bộ
+chat_lieu: Kaki
 an: false
-thu_vien: ["/assets/img/demo/do-bao-ho.png", "/assets/img/demo/ao-chay-bo.png", "/assets/img/demo/ao-khoac-gio.png", "/assets/img/demo/ao-polo.png"]
+ngay_tao: 2026-10-01T08:02
 ---
