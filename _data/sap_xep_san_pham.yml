@@ -1,9 +1,9 @@
 dong_phuc:
   - muc: _san_pham/dong-phuc/ao-polo.md
   - muc: _san_pham/dong-phuc/ao-thun.md
+  - muc: _san_pham/dong-phuc/ao-khoac-gio.md
   - muc: _san_pham/dong-phuc/dong-phuc-bao-ho.md
   - muc: _san_pham/dong-phuc/ao-bao-ho.md
-  - muc: _san_pham/dong-phuc/ao-khoac-gio.md
   - muc: _san_pham/dong-phuc/ao-teambuilding.md
   - muc: _san_pham/dong-phuc/tap-de.md
   - muc: _san_pham/dong-phuc/dong-phuc-cong-so.md
