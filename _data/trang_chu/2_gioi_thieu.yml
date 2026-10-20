@@ -1,13 +1,12 @@
-# Sửa trong CMS: Trang chủ ② Đến với TrueFit
 dong_nho: Đến với TrueFit
-tieu_de: '*MIỄN PHÍ* thiết kế - vận chuyển'
-mo_ta: 'Cung cấp giải pháp đồng phục cho doanh nghiệp: cam kết chất lượng cao cấp, quy trình phục vụ trọn gói: Tận tay - tận tình - tận nơi.'
-# Khung ảnh bên trái – bỏ ảnh gì tuỳ ý, ảnh tự chuyển. Để trống thì tự lấy ảnh sản phẩm
+tieu_de: "*MIỄN PHÍ* thiết kế - vận chuyển"
+mo_ta: "Cung cấp giải pháp đồng phục cho doanh nghiệp: cam kết chất lượng cao
+  cấp, quy trình phục vụ trọn gói: Tận tay - tận tình - tận nơi."
 tu_chuyen_giay: 2
 anh_khung:
-- anh: /assets/img/demo/banner.png
-  mo_ta: Đồng phục TrueFit
-- anh: /assets/img/demo/ao-polo.png
-  mo_ta: Áo polo TrueFit
-- anh: /assets/img/demo/ao-khoac-gio.png
-  mo_ta: Áo khoác gió TrueFit
+  - anh: /assets/uploads/Logo 57.png
+    mo_ta: Đồng phục TrueFit
+  - anh: /assets/uploads/Logo 42.png
+    mo_ta: Quà tặng TrueFit
+  - anh: /assets/uploads/Logo 89.png
+    mo_ta: Khách hàng TrueFit
