@@ -1,21 +1,22 @@
+# Thứ tự – kéo ⋮⋮ trong CMS để đổi vị trí. Tự cập nhật khi thêm/xoá mục.
 qua_tang:
-  - muc: _khach_hang/qua-tang/jbl-combo-pouch-tote.md
-  - muc: _khach_hang/qua-tang/jbl.md
-  - muc: _khach_hang/qua-tang/pgi.md
-  - muc: _khach_hang/qua-tang/dai-su-quan-viet-nam-brunei.md
-  - muc: _khach_hang/qua-tang/jbl-khan-bandana.md
-  - muc: _khach_hang/qua-tang/qua-dap-le-tot-nghiep.md
-  - muc: _khach_hang/qua-tang/jbl-so-tay.md
-  - muc: _khach_hang/qua-tang/jbl-binh-giu-nhiet.md
+  - _khach_hang/qua-tang/jbl-combo-pouch-tote.md
+  - _khach_hang/qua-tang/jbl.md
+  - _khach_hang/qua-tang/pgi.md
+  - _khach_hang/qua-tang/dai-su-quan-viet-nam-brunei.md
+  - _khach_hang/qua-tang/jbl-khan-bandana.md
+  - _khach_hang/qua-tang/qua-dap-le-tot-nghiep.md
+  - _khach_hang/qua-tang/jbl-so-tay.md
+  - _khach_hang/qua-tang/jbl-binh-giu-nhiet.md
 dong_phuc:
-  - muc: _khach_hang/dong-phuc/cao-phat.md
-  - muc: _khach_hang/dong-phuc/hausland.md
-  - muc: _khach_hang/dong-phuc/co-khi-dt.md
-  - muc: _khach_hang/dong-phuc/gia-nguyen.md
-  - muc: _khach_hang/dong-phuc/tenis-club.md
-  - muc: _khach_hang/dong-phuc/rong-do.md
-  - muc: _khach_hang/dong-phuc/ke-cafe.md
-  - muc: _khach_hang/dong-phuc/truong-th-hiep-tan.md
-  - muc: _khach_hang/dong-phuc/xu-ly-moi-truong-viet-nam.md
-  - muc: _khach_hang/dong-phuc/f88.md
-  - muc: _khach_hang/dong-phuc/giao-xu-tan-dinh.md
+  - _khach_hang/dong-phuc/cao-phat.md
+  - _khach_hang/dong-phuc/hausland.md
+  - _khach_hang/dong-phuc/co-khi-dt.md
+  - _khach_hang/dong-phuc/gia-nguyen.md
+  - _khach_hang/dong-phuc/tenis-club.md
+  - _khach_hang/dong-phuc/rong-do.md
+  - _khach_hang/dong-phuc/ke-cafe.md
+  - _khach_hang/dong-phuc/truong-th-hiep-tan.md
+  - _khach_hang/dong-phuc/xu-ly-moi-truong-viet-nam.md
+  - _khach_hang/dong-phuc/f88.md
+  - _khach_hang/dong-phuc/giao-xu-tan-dinh.md

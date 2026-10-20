@@ -1,38 +1,33 @@
+# Thứ tự – kéo ⋮⋮ trong CMS để đổi vị trí. Tự cập nhật khi thêm/xoá mục.
 dong_phuc:
-  - muc: _san_pham/dong-phuc/ao-polo.md
-  - muc: _san_pham/dong-phuc/ao-thun.md
-  - muc: _san_pham/dong-phuc/ao-khoac-gio.md
-  - muc: _san_pham/dong-phuc/dong-phuc-bao-ho.md
-  - muc: _san_pham/dong-phuc/ao-bao-ho.md
-  - muc: _san_pham/dong-phuc/ao-teambuilding.md
-  - muc: _san_pham/dong-phuc/tap-de.md
-  - muc: _san_pham/dong-phuc/dong-phuc-cong-so.md
-  - muc: _san_pham/dong-phuc/dong-phuc-hoc-sinh.md
-  - muc: _san_pham/dong-phuc/ao-chay-bo.md
-  - muc: _san_pham/dong-phuc/mu-luoi-trai.md
-  - muc: _san_pham/dong-phuc/tui-vai-rut.md
-  - muc: _san_pham/dong-phuc/dong-phuc-pg.md
+  - _san_pham/dong-phuc/ao-polo.md
+  - _san_pham/dong-phuc/ao-thun.md
+  - _san_pham/dong-phuc/ao-khoac-gio.md
+  - _san_pham/dong-phuc/dong-phuc-bao-ho.md
+  - _san_pham/dong-phuc/ao-bao-ho.md
+  - _san_pham/dong-phuc/tap-de.md
+  - _san_pham/dong-phuc/dong-phuc-cong-so.md
+  - _san_pham/dong-phuc/dong-phuc-hoc-sinh.md
 qua_tang:
-  - muc: _san_pham/qua-tang/notebook.md
-  - muc: _san_pham/qua-tang/khan-bandana.md
-  - muc: _san_pham/qua-tang/moc-khoa-huy-hieu.md
-  - muc: _san_pham/qua-tang/balo.md
-  - muc: _san_pham/qua-tang/tui-tote.md
-  - muc: _san_pham/qua-tang/pouch.md
-  - muc: _san_pham/qua-tang/toiletry-bag.md
-  - muc: _san_pham/qua-tang/tui-cheo.md
-  - muc: _san_pham/qua-tang/tui-day-rut.md
-  - muc: _san_pham/qua-tang/non-luoi-trai.md
-  - muc: _san_pham/qua-tang/moc-khoa.md
-  - muc: _san_pham/qua-tang/huy-hieu.md
-  - muc: _san_pham/qua-tang/pin-cai-ao.md
-  - muc: _san_pham/qua-tang/nam-cham-tu-lanh.md
-  - muc: _san_pham/qua-tang/strap-lanyard.md
-  - muc: _san_pham/qua-tang/binh-giu-nhiet.md
-  - muc: _san_pham/qua-tang/mini-bag.md
-  - muc: _san_pham/qua-tang/but.md
-  - muc: _san_pham/qua-tang/lot-ly-gom.md
-  - muc: _san_pham/qua-tang/tui-deo-bao-tu.md
-  - muc: _san_pham/qua-tang/tui-det-kim.md
-  - muc: _san_pham/qua-tang/vo.md
-  - muc: _san_pham/qua-tang/khan-tam-khan-chay-bo.md
+  - _san_pham/qua-tang/notebook.md
+  - _san_pham/qua-tang/khan-bandana.md
+  - _san_pham/qua-tang/moc-khoa-huy-hieu.md
+  - _san_pham/qua-tang/balo.md
+  - _san_pham/qua-tang/tui-tote.md
+  - _san_pham/qua-tang/pouch.md
+  - _san_pham/qua-tang/toiletry-bag.md
+  - _san_pham/qua-tang/tui-cheo.md
+  - _san_pham/qua-tang/tui-day-rut.md
+  - _san_pham/qua-tang/non-luoi-trai.md
+  - _san_pham/qua-tang/huy-hieu.md
+  - _san_pham/qua-tang/pin-cai-ao.md
+  - _san_pham/qua-tang/nam-cham-tu-lanh.md
+  - _san_pham/qua-tang/strap-lanyard.md
+  - _san_pham/qua-tang/binh-giu-nhiet.md
+  - _san_pham/qua-tang/mini-bag.md
+  - _san_pham/qua-tang/but.md
+  - _san_pham/qua-tang/lot-ly-gom.md
+  - _san_pham/qua-tang/tui-deo-bao-tu.md
+  - _san_pham/qua-tang/tui-det-kim.md
+  - _san_pham/qua-tang/vo.md
+  - _san_pham/qua-tang/khan-tam-khan-chay-bo.md
