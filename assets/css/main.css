@@ -930,12 +930,12 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 #hai-huong .tf-door__txt { left: clamp(.75rem, 2vw, 1.5rem); right: auto; max-width: calc(100% - 2 * clamp(.75rem, 2vw, 1.5rem)); bottom: clamp(.75rem, 2vw, 1.5rem); padding: clamp(.9rem, 2vw, 1.5rem) clamp(1rem, 2.2vw, 1.75rem); border-radius: 20px; background: rgba(20,20,20,.45); -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2); }
 #hai-huong .tf-door__txt > span { color: #fff; font-weight: 500; }
 @media (max-width: 760px) {
-  #hai-huong .tf-doors { grid-template-columns: 1fr 1fr; gap: .6rem; }
-  #hai-huong .tf-door, #hai-huong .tf-door:nth-child(2) { border-radius: 18px; }
-  #hai-huong .tf-door__txt { left: .45rem; right: .45rem; max-width: none; bottom: .45rem; padding: .65rem .7rem; border-radius: 13px; gap: .2rem; }
-  #hai-huong .tf-door__txt strong { font-size: 1.1rem; }
-  #hai-huong .tf-door__txt > span { display: none; }
-  #hai-huong .tf-door__go { margin-top: .35rem; padding: .4rem .8rem; font-size: .68rem; }
+  #hai-huong .tf-doors { grid-template-columns: 1fr; gap: .9rem; }
+  #hai-huong .tf-door, #hai-huong .tf-door:nth-child(2) { border-radius: 20px; }
+  #hai-huong .tf-door__txt { left: .75rem; right: .75rem; max-width: none; bottom: .75rem; padding: 1rem 1.1rem; border-radius: 16px; gap: .3rem; }
+  #hai-huong .tf-door__txt strong { font-size: 1.6rem; }
+  #hai-huong .tf-door__txt > span { font-size: .85rem; line-height: 1.4; }
+  #hai-huong .tf-door__go { margin-top: .4rem; padding: .5rem 1rem; font-size: .75rem; }
 }
 /* Menu sổ xuống: nút "Khám phá" dạng viên trắng, đọc rõ trên mọi ảnh */
 .tf-mega__card span { z-index: 1; left: .9rem; bottom: .9rem; padding: .5rem 1rem; border-radius: 999px; background: #fff; color: var(--ink); font-size: .78rem; letter-spacing: .02em; text-shadow: none; box-shadow: 0 6px 18px -8px rgba(0,0,0,.35); transition: background .25s, color .25s; }
