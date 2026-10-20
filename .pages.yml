@@ -21,36 +21,24 @@ content:
     fields:
     - name: dong_phuc
       label: 👕 Sản phẩm đồng phục
-      type: object
-      list:
-        collapsible:
-          collapsed: true
-          summary: '{fields.muc}'
-      fields:
-      - name: muc
-        label: Mục
-        type: reference
-        options:
-          collection: sp_dong_phuc
-          search: title
-          value: '{path}'
-          label: '{title}'
+      type: reference
+      list: true
+      options:
+        collection: sp_dong_phuc
+        search: title
+        value: '{path}'
+        label: '{title}'
+      description: Kéo ⋮⋮ để đổi vị trí. Thêm/xoá mục thì danh sách tự cập nhật sau khoảng 1 phút (tải lại trang)
     - name: qua_tang
       label: 🎁 Sản phẩm quà tặng
-      type: object
-      list:
-        collapsible:
-          collapsed: true
-          summary: '{fields.muc}'
-      fields:
-      - name: muc
-        label: Mục
-        type: reference
-        options:
-          collection: sp_qua_tang
-          search: title
-          value: '{path}'
-          label: '{title}'
+      type: reference
+      list: true
+      options:
+        collection: sp_qua_tang
+        search: title
+        value: '{path}'
+        label: '{title}'
+      description: Kéo ⋮⋮ để đổi vị trí. Thêm/xoá mục thì danh sách tự cập nhật sau khoảng 1 phút (tải lại trang)
   - name: sp_dong_phuc
     label: 👕 Đồng phục
     type: collection
@@ -290,36 +278,24 @@ content:
     fields:
     - name: qua_tang
       label: 🎁 Đối tác quà tặng
-      type: object
-      list:
-        collapsible:
-          collapsed: true
-          summary: '{fields.muc}'
-      fields:
-      - name: muc
-        label: Mục
-        type: reference
-        options:
-          collection: kh_qua_tang
-          search: title
-          value: '{path}'
-          label: '{title} – {tieu_de_bai}'
+      type: reference
+      list: true
+      options:
+        collection: kh_qua_tang
+        search: title
+        value: '{path}'
+        label: '{title} – {tieu_de_bai}'
+      description: Kéo ⋮⋮ để đổi vị trí. Thêm/xoá mục thì danh sách tự cập nhật sau khoảng 1 phút (tải lại trang)
     - name: dong_phuc
       label: 👕 Đối tác đồng phục
-      type: object
-      list:
-        collapsible:
-          collapsed: true
-          summary: '{fields.muc}'
-      fields:
-      - name: muc
-        label: Mục
-        type: reference
-        options:
-          collection: kh_dong_phuc
-          search: title
-          value: '{path}'
-          label: '{title}'
+      type: reference
+      list: true
+      options:
+        collection: kh_dong_phuc
+        search: title
+        value: '{path}'
+        label: '{title}'
+      description: Kéo ⋮⋮ để đổi vị trí. Thêm/xoá mục thì danh sách tự cập nhật sau khoảng 1 phút (tải lại trang)
   - name: kh_dong_phuc
     label: 👕 Đối tác đồng phục
     type: collection
