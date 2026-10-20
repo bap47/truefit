@@ -698,7 +698,7 @@ content:
       - name: anh
         label: Ảnh
         type: image
-        description: Ảnh ngang ~1600×1000, ảnh thật lifestyle (team mặc đồng phục / set quà tặng). Chữ nằm góc dưới bên trái nên chừa khoảng đó. Ảnh này cũng hiện ở ô ảnh lớn trong menu sổ xuống Đồng phục
+        description: Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB). Chữ nằm bên dưới ảnh, không đè lên ảnh. Ảnh này cũng hiện ở ô ảnh lớn trong menu sổ xuống Đồng phục
           / Quà tặng
       - name: link
         label: Link
