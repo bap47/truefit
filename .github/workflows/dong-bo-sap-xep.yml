@@ -1,0 +1,28 @@
+name: Dong bo sap xep
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_san_pham/**'
+      - '_khach_hang/**'
+      - '_data/sap_xep_*.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: dong-bo-sap-xep
+  cancel-in-progress: false
+jobs:
+  dong-bo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 .github/scripts/dong_bo_sap_xep.py
+      - run: |
+          if [ -n "$(git status --porcelain _data)" ]; then
+            git config user.name "truefit-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add _data/sap_xep_*.yml
+            git commit -m "Tự cập nhật danh sách sắp xếp"
+            git pull --rebase origin main && git push
+          fi
