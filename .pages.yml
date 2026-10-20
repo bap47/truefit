@@ -28,7 +28,6 @@ content:
         search: title
         value: '{path}'
         label: '{title}'
-      description: Kéo ⋮⋮ để đổi vị trí. Thêm/xoá mục thì danh sách tự cập nhật sau khoảng 1 phút (tải lại trang)
     - name: qua_tang
       label: 🎁 Sản phẩm quà tặng
       type: reference
@@ -38,7 +37,6 @@ content:
         search: title
         value: '{path}'
         label: '{title}'
-      description: Kéo ⋮⋮ để đổi vị trí. Thêm/xoá mục thì danh sách tự cập nhật sau khoảng 1 phút (tải lại trang)
   - name: sp_dong_phuc
     label: 👕 Đồng phục
     type: collection
@@ -285,7 +283,6 @@ content:
         search: title
         value: '{path}'
         label: '{title} – {tieu_de_bai}'
-      description: Kéo ⋮⋮ để đổi vị trí. Thêm/xoá mục thì danh sách tự cập nhật sau khoảng 1 phút (tải lại trang)
     - name: dong_phuc
       label: 👕 Đối tác đồng phục
       type: reference
@@ -295,7 +292,6 @@ content:
         search: title
         value: '{path}'
         label: '{title}'
-      description: Kéo ⋮⋮ để đổi vị trí. Thêm/xoá mục thì danh sách tự cập nhật sau khoảng 1 phút (tải lại trang)
   - name: kh_dong_phuc
     label: 👕 Đối tác đồng phục
     type: collection
