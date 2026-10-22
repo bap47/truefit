@@ -375,7 +375,7 @@
 })();
 /* Chống 1 chữ rớt dòng: dính 2 chữ cuối bằng khoảng trắng không ngắt (dòng cuối luôn ≥ 2 chữ) */
 (function () {
-  var sel = 'h1, h2, h3, h4, .tf-title, .tf-hero__title, .tf-story strong, .tf-story__sum, .tf-card__name, .tf-lead, .tf-hero__tagline, .tf-prose p, .tf-intro__lead';
+  var sel = 'h1, h2, h3, h4, .tf-title, .tf-hero__title, .tf-story strong, .tf-story__sum, .tf-card__name, .tf-lead, .tf-hero__tagline, .tf-prose p, .tf-intro__lead, .tf-door__txt > span';
   function lastText(el) {
     var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n, last = null;
     while ((n = w.nextNode())) { if (/\S/.test(n.nodeValue)) last = n; }
