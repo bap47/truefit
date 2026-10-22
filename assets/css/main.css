@@ -972,3 +972,8 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 .tf-social a:hover { transform: translateY(-3px); background: var(--orange); border-color: var(--orange); box-shadow: none; }
 .tf-social svg { width: 20px; height: 20px; display: block; }
 .tf-social img { width: 22px; height: 22px; object-fit: contain; }
+/* Lớp blur phủ tràn hết chiều ngang (tránh mép 2 bên bị hở) */
+#hai-huong .tf-door::after { left: -24px; right: -24px; bottom: -24px; height: calc(62% + 24px); }
+/* Nâng ảnh lên để chữ không che sản phẩm */
+#hai-huong .tf-door__img img { transform: scale(1.12) translateY(-8%); transform-origin: 50% 0; }
+#hai-huong .tf-door:hover .tf-door__img img { transform: scale(1.16) translateY(-8%); }
