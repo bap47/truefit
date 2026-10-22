@@ -1022,10 +1022,11 @@ content:
       - name: link
         label: Link
         type: string
-        description: 'Gọi điện: tel:0909914059 · Email: mailto:ten@gmail.com'
+        description: 'Gọi điện: tel:0909914059 · Email: mailto:ten@gmail.com. Icon tự hiện theo link: Zalo, tel:, mailto:, Facebook, Instagram, TikTok. Để trống link thì ẩn'
       - name: icon
-        label: Icon (ảnh vuông)
+        label: Icon riêng (không bắt buộc)
         type: image
+        description: Chỉ dùng cho kênh khác ngoài 6 kênh trên
   - name: seo
     label: Favicon & ảnh khi gửi link
     type: file
