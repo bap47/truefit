@@ -698,8 +698,11 @@ content:
       - name: anh
         label: Ảnh
         type: image
-        description: Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB). Chữ nằm bên dưới ảnh, không đè lên ảnh. Ảnh này cũng hiện ở ô ảnh lớn trong menu sổ xuống Đồng phục
-          / Quà tặng
+        description: Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB). Chữ và nút nằm phía dưới ảnh nên để sản phẩm ở nửa trên
+      - name: anh_menu
+        label: Ảnh trong menu sổ xuống
+        type: image
+        description: Ảnh ngang 1200×900 (4:3) hiện ở ô ảnh lớn khi rê chuột vào menu Đồng phục / Quà tặng. Để trống thì dùng ảnh ở trên. Nút «Khám phá» nằm góc dưới trái
       - name: link
         label: Link
         type: string
