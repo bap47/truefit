@@ -977,3 +977,4 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 /* Nâng ảnh lên để chữ không che sản phẩm */
 #hai-huong .tf-door__img img { transform: scale(1.12) translateY(-8%); transform-origin: 50% 0; }
 #hai-huong .tf-door:hover .tf-door__img img { transform: scale(1.16) translateY(-8%); }
+.tf-footer .tf-social a:hover { color: #fff; }
