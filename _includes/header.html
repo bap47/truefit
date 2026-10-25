@@ -33,7 +33,7 @@
             </div>
             {% if cua and cua[idx] %}{% assign c = cua[idx] %}
             <a class="tf-mega__card" href="{{ url | relative_url }}">
-              <img src="{{ c.anh | prepend: site.baseurl }}" alt="{{ c.ten }}" loading="lazy" width="600" height="600">
+              {% assign _am = c.anh_menu | default: c.anh %}<img src="{{ _am | prepend: site.baseurl }}" alt="{{ c.ten }}" loading="lazy" width="800" height="600">
               <span>{{ c.nut | default: c.ten }} →</span>
             </a>
             {% endif %}
