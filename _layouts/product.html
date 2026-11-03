@@ -12,21 +12,11 @@ layout: default
       <h1 class="rise" style="--d:.08s">{{ page.title }}</h1>
       {% include pd-buy.html p=page %}
       {% if page.mo_ta %}<p class="tf-pd__lead tf-pd__lead--sau rise" style="--d:.2s">{{ page.mo_ta }}</p>{% endif %}
-      <div class="tf-pd__sec rise" style="--d:.2s">
+      {% capture _spec %}{% if page.gom and page.gom.size > 0 %}<div><dt>Bộ gồm</dt><dd>{{ page.gom | join: " · " }}</dd></div>{% endif %}{% if page.chat_lieu and page.chat_lieu != "" %}<div><dt>Chất liệu</dt><dd>{{ page.chat_lieu }}</dd></div>{% endif %}{% if page.mau_sac and page.mau_sac != "" %}<div><dt>Màu sắc</dt><dd>{{ page.mau_sac }}</dd></div>{% endif %}{% if page.kich_thuoc and page.kich_thuoc != "" %}<div><dt>Size / kích thước</dt><dd>{{ page.kich_thuoc }}</dd></div>{% endif %}{% if page.gia_cong and page.gia_cong != "" %}<div><dt>Gia công logo</dt><dd>{{ page.gia_cong }}</dd></div>{% endif %}{% if page.thoi_gian and page.thoi_gian != "" %}<div><dt>Thời gian sản xuất</dt><dd>{{ page.thoi_gian }}</dd></div>{% endif %}{% endcapture %}
+      {% assign _spec = _spec | strip %}{% if _spec != "" %}<div class="tf-pd__sec rise" style="--d:.2s">
         <h2>Thông tin sản phẩm</h2>
-        <dl class="tf-spec">
-          <div><dt>Danh mục</dt><dd>{{ ten_dm }}</dd></div>
-          {% if page.gom and page.gom.size > 0 %}<div><dt>Bộ gồm</dt><dd>{{ page.gom | join: " · " }}</dd></div>{% endif %}
-          {% if page.dat_tu and page.dat_tu != "" %}<div><dt>Đặt từ</dt><dd>{{ page.dat_tu }}</dd></div>{% endif %}
-          {% if page.chat_lieu and page.chat_lieu != "" %}<div><dt>Chất liệu</dt><dd>{{ page.chat_lieu }}</dd></div>{% endif %}
-          {% if page.mau_sac and page.mau_sac != "" %}<div><dt>Màu sắc</dt><dd>{{ page.mau_sac }}</dd></div>{% endif %}
-          {% if page.kich_thuoc and page.kich_thuoc != "" %}<div><dt>Size / kích thước</dt><dd>{{ page.kich_thuoc }}</dd></div>{% endif %}
-          <div><dt>Gia công logo</dt><dd>{{ page.gia_cong | default: site.data.chung.gia_cong }}</dd></div>
-          {% if page.thoi_gian and page.thoi_gian != "" %}<div><dt>Thời gian sản xuất</dt><dd>{{ page.thoi_gian }}</dd></div>{% endif %}
-          {% if site.data.chung.thiet_ke %}<div><dt>Thiết kế</dt><dd>{{ site.data.chung.thiet_ke }}</dd></div>{% endif %}
-          <div><dt>Bảo hành</dt><dd>{{ site.data.chung.bao_hanh | default: "3 tháng" }} · <a href="{{ '/chinh-sach/bao-quan/' | relative_url }}">Hướng dẫn bảo quản</a></dd></div>
-        </dl>
-      </div>
+        <dl class="tf-spec">{{ _spec }}</dl>
+      </div>{% endif %}
     </div>
   </div>
 
