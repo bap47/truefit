@@ -26,7 +26,7 @@ layout: default
 <section class="tf-section tf-section--cream">
   <div class="wrap">
     <h2 class="tf-title reveal">Sản phẩm <span>cùng loại</span></h2>
-    <div class="tf-grid">
+    <div class="tf-grid tf-grid--4">
       {% assign n = 0 %}
       {% for p in cung %}{% if p.url != page.url and n < 4 and p.an != true %}{% include product-card.html p=p %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}
     </div>
