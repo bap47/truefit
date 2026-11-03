@@ -30,5 +30,5 @@ buoc:
     chi_tiet:
       - Đóng hộp quà, kèm thiệp theo yêu cầu
       - Miễn phí vận chuyển
-      - Sản phẩm lỗi do sản xuất được sửa hoặc đổi mới
+      - Bảo hành 3 tháng, hoàn tiền 100% nếu lỗi không khắc phục được
 ---
