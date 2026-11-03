@@ -19,14 +19,16 @@ buoc:
     chi_tiet:
       - Thiết kế mockup miễn phí, đồng bộ nhận diện thương hiệu
       - Làm mẫu thực tế trước khi sản xuất hàng loạt
-  - ten: Sản xuất – Gia công logo
-    mo_ta: Sản xuất và gia công logo tại xưởng, kiểm soát chất lượng từng công đoạn.
+  - ten: Ký kết – Sản xuất
+    mo_ta: Ký hợp đồng, đặt cọc theo thỏa thuận, sản xuất và gia công logo tại xưởng.
     chi_tiet:
       - In, thêu, ép logo theo mẫu đã duyệt
       - Kiểm tra màu sắc, vị trí logo trên từng sản phẩm
+      - Cập nhật tiến độ sản xuất trong suốt quá trình làm
   - ten: Đóng gói – Giao hàng
-    mo_ta: Đóng gói theo yêu cầu và giao hàng tận nơi.
+    mo_ta: Đóng gói theo yêu cầu và giao hàng tận nơi đúng hẹn. Khách kiểm tra đủ số lượng, chất lượng rồi thanh toán phần còn lại.
     chi_tiet:
       - Đóng hộp quà, kèm thiệp theo yêu cầu
       - Miễn phí vận chuyển
+      - Sản phẩm lỗi do sản xuất được sửa hoặc đổi mới
 ---

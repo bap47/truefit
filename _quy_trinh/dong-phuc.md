@@ -20,12 +20,13 @@ buoc:
       - Thiết kế miễn phí, gửi file demo để duyệt
       - May mẫu thực tế để duyệt trước khi sản xuất
   - ten: Ký kết – Sản xuất
-    mo_ta: Chốt bảng size, ký hợp đồng và tiến hành sản xuất tại xưởng.
+    mo_ta: Chốt bảng size, ký hợp đồng, đặt cọc theo thỏa thuận và tiến hành sản xuất tại xưởng.
     chi_tiet:
       - Hỗ trợ lên bảng size cho từng nhân viên
-      - Kiểm soát chất lượng từ vải đến thành phẩm
+      - Lên rập, cắt vải, may và in/thêu logo đúng mẫu đã duyệt
+      - Cập nhật tiến độ sản xuất trong suốt quá trình làm
   - ten: Kiểm tra – Giao hàng
-    mo_ta: Kiểm tra từng sản phẩm, đóng gói và giao hàng tận nơi.
+    mo_ta: Kiểm tra từng sản phẩm, đóng gói và giao hàng tận nơi đúng hẹn. Khách kiểm tra đủ số lượng, chất lượng rồi thanh toán phần còn lại.
     chi_tiet:
       - Miễn phí vận chuyển
       - Bảo hành 3 tháng, hoàn tiền 100% nếu lỗi không khắc phục được
