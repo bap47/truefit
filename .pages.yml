@@ -140,7 +140,7 @@ content:
     - name: gia_cong
       label: Gia công logo
       type: string
-      description: Để trống = In hoặc thêu theo yêu cầu
+      description: Chỉ ghi khi sản phẩm có cách gia công riêng. Để trống thì ẩn
     - name: thoi_gian
       label: Thời gian sản xuất
       type: string
@@ -262,7 +262,7 @@ content:
     - name: gia_cong
       label: Gia công logo
       type: string
-      description: Để trống = In hoặc thêu theo yêu cầu
+      description: Chỉ ghi khi sản phẩm có cách gia công riêng. Để trống thì ẩn
     - name: thoi_gian
       label: Thời gian sản xuất
       type: string
@@ -968,18 +968,6 @@ content:
       type: string
       list: true
       description: 'Hiện ở menu sổ xuống Đồng phục / Quà tặng. VD: Thiết kế miễn phí'
-    - name: thiet_ke
-      label: Phí thiết kế
-      type: string
-      description: Hiện trong bảng Thông tin của mọi sản phẩm. Để trống thì ẩn dòng này
-    - name: bao_hanh
-      label: Bảo hành
-      type: string
-      description: 'Hiện trong bảng Thông tin của mọi sản phẩm. VD: 3 tháng'
-    - name: gia_cong
-      label: Gia công logo (mặc định)
-      type: string
-      description: Sản phẩm nào không ghi riêng thì dùng câu này
     - name: uu_dai_sp_tieu_de
       label: Trang sản phẩm – tiêu đề khung ưu đãi
       type: string
