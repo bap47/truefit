@@ -107,13 +107,8 @@ content:
           label: Phóng 200%
       description: Phóng to vào đúng phần đã chọn ở ô trên
     - name: mo_ta
-      label: Mô tả ngắn (dưới tên sản phẩm)
+      label: Mô tả ngắn (hiện khi tìm Google / gửi link)
       type: text
-    - name: gom
-      label: Bộ gồm (không bắt buộc)
-      type: string
-      list: true
-      description: 'Dùng cho sản phẩm là một bộ. VD Đồng phục công sở: Áo sơ mi · Quần tây · Váy bút chì'
     - name: dat_tu
       label: Đặt từ
       type: string
@@ -126,25 +121,6 @@ content:
       label: Bảng size riêng (không bắt buộc)
       type: image
       description: Để trống thì dùng bảng size chung (⚙️ Cài đặt chung › Thông tin chung)
-    - name: chat_lieu
-      label: Chất liệu
-      type: string
-    - name: mau_sac
-      label: Màu sắc
-      type: string
-      description: 'VD: Theo bảng màu vải hoặc theo nhận diện thương hiệu'
-    - name: kich_thuoc
-      label: Size / kích thước
-      type: string
-      description: 'VD: S – 3XL hoặc 20×25cm'
-    - name: gia_cong
-      label: Gia công logo
-      type: string
-      description: Chỉ ghi khi sản phẩm có cách gia công riêng. Để trống thì ẩn
-    - name: thoi_gian
-      label: Thời gian sản xuất
-      type: string
-      description: 'VD: 7–10 ngày sau khi duyệt mẫu'
     - name: an
       label: Ẩn khỏi web
       type: boolean
@@ -229,13 +205,8 @@ content:
           label: Phóng 200%
       description: Phóng to vào đúng phần đã chọn ở ô trên
     - name: mo_ta
-      label: Mô tả ngắn (dưới tên sản phẩm)
+      label: Mô tả ngắn (hiện khi tìm Google / gửi link)
       type: text
-    - name: gom
-      label: Bộ gồm (không bắt buộc)
-      type: string
-      list: true
-      description: 'Dùng cho sản phẩm là một bộ. VD Đồng phục công sở: Áo sơ mi · Quần tây · Váy bút chì'
     - name: dat_tu
       label: Đặt từ
       type: string
@@ -248,25 +219,6 @@ content:
       label: Bảng size riêng (không bắt buộc)
       type: image
       description: Để trống thì dùng bảng size chung (⚙️ Cài đặt chung › Thông tin chung)
-    - name: chat_lieu
-      label: Chất liệu
-      type: string
-    - name: mau_sac
-      label: Màu sắc
-      type: string
-      description: 'VD: Theo bảng màu vải hoặc theo nhận diện thương hiệu'
-    - name: kich_thuoc
-      label: Size / kích thước
-      type: string
-      description: 'VD: S – 3XL hoặc 20×25cm'
-    - name: gia_cong
-      label: Gia công logo
-      type: string
-      description: Chỉ ghi khi sản phẩm có cách gia công riêng. Để trống thì ẩn
-    - name: thoi_gian
-      label: Thời gian sản xuất
-      type: string
-      description: 'VD: 7–10 ngày sau khi duyệt mẫu'
     - name: an
       label: Ẩn khỏi web
       type: boolean
