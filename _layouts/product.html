@@ -11,12 +11,6 @@ layout: default
       <a class="tf-eyebrow rise" href="{{ '/san-pham/' | append: page.danh_muc | append: '/' | relative_url }}">{{ ten_dm }}</a>
       <h1 class="rise" style="--d:.08s">{{ page.title }}</h1>
       {% include pd-buy.html p=page %}
-      {% if page.mo_ta %}<p class="tf-pd__lead tf-pd__lead--sau rise" style="--d:.2s">{{ page.mo_ta }}</p>{% endif %}
-      {% capture _spec %}{% if page.gom and page.gom.size > 0 %}<div><dt>Bộ gồm</dt><dd>{{ page.gom | join: " · " }}</dd></div>{% endif %}{% if page.chat_lieu and page.chat_lieu != "" %}<div><dt>Chất liệu</dt><dd>{{ page.chat_lieu }}</dd></div>{% endif %}{% if page.mau_sac and page.mau_sac != "" %}<div><dt>Màu sắc</dt><dd>{{ page.mau_sac }}</dd></div>{% endif %}{% if page.kich_thuoc and page.kich_thuoc != "" %}<div><dt>Size / kích thước</dt><dd>{{ page.kich_thuoc }}</dd></div>{% endif %}{% if page.gia_cong and page.gia_cong != "" %}<div><dt>Gia công logo</dt><dd>{{ page.gia_cong }}</dd></div>{% endif %}{% if page.thoi_gian and page.thoi_gian != "" %}<div><dt>Thời gian sản xuất</dt><dd>{{ page.thoi_gian }}</dd></div>{% endif %}{% endcapture %}
-      {% assign _spec = _spec | strip %}{% if _spec != "" %}<div class="tf-pd__sec rise" style="--d:.2s">
-        <h2>Thông tin sản phẩm</h2>
-        <dl class="tf-spec">{{ _spec }}</dl>
-      </div>{% endif %}
     </div>
   </div>
 
