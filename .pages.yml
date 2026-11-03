@@ -118,6 +118,14 @@ content:
       label: Đặt từ
       type: string
       description: 'VD: 50 áo – để trống nếu không muốn hiện'
+    - name: gia_tu
+      label: Giá từ
+      type: string
+      description: 'VD: 134.000đ – để trống thì ẩn'
+    - name: bang_size
+      label: Bảng size riêng (không bắt buộc)
+      type: image
+      description: Để trống thì dùng bảng size chung (⚙️ Cài đặt chung › Thông tin chung)
     - name: chat_lieu
       label: Chất liệu
       type: string
@@ -232,6 +240,14 @@ content:
       label: Đặt từ
       type: string
       description: 'VD: 50 áo – để trống nếu không muốn hiện'
+    - name: gia_tu
+      label: Giá từ
+      type: string
+      description: 'VD: 134.000đ – để trống thì ẩn'
+    - name: bang_size
+      label: Bảng size riêng (không bắt buộc)
+      type: image
+      description: Để trống thì dùng bảng size chung (⚙️ Cài đặt chung › Thông tin chung)
     - name: chat_lieu
       label: Chất liệu
       type: string
@@ -964,6 +980,29 @@ content:
       label: Gia công logo (mặc định)
       type: string
       description: Sản phẩm nào không ghi riêng thì dùng câu này
+    - name: uu_dai_sp_tieu_de
+      label: Trang sản phẩm – tiêu đề khung ưu đãi
+      type: string
+      description: 'VD: Ưu đãi khi đặt hàng'
+    - name: uu_dai_sp
+      label: Trang sản phẩm – các dòng ưu đãi
+      type: string
+      list: true
+      description: Hiện trong khung ưu đãi của mọi sản phẩm. Dòng «Nhận đơn từ…» tự lấy từ ô «Đặt từ» của từng sản phẩm
+    - name: freeship_tieu_de
+      label: Trang sản phẩm – dải giao hàng (chữ lớn)
+      type: string
+      description: 'VD: FREESHIP. Để trống thì ẩn dải này'
+    - name: freeship_dong_1
+      label: Trang sản phẩm – dải giao hàng (dòng 1)
+      type: string
+    - name: freeship_dong_2
+      label: Trang sản phẩm – dải giao hàng (dòng 2)
+      type: string
+    - name: bang_size
+      label: Bảng size đồng phục (mặc định)
+      type: image
+      description: Hiện link «Hướng dẫn chọn size» ở mọi sản phẩm đồng phục. Sản phẩm nào có bảng size riêng thì gắn ở sản phẩm đó
     - name: quy_trinh_trang_chu
       label: Quy trình hiện ở trang chủ
       type: select
