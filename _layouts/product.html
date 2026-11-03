@@ -10,11 +10,8 @@ layout: default
     <div class="tf-pd__info">
       <a class="tf-eyebrow rise" href="{{ '/san-pham/' | append: page.danh_muc | append: '/' | relative_url }}">{{ ten_dm }}</a>
       <h1 class="rise" style="--d:.08s">{{ page.title }}</h1>
-      {% if page.mo_ta %}<p class="tf-pd__lead rise" style="--d:.12s">{{ page.mo_ta }}</p>{% endif %}
-      <div class="tf-btns rise" style="--d:.16s">
-        <a class="btn" href="#bao-gia-form" data-bao-gia data-sp="{{ page.title }}">Báo giá mẫu này</a>
-        <a class="btn btn--line" href="tel:{{ site.data.lien_he.hotline_so }}">Gọi {{ site.data.lien_he.hotline }}</a>
-      </div>
+      {% include pd-buy.html p=page %}
+      {% if page.mo_ta %}<p class="tf-pd__lead tf-pd__lead--sau rise" style="--d:.2s">{{ page.mo_ta }}</p>{% endif %}
       <div class="tf-pd__sec rise" style="--d:.2s">
         <h2>Thông tin sản phẩm</h2>
         <dl class="tf-spec">
