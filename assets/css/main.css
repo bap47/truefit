@@ -978,3 +978,49 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 #hai-huong .tf-door__img img { transform: scale(1.12) translateY(-8%); transform-origin: 50% 0; }
 #hai-huong .tf-door:hover .tf-door__img img { transform: scale(1.16) translateY(-8%); }
 .tf-footer .tf-social a:hover { color: #fff; }
+/* Trang sản phẩm: khối mua hàng (giá · size · ưu đãi · freeship · liên hệ) */
+.tf-buy__gia { margin: .2rem 0 .6rem; font-weight: 600; font-size: 1rem; }
+.tf-buy__gia strong { color: var(--orange); font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); font-weight: 700; margin-left: .25rem; }
+.tf-buy__size { display: inline-flex; align-items: center; gap: .55rem; margin: 0 0 1rem; color: var(--ink); text-decoration: none; font-size: .92rem; }
+.tf-buy__size svg { width: 26px; height: 26px; }
+.tf-buy__size:hover { color: var(--orange); }
+.tf-buy__uudai { border: 1.5px solid #f6d9b8; background: #fffaf3; border-radius: 16px; padding: 1rem 1.25rem; margin-bottom: .85rem; }
+.tf-buy__h { display: flex; align-items: center; gap: .6rem; margin: 0 0 .7rem; font-weight: 700; font-size: 1rem; }
+.tf-buy__h svg { width: 30px; height: 30px; color: var(--orange); padding-right: .6rem; border-right: 2px solid var(--orange); box-sizing: content-box; }
+.tf-buy__uudai ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.tf-buy__uudai li { display: flex; align-items: center; gap: .7rem; font-size: .92rem; line-height: 1.45; }
+.tf-buy__i { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #fdebd8; color: var(--orange-deep, var(--orange)); }
+.tf-buy__i svg { width: 18px; height: 18px; }
+.tf-buy__ship { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: .9rem; padding: .85rem 1.25rem; border-radius: 14px; background: var(--cream); margin-bottom: .85rem; color: var(--orange-deep, var(--orange)); }
+.tf-buy__ship svg { width: 40px; height: 30px; }
+.tf-buy__ship strong { font-size: 1.15rem; letter-spacing: .02em; }
+.tf-buy__ship span { justify-self: end; text-align: right; color: var(--ink-soft); font-size: .82rem; line-height: 1.35; }
+.tf-buy__ship span b { display: block; color: var(--ink); font-size: .85rem; text-transform: uppercase; }
+.tf-buy__cta { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.tf-buy__cta a { display: flex; align-items: center; gap: .8rem; padding: .85rem 1.1rem; border-radius: 14px; text-decoration: none; transition: transform .25s var(--ease), box-shadow .25s; }
+.tf-buy__cta a:hover { transform: translateY(-2px); box-shadow: 0 14px 26px -16px rgba(0,0,0,.45); }
+.tf-buy__cta strong { display: block; font-size: .98rem; line-height: 1.2; }
+.tf-buy__cta em { display: block; font-style: normal; font-size: .78rem; opacity: .85; margin-top: .15rem; }
+.tf-buy__zalo { background: var(--orange); color: #fff; }
+.tf-buy__zl { flex: none; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #fff; color: #0068ff; font-weight: 800; font-size: .72rem; }
+.tf-buy__call { border: 1.5px solid var(--orange); color: var(--ink); background: #fff; }
+.tf-buy__call svg { flex: none; width: 30px; height: 30px; color: var(--orange); }
+.tf-buy__call strong { color: var(--orange); }
+.tf-buy__form { display: inline-block; margin-top: .8rem; font-size: .88rem; color: var(--ink-soft); }
+.tf-buy__form:hover { color: var(--orange); }
+.tf-pd__lead--sau { margin-top: 1.25rem; }
+@media (max-width: 480px) {
+  .tf-buy__uudai { padding: .9rem 1rem; }
+  .tf-buy__uudai li { font-size: .86rem; gap: .6rem; }
+  .tf-buy__ship { gap: .6rem; padding: .75rem 1rem; }
+  .tf-buy__ship svg { width: 32px; height: 24px; }
+  .tf-buy__ship strong { font-size: 1rem; }
+  .tf-buy__ship span { font-size: .72rem; }
+  .tf-buy__ship span b { font-size: .74rem; }
+  .tf-buy__cta { gap: .5rem; }
+  .tf-buy__cta a { gap: .55rem; padding: .7rem .75rem; }
+  .tf-buy__zl { width: 34px; height: 34px; font-size: .62rem; }
+  .tf-buy__call svg { width: 24px; height: 24px; }
+  .tf-buy__cta strong { font-size: .86rem; }
+  .tf-buy__cta em { font-size: .68rem; }
+}
