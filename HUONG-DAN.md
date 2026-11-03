@@ -22,7 +22,7 @@ Menu CMS chia 3 nhóm:
 |---|---|---|
 | Thanh ưu đãi, slogan, giới thiệu ngắn | ⚙️ Thông tin chung | Dải trên cùng, footer – mọi trang |
 | Ưu đãi nổi bật (Thiết kế miễn phí…) | ⚙️ Thông tin chung | Menu sổ xuống Đồng phục / Quà tặng |
-| Bảo hành, phí thiết kế, gia công logo | ⚙️ Thông tin chung | Bảng thông tin của mọi sản phẩm |
+| Ưu đãi, FREESHIP, bảng size chung | ⚙️ Thông tin chung | Khung ưu đãi của mọi sản phẩm |
 | Hotline, Zalo, email, giờ làm việc | ⚙️ Liên hệ | Nút gọi, nút Zalo, khối báo giá, footer, popup |
 | Email nhận form báo giá | ⚙️ Liên hệ | Mọi form báo giá |
 | Favicon, ảnh khi gửi link | ⚙️ Favicon & ảnh khi gửi link | Toàn web |
