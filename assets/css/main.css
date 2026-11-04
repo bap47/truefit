@@ -1071,10 +1071,8 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 }
 /* Quy trình trang chủ: hiệu ứng khi rê chuột */
 .tf-steps > li { padding: .9rem .6rem 1rem; border-radius: 18px; transition: background .3s, transform .35s var(--ease); cursor: default; }
-.tf-steps > li::before { transition: background .4s, color .4s, transform .35s var(--ease), box-shadow .35s; }
 @media (hover: hover) {
   .tf-steps > li:hover { background: rgba(255,255,255,.12); transform: translateY(-6px); }
-  .tf-steps > li:hover::before { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(255,255,255,.22); background: #fff; color: var(--orange); }
   .tf-pd__steps > li { transition: transform .35s var(--ease), box-shadow .35s; }
   .tf-pd__steps > li:hover { transform: translateY(-5px); box-shadow: 0 18px 30px -20px rgba(244,128,25,.55); }
 }
