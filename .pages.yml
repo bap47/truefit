@@ -365,10 +365,6 @@ content:
       label: Số lượng đã làm
       type: string
       description: 'VD: 500 áo polo, 300 túi tote'
-    - name: thoi_gian
-      label: Thời gian thực hiện
-      type: string
-      description: 'VD: 10 ngày'
     - name: tieu_de_bai
       label: Tên dự án hiện trên thẻ
       type: string
@@ -494,10 +490,6 @@ content:
       label: Số lượng đã làm
       type: string
       description: 'VD: 500 áo polo, 300 túi tote'
-    - name: thoi_gian
-      label: Thời gian thực hiện
-      type: string
-      description: 'VD: 10 ngày'
     - name: tieu_de_bai
       label: Loại sản phẩm (hiện trên thẻ)
       type: string
