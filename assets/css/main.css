@@ -1068,8 +1068,8 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
 .tf-steps > li { padding: .9rem .6rem 1rem; border-radius: 18px; transition: background .3s, transform .35s var(--ease); cursor: default; }
 @media (hover: hover) {
   .tf-steps > li:hover { background: rgba(255,255,255,.12); transform: translateY(-6px); }
-  .tf-pd__steps > li { transition: transform .35s var(--ease), box-shadow .35s; }
-  .tf-pd__steps > li:hover { transform: translateY(-5px); box-shadow: 0 18px 30px -20px rgba(244,128,25,.55); }
+  .tf-pd__steps > li { transition: transform .3s var(--ease); }
+  .tf-pd__steps > li:hover { transform: scale(1.04); }
 }
 /* Chừa chỗ cho khối "Gửi logo…" nổi ở đầu footer – không đè lên nội dung phía trên */
 main#noi-dung:has(+ .tf-footer:not(.tf-footer--home)) > section:last-child { padding-bottom: calc(clamp(2rem, 5vh, 3.5rem) + 6.5rem) !important; }
