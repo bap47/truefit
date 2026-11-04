@@ -676,7 +676,7 @@ content:
       - name: anh
         label: Ảnh
         type: image
-        description: Ảnh vuông 1200×1200 (JPG/WebP, dưới 500KB). Chữ và nút nằm phía dưới ảnh nên để sản phẩm ở nửa trên
+        description: Ảnh ngang 1200×800 (3:2, JPG/WebP, dưới 500KB). Chữ và nút nằm góc dưới trái nên để sản phẩm ở nửa trên / bên phải. Trên điện thoại ảnh được cắt vuông
       - name: anh_menu
         label: Ảnh trong menu sổ xuống
         type: image
