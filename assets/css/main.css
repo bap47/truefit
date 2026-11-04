@@ -1082,3 +1082,5 @@ main#noi-dung:has(+ .tf-footer:not(.tf-footer--home)) > section:last-child { pad
   #hai-huong .tf-door__go { grid-area: go; margin: 0; align-self: end; }
   #hai-huong .tf-door::after { height: calc(45% + 24px); }
 }
+/* Trang đối tác: «Sản phẩm liên quan» + «Đối tác khác» cùng nền kem liền mạch */
+#san-pham.tf-section--cream + #doi-tac-khac { padding-top: 0; }
