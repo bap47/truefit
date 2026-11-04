@@ -1089,3 +1089,5 @@ main#noi-dung:has(+ .tf-footer:not(.tf-footer--home)) > section:last-child { pad
   .tf-timeline__card { transition: transform .3s var(--ease); }
   .tf-timeline__step:hover .tf-timeline__card { transform: scale(1.02); }
 }
+/* Chính sách: chữ nội dung màu đen cho dễ đọc */
+.tf-tabs--policy .tf-tabs__panel .tf-prose, .tf-policy-nav ~ .tf-prose { color: var(--ink); }
