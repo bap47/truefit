@@ -1084,3 +1084,8 @@ main#noi-dung:has(+ .tf-footer:not(.tf-footer--home)) > section:last-child { pad
 }
 /* Trang đối tác: «Sản phẩm liên quan» + «Đối tác khác» cùng nền kem liền mạch */
 #san-pham.tf-section--cream + #doi-tac-khac { padding-top: 0; }
+/* Trang Quy trình: các bước hiện ngay, rê chuột thì phóng nhẹ */
+@media (hover: hover) {
+  .tf-timeline__card { transition: transform .3s var(--ease); }
+  .tf-timeline__step:hover .tf-timeline__card { transform: scale(1.02); }
+}
