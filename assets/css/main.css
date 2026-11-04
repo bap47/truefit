@@ -1024,3 +1024,5 @@ img[data-khung].is-khac { object-position: 50% 50%; transform: none; object-fit:
   .tf-buy__cta strong { font-size: .86rem; }
   .tf-buy__cta em { font-size: .68rem; }
 }
+.tf-buy__chat { flex: none; width: 32px; height: 32px; color: #fff; }
+@media (max-width: 480px) { .tf-buy__chat { width: 26px; height: 26px; } }
