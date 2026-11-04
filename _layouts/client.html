@@ -68,7 +68,7 @@ layout: default
 
 {% include xep.html loai="kh" %}{% assign nhom_nay = page.nhom | default: "dong-phuc" %}{% assign khac = xep | where_exp: "c", "c.url != page.url" | where: "nhom", nhom_nay %}
 {% if khac.size > 0 %}
-<section class="tf-section" id="doi-tac-khac">
+<section class="tf-section tf-section--cream" id="doi-tac-khac">
   <div class="wrap">
     <h2 class="tf-title reveal">Đối tác <span>khác</span> của TrueFit</h2>
     <div class="tf-stories__grid">
