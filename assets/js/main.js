@@ -297,9 +297,21 @@
   function hi(t, words) {
     var out = esc(t), n = norm(t);
     if (n.length !== t.length) return out;
-    words.forEach(function (w) { var i = (' ' + n).indexOf(' ' + w); if (i >= 0) out = esc(t.slice(0, i)) + '<mark>' + esc(t.slice(i, i + w.length)) + '</mark>' + esc(t.slice(i + w.length)); });
-    return out;
+    var m = []; words.forEach(function (w) { var i = (' ' + n).indexOf(' ' + w); if (w && i >= 0) for (var k = i; k < i + w.length; k++) m[k] = 1; });
+    if (!m.length) return out;
+    out = ''; var on = false;
+    for (var k = 0; k < t.length; k++) { if (!!m[k] !== on) { out += on ? '</mark>' : '<mark>'; on = !on; } out += esc(t[k]); }
+    return on ? out + '</mark>' : out;
   }
+  var SICON = {
+    'bao-hanh': '<path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+    'bao-mat': '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle cx="12" cy="16" r="1.3"/>',
+    'chat-luong': '<circle cx="12" cy="9" r="6"/><path d="M9 14.5L7.5 22 12 19.5 16.5 22 15 14.5"/><path d="M9.8 9l1.5 1.5 3-3"/>',
+    'giao-hang': '<path d="M3 6h11v10H3z"/><path d="M14 9h4l3 3.5V16h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
+    'bao-quan': '<path d="M8 3l-5 3 2 4 2-1v12h10V9l2 1 2-4-5-3c0 1.7-1.8 3-4 3S8 4.7 8 3z"/>',
+    'dong-phuc': '<path d="M8 3l-5 3 2 4 2-1v12h10V9l2 1 2-4-5-3c0 1.7-1.8 3-4 3S8 4.7 8 3z"/>',
+    'qua-tang': '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13"/><path d="M12 8C10.5 4.5 7 4 7 6s3 2 5 2zM12 8c1.5-3.5 5-4 5-2s-3 2-5 2z"/>'
+  };
   var GROUPS = [['sp', 'Sản phẩm'], ['kh', 'Đối tác'], ['tt', 'Quy trình & chính sách']];
   function render(q) {
     var nq = norm(q);
@@ -317,7 +329,7 @@
         var list = hits.filter(function (h) { return h.x.n === g[0]; }).slice(0, g[0] === 'sp' ? 8 : 4);
         if (!list.length) return '';
         return '<div class="tf-search__group"><p class="tf-search__h">' + g[1] + ' <small style="color:var(--ink-soft);font-weight:400">(' + list.length + ')</small></p><div class="tf-search__list">' + list.map(function (h) {
-          var x = h.x, img = x.i ? '<img src="' + esc(x.i) + '" alt="" loading="lazy">' : '<span class="ph ph--txt">' + (x.m === 'Quy trình' ? '↻' : '§') + '</span>';
+          var x = h.x, ic = SICON[x.s], img = x.i ? '<img src="' + esc(x.i) + '" alt="" loading="lazy">' : (ic ? '<span class="ph ph--txt ph--ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ic + '</svg></span>' : '<span class="ph ph--txt">' + (x.m === 'Quy trình' ? '↻' : '§') + '</span>');
           return '<a class="tf-search__row" href="' + esc(x.u) + '">' + img + '<span><strong>' + hi(x.t, words) + '</strong>' + (x.d ? '<small>' + esc(x.d) + '</small>' : '') + '</span><span class="tf-search__tag">' + esc(x.m) + '</span></a>';
         }).join('') + '</div></div>';
       }).join('');
