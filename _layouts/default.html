@@ -24,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <script>document.documentElement.classList.add('js');</script>
+  {% if page.url == "/" %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TrueFit","alternateName":"TrueFit Uniform","url":{{ site.url | jsonify }},"logo":{{ '/assets/img/logo-truefit.png' | absolute_url | jsonify }},"description":{{ site.description | jsonify }},"email":{{ site.data.lien_he.email | jsonify }},"telephone":"+84909914059","contactPoint":{"@type":"ContactPoint","telephone":"+84909914059","contactType":"customer service","areaServed":"VN","availableLanguage":"Vietnamese"},"sameAs":["https://www.facebook.com/truefituniform","https://www.instagram.com/truefituniform","https://www.tiktok.com/@truefituniform"]}</script>{% endif %}
 </head>
 <body>
   <a class="skip" href="#noi-dung">Bỏ qua tới nội dung</a>
