@@ -1100,3 +1100,7 @@ main#noi-dung:has(+ .tf-footer:not(.tf-footer--home)) > section:last-child { pad
 .tf-prose ol.tf-toc a { display: flex; gap: .6rem; padding: .55rem 0; color: var(--ink); text-decoration: none; }
 .tf-prose ol.tf-toc a::before { content: counter(toc) "."; flex: none; min-width: 1.2rem; color: var(--orange); font-weight: 700; }
 .tf-prose ol.tf-toc a:hover { color: var(--orange); }
+
+/* Mũi tên menu: thẳng hàng giữa chữ */
+.tf-nav__caret { display: inline-block; font-size: 0; width: 6px; height: 6px; margin-left: 7px; vertical-align: middle; border-right: 1.8px solid currentColor; border-bottom: 1.8px solid currentColor; transform: translateY(-3px) rotate(45deg); transition: transform .25s var(--ease); }
+.tf-nav__item:hover .tf-nav__caret, .tf-nav__item--drop:hover .tf-nav__caret { transform: translateY(0) rotate(225deg); }
