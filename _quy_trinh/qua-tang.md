@@ -29,6 +29,6 @@ buoc:
     mo_ta: Đóng gói theo yêu cầu và giao hàng tận nơi đúng hẹn. Khách kiểm tra đủ số lượng, chất lượng rồi thanh toán 50% còn lại.
     chi_tiet:
       - Đóng hộp quà, kèm thiệp theo yêu cầu
-      - Miễn phí vận chuyển
+      - Miễn phí giao nội thành TP.HCM, ngoại tỉnh tính phí theo đơn vị vận chuyển
       - Bảo hành 3 tháng, hoàn tiền 100% nếu lỗi không khắc phục được
 ---
