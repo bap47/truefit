@@ -1000,6 +1000,10 @@ content:
       label: Email nhận form báo giá
       type: string
       description: Lần đầu có khách gửi form, hộp thư này nhận mail xác nhận từ FormSubmit – bấm Activate 1 lần là xong
+    - name: web3forms_key
+      label: Mã Web3Forms (Access Key)
+      type: string
+      description: Dán mã lấy từ web3forms.com vào đây. Có mã thì form báo giá gửi qua Web3Forms (nhanh hơn), mail về đúng email đã đăng ký mã.
     - name: kenh
       label: Icon liên hệ ở footer
       type: object
