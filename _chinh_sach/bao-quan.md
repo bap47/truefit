@@ -2,21 +2,74 @@
 title: Hướng dẫn bảo quản
 thu_tu: 5
 ---
-*Lưu ý: Chính sách bảo hành không áp dụng cho lỗi sản phẩm do bảo quản sai hướng dẫn.*
+*Bảo quản đúng cách giúp đồng phục giữ form, giữ màu và bền đẹp lâu hơn. Lưu ý: chính sách bảo hành không áp dụng cho lỗi sản phẩm do bảo quản sai hướng dẫn.*
 
-## Giặt
+1. [Khi mới nhận đồng phục](#moi-nhan)
+2. [Giặt](#giat)
+3. [Phơi và làm khô](#phoi)
+4. [Ủi](#ui)
+5. [Cất giữ khi không sử dụng](#cat-giu)
+6. [Lưu ý theo từng loại đồng phục](#theo-loai)
+7. [Xử lý vết bẩn thường gặp](#vet-ban)
+8. [Những thói quen nên tránh](#nen-tranh)
+{: .tf-toc}
 
-- Lần giặt đầu tiên sau ngày nhận sản phẩm 5 ngày và không dùng xà phòng.
-- Lấy hết vật dụng bên trong và trên bề mặt áo (huy hiệu, bảng tên…) ra, lộn mặt trong của áo ra trước khi giặt.
-- Nhiệt độ nước dưới 30°C, không ngâm lâu trong dung dịch giặt.
-- Giặt ở chế độ vừa.
-- Không dùng hoá chất tẩy.
-- Sấy khô ở nhiệt độ thường, sức nóng thấp.
+## Khi mới nhận đồng phục {#moi-nhan}
 
-## Ủi
+- Xem nhãn hướng dẫn giặt ủi trên sản phẩm, vì mỗi chất liệu có cách chăm sóc khác nhau.
+- Lần giặt đầu tiên nên sau ngày nhận sản phẩm **5 ngày** để hình in ổn định, và không dùng xà phòng ở lần giặt này.
+- Nếu cần mặc gấp, có thể sử dụng áo trước khi giặt.
 
-- Ủi ở nhiệt độ trung bình, không kéo áo khi ủi.
-- Không ủi lên bề mặt hình in, kể cả mặt trong và mặt ngoài áo.
-- Không phun trực tiếp hoá chất, dầu thơm, nước hoa lên bề mặt hình in.
+## Giặt {#giat}
 
-*Màu áo có thể mờ nhẹ sau nhiều lần giặt, ủi. Khách hàng có thể sử dụng áo trước khi giặt nếu cần dùng gấp.*
+- Phân loại đồ trắng, đồ màu và theo chất liệu trước khi giặt.
+- Lấy hết vật dụng trên áo (huy hiệu, bảng tên, kẹp…) và **lộn mặt trái** áo trước khi giặt để bảo vệ hình in, hình thêu.
+- Dùng nước **dưới 30°C**, không ngâm áo quá lâu trong nước giặt.
+- Chọn nước giặt dịu nhẹ; **không dùng thuốc tẩy** hoặc bột giặt có chất tẩy trắng mạnh.
+- Áo thun, áo polo giặt máy được ở chế độ nhẹ. Áo khoác, đồ bảo hộ nên giặt riêng.
+- Áo thun, áo polo nên giặt sau mỗi lần mặc; áo khoác giặt khoảng 1–2 tuần/lần để tránh nhanh cũ.
+
+## Phơi và làm khô {#phoi}
+
+- Phơi nơi khô ráo, thoáng gió, tránh nắng gắt trực tiếp để áo không bị bạc màu.
+- Phơi lộn mặt trái, treo bằng móc để áo giữ form.
+- Hạn chế sấy máy; nếu cần sấy, chọn nhiệt độ thấp.
+- Không để áo phơi ngoài trời quá lâu sau khi đã khô.
+
+## Ủi {#ui}
+
+- Ủi ở **nhiệt độ trung bình**, ưu tiên bàn ủi hơi nước.
+- Lộn mặt trái khi ủi; **không ủi trực tiếp lên hình in**, kể cả mặt trong và mặt ngoài.
+- Không kéo căng áo khi ủi.
+- Không phun nước hoa, dầu thơm hay hoá chất trực tiếp lên hình in.
+
+## Cất giữ khi không sử dụng {#cat-giu}
+
+- Áo polo, sơ mi, áo khoác nên treo móc; mỗi móc treo một áo để tránh biến dạng.
+- Cất ở tủ khô ráo, thoáng khí, tránh ánh nắng; có thể đặt gói hút ẩm để chống ẩm mốc.
+- Để xa vật sắc nhọn; sản phẩm có chi tiết kim loại nên cất riêng.
+
+## Lưu ý theo từng loại đồng phục {#theo-loai}
+
+- **Đồng phục màu trắng:** giặt riêng, ưu tiên giặt tay với nước giặt nhẹ, phơi nơi râm mát để hạn chế ố vàng.
+- **Áo có hình in, hình thêu:** luôn lộn trái khi giặt và ủi, không chà mạnh lên vùng in, thêu.
+- **Áo khoác, đồ bảo hộ:** giặt riêng ở chế độ nhẹ, không vắt mạnh để giữ form và lớp vải.
+- **Sản phẩm có đính phụ kiện:** nên giặt tay nhẹ nhàng để tránh phụ kiện làm rách vải.
+
+## Xử lý vết bẩn thường gặp {#vet-ban}
+
+Xử lý vết bẩn càng sớm càng dễ sạch. Nên thử trước ở một góc khuất của áo.
+
+- **Vết thức ăn:** lau ngay bằng khăn ướt; vết khô thì ngâm nước ấm khoảng 15–20 phút rồi giặt lại.
+- **Vết dầu mỡ:** xịt hỗn hợp giấm trắng pha nước, để khoảng 5 phút rồi lau sạch và giặt lại.
+- **Vết mực:** chấm một lớp kem đánh răng trắng, để 20–30 phút, chải nhẹ rồi giặt lại.
+- **Vết máu:** dùng nước lạnh pha muối, thấm và lau nhiều lần đến khi sạch. Không dùng nước nóng.
+
+## Những thói quen nên tránh {#nen-tranh}
+
+- Giặt quá thường xuyên với áo khoác, quần tây, chân váy.
+- Dùng bột giặt có chất tẩy trắng mạnh trong thời gian dài.
+- Phơi dưới nắng gắt hoặc để ngoài trời quá lâu.
+- Ủi ở nhiệt độ quá cao.
+
+*Màu áo có thể mờ nhẹ sau nhiều lần giặt, ủi. Cần hỗ trợ thêm, vui lòng nhắn Zalo hoặc gọi [0909 914 059](tel:0909914059).*
