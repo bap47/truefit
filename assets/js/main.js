@@ -210,7 +210,9 @@
       e.preventDefault();
       var tr = form.querySelector('[data-trang]'); if (tr) tr.value = location.href;
       send.disabled = true; msg.className = 'tf-qform__msg'; msg.textContent = 'Đang gửi…';
-      fetch(form.dataset.ajax, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+      var fd = new FormData(form), isW3 = /web3forms/.test(form.dataset.ajax), body = fd, hd = { 'Accept': 'application/json' };
+      if (isW3) { var o = {}; fd.forEach(function (v, k) { o[k] = v; }); body = JSON.stringify(o); hd['Content-Type'] = 'application/json'; }
+      fetch(form.dataset.ajax, { method: 'POST', headers: hd, body: body })
         .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === 'false') throw j; return j; }); })
         .then(function () { msg.className = 'tf-qform__msg is-ok'; msg.textContent = '✓ Đã gửi! TrueFit sẽ liên hệ bạn sớm nhất.'; form.reset(); send.disabled = false; })
         .catch(function () { msg.className = 'tf-qform__msg is-err'; msg.textContent = 'Chưa gửi được. Bạn nhắn Zalo hoặc gọi hotline giúp TrueFit nhé.'; send.disabled = false; });
