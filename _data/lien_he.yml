@@ -7,6 +7,7 @@ gio_lam_viec: 8h00 - 17h30
 gio_chat: Online 24/7
 ngay_lam_viec: Thứ 2 - Thứ 7
 email_bao_gia: truefit.hello@gmail.com
+web3forms_key: "1df68cfb-12fe-48b9-a0df-d05ae3d2ef3e"
 kenh:
   - ten: Zalo
     link: https://zalo.me/0909914059
