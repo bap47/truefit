@@ -1,6 +1,6 @@
 ---
 title: Chính sách giao hàng
-thu_tu: 3
+thu_tu: 2
 ---
 1. [Đối với đơn hàng nội thành Thành phố Hồ Chí Minh](#noi-thanh)
 2. [Đối với đơn hàng ngoại tỉnh](#ngoai-tinh)

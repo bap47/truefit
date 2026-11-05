@@ -1,6 +1,6 @@
 ---
 title: Chính sách bảo mật
-thu_tu: 2
+thu_tu: 5
 ---
 1. [Quyền lợi của khách hàng](#quyen-loi)
 2. [Thay đổi chính sách về quyền riêng tư](#thay-doi)
