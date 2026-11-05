@@ -1,0 +1,9 @@
+---
+layout: null
+sitemap: false
+---
+User-agent: *
+Allow: /
+Disallow: /san-pham/qua-tang/
+
+Sitemap: {{ "/sitemap.xml" | absolute_url }}
