@@ -4,12 +4,11 @@ thu_tu: 1
 ---
 *Quy định về sản phẩm và dịch vụ của TrueFit*
 
-**Tóm tắt nội dung**
-
 1. [Quy định về đặc điểm sản phẩm và dịch vụ](#dac-diem)
 2. [Quy định về cách bảo quản sản phẩm](#bao-quan-sp)
 3. [Quy định khác](#quy-dinh-khac)
 4. [Chính sách bảo hành của TrueFit](#bao-hanh-sp)
+{: .tf-toc}
 
 ## Quy định về đặc điểm sản phẩm và dịch vụ {#dac-diem}
 

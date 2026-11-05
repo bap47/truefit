@@ -2,10 +2,9 @@
 title: Chính sách bảo mật
 thu_tu: 2
 ---
-**Tóm tắt nội dung**
-
 1. [Quyền lợi của khách hàng](#quyen-loi)
 2. [Thay đổi chính sách về quyền riêng tư](#thay-doi)
+{: .tf-toc}
 
 TrueFit chúng tôi luôn mang đến cho bạn những trải nghiệm tốt nhất từ khâu Tư vấn – Thiết kế – Sản xuất – Giao hàng. Để đạt được trải nghiệm phù hợp với doanh nghiệp, chúng tôi cần tìm hiểu và sử dụng một số thông tin thuộc bản quyền của doanh nghiệp như: logo nhận diện thương hiệu, slogan. Kèm với đó là thông tin của người đại diện ký kết hợp đồng như: họ tên, số điện thoại, địa chỉ email, bộ phận – chức vụ làm việc.
 
