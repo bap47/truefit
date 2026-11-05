@@ -375,7 +375,8 @@
 })();
 /* Chống 1 chữ rớt dòng: dính 2 chữ cuối bằng khoảng trắng không ngắt (dòng cuối luôn ≥ 2 chữ) */
 (function () {
-  var sel = 'h1, h2, h3, h4, .tf-title, .tf-hero__title, .tf-story strong, .tf-story__sum, .tf-card__name, .tf-lead, .tf-hero__tagline, .tf-prose p, .tf-intro__lead, .tf-door__txt > span, .tf-buy__uudai li > span:last-child';
+  /* Áp dụng cho MỌI khối chữ trên web: tiêu đề, đoạn văn, gạch đầu dòng, bảng, thẻ… */
+  var sel = 'h1, h2, h3, h4, h5, h6, p, li, dd, dt, td, th, figcaption, blockquote, label, .tf-title, .tf-hero__title, .tf-story strong, .tf-story__sum, .tf-card__name, .tf-lead, .tf-hero__tagline, .tf-intro__lead, .tf-door__txt > span, .tf-buy__uudai li > span:last-child, .tf-steps strong, .tf-pd__steps strong, .tf-buy__ship span, .tf-buy__cta em, .tf-story em';
   function lastText(el) {
     var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n, last = null;
     while ((n = w.nextNode())) { if (/\S/.test(n.nodeValue)) last = n; }
@@ -383,6 +384,8 @@
   }
   function fix(el) {
     if (el.dataset.nw) return; el.dataset.nw = 1;
+    /* khối chứa khối con (VD li có ul/p bên trong) thì để khối con tự xử lý */
+    if (el.querySelector('p, ul, ol, div, li, h1, h2, h3, h4, table')) return;
     var t = lastText(el); if (!t) return;
     var v = t.nodeValue.replace(/\s+$/, ''), tail = t.nodeValue.slice(v.length);
     var i = v.lastIndexOf(' ');
