@@ -1107,3 +1107,8 @@ main#noi-dung:has(+ .tf-footer:not(.tf-footer--home)) > section:last-child { pad
 
 .tf-search__row .ph--ic { background: var(--cream); }
 .tf-search__row .ph--ic svg { width: 26px; height: 26px; }
+
+/* Icon liên hệ footer: luôn 1 hàng, tự thu nhỏ khi cột hẹp */
+.tf-social { flex-wrap: nowrap; }
+.tf-social a { flex: 0 1 40px; width: auto; height: auto; aspect-ratio: 1; min-width: 30px; }
+.tf-social svg { width: 50%; height: 50%; max-width: 20px; max-height: 20px; }
